@@ -1,0 +1,67 @@
+{% extends 'layout_client.html' %}
+
+{% block title %}Change Password{% endblock %}
+
+{% block content %}
+
+<div class="layout-content-body">
+	<div class="title-bar">
+	  <h1 class="title-bar-title">
+		<span class="d-ib">Add Basics</span>
+	  </h1>
+	</div>
+	<form data-toggle="md-validator" action="{{url_for('add_basics')}}" method="POST">
+	  <div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+		  <div class="md-form-group">
+			<select class="md-form-control" name="pol" id="pol" data-msg-required="Please indicate your gender." required>
+				<option value="" disabled="disabled" selected="selected">Gender</option>
+				<option value="M">Male</option>
+				<option value="F">Female</option>
+				<option value="N">Not specified</option>
+			</select>
+			<label class="md-control-label"></label>
+			</div>
+				<div class="row">
+					<div class="col-sm-12">
+					  <div class="md-form-group md-label-floating">
+							<input class="md-form-control" type="date" name="godini" id="godini" data-format="dd/MM/yyyy" data-msg-required="Please enter your birth date">
+							<label class="md-control-label"></label>
+					  </div>
+					</div>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="visina" id="visina" placeholder="Visina (cm)">
+				  <label class="md-control-label"></label>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="tezina" id="tezina" placeholder="Tezina (kg)">
+				  <label class="md-control-label"></label>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="alergija" id="alergija" placeholder="Alergija (ako ima)">
+				  <label class="md-control-label"></label>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="netolerantnost" id="netolerantnost" placeholder="Netolerantnost (ako ima)">
+				  <label class="md-control-label"></label>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="odbivnost" id="odbivnost" placeholder="Odbivnost (ako ima)">
+				  <label class="md-control-label"></label>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="zaboluvanja" id="zaboluvanja" placeholder="Zaboluvanja (ako ima)">
+				  <label class="md-control-label"></label>
+				</div>
+				<div class="md-form-group">
+				  <input class="md-form-control" type="text" name="iskustvo" id="iskustvo" placeholder="Iskustvo vo teretana (ako ima)">
+				  <label class="md-control-label"></label>
+				</div>
+				<button class="btn btn-default btn-block" type="submit">Add Basics</button>
+			 </div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}
