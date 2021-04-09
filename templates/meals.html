@@ -27,6 +27,10 @@
 			  				<tr>
 									<th>Seq.</th>
 									<th>Name</th>
+									<th>Sostojki</th>
+									<th>Proteins</th>
+									<th>Carbohydrates</th>
+									<th>Fats</th>
 									<th>Description</th>
 									<th>Action</th>
 			  				</tr>
@@ -36,9 +40,13 @@
 								<tr>
 				  				<td>{{row['option_id']}}</td>
 				  				<td>{{row['name']}}</td>
+				  				<td>{{row['sostojki']}}</td>
+				  				<td>{{row['proteins']}}</td>
+				  				<td>{{row['carbohydrates']}}</td>
+				  				<td>{{row['fats']}}</td>
 				  				<td>{{row['description']}}</td>
 				  				<td>
-										<a href="/delete_meal/{{row['meal_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the client?')">Delete</a>
+										<a href="/delete_meal/{{row['option_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the client?')">Delete</a>
 				  				</td>
 								</tr>
 			  				{% endfor %}

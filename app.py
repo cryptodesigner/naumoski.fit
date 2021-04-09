@@ -652,12 +652,13 @@ def add_meal():
 
 	if request.method == 'POST':
 		name = request.form['name']
-		category = request.form['category']
+		sostojki = request.form['sostojki']
 		proteins = request.form['proteins']
 		carbohydrates = request.form['carbohydrates']
 		fats = request.form['fats']
-   
-		cursor.execute('INSERT INTO gros_sups VALUES (NULL, %s, %s, %s, %s, %s)', (name, category, proteins, carbohydrates, fats)) 
+		description = request.form['description']
+
+		cursor.execute('INSERT INTO options VALUES (NULL, %s, %s, %s, %s, %s, %s)', (name, sostojki, proteins, carbohydrates, fats, description)) 
 		conn.commit()
    
 	elif request.method == 'POST':
@@ -819,14 +820,17 @@ def add_training():
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
 	if request.method == 'POST':
+		clients_client_id = request.form['clients_client_id']
 		name = request.form['name']
 		serii_povt = request.form['serii_povt']
 		link_vezba = request.form['link_vezba']
 		tech = request.form['tech']
 		link_tech = request.form['link_tech']
+		vreme = request.form['vreme']
+		date = request.form['date']
 		description = request.form['description']
 
-		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s)', (name, serii_povt, link_vezba, tech, link_tech, description))
+		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (clients_client_id, name, serii_povt, link_vezba, tech, link_tech, vreme, date, description))
 		conn.commit()
 
 		#tuka lista od js za pomosna tabela
@@ -834,7 +838,7 @@ def add_training():
 	elif request.method == 'POST':
 		flash("Fill the form")
 
-	#tuka dodaj za selectiranje tabeli drugi
+	
 
 	return render_template('add_training.html', email=session['email'])
 
@@ -860,9 +864,15 @@ def add_daily_routine():
 	elif request.method == 'POST':
 		flash("Fill the form")
 
-	#tuka dodaj za selectiranje tabeli drugi
+	cursor.execute("SELECT * FROM clients WHERE managers_manager_id = '{}'".format(session['manager_id']))
+	data = cursor.fetchall()
 
-	return render_template('add_daily_routine.html', email=session['email'])
+	cursor.execute("SELECT * FROM options")
+	data2 = cursor.fetchall()
+
+	cursor.close()
+
+	return render_template('add_daily_routine.html', email=session['email'], data=data, data2=data2)
 
 
 
@@ -1043,7 +1053,7 @@ def meals():
 	conn = mysql.connect()
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	cursor.execute("SELECT * FROM meal_options")
+	cursor.execute("SELECT * FROM options")
 	data = cursor.fetchall()
 
 	cursor.close()
@@ -1102,13 +1112,13 @@ def client_meals():
 
 
 # Delete Meal
-# @app.route('/delete_meal/<string:id_data>', methods=['GET'])
-# def delete_meal(id_data):
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
-# 	cursor.execute("DELETE FROM meals WHERE meal_id=%s", (id_data))
-# 	conn.commit()
-# 	return redirect(url_for('meals'))
+@app.route('/delete_meal/<string:id_data>', methods=['GET'])
+def delete_meal(id_data):
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	cursor.execute("DELETE FROM options WHERE option_id=%s", (id_data))
+	conn.commit()
+	return redirect(url_for('meals'))
 
 
 
