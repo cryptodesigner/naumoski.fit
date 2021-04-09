@@ -4,6 +4,7 @@
 # Boban Naumoski
 ## Coaching app
 Boban prebarvese mnogu, i na kraj mu dadovme 3 opcii da odberit, i ja odbra tretata opcija - 09.04.2021
+Koj go ebat.
 
 
 
