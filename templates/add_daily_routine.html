@@ -1,0 +1,66 @@
+{% extends 'layout_manager.html' %}
+
+{% block title %}Add Meal{% endblock %}
+
+{% block content %}
+
+<div class="layout-content-body">
+  <div class="title-bar">
+		<h1 class="title-bar-title">
+		  <span class="d-ib">Add Daily routine</span>
+		</h1>
+  </div>
+</div>
+
+<form data-toggle="md-validator">
+  <div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+	  	<div class="demo-md-form-wrapper">
+
+				<div class="md-form-group">
+		  		<input class="md-form-control" type="text" name="name" id="nameDailyRoutine" placeholder="Daily Routine Name">
+		  		<label class="md-control-label"></label>
+				</div>
+
+				<div class="md-form-group">
+		  		<select class="md-form-control" name="meals" id="meal" placeholder="Client">
+						<option value="" disabled="disabled" selected="selected">Meal</option>
+						{% for meal in data %}
+			  		<option value="{{meal['meal_id']}}">{{meal['name']}}</option>
+						{% endfor %}
+		  		</select>
+		  		<label class="md-control-label"></label>
+				</div>
+
+				<div class="md-form-group">
+		  		<select class="md-form-control" name="training" id="training" placeholder="Client">
+						<option value="" disabled="disabled" selected="selected">Training</option>
+						{% for training in data2 %}
+			  		<option value="{{training['training_id']}}">{{training['name']}}</option>
+						{% endfor %}
+		  		</select>
+		  		<label class="md-control-label"></label>
+				</div>
+				  
+				<div class="md-form-group md-label-floating">
+		  		<input class="md-form-control dates" type="date" name="data" data-format="dd/MM/yyyy" data-msg-required="Please enter your birth date" required>
+		  		<label class="md-control-label"></label>
+				</div>
+				<div id="otherDates">
+					
+		 		</div>
+		 		<button type="button" id="addAnotherDate">Add another date</button>
+		 		<button type="button" id="removeLastDate">Remove last date</button>
+		 		
+		 		<div class="md-form-group">
+		   		<input class="md-form-control" type="text" name="vreme" id="vreme" placeholder="Vreme">
+		   		<label class="md-control-label"></label>
+		 		</div>
+			  <button type="button" class="btn btn-default btn-block" id="proba">Add Meal</button>
+			</div>
+		  </div>
+		</div>
+	</form>
+</div>
+
+{% endblock %}

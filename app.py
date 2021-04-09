@@ -841,6 +841,32 @@ def add_training():
 
 
 
+
+# --------- DAILY ROUTINES ----------
+@app.route('/add_daily_routine', methods=['GET', 'POST'])
+def add_daily_routine():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	if request.method == 'POST':
+		name = request.form['name']
+		
+
+		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s)', (name, serii_povt, link_vezba, tech, link_tech, description))
+		conn.commit()
+
+		#tuka lista od js za pomosna tabela
+
+	elif request.method == 'POST':
+		flash("Fill the form")
+
+	#tuka dodaj za selectiranje tabeli drugi
+
+	return render_template('add_daily_routine.html', email=session['email'])
+
+
+
+
 # # ------- DAILY-ROUTINES ------
 # @app.route('/add_daily_routine', methods=['GET', 'POST'])
 # def add_daily_routine():
@@ -1012,17 +1038,17 @@ def add_training():
 
 
 # # Show All Meals Page
-# @app.route('/meals')
-# def meals():
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/meals')
+def meals():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-# 	cursor.execute("SELECT * FROM meal_options")
-# 	data = cursor.fetchall()
+	cursor.execute("SELECT * FROM meal_options")
+	data = cursor.fetchall()
 
-# 	cursor.close()
+	cursor.close()
 
-# 	return render_template('meals.html', email=session['email'], data=data)
+	return render_template('meals.html', email=session['email'], data=data)
 
 
 
@@ -1044,17 +1070,17 @@ def add_training():
 
 
 # # Show All Daily Routines Page
-# @app.route('/daily_routines')
-# def daily_routines():
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/daily_routines')
+def daily_routines():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-# 	cursor.execute("SELECT * FROM daily_routines")
-# 	data = cursor.fetchall()
+	cursor.execute("SELECT * FROM daily_routines")
+	data = cursor.fetchall()
 
-# 	cursor.close()
+	cursor.close()
 
-# 	return render_template('daily_routines.html', email=session['email'], data=data)
+	return render_template('daily_routines.html', email=session['email'], data=data)
 
 
 
