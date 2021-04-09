@@ -53,6 +53,7 @@ def home():
 
 
 
+
 # Registering Page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -639,6 +640,30 @@ def upload(filename):
 # 	cursor.execute("DELETE FROM gros_sups WHERE gros_sups_id=%s", (id_data))
 # 	conn.commit()
 # 	return redirect(url_for('food'))
+
+
+
+
+# Add Food Page
+@app.route('/add_meal', methods=['GET', 'POST'])
+def add_meal():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	if request.method == 'POST':
+		name = request.form['name']
+		category = request.form['category']
+		proteins = request.form['proteins']
+		carbohydrates = request.form['carbohydrates']
+		fats = request.form['fats']
+   
+		cursor.execute('INSERT INTO gros_sups VALUES (NULL, %s, %s, %s, %s, %s)', (name, category, proteins, carbohydrates, fats)) 
+		conn.commit()
+   
+	elif request.method == 'POST':
+		flash("Please fill out the form!")
+
+	return render_template('add_meal.html', email=session['email'])
 
 
 

@@ -1,0 +1,67 @@
+{% extends 'layout_client.html' %}
+
+{% block title %}Change Password{% endblock %}
+
+{% block content %}
+
+<div class="layout-content-body">
+  <div class="title-bar">
+		<h1 class="title-bar-title">
+		  <span class="d-ib">All Measurements</span>
+		</h1>
+  </div>
+  <div class="row gutter-xs">
+		<div class="col-xs-12">
+	 		<div class="card">
+				<div class="card-header">
+	  			<div class="card-actions">
+						<button type="button" class="card-action card-toggler" title="Collapse"></button>
+						<button type="button" class="card-action card-reload" title="Reload"></button>
+						<button type="button" class="card-action card-remove" title="Remove"></button>
+	  			</div>
+	  			<strong>Clients Measurements List</strong>
+				</div>
+				<div class="card-body">
+		  		<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Seq.</th>
+								<th>Tezina</th>
+								<th>Vrat</th>
+								<th>Gradi</th>
+								<th>Pod Gradi</th>
+								<th>Papok</th>
+								<th>Kolk</th>
+								<th>Raka</th>
+								<th>But</th>
+								<th>Date</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for measurement in data %}
+							<tr>
+								<td>{{measurement['measurement_id']}}</td>
+								<td>{{measurement['tezina']}}</td>
+								<td>{{measurement['vrat']}}</td>
+								<td>{{measurement['gradi']}}</td>
+								<td>{{measurement['pod_gradi']}}</td>
+								<td>{{measurement['papok']}}</td>
+								<td>{{measurement['kolk']}}</td>
+								<td>{{measurement['raka']}}</td>
+								<td>{{measurement['but']}}</td>
+								<td>{{measurement['cur_date']}}</td>
+								<td>
+				  				<a href="/delete_measurement/{{measurement['measurement_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the measurement?')">Delete</a>
+								</td>
+			  			</tr>
+			  			{% endfor %}
+						</tbody>
+		 	 		</table>
+				</div>
+	  	</div>
+		</div>
+  </div>
+</div>
+
+{% endblock %}
