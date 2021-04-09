@@ -400,7 +400,7 @@
                   		</div>
                   		<div class="col-sm-2">
                   			<div class="md-form-group">
-                  			  <button type="button">Remove</button>
+                  			  <button type="button" onclick="removeThis(this)">Remove</button>
                   			</div>
                   		</div>
                   	</div>
@@ -446,7 +446,7 @@
 								  		</div>
 								  		<div class="col-sm-1">
                   			<div class="md-form-group">
-                  			  <button type="button">Remove</button>
+                  			  <button type="button" onclick="removeThis(this)" >Remove</button>
                   			</div>
                   		</div>
 								  	</div>
@@ -515,8 +515,8 @@
 		var mealsAndTrainingContainer = document.getElementById("mealsAndTrainingContainer")
 		var addedMealsAndTrainings = document.getElementById("addedMealsAndTrainings")
 
-		function removeChild(){
-			console.log(lo)
+		function removeThis(t){
+			t.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
 		}
 
 		// console.log(client.value)
