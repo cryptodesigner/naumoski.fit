@@ -1,0 +1,18 @@
+{% extends 'layout_client.html' %}
+
+{% block title %}Client Meals{% endblock %}
+
+{% block content %}
+
+<div class="layout-content-body">
+  <div class="title-bar">
+		<h1 class="title-bar-title">
+		  <span class="d-ib">Uploaded Images</span>
+		</h1>
+  </div>
+  {% for file in files %}
+	<img src="{{ url_for('upload', filename=file) }}" style="width: 200px">
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -444,43 +444,43 @@ def add_basics():
 
 
 # Show All Basics Page
-@app.route('/basics')
-def basics():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# @app.route('/basics')
+# def basics():
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	cursor.execute("SELECT * FROM basics WHERE clients_client_id = '{}'".format(session['client_id']))
-	data = cursor.fetchall()
-	cursor.close()
+# 	cursor.execute("SELECT * FROM basics WHERE clients_client_id = '{}'".format(session['client_id']))
+# 	data = cursor.fetchall()
+# 	cursor.close()
 
-	return render_template('basics.html', email=session['email'], data=data)
+# 	return render_template('basics.html', email=session['email'], data=data)
 
 
 
 
 # Show Clients Basics Page
-@app.route('/client_basics')
-def client_basics():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# @app.route('/client_basics')
+# def client_basics():
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	cursor.execute("SELECT * FROM basics WHERE clients_client_id = '{}'".format(session['client_id']))
-	data = cursor.fetchall()
-	cursor.close()
+# 	cursor.execute("SELECT * FROM basics WHERE clients_client_id = '{}'".format(session['client_id']))
+# 	data = cursor.fetchall()
+# 	cursor.close()
 
-	return render_template('client_basics.html', email=session['email'], data=data)
+# 	return render_template('client_basics.html', email=session['email'], data=data)
 
 
 
 
 # Delete Basics
-@app.route('/delete_basics/<string:id_data>', methods=['GET'])
-def delete_basics(id_data):
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
-	cursor.execute("DELETE FROM basics WHERE basic_id=%s", (id_data))
-	conn.commit()
-	return redirect(url_for('client_basics'))
+# @app.route('/delete_basics/<string:id_data>', methods=['GET'])
+# def delete_basics(id_data):
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# 	cursor.execute("DELETE FROM basics WHERE basic_id=%s", (id_data))
+# 	conn.commit()
+# 	return redirect(url_for('client_basics'))
 
 
 
@@ -514,43 +514,43 @@ def add_schedule():
 
 
 # Show All Schedule Page
-@app.route('/schedules')
-def schedules():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# @app.route('/schedules')
+# def schedules():
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
-	data = cursor.fetchall()
-	cursor.close()
+# 	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
+# 	data = cursor.fetchall()
+# 	cursor.close()
 
-	return render_template('schedules.html', email=session['email'], data=data)
+# 	return render_template('schedules.html', email=session['email'], data=data)
 
 
 
 
 # Show Clients Schedule Page
-@app.route('/client_schedule')
-def client_schedule():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# @app.route('/client_schedule')
+# def client_schedule():
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
-	data = cursor.fetchall()
-	cursor.close()
+# 	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
+# 	data = cursor.fetchall()
+# 	cursor.close()
 
-	return render_template('client_schedule.html', email=session['email'], data=data)
+# 	return render_template('client_schedule.html', email=session['email'], data=data)
 
 
 
 
 # Delete Schedule
-@app.route('/delete_schedule/<string:id_data>', methods=['GET'])
-def delete_schedule(id_data):
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
-	cursor.execute("DELETE FROM schedules WHERE schedule_id=%s", (id_data))
-	conn.commit()
-	return redirect(url_for('client_schedule'))
+# @app.route('/delete_schedule/<string:id_data>', methods=['GET'])
+# def delete_schedule(id_data):
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# 	cursor.execute("DELETE FROM schedules WHERE schedule_id=%s", (id_data))
+# 	conn.commit()
+# 	return redirect(url_for('client_schedule'))
 
 
 
@@ -1086,25 +1086,17 @@ def daily_routines():
 
 
 # Show Clients Meals Page
-# @app.route('/client_meals')
-# def client_meals():
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/client_meals')
+def client_meals():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-# 	cursor.execute("SELECT * FROM meals WHERE clients_client_id = '{}'".format(session['client_id']))
-# 	data = cursor.fetchall()
+	cursor.execute("SELECT * FROM meals WHERE clients_client_id = '{}'".format(session['client_id']))
+	data = cursor.fetchall()
 
-# 	sql = "SELECT m.name, gs.name  FROM meals m \
-# 		INNER JOIN meals_has_gros_sups mg ON m.meal_id = mg.meals_meal_id \
-# 		INNER JOIN gros_sups gs ON gs.gros_sups_id = mg.gros_sups_gros_sups_id \
-# 		WHERE clients_client_id = '{}'".format(session['client_id']) 
+	cursor.close()
 
-# 	cursor.execute(sql)
-# 	food = cursor.fetchall()
-
-# 	cursor.close()
-
-# 	return render_template('client_meals.html', email=session['email'], data=data, food=food)
+	return render_template('client_meals.html', email=session['email'], data=data, food=food)
 
 
 
@@ -1170,16 +1162,16 @@ def trainings():
 
 
 # Show Clients Trainings Page
-# @app.route('/client_trainings')
-# def clients_trainings():
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/client_trainings')
+def clients_trainings():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-# 	cursor.execute("SELECT * FROM trainings WHERE clients_client_id = '{}'".format(session['client_id']))
-# 	data = cursor.fetchall()
-# 	cursor.close()
+	cursor.execute("SELECT * FROM trainings WHERE clients_client_id = '{}'".format(session['client_id']))
+	data = cursor.fetchall()
+	cursor.close()
 
-# 	return render_template('client_trainings.html', email=session['email'], data=data)
+	return render_template('client_trainings.html', email=session['email'], data=data)
 
 
 

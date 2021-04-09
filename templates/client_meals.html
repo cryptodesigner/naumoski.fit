@@ -1,0 +1,59 @@
+{% extends 'layout_client.html' %}
+
+{% block title %}Client Meals{% endblock %}
+
+{% block content %}
+
+<div class="layout-content-body">
+  <div class="title-bar">
+		<h1 class="title-bar-title">
+		  <span class="d-ib">All Diets</span>
+		</h1>
+  </div>
+  <div class="row gutter-xs">
+		<div class="col-xs-12">
+			<div class="card">
+				<div class="card-header">
+					<div class="card-actions">
+						<button type="button" class="card-action card-toggler" title="Collapse"></button>
+						<button type="button" class="card-action card-reload" title="Reload"></button>
+						<button type="button" class="card-action card-remove" title="Remove"></button>
+					</div>
+					<strong>Clients Diets List</strong>
+				</div>
+				<div class="card-body">
+					<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+						<thead>
+							<tr>
+								<th>Seq.</th>
+								<th>Name</th>
+								<th>Category</th>
+								<th>Option</th>
+								<th>Time</th>
+								<th>Start Date</th>
+								<th>End Date</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for meal in data %}
+							<tr>
+								<td>{{meal['meal_id']}}</td>
+								<td>{{meal['name']}}</td>
+								<td>{{meal['category']}}</td>
+								<td>{{meal['option']}}</td>
+								<td>{{meal['vreme']}}</td>
+								<td>{{meal['start_date']}}</td>
+								<td>{{meal['end_date']}}</td>
+								<td>{{meal['description']}}</td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>
+
+{% endblock %}
