@@ -28,11 +28,11 @@
 								<th>Seq.</th>
 								<th>Name</th>
 								<th>Category</th>
-								<th>Option</th>
-								<th>Time</th>
-								<th>Start Date</th>
-								<th>End Date</th>
-								<th>Description</th>
+								<th>Vreme</th>
+								<th>Option1 Id</th>
+								<th>Option2 Id</th>
+								<th>Option3 Id</th>
+								<th>Date</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -41,11 +41,11 @@
 								<td>{{meal['meal_id']}}</td>
 								<td>{{meal['name']}}</td>
 								<td>{{meal['category']}}</td>
-								<td>{{meal['option']}}</td>
 								<td>{{meal['vreme']}}</td>
-								<td>{{meal['start_date']}}</td>
-								<td>{{meal['end_date']}}</td>
-								<td>{{meal['description']}}</td>
+								<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option1']}})">See Option</button></td>
+								<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option2']}})">See Option</button></td>
+								<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option3']}})">See Option</button></td>
+								<td>{{meal['date']}}</td>
 							</tr>
 							{% endfor %}
 						</tbody>
@@ -55,5 +55,73 @@
 		</div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Current Option Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modalSostojki">Sostojki:</div>
+        <div id="modalProteins">Proteini:</div>
+        <div id="modalCarbohydrates">Jaglenohidrati:</div>
+        <div id="modalFats">Masti:</div>
+        <div id="modalDescription">Description:</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+var modalSostojki = document.getElementById("modalSostojki")
+var modalProteins = document.getElementById("modalProteins")
+var modalCarbohydrates = document.getElementById("modalCarbohydrates")
+var modalFats = document.getElementById("modalFats")
+var modalDescription = document.getElementById("modalDescription")
+
+modalSostojki.innerHTML = "proba"
+console.log(modalSostojki)
+
+
+	function seeOption(t){
+
+		console.log(t)
+
+		fetch("/chose_option", {
+        	method: "POST",
+        	headers: {
+           	"Content-Type": "application/json",
+           	Accept: 'application/json'
+        	},
+        		body: JSON.stringify(t)
+      		}).then((response) => {
+      			  console.log(response)
+  				  return response.json()
+  				})
+  				.then((data) => {
+  				  // Work with JSON data here
+  				  console.log(data[0])
+  				  modalSostojki.innerHTML = "Sostoji: " + data[0].sostojki
+  				  modalProteins.innerHTML = "Proteini : " + data[0].proteins
+  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + data[0].carbohydrates
+  				  modalFats.innerHTML = "Masti : " + data[0].fats
+  				  modalDescription.innerHTML = "Description : " + data[0].description
+
+  				})
+  				.catch((err) => {
+  				  // Do something for an error here
+  				})
+
+	}
+</script>
 
 {% endblock %}

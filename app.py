@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, json, url_for, flash, session, send_file, send_from_directory
+from flask import Flask, render_template, request, redirect, json, jsonify, url_for, flash, session, send_file, send_from_directory
 from flaskext.mysql import MySQL
 import MySQLdb
 import yaml
@@ -1077,7 +1077,7 @@ def meals():
 
 
 # # Show All Daily Meals Page
-@app.route('/daily_meals')
+@app.route('/daily_meals', methods=['GET', 'POST'])
 def daily_meals():
 	conn = mysql.connect()
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
@@ -1085,9 +1085,43 @@ def daily_meals():
 	cursor.execute("SELECT * FROM meals")
 	data = cursor.fetchall()
 
+	
+
+	if request.method == 'POST':
+		req = request.get_json()
+		cursor.execute("SELECT * FROM options WHERE option_id = %s",(req))
+		data2 = cursor.fetchall()
+		cursor.close()
+		print(jsonify(data2))
+		print(type(data2))
+		cursor.close()
+		return jsonify(data2)
+
+
+
+
 	cursor.close()
+		
+			
+
+	
 
 	return render_template('daily_meals.html', email=session['email'], data=data)
+
+
+@app.route('/chose_option', methods=['POST'])
+def chose_option():
+	
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	req = request.get_json()
+	cursor.execute("SELECT * FROM options WHERE option_id = %s",(req))
+	data2 = cursor.fetchall()
+	cursor.close()
+	print(data2)	
+
+	return jsonify(data2)
 
 
 
@@ -1119,7 +1153,9 @@ def client_meals():
 
 	cursor.close()
 
-	return render_template('client_meals.html', email=session['email'], data=data, food=food)
+
+
+	return render_template('client_meals.html', email=session['email'], data=data)
 
 
 
