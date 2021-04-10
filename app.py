@@ -1077,17 +1077,17 @@ def meals():
 
 
 # # Show All Daily Meals Page
-# @app.route('/daily_meals')
-# def daily_meals():
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/daily_meals')
+def daily_meals():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-# 	cursor.execute("SELECT * FROM daily_meals")
-# 	data = cursor.fetchall()
+	cursor.execute("SELECT * FROM meals")
+	data = cursor.fetchall()
 
-# 	cursor.close()
+	cursor.close()
 
-# 	return render_template('daily_meals.html', email=session['email'], data=data)
+	return render_template('daily_meals.html', email=session['email'], data=data)
 
 
 
@@ -1124,7 +1124,7 @@ def client_meals():
 
 
 
-# Delete Meal
+# Delete Meal Option
 @app.route('/delete_meal/<string:id_data>', methods=['GET'])
 def delete_meal(id_data):
 	conn = mysql.connect()
@@ -1132,6 +1132,17 @@ def delete_meal(id_data):
 	cursor.execute("DELETE FROM options WHERE option_id=%s", (id_data))
 	conn.commit()
 	return redirect(url_for('meals'))
+
+
+
+# Delete Daily Meal
+@app.route('/delete_daily_meal/<string:id_data>', methods=['GET'])
+def delete_daily_meal(id_data):
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	cursor.execute("DELETE FROM meals WHERE meal_id=%s", (id_data))
+	conn.commit()
+	return redirect(url_for('daily_meals'))
 
 
 
