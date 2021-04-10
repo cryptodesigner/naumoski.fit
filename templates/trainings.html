@@ -26,6 +26,7 @@
 						<thead>
 			  			<tr>
 								<th>Seq.</th>
+								<th>Client</th>
 								<th>Name</th>
 								<th>Serii / Povtoruvanja</th>
 								<th>Vezba Link</th>
@@ -39,6 +40,7 @@
 			  			{% for training in data %}
 							<tr>
 				  			<td>{{training['training_id']}}</td>
+				  			<td>{{training['clients_client_id']}}</td>
 				  			<td>{{training['name']}}</td>
 				  			<td>{{training['serii_povt']}}</td>
 				  			<td>{{training['link_vezba']}}</td>

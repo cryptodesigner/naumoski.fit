@@ -853,12 +853,25 @@ def add_daily_routine():
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
 	if request.method == 'POST':
-		name = request.form['name']
+		# allSelectedMeals = request.form['allSelectedMeals']
+		# allSelectedTrainings = request.form['allSelectedTrainings']
+		req = request.get_json()
+		
+		for i in req[0]:
+			cursor.execute('INSERT INTO meals VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["category"], i["vreme"], i["option1"], i["option2"], i["option3"], i["date"]))
+			conn.commit()
+
+		for i in req[1]:
+			cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["serii_povt"], i["link_vezba"], i["tech"], i["link_tech"], i["vreme"], i["date"], i["description"]))
+			conn.commit()
+
+
+		
+		# print(allSelectedTrainings[0])
+
 		
 
-		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s)', (name, serii_povt, link_vezba, tech, link_tech, description))
-		conn.commit()
-
+		
 		#tuka lista od js za pomosna tabela
 
 	elif request.method == 'POST':

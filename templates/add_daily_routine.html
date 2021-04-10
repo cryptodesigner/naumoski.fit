@@ -367,12 +367,25 @@
 	
 </div>
 								
-                 
+                 				<div class="row" id="firstDate">
+                 				  <div class="col-sm-12">
+                 				    <div class="md-form-group md-label-floating">
+                 				      <input class="md-form-contro mealsAndTrainingsDate" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
+                 				      <button type="button" onClick="removeCurrDate(this)">Remove Date</button>
+                 				    </div>
+                 				  </div>
+                 				</div>
+
+                 				<div id="datesWrapper">
+                 					
+                 				</div>
+                 				<button type="button" onClick="addNewDate()">Add Date</button>
 
 
 									<button type="button" id="addMeal">Add Meal</button>
 									<button type="button" id="addTraining">Add Training</button>
 									
+									<button type="button" id="submitBtn">Submit</button>
 								</div>
 							</div>
 						
@@ -414,31 +427,157 @@
 		var addMeal = document.getElementById("addMeal")
 		var addTraining = document.getElementById("addTraining")
 		var client =  document.getElementById("client")
-		var mealName = document.querySelectorAll(".mealName");
-		var mealCategory = document.querySelectorAll(".mealCategory");
-		var mealOptionOne = document.querySelectorAll(".mealOptionOne");
-		var mealOptionTwo = document.querySelectorAll(".mealOptionTwo");
-		var mealOptionThree = document.querySelectorAll(".mealOptionThree");
-		var mealVreme = document.querySelectorAll(".mealVreme");
+		
 		var mealDiv = document.getElementById("mealDiv")
 		var mealsAndTrainingContainer = document.getElementById("mealsAndTrainingContainer")
 		var addedMealsAndTrainings = document.getElementById("addedMealsAndTrainings")
+		var submitBtn = document.getElementById("submitBtn")
+
+		var firstDate = document.getElementById("firstDate")
+		var datesWrapper = document.getElementById("datesWrapper")
+
+		console.log(firstDate)
+
+		var allSelectedMeals = []
+
+
+		function addNewDate(){
+			var clnfirstDate = firstDate.cloneNode(true);
+			datesWrapper.appendChild(clnfirstDate)
+		}
+
+		function removeCurrDate(t){
+			t.parentNode.parentNode.parentNode.remove()
+		}
+
+		submitBtn.addEventListener("click", function(){
+			console.log("rabotit")
+			var allSelectedMeals = createArrayOfAllMeals();
+			var allSelectedTrainings = createArrayOfAllTrainings();
+			var allMealsAndTrainings = [allSelectedMeals, allSelectedTrainings]
+			console.log(allSelectedMeals)
+			console.log(allSelectedTrainings)
+
+			fetch("/add_daily_routine", {
+        		method: "POST",
+        		headers: {
+            	"Content-Type": "application/json"
+        		},
+        			body: JSON.stringify(allMealsAndTrainings)
+      			}).then(res => {
+  			      console.log(res);
+  			    });
+  		});
+			
+//         	var bodyFormData = new FormData()
+// //      	  console.log(nameid.value)
+//         	bodyFormData.append("allSelectedMeals", allSelectedMeals)
+//         	bodyFormData.append("allSelectedTrainings", allSelectedTrainings)
+        	
+	
+// 			axios({
+//          		method: 'POST',
+//          		url: '/add_daily_routine',
+//          		data: bodyFormData,
+//          		headers: {"Content-Type": "multipart/form-data"},
+//        		 })
+//             .then(function (response) {
+//             	console.log(response)
+//                 // if(response.status == 200){
+//                 //   location.reload();
+//                 //   $('html,body').scrollTop(0);
+//                 // }
+                
+//             })
+//             .catch(function (error) {
+//                 console.log(error);
+//             });
+			
+			
+		
+
+		function createArrayOfAllMeals(){
+			var mealName = document.querySelectorAll(".mealName");
+			var mealCategory = document.querySelectorAll(".mealCategory");
+			var mealOptionOne = document.querySelectorAll(".mealOptionOne");
+			var mealOptionTwo = document.querySelectorAll(".mealOptionTwo");
+			var mealOptionThree = document.querySelectorAll(".mealOptionThree");
+			var mealVreme = document.querySelectorAll(".mealVreme");
+			var mealsAndTrainingsDate = document.querySelectorAll(".mealsAndTrainingsDate");
+
+			var allDates=[]
+			var allSelectedMeals = []
+			
+			for (var j = 0; j < mealsAndTrainingsDate.length; j++) {
+				allDates.push(mealsAndTrainingsDate[j].value)
+				
+			}
+
+			for (var i = 1; i < mealName.length; i++) {
+				for (var x = 0; x < allDates.length; x++) {
+					var newMeal = {
+					clients_client_id  : client.value,
+					name : mealName[i].value,
+					category  : mealCategory[i].value,
+					vreme : mealVreme[i].value,
+					option1 : mealOptionOne[i].value,
+					option2 : mealOptionTwo[i].value,
+					option3 : mealOptionThree[i].value,
+					date : allDates[x]
+					}
+					allSelectedMeals.push(newMeal)
+				}
+			}
+			return allSelectedMeals;
+
+		}
+
+
+		function createArrayOfAllTrainings(){
+			var trainingName = document.querySelectorAll(".trainingName");
+			var trainingSerii = document.querySelectorAll(".trainingSerii");
+			var trainingVezbaLink = document.querySelectorAll(".trainingVezbaLink");
+			var trainingTech = document.querySelectorAll(".trainingTech");
+			var trainingTechLink = document.querySelectorAll(".trainingTechLink");
+			var trainingVreme = document.querySelectorAll(".trainingVreme");
+			var trainingDescription = document.querySelectorAll(".trainingDescription");
+			var mealsAndTrainingsDate = document.querySelectorAll(".mealsAndTrainingsDate");
+
+			var allDates=[]
+			var allSelectedTrainings = []
+			
+			for (var j = 0; j < mealsAndTrainingsDate.length; j++) {
+				allDates.push(mealsAndTrainingsDate[j].value)
+				
+			}
+
+			for (var i = 1; i < trainingName.length; i++) {
+				for (var x = 0; x < allDates.length; x++) {
+					var newTraining = {
+					clients_client_id  : client.value,
+					name : trainingName[i].value,
+					serii_povt : trainingSerii[i].value,
+					link_vezba : trainingVezbaLink[i].value,
+					tech : trainingTech[i].value,
+					link_tech : trainingTechLink[i].value,
+					vreme : trainingVreme[i].value,
+					date : allDates[x],
+					description : trainingDescription[i].value
+					}
+					allSelectedTrainings.push(newTraining)
+				}
+			}
+			return allSelectedTrainings;
+
+		}
 
 		function removeThis(t){
 			t.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
 		}
 
-		// console.log(client.value)
-		// 	console.log(mealName[0].value)
-		// 	console.log(mealCategory[0].value)
-		// 	console.log(mealOptionOne[0].value)
-		// 	console.log(mealOptionTwo[0].value)
-		// 	console.log(mealOptionThree[0].value)
-		// 	console.log(mealVreme[0].value)
-		// 	console.log(mealDiv)
 
 		addMeal.addEventListener("click", function(){
-			console.log(typeof(mealVreme[0]))
+			
 			var newMealDiv = mealsAndTrainingContainer.childNodes;
 			var clnMealDiv = newMealDiv[1].cloneNode(true);
 			addedMealsAndTrainings.appendChild(clnMealDiv)
