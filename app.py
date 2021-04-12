@@ -321,7 +321,7 @@ def client_profile():
 
 	sql = "SELECT * FROM meals WHERE clients_client_id = '{}' \
 		AND date >= CURDATE() \
-		ORDER BY vreme ASC".format(session['client_id'])
+		ORDER BY date ASC".format(session['client_id'])
 
 	cursor.execute(sql)
 	all_meals = cursor.fetchall()
