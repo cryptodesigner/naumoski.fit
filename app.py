@@ -277,9 +277,58 @@ def client_profile():
 	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
 	data4 = cursor.fetchall()
 
+	sql = "SELECT m.name FROM managers m \
+		INNER JOIN clients c ON m.manager_id = c.managers_manager_id \
+		WHERE client_id = {}".format(session['client_id'])
+
+	cursor.execute(sql)
+	assigned_manager = cursor.fetchall()
+
+	sql = "SELECT * FROM trainings WHERE clients_client_id = '{}' \
+		AND date = CURDATE() \
+		ORDER BY vreme ASC".format(session['client_id'])
+
+	cursor.execute(sql)
+	today_trainings = cursor.fetchall()
+
+	sql = "SELECT * FROM trainings WHERE clients_client_id = '{}' \
+		AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY) \
+		ORDER BY vreme ASC".format(session['client_id'])
+
+	cursor.execute(sql)
+	tomorrow_trainings = cursor.fetchall()
+
+	sql = "SELECT * FROM trainings WHERE clients_client_id = '{}' \
+		AND date >= CURDATE() \
+		ORDER BY vreme ASC".format(session['client_id'])
+
+	cursor.execute(sql)
+	all_trainings = cursor.fetchall()
+
+	sql = "SELECT * FROM meals WHERE clients_client_id = '{}' \
+		AND date = CURDATE() \
+		ORDER BY vreme ASC".format(session['client_id'])
+
+	cursor.execute(sql)
+	today_meals = cursor.fetchall()
+
+	sql = "SELECT * FROM meals WHERE clients_client_id = '{}' \
+		AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY) \
+		ORDER BY vreme ASC".format(session['client_id'])
+
+	cursor.execute(sql)
+	tomorrow_meals = cursor.fetchall()
+
+	sql = "SELECT * FROM meals WHERE clients_client_id = '{}' \
+		AND date >= CURDATE() \
+		ORDER BY vreme ASC".format(session['client_id'])
+
+	cursor.execute(sql)
+	all_meals = cursor.fetchall()
+
 	cursor.close()
 	return render_template('client_profile.html', 
-		email=session['email'], data=data, data2=data2, data3=data3, data4=data4)
+		email=session['email'], data=data, data2=data2, data3=data3, data4=data4, assigned_manager=assigned_manager, today_trainings=today_trainings, tomorrow_trainings=tomorrow_trainings, all_trainings=all_trainings, today_meals=today_meals, tomorrow_meals=tomorrow_meals, all_meals=all_meals)
 
 
 

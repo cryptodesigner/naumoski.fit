@@ -180,7 +180,7 @@
         </div>
       </div>
 
-      <div class="col-md-12">
+      <!-- <div class="col-md-12">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -197,33 +197,19 @@
               <thead>
                 <tr>
                   <th>Routine Name</th>
-                  <th>Time</th>
-                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 {% for row in data5 %}
                 <tr>
                   <td>{{row['dailyRoutineName']}}</td>
-                  <td>{{row['routineTime']}}</td>
- 
-                  {% if row['GrosName'] != None %}
-
-                  <td>
-                    {{row['GrosName']}}
-                  </td>
-                  {% else %}
-                  <td>
-                    {{row['trainingName']}} - {{row['trainingDescription']}} / Serii: {{row['serii_povt']}}
-                  </td>
-                  {% endif %}
                 </tr>
                 {% endfor %}
               </tbody>
             </table>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
      
     <div id="Trainings" class="tab" style="display: none">
@@ -234,17 +220,115 @@
         <ul class="nav nav-tabs nav-justified">
           <li class="active"><a href="#trainingtoday" data-toggle="tab">Today</a></li>
           <li><a href="#trainingtomorrow" data-toggle="tab">Tomorrow</a></li>
-          <li><a href="#trainingweek" data-toggle="tab">Week</a></li>
+          <li><a href="#trainingweek" data-toggle="tab">All</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade active in" id="trainingtoday">
             <strong>Today</strong>
+
+            <div class="card-body">
+              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Seq.</th>
+                    <th>Name</th>
+                    <th>Serii/Povtoruvanja</th>
+                    <th>Link Vezba</th>
+                    <th>Tehnika</th>
+                    <th>Link Tehnika</th>
+                    <th>Vreme</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in today_trainings %}
+                  <tr>
+                    <td>{{row['training_id']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['serii_povt']}}</td>
+                    <td>{{row['link_vezba']}}</td>
+                    <td>{{row['tech']}}</td>
+                    <td>{{row['link_tech']}}</td>
+                    <td>{{row['vreme']}}</td>
+                    <td>{{row['description']}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
           </div>
+          
           <div class="tab-pane fade" id="trainingtomorrow">
             <strong>Tomorrow</strong>
+
+            <div class="card-body">
+              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Seq.</th>
+                    <th>Name</th>
+                    <th>Serii/Povtoruvanja</th>
+                    <th>Link Vezba</th>
+                    <th>Tehnika</th>
+                    <th>Link Tehnika</th>
+                    <th>Vreme</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in tomorrow_trainings %}
+                  <tr>
+                    <td>{{row['training_id']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['serii_povt']}}</td>
+                    <td>{{row['link_vezba']}}</td>
+                    <td>{{row['tech']}}</td>
+                    <td>{{row['link_tech']}}</td>
+                    <td>{{row['vreme']}}</td>
+                    <td>{{row['description']}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
           </div>
+          
           <div class="tab-pane fade" id="trainingweek">
-            <strong>Week</strong>
+            <strong>All</strong>
+
+            <div class="card-body">
+              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Seq.</th>
+                    <th>Name</th>
+                    <th>Serii/Povtoruvanja</th>
+                    <th>Link Vezba</th>
+                    <th>Tehnika</th>
+                    <th>Link Tehnika</th>
+                    <th>Vreme</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in all_trainings %}
+                  <tr>
+                    <td>{{row['training_id']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['serii_povt']}}</td>
+                    <td>{{row['link_vezba']}}</td>
+                    <td>{{row['tech']}}</td>
+                    <td>{{row['link_tech']}}</td>
+                    <td>{{row['vreme']}}</td>
+                    <td>{{row['description']}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
@@ -259,18 +343,108 @@
         <ul class="nav nav-tabs nav-justified">
           <li class="active"><a href="#dietToday" data-toggle="tab">Today</a></li>
           <li><a href="#dietTomorrow" data-toggle="tab">Tomorrow</a></li>
-          <li><a href="#dietWeek" data-toggle="tab">Week</a></li>
+          <li><a href="#dietWeek" data-toggle="tab">All</a></li>
         </ul>
 
         <div class="tab-content">
           <div class="tab-pane fade active in" id="dietToday">
             <strong>Today</strong>
+
+            <div class="card-body">
+              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Seq.</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Vreme</th>
+                    <th>Opcija 1</th>
+                    <th>Opcija 2</th>
+                    <th>Opcija 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in today_meals %}
+                  <tr>
+                    <td>{{row['meal_id']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['category']}}</td>
+                    <td>{{row['vreme']}}</td>
+                    <td>{{row['option1']}}</td>
+                    <td>{{row['option2']}}</td>
+                    <td>{{row['option3']}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
           </div>
           <div class="tab-pane fade" id="dietTomorrow">
             <strong>Tomorrow</strong>
+
+            <div class="card-body">
+              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Seq.</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Vreme</th>
+                    <th>Opcija 1</th>
+                    <th>Opcija 2</th>
+                    <th>Opcija 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in tomorrow_meals %}
+                  <tr>
+                    <td>{{row['meal_id']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['category']}}</td>
+                    <td>{{row['vreme']}}</td>
+                    <td>{{row['option1']}}</td>
+                    <td>{{row['option2']}}</td>
+                    <td>{{row['option3']}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
           </div>
           <div class="tab-pane fade" id="dietWeek">
-            <strong>Week</strong>
+            <strong>All</strong>
+
+            <div class="card-body">
+              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+                <thead>
+                  <tr>
+                    <th>Seq.</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Vreme</th>
+                    <th>Opcija 1</th>
+                    <th>Opcija 2</th>
+                    <th>Opcija 3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for row in all_meals %}
+                  <tr>
+                    <td>{{row['meal_id']}}</td>
+                    <td>{{row['name']}}</td>
+                    <td>{{row['category']}}</td>
+                    <td>{{row['vreme']}}</td>
+                    <td>{{row['option1']}}</td>
+                    <td>{{row['option2']}}</td>
+                    <td>{{row['option3']}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </div>
