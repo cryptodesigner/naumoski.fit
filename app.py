@@ -1308,51 +1308,47 @@ def clients_trainings():
 
 
 # Client Profile
-# @app.route('/clients_profile/<string:id_data>', methods=['GET', 'POST'])
-# def clients_profile(id_data):
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/clients_profile/<string:id_data>', methods=['GET', 'POST'])
+def clients_profile(id_data):
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 	
-# 	cursor.execute("SELECT * FROM clients WHERE client_id=%s", (id_data))
-# 	data = cursor.fetchall()
+	cursor.execute("SELECT * FROM clients WHERE client_id=%s", (id_data))
+	data = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM measurements WHERE clients_client_id=%s", (id_data))
-# 	data2 = cursor.fetchall()
+	cursor.execute("SELECT * FROM measurements WHERE clients_client_id=%s", (id_data))
+	data2 = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM basics WHERE clients_client_id=%s", (id_data))
-# 	data3 = cursor.fetchall()
+	cursor.execute("SELECT * FROM basics WHERE clients_client_id=%s", (id_data))
+	data3 = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM schedules WHERE clients_client_id=%s", (id_data))
-# 	data4 = cursor.fetchall()
+	cursor.execute("SELECT * FROM schedules WHERE clients_client_id=%s", (id_data))
+	data4 = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM trainings WHERE clients_client_id=%s AND date >= CURDATE() AND date <= DATE_ADD(CURDATE(),INTERVAL 7 DAY)", (id_data))
-# 	t_week = cursor.fetchall()
+	cursor.execute("SELECT * FROM trainings WHERE clients_client_id=%s AND date >= CURDATE() ORDER BY date ASC", (id_data))
+	t_week = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM trainings WHERE clients_client_id=%s AND date = DATE_ADD(CURDATE(),INTERVAL 1 DAY)", (id_data))
-# 	t_tomorrow = cursor.fetchall()
+	cursor.execute("SELECT * FROM trainings WHERE clients_client_id=%s AND date = DATE_ADD(CURDATE(),INTERVAL 1 DAY) ORDER BY vreme ASC", (id_data))
+	t_tomorrow = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM trainings WHERE clients_client_id=%s AND date = CURDATE()", (id_data))
-# 	t_today = cursor.fetchall()
+	cursor.execute("SELECT * FROM trainings WHERE clients_client_id=%s AND date = CURDATE() ORDER BY vreme ASC", (id_data))
+	t_today = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM meals WHERE clients_client_id=%s AND start_date >= CURDATE() AND start_date <= DATE_ADD(CURDATE(),INTERVAL 7 DAY)", (id_data))
-# 	m_week = cursor.fetchall()
+	cursor.execute("SELECT * FROM meals WHERE clients_client_id=%s AND date >= CURDATE() ORDER BY date ASC", (id_data))
+	m_week = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM meals WHERE clients_client_id=%s AND start_date = DATE_ADD(CURDATE(),INTERVAL 1 DAY)", (id_data))
-# 	m_tomorrow = cursor.fetchall()
+	cursor.execute("SELECT * FROM meals WHERE clients_client_id=%s AND date = DATE_ADD(CURDATE(),INTERVAL 1 DAY) ORDER BY vreme ASC", (id_data))
+	m_tomorrow = cursor.fetchall()
 
-# 	cursor.execute("SELECT * FROM meals WHERE clients_client_id=%s AND start_date = CURDATE()", (id_data))
-# 	m_today = cursor.fetchall()
+	cursor.execute("SELECT * FROM meals WHERE clients_client_id=%s AND date = CURDATE() ORDER BY vreme ASC", (id_data))
+	m_today = cursor.fetchall()
 
-# 	sql = "SELECT m.name FROM managers m \
-# 		INNER JOIN clients c ON m.manager_id = c.managers_manager_id \
-# 		WHERE manager_id = {}".format(session['manager_id'])
+	cursor.execute("SELECT * FROM managers WHERE manager_id='{}'".format(session['manager_id']))
+	assigned_manager = cursor.fetchall()
 
-# 	cursor.execute(sql)
-# 	assigned_manager = cursor.fetchall()
+	cursor.close()
 
-# 	cursor.close()
-
-# 	return render_template('profile_of_client.html', assigned_manager=assigned_manager, data=data, data2=data2, data3=data3, data4=data4, t_today=t_today, t_tomorrow=t_tomorrow, t_week=t_week, m_today=m_today, m_tomorrow=m_tomorrow, m_week=m_week, email=session['email'])
+	return render_template('profile_of_client.html', assigned_manager=assigned_manager, data=data, data2=data2, data3=data3, data4=data4, t_today=t_today, t_tomorrow=t_tomorrow, t_week=t_week, m_today=m_today, m_tomorrow=m_tomorrow, m_week=m_week, email=session['email'])
 
 
 
