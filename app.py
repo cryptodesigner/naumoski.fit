@@ -546,10 +546,12 @@ def add_schedule():
 		stanuvanje = request.form['stanuvanje']
 		legnuvanje = request.form['legnuvanje']
 		rabota = request.form['rabota']
+		pauzi = request.form['pauzi']
 		trening = request.form['trening']
+		cardio = request.form['cardio']
 		description = request.form['description']
 	   
-		cursor.execute('INSERT INTO schedules VALUES (NULL, %s, %s, %s, %s, %s, %s)', (clients_client_id, stanuvanje, legnuvanje, rabota, trening, description)) 
+		cursor.execute('INSERT INTO schedules VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (clients_client_id, stanuvanje, legnuvanje, rabota, pauzi, trening, cardio, description)) 
 		conn.commit()
    
 		flash("You have added client successfully")
@@ -578,16 +580,16 @@ def add_schedule():
 
 
 # Show Clients Schedule Page
-# @app.route('/client_schedule')
-# def client_schedule():
-# 	conn = mysql.connect()
-# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
+@app.route('/client_schedule')
+def client_schedule():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-# 	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
-# 	data = cursor.fetchall()
-# 	cursor.close()
+	cursor.execute("SELECT * FROM schedules WHERE clients_client_id = '{}'".format(session['client_id']))
+	data = cursor.fetchall()
+	cursor.close()
 
-# 	return render_template('client_schedule.html', email=session['email'], data=data)
+	return render_template('client_schedule.html', email=session['email'], data=data)
 
 
 
