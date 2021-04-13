@@ -15,16 +15,18 @@
 <form data-toggle="md-validator">
 	<div class="container">
 		<div class="demo-md-form-wrapper">
-			<div class="md-form-group">
-				<select class="md-form-control client" name="client" id="client" placeholder="Client">
-					<option value="" disabled="disabled" selected="selected">Client</option>
-					{% for client in data %}
-						<option value="{{client['client_id']}}">{{client['name']}}</option>
-					{% endfor %}
-				</select>
-				<label class="md-control-label"></label>
+			<div class="col-xs-12">
+				<div class="md-form-group">
+					<select class="md-form-control client" name="client" id="client" placeholder="Client">
+						<option value="" disabled="disabled" selected="selected">Client</option>
+						{% for client in data %}
+							<option value="{{client['client_id']}}">{{client['name']}}</option>
+						{% endfor %}
+					</select>
+				</div>
 			</div>
-
+			<br>
+			
 			<div id="mealsAndTrainingContainer" style="display: none;">
 				<div id="mealDiv"> 								
 					<div class="md-form-group">
@@ -202,6 +204,8 @@
         			body: JSON.stringify(allMealsAndTrainings)
       			}).then(res => {
   			      console.log(res);
+                location.reload();
+                $('html,body').scrollTop(0);
   			    });
   		});
 
@@ -225,22 +229,20 @@
 			for (var i = 1; i < mealName.length; i++) {
 				for (var x = 0; x < allDates.length; x++) {
 					var newMeal = {
-					clients_client_id  : client.value,
-					name : mealName[i].value,
-					category  : mealCategory[i].value,
-					vreme : mealVreme[i].value,
-					option1 : mealOptionOne[i].value,
-					option2 : mealOptionTwo[i].value,
-					option3 : mealOptionThree[i].value,
-					date : allDates[x]
+						clients_client_id  : client.value,
+						name : mealName[i].value,
+						category  : mealCategory[i].value,
+						vreme : mealVreme[i].value,
+						option1 : mealOptionOne[i].value,
+						option2 : mealOptionTwo[i].value,
+						option3 : mealOptionThree[i].value,
+						date : allDates[x]
 					}
 					allSelectedMeals.push(newMeal)
 				}
 			}
 			return allSelectedMeals;
-
 		}
-
 
 		function createArrayOfAllTrainings(){
 			var trainingName = document.querySelectorAll(".trainingName");
@@ -263,27 +265,25 @@
 			for (var i = 1; i < trainingName.length; i++) {
 				for (var x = 0; x < allDates.length; x++) {
 					var newTraining = {
-					clients_client_id  : client.value,
-					name : trainingName[i].value,
-					serii_povt : trainingSerii[i].value,
-					link_vezba : trainingVezbaLink[i].value,
-					tech : trainingTech[i].value,
-					link_tech : trainingTechLink[i].value,
-					vreme : trainingVreme[i].value,
-					date : allDates[x],
-					description : trainingDescription[i].value
+						clients_client_id  : client.value,
+						name : trainingName[i].value,
+						serii_povt : trainingSerii[i].value,
+						link_vezba : trainingVezbaLink[i].value,
+						tech : trainingTech[i].value,
+						link_tech : trainingTechLink[i].value,
+						vreme : trainingVreme[i].value,
+						date : allDates[x],
+						description : trainingDescription[i].value
 					}
 					allSelectedTrainings.push(newTraining)
 				}
 			}
 			return allSelectedTrainings;
-
 		}
 
 		function removeThis(t){
 			t.parentNode.parentNode.parentNode.parentNode.parentNode.remove()
 		}
-
 
 		addMeal.addEventListener("click", function(){
 			
@@ -302,7 +302,6 @@
 
 		})
 		
-
 		</script>
 
 {% endblock %}
