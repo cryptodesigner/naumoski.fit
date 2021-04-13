@@ -15,6 +15,7 @@
 <form data-toggle="md-validator">
 	<div class="container">
 		<div class="demo-md-form-wrapper">
+			
 			<div class="col-xs-12">
 				<div class="md-form-group">
 					<select class="md-form-control client" name="client" id="client" placeholder="Client">
@@ -25,9 +26,9 @@
 					</select>
 				</div>
 			</div>
-			<br>
 			
-			<div id="mealsAndTrainingContainer" style="display: none;">
+			<div class="row" id="mealsAndTrainingContainer" style="display: none;">
+				
 				<div id="mealDiv"> 								
 					<div class="md-form-group">
 						<div class="row">
@@ -93,6 +94,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div id="trainingDiv"> 								
 					<div class="md-form-group">
 						<div class="row">
@@ -139,6 +141,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 
 			<div id="addedMealsAndTrainings"></div>
@@ -153,10 +156,14 @@
 			</div>
 
 			<div id="datesWrapper"></div>
-			<button type="button" onClick="addNewDate()">Add Date</button>
-			<button type="button" id="addMeal">Add Meal</button>
-			<button type="button" id="addTraining">Add Training</button>
-			<button type="button" id="submitBtn">Submit</button>
+
+			<div>
+				<button type="button" onClick="addNewDate()">Add Date</button>
+				<button type="button" id="addMeal">Add Meal</button>
+				<button type="button" id="addTraining">Add Training</button>
+				<button type="button" id="submitBtn">Submit</button>
+			</div>
+			
 		</div>
 	</div>
 </form>
@@ -290,13 +297,13 @@
 			var newMealDiv = mealsAndTrainingContainer.childNodes;
 			var clnMealDiv = newMealDiv[1].cloneNode(true);
 			addedMealsAndTrainings.appendChild(clnMealDiv)
-			console.log(clnMealDiv)
+			// console.log(clnMealDiv)
 		})
 
 		addTraining.addEventListener("click", function(){
-			console.log(addTraining)
+			// console.log(addTraining)
 			var newTrainingDiv = mealsAndTrainingContainer.childNodes;
-			console.log(newTrainingDiv)
+			// console.log(newTrainingDiv)
 			var clnTrainingDiv = newTrainingDiv[3].cloneNode(true);
 			addedMealsAndTrainings.appendChild(clnTrainingDiv)
 
