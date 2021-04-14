@@ -370,9 +370,9 @@
                     <td>{{row['name']}}</td>
                     <td>{{row['category']}}</td>
                     <td>{{row['vreme']}}</td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button></td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button></td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button></td>
+                    <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -403,9 +403,9 @@
                     <td>{{row['name']}}</td>
                     <td>{{row['category']}}</td>
                     <td>{{row['vreme']}}</td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button></td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button></td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button></td>
+                    <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -437,9 +437,9 @@
                     <td>{{row['name']}}</td>
                     <td>{{row['category']}}</td>
                     <td>{{row['vreme']}}</td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button></td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button></td>
-                    <td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button></td>
+                    <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
                     <td>{{row['date']}}</td>
                   </tr>
                   {% endfor %}

@@ -33,6 +33,7 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 
 app.config['UPLOAD_PATH'] = UPLOAD_PATH
+app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
 
 mysql = MySQL(app)
 mysql.init_app(app)
@@ -638,7 +639,7 @@ def photos():
 
 @app.route('/uploads/<filename>')
 def upload(filename):
-	return send_from_directory(app.config['UPLOAD_PATH'], filename)
+	return send_from_directory(os.path.join(app.config['UPLOAD_PATH'], current_user.get_id()), filename)
 
 
 
@@ -909,7 +910,23 @@ def add_daily_routine():
 		req = request.get_json()
 		
 		for i in req[0]:
-			cursor.execute('INSERT INTO meals VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["category"], i["vreme"], i["option1"], i["option2"], i["option3"], i["date"]))
+			if not i["option1"]:
+				opt1 = 0
+			else:
+				opt1 = int(i["option1"])
+			
+			if not i["option2"]:
+				opt2 = 0
+			else:
+				opt2 = int(i["option2"])
+
+			if not i["option3"]:
+				opt3 = 0
+			else:
+				opt3 = int(i["option3"])
+			
+			
+			cursor.execute('INSERT INTO meals VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["category"], i["vreme"], opt1, opt2, opt3, i["date"]))
 			conn.commit()
 
 		for i in req[1]:
