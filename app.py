@@ -327,9 +327,19 @@ def client_profile():
 	cursor.execute(sql)
 	all_meals = cursor.fetchall()
 
+	sql = "SELECT name, vreme FROM meals WHERE clients_client_id = '{}' \
+		AND date = CURDATE() \
+		UNION \
+		SELECT name, vreme FROM trainings WHERE clients_client_id = '{}' \
+		AND date = CURDATE() \
+		ORDER BY vreme ASC".format(session['client_id'], session['client_id'])
+
+	cursor.execute(sql)
+	daily_routines = cursor.fetchall()
+
 	cursor.close()
 	return render_template('client_profile.html', 
-		email=session['email'], data=data, data2=data2, data3=data3, data4=data4, assigned_manager=assigned_manager, today_trainings=today_trainings, tomorrow_trainings=tomorrow_trainings, all_trainings=all_trainings, today_meals=today_meals, tomorrow_meals=tomorrow_meals, all_meals=all_meals)
+		email=session['email'], daily_routines=daily_routines, data=data, data2=data2, data3=data3, data4=data4, assigned_manager=assigned_manager, today_trainings=today_trainings, tomorrow_trainings=tomorrow_trainings, all_trainings=all_trainings, today_meals=today_meals, tomorrow_meals=tomorrow_meals, all_meals=all_meals)
 
 
 

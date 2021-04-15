@@ -180,6 +180,37 @@
         </div>
       </div>
 
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Daily Routine</strong>
+          </div>
+          <div class="card-body" data-toggle="match-height">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Name.</th>
+                  <th>Vreme</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in daily_routines %}
+                <tr>
+                  <td>{{row['name']}}</td>
+                  <td>{{row['vreme']}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <!-- <div class="col-md-12">
         <div class="card">
           <div class="card-header">
