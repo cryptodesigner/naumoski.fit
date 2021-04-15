@@ -378,6 +378,13 @@ def edit_profile():
 
 
 
+@app.route('/edit_m_profile')
+def edit_m_profile():
+	return render_template('edit_m_profile.html', email=session['email'])
+
+
+
+
 @app.route('/change_password', methods=['GET', 'POST'])
 def change_password():
 	conn = mysql.connect()
@@ -394,6 +401,27 @@ def change_password():
 		return redirect(url_for('client_profile'))
 
 	return render_template('change_password.html', email=session['email'])
+
+
+
+
+@app.route('/change_m_password', methods=['GET', 'POST'])
+def change_m_password():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	if request.method == 'POST':
+		manager_id = session['manager_id']
+		newpass = request.form['newpass']
+
+		encPassword = hashlib.md5(newpass.encode()).hexdigest()
+
+		cursor.execute('UPDATE managers SET password = %s WHERE manager_id = %s', (encPassword, manager_id))
+		conn.commit()
+		return redirect(url_for('manager_profile'))
+
+	return render_template('change_m_password.html', email=session['email'])
+
 
 
 

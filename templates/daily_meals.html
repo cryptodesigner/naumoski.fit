@@ -45,9 +45,9 @@
 								<td>{{meal['name']}}</td>
 								<td>{{meal['category']}}</td>
 								<td>{{meal['vreme']}}</td>
-								<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option1']}})">See Option</button></td>
-								<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option2']}})">See Option</button></td>
-								<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option3']}})">See Option</button></td>
+								<td>{% if meal['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
+                				<td>{% if meal['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
+                				<td>{% if meal['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{meal['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
 								<td>{{meal['date']}}</td>
 								<td>
 				  				<a href="/delete_daily_meal/{{meal['meal_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the meal?')">Delete</a>
