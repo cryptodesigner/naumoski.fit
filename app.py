@@ -649,7 +649,7 @@ def photos():
 
 @app.route('/uploads/<filename>')
 def upload(filename):
-	return send_from_directory(os.path.join(app.config['UPLOAD_PATH'], current_user.get_id()), filename)
+	return send_from_directory(os.path.join(app.config['UPLOAD_PATH']), filename)
 
 
 
@@ -895,15 +895,10 @@ def add_training():
 		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (clients_client_id, name, serii_povt, link_vezba, tech, link_tech, vreme, date, description))
 		conn.commit()
 
-		#tuka lista od js za pomosna tabela
-
 	elif request.method == 'POST':
 		flash("Fill the form")
 
-	
-
 	return render_template('add_training.html', email=session['email'])
-
 
 
 
@@ -935,22 +930,12 @@ def add_daily_routine():
 			else:
 				opt3 = int(i["option3"])
 			
-			
 			cursor.execute('INSERT INTO meals VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["category"], i["vreme"], opt1, opt2, opt3, i["date"]))
 			conn.commit()
 
 		for i in req[1]:
 			cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["serii_povt"], i["link_vezba"], i["tech"], i["link_tech"], i["vreme"], i["date"], i["description"]))
 			conn.commit()
-
-
-		
-		# print(allSelectedTrainings[0])
-
-		
-
-		
-		#tuka lista od js za pomosna tabela
 
 	elif request.method == 'POST':
 		flash("Fill the form")
@@ -1138,7 +1123,7 @@ def add_daily_routine():
 
 
 
-# # Show All Meals Page
+# Show All Meals Page
 @app.route('/meals')
 def meals():
 	conn = mysql.connect()
@@ -1154,7 +1139,7 @@ def meals():
 
 
 
-# # Show All Daily Meals Page
+# Show All Daily Meals Page
 @app.route('/daily_meals', methods=['GET', 'POST'])
 def daily_meals():
 	conn = mysql.connect()
@@ -1162,8 +1147,6 @@ def daily_meals():
 
 	cursor.execute("SELECT * FROM meals")
 	data = cursor.fetchall()
-
-	
 
 	if request.method == 'POST':
 		req = request.get_json()
@@ -1175,18 +1158,14 @@ def daily_meals():
 		cursor.close()
 		return jsonify(data2)
 
-
-
-
 	cursor.close()
-		
-			
-
 	
-
 	return render_template('daily_meals.html', email=session['email'], data=data)
 
 
+
+
+# Choose Option
 @app.route('/chose_option', methods=['POST'])
 def chose_option():
 	
@@ -1204,18 +1183,18 @@ def chose_option():
 
 
 
-# # Show All Daily Routines Page
-@app.route('/daily_routines')
-def daily_routines():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# Show All Daily Routines Page
+# @app.route('/daily_routines')
+# def daily_routines():
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	cursor.execute("SELECT * FROM daily_routines")
-	data = cursor.fetchall()
+# 	cursor.execute("SELECT * FROM daily_routines")
+# 	data = cursor.fetchall()
 
-	cursor.close()
+# 	cursor.close()
 
-	return render_template('daily_routines.html', email=session['email'], data=data)
+# 	return render_template('daily_routines.html', email=session['email'], data=data)
 
 
 
@@ -1230,8 +1209,6 @@ def client_meals():
 	data = cursor.fetchall()
 
 	cursor.close()
-
-
 
 	return render_template('client_meals.html', email=session['email'], data=data)
 

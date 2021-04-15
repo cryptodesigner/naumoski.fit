@@ -1,6 +1,6 @@
 {% extends 'layout_manager.html' %}
 
-{% block title %}Manager Profile{% endblock %}
+{% block title %} {% for row in data %}{{row['name']}}'s Profile{% endfor %} {% endblock %}
 
 {% block content %}
 
