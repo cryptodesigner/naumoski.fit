@@ -833,12 +833,11 @@ def add_tech():
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
 	if request.method == 'POST':
-		tehnika_id = request.form['tehnika_id']
 		name = request.form['name']
 		link = request.form['link']
 		description = request.form['description']
    
-		cursor.execute('INSERT INTO tehniki VALUES (NULL, %s, %s, %s)', (tehnika_id, name, link, description)) 
+		cursor.execute('INSERT INTO tehniki VALUES (NULL, %s, %s, %s)', (name, link, description)) 
 		conn.commit()
    
 	elif request.method == 'POST':
@@ -956,29 +955,29 @@ def delete_tech(id_data):
 
 
 # ------- TRAININGS ------
-@app.route('/add_training', methods=['GET', 'POST'])
-def add_training():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
+# @app.route('/add_training', methods=['GET', 'POST'])
+# def add_training():
+# 	conn = mysql.connect()
+# 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
-	if request.method == 'POST':
-		clients_client_id = request.form['clients_client_id']
-		name = request.form['name']
-		serii_povt = request.form['serii_povt']
-		link_vezba = request.form['link_vezba']
-		tech = request.form['tech']
-		link_tech = request.form['link_tech']
-		vreme = request.form['vreme']
-		date = request.form['date']
-		description = request.form['description']
+# 	if request.method == 'POST':
+# 		clients_client_id = request.form['clients_client_id']
+# 		name = request.form['name']
+# 		serii_povt = request.form['serii_povt']
+# 		link_vezba = request.form['link_vezba']
+# 		tech = request.form['tech']
+# 		link_tech = request.form['link_tech']
+# 		vreme = request.form['vreme']
+# 		date = request.form['date']
+# 		description = request.form['description']
 
-		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (clients_client_id, name, serii_povt, link_vezba, tech, link_tech, vreme, date, description))
-		conn.commit()
+# 		cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (clients_client_id, name, serii_povt, link_vezba, tech, link_tech, vreme, date, description))
+# 		conn.commit()
 
-	elif request.method == 'POST':
-		flash("Fill the form")
+# 	elif request.method == 'POST':
+# 		flash("Fill the form")
 
-	return render_template('add_training.html', email=session['email'])
+# 	return render_template('add_training.html', email=session['email'])
 
 
 
@@ -1014,7 +1013,7 @@ def add_daily_routine():
 			conn.commit()
 
 		for i in req[1]:
-			cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["serii_povt"], i["link_vezba"], i["tech"], i["link_tech"], i["vreme"], i["date"], i["description"]))
+			cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["serii_povt"], i["link_vezba"], int(i["tech"]), i["vreme"], i["date"], i["description"]))
 			conn.commit()
 
 	elif request.method == 'POST':
@@ -1026,9 +1025,12 @@ def add_daily_routine():
 	cursor.execute("SELECT * FROM options")
 	data2 = cursor.fetchall()
 
+	cursor.execute("SELECT * FROM tehniki")
+	data3 = cursor.fetchall()
+
 	cursor.close()
 
-	return render_template('add_daily_routine.html', email=session['email'], data=data, data2=data2)
+	return render_template('add_daily_routine.html', email=session['email'], data=data, data2=data2, data3=data3)
 
 
 
@@ -1230,12 +1232,12 @@ def daily_meals():
 
 	if request.method == 'POST':
 		req = request.get_json()
+
 		cursor.execute("SELECT * FROM options WHERE option_id = %s",(req))
 		data2 = cursor.fetchall()
+
 		cursor.close()
-		print(jsonify(data2))
-		print(type(data2))
-		cursor.close()
+
 		return jsonify(data2)
 
 	cursor.close()
@@ -1253,12 +1255,75 @@ def chose_option():
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 
 	req = request.get_json()
+
 	cursor.execute("SELECT * FROM options WHERE option_id = %s",(req))
 	data2 = cursor.fetchall()
-	cursor.close()
-	print(data2)	
 
+	cursor.close()
+	
 	return jsonify(data2)
+
+
+
+
+
+# Show All Trainings Page
+@app.route('/trainings')
+def trainings():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	cursor.execute("SELECT * FROM trainings")
+	data = cursor.fetchall()
+
+	if request.method == 'POST':
+		req = request.get_json()
+
+		cursor.execute("SELECT * FROM tehniki WHERE tehnika_id = %s",(req))
+		data2 = cursor.fetchall()
+
+		cursor.close()
+
+		return jsonify(data2)
+
+	cursor.close()
+
+	return render_template('trainings.html', email=session['email'], data=data)
+
+
+
+
+# Choose Technique
+@app.route('/chose_tech', methods=['POST'])
+def chose_tech():
+	
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	req = request.get_json()
+
+	cursor.execute("SELECT * FROM tehniki WHERE tehnika_id = %s",(req))
+	data2 = cursor.fetchall()
+
+	cursor.close()
+	
+	return jsonify(data2)
+
+
+
+
+# Show Clients Trainings Page
+@app.route('/client_trainings')
+def clients_trainings():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	cursor.execute("SELECT * FROM trainings WHERE clients_client_id = '{}'".format(session['client_id']))
+	data = cursor.fetchall()
+	cursor.close()
+
+	return render_template('client_trainings.html', email=session['email'], data=data)
+
 
 
 
@@ -1348,35 +1413,6 @@ def delete_daily_meal(id_data):
 
 # 	return render_template('add_training.html', email=session['email'], data=data)
 
-
-
-
-# Show All Trainings Page
-@app.route('/trainings')
-def trainings():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
-
-	cursor.execute("SELECT * FROM trainings")
-	data = cursor.fetchall()
-	cursor.close()
-
-	return render_template('trainings.html', email=session['email'], data=data)
-
-
-
-
-# Show Clients Trainings Page
-@app.route('/client_trainings')
-def clients_trainings():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
-
-	cursor.execute("SELECT * FROM trainings WHERE clients_client_id = '{}'".format(session['client_id']))
-	data = cursor.fetchall()
-	cursor.close()
-
-	return render_template('client_trainings.html', email=session['email'], data=data)
 
 
 
