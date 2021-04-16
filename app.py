@@ -1009,11 +1009,11 @@ def add_daily_routine():
 			else:
 				opt3 = int(i["option3"])
 			
-			cursor.execute('INSERT INTO meals VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["category"], i["vreme"], opt1, opt2, opt3, i["date"]))
+			cursor.execute('INSERT INTO meals VALUES (NULL, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["vreme"], opt1, opt2, opt3, i["date"]))
 			conn.commit()
 
 		for i in req[1]:
-			cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["serii_povt"], i["link_vezba"], int(i["tech"]), i["vreme"], i["date"], i["description"]))
+			cursor.execute('INSERT INTO trainings VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)', (i["clients_client_id"], i["name"], i["muskulna_grupa"], i["serii_povt"], i["link_vezba"], int(i["tech"]), i["vreme"], i["date"], i["description"]))
 			conn.commit()
 
 	elif request.method == 'POST':

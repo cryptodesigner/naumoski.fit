@@ -25,8 +25,9 @@
 		  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
 						<thead>
 			  			<tr>
-								<th>Seq.</th>
+								<!-- <th>Seq.</th> -->
 								<th>Name</th>
+								<th>Muscle Group</th>
 								<th>Serii / Povtoruvanja</th>
 								<th>Vezba Link</th>
 								<th>Technique</th>
@@ -36,8 +37,9 @@
 						<tbody>
 			  			{% for training in data %}
 							<tr>
-				  			<td>{{training['training_id']}}</td>
+				  			<!-- <td>{{training['training_id']}}</td> -->
 				  			<td>{{training['name']}}</td>
+				  			<td>{{training['muskulna_grupa']}}</td>
 				  			<td>{{training['serii_povt']}}</td>
 				  			<td>{{training['link_vezba']}}</td>
 				  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{training['tech']}})">See Option</button></td>

@@ -261,8 +261,9 @@
               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Seq.</th>
+                    <!-- <th>Seq.</th> -->
                     <th>Name</th>
+                    <th>Muscle Group</th>
                     <th>Serii/Povtoruvanja</th>
                     <th>Link Vezba</th>
                     <th>Tehnika</th>
@@ -273,8 +274,9 @@
                 <tbody>
                   {% for row in today_trainings %}
                   <tr>
-                    <td>{{row['training_id']}}</td>
+                    <!-- <td>{{row['training_id']}}</td> -->
                     <td>{{row['name']}}</td>
+                    <td>{{row['muskulna_grupa']}}</td>
                     <td>{{row['serii_povt']}}</td>
                     <td>{{row['link_vezba']}}</td>
                     <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
@@ -295,8 +297,9 @@
               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Seq.</th>
+                    <!-- <th>Seq.</th> -->
                     <th>Name</th>
+                    <th>Muscle Group</th>
                     <th>Serii/Povtoruvanja</th>
                     <th>Link Vezba</th>
                     <th>Tehnika</th>
@@ -307,8 +310,9 @@
                 <tbody>
                   {% for row in tomorrow_trainings %}
                   <tr>
-                    <td>{{row['training_id']}}</td>
+                    <!-- <td>{{row['training_id']}}</td> -->
                     <td>{{row['name']}}</td>
+                    <td>{{row['muskulna_grupa']}}</td>
                     <td>{{row['serii_povt']}}</td>
                     <td>{{row['link_vezba']}}</td>
                     <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
@@ -329,8 +333,9 @@
               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Seq.</th>
+                    <!-- <th>Seq.</th> -->
                     <th>Name</th>
+                    <th>Muscle Group</th>
                     <th>Serii/Povtoruvanja</th>
                     <th>Link Vezba</th>
                     <th>Tehnika</th>
@@ -341,8 +346,9 @@
                 <tbody>
                   {% for row in all_trainings %}
                   <tr>
-                    <td>{{row['training_id']}}</td>
+                    <!-- <td>{{row['training_id']}}</td> -->
                     <td>{{row['name']}}</td>
+                    <td>{{row['muskulna_grupa']}}</td>
                     <td>{{row['serii_povt']}}</td>
                     <td>{{row['link_vezba']}}</td>
                     <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
@@ -379,9 +385,8 @@
               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Seq.</th>
+                    <!-- <th>Seq.</th> -->
                     <th>Name</th>
-                    <th>Category</th>
                     <th>Vreme</th>
                     <th>Opcija 1</th>
                     <th>Opcija 2</th>
@@ -391,9 +396,8 @@
                 <tbody>
                   {% for row in today_meals %}
                   <tr>
-                    <td>{{row['meal_id']}}</td>
+                    <!-- <td>{{row['meal_id']}}</td> -->
                     <td>{{row['name']}}</td>
-                    <td>{{row['category']}}</td>
                     <td>{{row['vreme']}}</td>
                     <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
                     <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
@@ -412,9 +416,8 @@
               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Seq.</th>
+                    <!-- <th>Seq.</th> -->
                     <th>Name</th>
-                    <th>Category</th>
                     <th>Vreme</th>
                     <th>Opcija 1</th>
                     <th>Opcija 2</th>
@@ -424,9 +427,8 @@
                 <tbody>
                   {% for row in tomorrow_meals %}
                   <tr>
-                    <td>{{row['meal_id']}}</td>
+                    <!-- <td>{{row['meal_id']}}</td> -->
                     <td>{{row['name']}}</td>
-                    <td>{{row['category']}}</td>
                     <td>{{row['vreme']}}</td>
                     <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
                     <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
@@ -445,9 +447,8 @@
               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <th>Seq.</th>
+                    <!-- <th>Seq.</th> -->
                     <th>Name</th>
-                    <th>Category</th>
                     <th>Vreme</th>
                     <th>Opcija 1</th>
                     <th>Opcija 2</th>
@@ -458,9 +459,8 @@
                 <tbody>
                   {% for row in all_meals %}
                   <tr>
-                    <td>{{row['meal_id']}}</td>
+                    <!-- <td>{{row['meal_id']}}</td> -->
                     <td>{{row['name']}}</td>
-                    <td>{{row['category']}}</td>
                     <td>{{row['vreme']}}</td>
                     <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
                     <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>

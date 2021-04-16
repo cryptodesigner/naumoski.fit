@@ -37,7 +37,7 @@
 									<input class="md-form-control mealName" type="text" name="mealName"  placeholder="Meal Name">
 								</div>
 							</div>
-							<div class="col-sm-1">
+							<!-- <div class="col-sm-1">
 								<div class="md-form-group">
 									<select class="md-form-control mealCategory" name="category" data-msg="Meal Category">
 										<option value="" disabled="disabled" selected="selected">Meal Category</option>
@@ -50,7 +50,7 @@
 										<option value="Dodatok">Dodatok</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 							<div class="col-sm-2">
 								<div class="md-form-group">
 									<select class="md-form-control mealOptionOne" name="mealOptionOne" placeholder="Option 1">
@@ -105,12 +105,23 @@
 							</div>
 							<div class="col-sm-1">
 								<div class="md-form-group">
+									<select class="md-form-control trainingMuscle" name="trainingMuscle" data-msg="Muscle">
+										<option value="" disabled="disabled" selected="selected">Muscle</option>
+										<option value="Race">Race</option>
+										<option value="Noze">Noze</option>
+										<option value="Grb">Grb</option>
+										<option value="Gradi">Gradi</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-sm-1">
+								<div class="md-form-group">
 									<input class="md-form-control trainingSerii" type="text" name="trainingSerii"  placeholder="Serii">
 								</div>
 							</div>
-							<div class="col-sm-2">
+							<div class="col-sm-1">
 								<div class="md-form-group">
-									<input class="md-form-control trainingVezbaLink" type="text" name="trainingVezbaLink"  placeholder="Link Vezba">
+									<input class="md-form-control trainingVezbaLink" type="text" name="trainingVezbaLink"  placeholder="Link">
 								</div>
 							</div>
 							<div class="col-sm-2">
@@ -218,7 +229,7 @@
 
 		function createArrayOfAllMeals(){
 			var mealName = document.querySelectorAll(".mealName");
-			var mealCategory = document.querySelectorAll(".mealCategory");
+			// var mealCategory = document.querySelectorAll(".mealCategory");
 			var mealOptionOne = document.querySelectorAll(".mealOptionOne");
 			var mealOptionTwo = document.querySelectorAll(".mealOptionTwo");
 			var mealOptionThree = document.querySelectorAll(".mealOptionThree");
@@ -238,7 +249,7 @@
 					var newMeal = {
 						clients_client_id  : client.value,
 						name : mealName[i].value,
-						category  : mealCategory[i].value,
+						// category  : mealCategory[i].value,
 						vreme : mealVreme[i].value,
 						option1 : mealOptionOne[i].value,
 						option2 : mealOptionTwo[i].value,
@@ -253,6 +264,7 @@
 
 		function createArrayOfAllTrainings(){
 			var trainingName = document.querySelectorAll(".trainingName");
+			var trainingMuscle = document.querySelectorAll(".trainingMuscle");
 			var trainingSerii = document.querySelectorAll(".trainingSerii");
 			var trainingVezbaLink = document.querySelectorAll(".trainingVezbaLink");
 			var trainingTech = document.querySelectorAll(".trainingTech");
@@ -273,6 +285,7 @@
 					var newTraining = {
 						clients_client_id  : client.value,
 						name : trainingName[i].value,
+						muskulna_grupa : trainingMuscle[i].value,
 						serii_povt : trainingSerii[i].value,
 						link_vezba : trainingVezbaLink[i].value,
 						tech : trainingTech[i].value,
