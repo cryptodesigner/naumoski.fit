@@ -825,6 +825,58 @@ def delete_recept(id_data):
 
 
 
+
+# Add Technique Page
+@app.route('/add_tech', methods=['GET', 'POST'])
+def add_tech():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	if request.method == 'POST':
+		tehnika_id = request.form['tehnika_id']
+		name = request.form['name']
+		link = request.form['link']
+		description = request.form['description']
+   
+		cursor.execute('INSERT INTO tehniki VALUES (NULL, %s, %s, %s)', (tehnika_id, name, link, description)) 
+		conn.commit()
+   
+	elif request.method == 'POST':
+		flash("Please fill out the form!")
+
+	return render_template('add_technique.html', email=session['email'])
+
+
+
+
+# Show All Techniques Page
+@app.route('/techs')
+def techs():
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+
+	cursor.execute("SELECT * FROM tehniki")
+	data = cursor.fetchall()
+	cursor.close()
+
+	return render_template('techniques.html', email=session['email'], data=data)
+
+
+
+
+# Delete Technique
+@app.route('/delete_tech/<string:id_data>', methods=['GET'])
+def delete_tech(id_data):
+	conn = mysql.connect()
+	cursor = conn.cursor(pymysql.cursors.DictCursor)
+	cursor.execute("DELETE FROM tehniki WHERE tehnika_id=%s", (id_data))
+	conn.commit()
+	return redirect(url_for('techs'))
+
+
+
+
+
 # # -------- MEAL-OPTIONS ------------
 # @app.route('/add_meal', methods=['GET', 'POST'])
 # def add_meal():
