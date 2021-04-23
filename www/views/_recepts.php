@@ -43,7 +43,7 @@
 									<td><?= $recept->description; ?></td>
 									<td><?= $recept->link; ?></td>
 									<td>
-					  				<a href="/delete_recept/{{recept['recept_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the recept?')">Delete</a>
+					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?recept_id=<?= $recept->recept_id ?>" class='btn btn-danger'>Delete</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>

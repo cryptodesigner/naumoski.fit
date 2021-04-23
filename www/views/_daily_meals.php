@@ -44,13 +44,7 @@
 				  			<tr>
 									<td><?= $meal->name; ?></td>
 									<td><?= $meal->vreme; ?></td>
-
-									<td>";
-									  if ($meal->option1 == 0){echo <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption($meal->option1)">See Option</button>}
-									  else {echo 'No Option';}
-									  echo
-									"</td>
-									
+									<td><?= $meal->option1; ?></td>
 									<td><?= $meal->option2; ?></td>
 									<td><?= $meal->option3; ?></td>
 									<td><?= $meal->date ?></td>

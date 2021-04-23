@@ -49,7 +49,7 @@
 					  				<td><?= $meal->fats; ?></td>
 					  				<td><?= $meal->description; ?></td>
 					  				<td>
-											<a href="/delete_meal/{{row['option_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the client?')">Delete</a>
+										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?option_id=<?= $meal->option_id ?>" class='btn btn-danger'>Delete</a>
 					  				</td>
 									</tr>
 				  				<?php endforeach; ?>

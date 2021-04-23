@@ -40,7 +40,7 @@
 										<td><?= $person->name; $person->surname; ?></td>
 										<td><?= $person->client_id; ?></td>
 										<td>
-					  					<a href="/delete_client/{{row['client_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the client?')">Delete</a>
+					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Delete</a>
 										</td>
 										<td>
 					  					<a href="/clients_profile/{{row['client_id']}}" class="btn btn-default btn-xs">Profile</a>

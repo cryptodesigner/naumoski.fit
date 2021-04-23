@@ -89,7 +89,10 @@
             <img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Teddy Wilson">
           </div>
           <div class="profile-overview">
-            <h1 class="profile-name"><?php echo $_SESSION['email']; ?></h1>
+            <?php foreach($clients as $c): ?>
+              <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
+            <?php endforeach; ?>
+            <!-- <h1 class="profile-name"><?php echo $_SESSION['email']; ?></h1> -->
             <a class="profile-follow-btn" href ="edit_profile.php">Edit Profile</a>
             <p>Genesis Fitness Client<a class="link-inverted"></a></p>
           </div>
@@ -112,7 +115,9 @@
 
     <div id="Profile" class="tab">
       <div class="profile-container">
-        <h1><?php echo $_SESSION['email']; ?>'s Profile</h1>
+        <?php foreach($clients as $c): ?>
+          <h1><?= $c->name; ?>'s Profile</h1>
+        <?php endforeach; ?>
       </div>
 
       <div class="col-md-4">
@@ -321,7 +326,9 @@
      
     <div id="Trainings" class="tab" style="display: none">
       <div class="profile-container">
-        <h1><?php echo $_SESSION['email']; ?>'s Training List</h1>
+        <?php foreach($clients as $c): ?>
+          <h1><?= $c->name; ?>'s Training List</h1>
+        <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
         <ul class="nav nav-tabs nav-justified">
@@ -355,7 +362,7 @@
                     <td><?= $tt->muskulna_grupa; ?></td>
                     <td><?= $tt->serii_povt; ?></td>
                     <td><?= $tt->link_vezba; ?></td>
-                    <td><?= $tt->tech; ?></td>
+                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOption(<?= $tt->tech; ?>)">See Tech</button></td>
                     <td><?= $tt->vreme; ?></td>
                     <td><?= $tt->description; ?></td>
                   </tr>
@@ -391,7 +398,7 @@
                     <td><?= $tts->muskulna_grupa; ?></td>
                     <td><?= $tts->serii_povt; ?></td>
                     <td><?= $tts->link_vezba; ?></td>
-                    <td><?= $tts->tech; ?></td>
+                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOption(<?= $tts->tech; ?>)">See Tech</button></td>
                     <td><?= $tts->vreme; ?></td>
                     <td><?= $tts->description; ?></td>
                   </tr>
@@ -427,7 +434,7 @@
                     <td><?= $at->muskulna_grupa; ?></td>
                     <td><?= $at->serii_povt; ?></td>
                     <td><?= $at->link_vezba; ?></td>
-                    <td><?= $at->tech; ?></td>
+                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOption(<?= $at->tech; ?>)">See Tech</button></td>
                     <td><?= $at->vreme; ?></td>
                     <td><?= $at->description; ?></td>
                   </tr>
@@ -444,7 +451,9 @@
       
     <div id="Diets" class="tab" style="display: none">
       <div class="profile-container">
-        <h1><?php echo $_SESSION['email']; ?>'s Diet List</h1>
+        <?php foreach($clients as $c): ?>
+          <h1><?= $c->name; ?>'s Diet List</h1>
+        <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
         <ul class="nav nav-tabs nav-justified">
@@ -475,9 +484,24 @@
                     <!-- <td>{{row['meal_id']}}</td> -->
                     <td><?= $tm->name; ?></td>
                     <td><?= $tm->vreme; ?></td>
-                    <td><?= $tm->option1; ?></td>
-                    <td><?= $tm->option2; ?></td>
-                    <td><?= $tm->option3; ?></td>
+                    <td><?php if($tm->option1 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option1; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($tm->option2 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option2; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($tm->option3 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -506,9 +530,24 @@
                     <!-- <td>{{row['meal_id']}}</td> -->
                     <td><?= $tms->name; ?></td>
                     <td><?= $tms->vreme; ?></td>
-                    <td><?= $tms->option1; ?></td>
-                    <td><?= $tms->option2; ?></td>
-                    <td><?= $tms->option3; ?></td>
+                    <td><?php if($tms->option1 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($tms->option2 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($tms->option3 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -538,9 +577,25 @@
                     <!-- <td>{{row['meal_id']}}</td> -->
                     <td><?= $ams->name; ?></td>
                     <td><?= $ams->vreme; ?></td>
-                    <td><?= $ams->option1; ?></td>
-                    <td><?= $ams->option2; ?></td>
-                    <td><?= $ams->option3; ?></td>
+                    <td><?php if($ams->option1 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($ams->option2 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($ams->option3 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?= $ams->date; ?></td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>

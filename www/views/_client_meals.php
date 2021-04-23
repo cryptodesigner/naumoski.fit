@@ -44,9 +44,24 @@
 									<!-- <td>{{meal['meal_id']}}</td> -->
 									<td><?= $meal->name; ?></td>
 									<td><?= $meal->vreme; ?></td>
-									<td><?= $meal->option1; ?></td>
-	                <td><?= $meal->option2; ?></td>
-	                <td><?= $meal->option3; ?></td>
+									<td><?php if($meal->option1 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option1; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($meal->option2 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option2; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
+                    <td><?php if($meal->option3 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option3; ?>)">See Option</button>  
+                      <?php else: ?>
+                        <p>No Option</p>
+                      <?php endif; ?>    
+                    </td>
 									<td><?= $meal->date; ?></td>
 								</tr>
 								<?php endforeach; ?>

@@ -46,7 +46,7 @@
 					  			<td><?= $t->muskulna_grupa; ?></td>
 					  			<td><?= $t->serii_povt; ?></td>
 					  			<td><?= $t->link_vezba; ?></td>
-					  			<td><?= $t->tech; ?></td>
+					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $t->tech; ?>)">See Tech</button></td>
 					  			<td><?= $t->description; ?></td>
 								</tr>
 				  			<?php endforeach; ?>

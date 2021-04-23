@@ -140,7 +140,7 @@
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Basics</li>
                     <li><a href="add_basics.php">Add Basics</a></li>
-                   <!--  <li><a href="{{'client_basics'}}">Show All Basics</a></li> -->
+                    <li><a href="client_basics.php">Show All Basics</a></li>
                   </ul>
                 </li>
 

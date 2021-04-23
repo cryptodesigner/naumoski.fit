@@ -48,10 +48,10 @@
 					  			<td><?= $training->muskulna_grupa; ?></td>
 					  			<td><?= $training->serii_povt; ?></td>
 					  			<td><?= $training->link_vezba; ?></td>
-					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{training['tech']}})">See Option</button></td>
+					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $training->tech; ?>)">See Option</button></td>
 					  			<td><?= $training->description; ?></td>
 					  			<td>
-										<a href="/delete_training/{{training['training_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the training?')">Delete</a>
+									<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?training_id=<?= $training->training_id ?>" class='btn btn-danger'>Delete</a>
 					  			</td>
 								</tr>
 				  			<?php endforeach; ?>
@@ -98,7 +98,7 @@ var modalDescription = document.getElementById("modalDescription")
 
 		console.log(t)
 
-		fetch("/chose_tech", {
+		fetch("/chose_tech.php", {
         	method: "POST",
         	headers: {
            	"Content-Type": "application/json",
