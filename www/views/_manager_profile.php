@@ -1,3 +1,10 @@
+<?php
+  $sql = 'SELECT * FROM clients';
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $clients = $statement->fetchAll(PDO::FETCH_OBJ);
+?>
+
 <section>
 <div class="profile">
 	<div class="profile-header">
@@ -98,16 +105,16 @@
      			  </tr>
      			</thead>
      			<tbody>
-     			  {% for client in data2 %}
+     			  <?php foreach($clients as $c): ?>
      			  <tr>
-     			    <td>{{client['client_id']}}</td>
-     			    <td>{{client['name']}} {{client['surname']}}</td>
-     			    <td>{{client['email']}}</td>
+     			    <td><?= $c->client_id; ?></td>
+     			    <td><?= $c->name; ?> <?= $c->surname; ?></td>
+     			    <td><?= $c->email; ?></td>
      			    <td>
      			      <a href="/clients_profile/{{client['client_id']}}" class="btn btn-primary btn-xs">Profile</a>
      			    </td>
      			  </tr>
-     			  {% endfor %}
+     			  <?php endforeach; ?>
      			</tbody>
     		</table>
       </div>

@@ -1,3 +1,84 @@
+<?php
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM clients WHERE client_id = '$current_client.';";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $clients = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT m.name FROM managers m 
+    INNER JOIN clients c ON m.manager_id = c.managers_manager_id
+    WHERE client_id = '$current_client.';";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $assigned_manager = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM basics WHERE clients_client_id = '$current_client.';";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $basics = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT name, vreme FROM meals WHERE clients_client_id = '$current_client.'
+    AND date = CURDATE()
+    UNION
+    SELECT name, vreme FROM trainings WHERE clients_client_id = '$current_client.'
+    AND date = CURDATE()
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $daily_routine = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+    AND date = CURDATE()
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $today_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+    AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $tomorrow_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+    AND date >= CURDATE()
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $all_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+    AND date = CURDATE()
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $today_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+    AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $tomorrow_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+    AND date >= CURDATE()
+    ORDER BY vreme ASC";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $all_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+?>
+
 <section>
 <div class="profile">
   <div class="profile-header">
@@ -31,7 +112,7 @@
 
     <div id="Profile" class="tab">
       <div class="profile-container">
-        <?php echo $_SESSION['email']; ?>
+        <h1><?php echo $_SESSION['email']; ?>'s Profile</h1>
       </div>
 
       <div class="col-md-4">
@@ -47,34 +128,34 @@
           <div class="card-body" data-toggle="match-height">
             <table class="table table-striped">
               <tr>
-                {% for row in data %}
+                <?php foreach($clients as $c): ?>
                 <th colspan="6">Serial: </th>
-                <td colspan="6">{{row['client_id']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $c->client_id; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for row in assigned_manager %}
+                <?php foreach($assigned_manager as $am): ?>
                 <th colspan="6">Manager: </th>
-                <td colspan="6">{{row['name']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $am->name; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for row in data %}
+                <?php foreach($clients as $c): ?>
                 <th colspan="6">Ime: </th>
-                <td colspan="6">{{row['name']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $c->name; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for row in data %}
+                <?php foreach($clients as $c): ?>
                 <th colspan="6">Prezime: </th>
-                <td colspan="6">{{row['surname']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $c->surname; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for row in data %}
+                <?php foreach($clients as $c): ?>
                 <th colspan="6">Email: </th>
-                <td colspan="6">{{row['email']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $c->email; ?></td>
+                <?php endforeach; ?>
               </tr>
             </table>
           </div>
@@ -94,34 +175,34 @@
           <div class="card-body" data-toggle="match-height">
             <table class="table table-striped">
               <tr>
-                {% for row in data %}
+                <?php foreach($clients as $c): ?>
                 <th colspan="6">Ime: </th>
-                <td colspan="6">{{row['name']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $c->name; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Pol: </th>
-                <td colspan="6">{{basic['pol']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->pol; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Rodenden: </th>
-                <td colspan="6">{{basic['godini']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->godini; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Visina: </th>
-                <td colspan="6">{{basic['visina']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->visina; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Tezina: </th>
-                <td colspan="6">{{basic['tezina']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->tezina; ?></td>
+                <?php endforeach; ?>
               </tr>
             </table>
           </div>
@@ -141,34 +222,34 @@
           <div class="card-body" data-toggle="match-height">
             <table class="table table-striped">
               <tr>
-                {% for row in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Alergii: </th>
-                <td colspan="6">{{row['alergija']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->alergija; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Netolerantnost: </th>
-                <td colspan="6">{{basic['netolerantnost']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->netolerantnost; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Odbivnost: </th>
-                <td colspan="6">{{basic['odbivnost']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->odbivnost; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Zaboluvanja: </th>
-                <td colspan="6">{{basic['zaboluvanja']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->zaboluvanja; ?></td>
+                <?php endforeach; ?>
               </tr>
               <tr>
-                {% for basic in data3 %}
+                <?php foreach($basics as $b): ?>
                 <th colspan="6">Iskustvo: </th>
-                <td colspan="6">{{basic['iskustvo']}}</td>
-                {% endfor %}
+                <td colspan="6"><?= $b->iskustvo; ?></td>
+                <?php endforeach; ?>
               </tr>
             </table>
           </div>
@@ -194,12 +275,12 @@
                 </tr>
               </thead>
               <tbody>
-                {% for row in daily_routines %}
+                <?php foreach($daily_routine as $dr): ?>
                 <tr>
-                  <td>{{row['name']}}</td>
-                  <td>{{row['vreme']}}</td>
+                  <td><?= $dr->name; ?></td>
+                  <td><?= $dr->vreme; ?></td>
                 </tr>
-                {% endfor %}
+                <?php endforeach; ?>
               </tbody>
             </table>
           </div>
@@ -240,7 +321,7 @@
      
     <div id="Trainings" class="tab" style="display: none">
       <div class="profile-container">
-        {% for row in data %}<h1>{{row['name']}}'s Training List</h1>{% endfor %}
+        <h1><?php echo $_SESSION['email']; ?>'s Training List</h1>
       </div>
       <div class="panel m-b-lg">
         <ul class="nav nav-tabs nav-justified">
@@ -267,18 +348,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for row in today_trainings %}
+                  <?php foreach($today_trainings as $tt): ?>
                   <tr>
                     <!-- <td>{{row['training_id']}}</td> -->
-                    <td>{{row['name']}}</td>
-                    <td>{{row['muskulna_grupa']}}</td>
-                    <td>{{row['serii_povt']}}</td>
-                    <td>{{row['link_vezba']}}</td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
-                    <td>{{row['vreme']}}</td>
-                    <td>{{row['description']}}</td>
+                    <td><?= $tt->name; ?></td>
+                    <td><?= $tt->muskulna_grupa; ?></td>
+                    <td><?= $tt->serii_povt; ?></td>
+                    <td><?= $tt->link_vezba; ?></td>
+                    <td><?= $tt->tech; ?></td>
+                    <td><?= $tt->vreme; ?></td>
+                    <td><?= $tt->description; ?></td>
                   </tr>
-                  {% endfor %}
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -303,18 +384,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for row in tomorrow_trainings %}
+                  <?php foreach($tomorrow_trainings as $tts): ?>
                   <tr>
                     <!-- <td>{{row['training_id']}}</td> -->
-                    <td>{{row['name']}}</td>
-                    <td>{{row['muskulna_grupa']}}</td>
-                    <td>{{row['serii_povt']}}</td>
-                    <td>{{row['link_vezba']}}</td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
-                    <td>{{row['vreme']}}</td>
-                    <td>{{row['description']}}</td>
+                    <td><?= $tts->name; ?></td>
+                    <td><?= $tts->muskulna_grupa; ?></td>
+                    <td><?= $tts->serii_povt; ?></td>
+                    <td><?= $tts->link_vezba; ?></td>
+                    <td><?= $tts->tech; ?></td>
+                    <td><?= $tts->vreme; ?></td>
+                    <td><?= $tts->description; ?></td>
                   </tr>
-                  {% endfor %}
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -339,18 +420,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for row in all_trainings %}
+                  <?php foreach($all_trainings as $at): ?>
                   <tr>
                     <!-- <td>{{row['training_id']}}</td> -->
-                    <td>{{row['name']}}</td>
-                    <td>{{row['muskulna_grupa']}}</td>
-                    <td>{{row['serii_povt']}}</td>
-                    <td>{{row['link_vezba']}}</td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
-                    <td>{{row['vreme']}}</td>
-                    <td>{{row['description']}}</td>
+                    <td><?= $at->name; ?></td>
+                    <td><?= $at->muskulna_grupa; ?></td>
+                    <td><?= $at->serii_povt; ?></td>
+                    <td><?= $at->link_vezba; ?></td>
+                    <td><?= $at->tech; ?></td>
+                    <td><?= $at->vreme; ?></td>
+                    <td><?= $at->description; ?></td>
                   </tr>
-                  {% endfor %}
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -363,7 +444,7 @@
       
     <div id="Diets" class="tab" style="display: none">
       <div class="profile-container">
-        {% for row in data %}<h1>{{row['name']}}'s Diet List</h1>{% endfor %}
+        <h1><?php echo $_SESSION['email']; ?>'s Diet List</h1>
       </div>
       <div class="panel m-b-lg">
         <ul class="nav nav-tabs nav-justified">
@@ -389,16 +470,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for row in today_meals %}
+                  <?php foreach($today_meals as $tm): ?>
                   <tr>
                     <!-- <td>{{row['meal_id']}}</td> -->
-                    <td>{{row['name']}}</td>
-                    <td>{{row['vreme']}}</td>
-                    <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td><?= $tm->name; ?></td>
+                    <td><?= $tm->vreme; ?></td>
+                    <td><?= $tm->option1; ?></td>
+                    <td><?= $tm->option2; ?></td>
+                    <td><?= $tm->option3; ?></td>
                   </tr>
-                  {% endfor %}
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -420,16 +501,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for row in tomorrow_meals %}
+                  <?php foreach($tomorrow_meals as $tms): ?>
                   <tr>
                     <!-- <td>{{row['meal_id']}}</td> -->
-                    <td>{{row['name']}}</td>
-                    <td>{{row['vreme']}}</td>
-                    <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
+                    <td><?= $tms->name; ?></td>
+                    <td><?= $tms->vreme; ?></td>
+                    <td><?= $tms->option1; ?></td>
+                    <td><?= $tms->option2; ?></td>
+                    <td><?= $tms->option3; ?></td>
                   </tr>
-                  {% endfor %}
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -452,17 +533,16 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {% for row in all_meals %}
+                  <?php foreach($all_meals as $ams): ?>
                   <tr>
                     <!-- <td>{{row['meal_id']}}</td> -->
-                    <td>{{row['name']}}</td>
-                    <td>{{row['vreme']}}</td>
-                    <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
-                    <td>{{row['date']}}</td>
+                    <td><?= $ams->name; ?></td>
+                    <td><?= $ams->vreme; ?></td>
+                    <td><?= $ams->option1; ?></td>
+                    <td><?= $ams->option2; ?></td>
+                    <td><?= $ams->option3; ?></td>
                   </tr>
-                  {% endfor %}
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -603,5 +683,3 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
 
   }
 </script>
-
-{% endblock %}

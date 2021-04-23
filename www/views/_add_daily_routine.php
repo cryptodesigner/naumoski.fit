@@ -187,6 +187,27 @@
 				<button type="button" id="addTraining">Add Training</button>
 				<button type="button" id="submitBtn">Submit</button>
 			</div>
+			<?php
+				  
+				$message = '';
+  // if (isset ($_POST['allMealsAndTrainings'])) {
+  	// print_r($_POST['allMealsAndTrainings']);
+
+
+				// $clients_client_id = 12;
+  		// 	$name = "name";
+  		// 	$vreme = "10:00";
+  		// 	$option1 = 1;
+  		// 	$option2 = 1;
+  		// 	$option3 = 1;
+  		// 	$date = "2021-04-26";
+
+  			
+				//  $sql = 'INSERT INTO meals (clients_client_id, name, vreme, option1, option2, option3, date) VALUES				(:clients_client_id, :name, :vreme, :option1, :option2, :option3, :date)';
+				//         $statement = $connection->prepare($sql);
+				//         $statement->execute([':clients_client_id' => $clients_client_id, ':name' => $name, ':vreme' => $vreme, ':option1' => $option1, ':option2' => $option2, ':option3' => $option3, ':date' => $date])
+					
+			?>
 		</div>
 	</div>
 </form>
@@ -227,6 +248,9 @@
 			var allMealsAndTrainings = [allSelectedMeals, allSelectedTrainings]
 			// console.log(allSelectedMeals)
 			// console.log(allSelectedTrainings)
+			console.log(allMealsAndTrainings)
+			console.log(JSON.stringify(allMealsAndTrainings))
+			// json_array = JSON.stringify(allMealsAndTrainings)
 
 			fetch("/add_daily_routine.php", {
         		method: "POST",
@@ -235,9 +259,9 @@
         		},
         			body: JSON.stringify(allMealsAndTrainings)
       			}).then(res => {
-  			       // console.log(res);
-                location.reload();
-                $('html,body').scrollTop(0);
+  			        // console.log(res);
+                // location.reload();
+                // $('html,body').scrollTop(0);
   			    });
   		});
 
