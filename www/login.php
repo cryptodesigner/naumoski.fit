@@ -8,6 +8,7 @@
     $manager_id = mysqli_real_escape_string($db, $_GET['manager_id']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
+    $password = md5($password);
   
     $sql = "SELECT * FROM managers WHERE email = '$email' and password = '$password'";
     $result = mysqli_query($db, $sql);
@@ -32,6 +33,7 @@
     $client_id = mysqli_real_escape_string($db, $_GET['client_id']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
+    $password = md5($password);
   
     $sql = "SELECT * FROM clients WHERE email = '$email' and password = '$password'";
     $result = mysqli_query($db, $sql);

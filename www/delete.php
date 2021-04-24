@@ -35,6 +35,14 @@
 	}
 
 
+	$meal_id = $_GET['meal_id'];
+	$sql = 'DELETE FROM meals WHERE meal_id=:meal_id';
+	$statement = $connection->prepare($sql);
+	if ($statement->execute([':meal_id' => $meal_id])) {
+  	header("Location: /daily_meals.php");
+	}
+
+
 	$recept_id = $_GET['recept_id'];
 	$sql = 'DELETE FROM recepts WHERE recept_id=:recept_id';
 	$statement = $connection->prepare($sql);

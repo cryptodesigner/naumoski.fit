@@ -10,6 +10,7 @@
     $surname = $_POST['surname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $password = md5($password);
     $sql = 'INSERT INTO managers(name, surname, email, password) VALUES(:name, :surname, :email, :password)';
     $statement = $connection->prepare($sql);
     if ($statement->execute([':name' => $name, ':surname' => $surname, ':email' => $email, ':password' => $password])) {
@@ -98,7 +99,7 @@
         </div>
       </div>
       <div class="signup-footer">
-        Already have an account? <a href="{{url_for('login')}}">Log in</a>
+        Already have an account? <a href="login.php">Log in</a>
       </div>
     </div>
     <script src="../static/js/vendor.min.js"></script>

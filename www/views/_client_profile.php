@@ -362,7 +362,7 @@
                     <td><?= $tt->muskulna_grupa; ?></td>
                     <td><?= $tt->serii_povt; ?></td>
                     <td><?= $tt->link_vezba; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOption(<?= $tt->tech; ?>)">See Tech</button></td>
+                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
                     <td><?= $tt->vreme; ?></td>
                     <td><?= $tt->description; ?></td>
                   </tr>
@@ -398,7 +398,7 @@
                     <td><?= $tts->muskulna_grupa; ?></td>
                     <td><?= $tts->serii_povt; ?></td>
                     <td><?= $tts->link_vezba; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOption(<?= $tts->tech; ?>)">See Tech</button></td>
+                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
                     <td><?= $tts->vreme; ?></td>
                     <td><?= $tts->description; ?></td>
                   </tr>
@@ -434,7 +434,7 @@
                     <td><?= $at->muskulna_grupa; ?></td>
                     <td><?= $at->serii_povt; ?></td>
                     <td><?= $at->link_vezba; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOption(<?= $at->tech; ?>)">See Tech</button></td>
+                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
                     <td><?= $at->vreme; ?></td>
                     <td><?= $at->description; ?></td>
                   </tr>
@@ -676,7 +676,7 @@ console.log(modalSostojki)
 
     console.log(t)
 
-    fetch("/chose_option", {
+    fetch("/chose_option.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -684,21 +684,20 @@ console.log(modalSostojki)
           },
             body: JSON.stringify(t)
           }).then((response) => {
-              console.log(response)
-            return response.json()
+            return response.text()
           })
           .then((data) => {
-            // Work with JSON data here
-            console.log(data[0])
-            modalSostojki.innerHTML = "Sostoji: " + data[0].sostojki
-            modalProteins.innerHTML = "Proteini : " + data[0].proteins
-            modalCarbohydrates.innerHTML = "Jaglenohidrati : " + data[0].carbohydrates
-            modalFats.innerHTML = "Masti : " + data[0].fats
-            modalDescription.innerHTML = "Description : " + data[0].description
+            // Work with JSON data here  
+            var theItem = JSON.parse(data.slice(57,-1))
+            modalSostojki.innerHTML = "Sostoji: " + theItem.sostojki
+            modalProteins.innerHTML = "Proteini : " + theItem.proteins
+            modalCarbohydrates.innerHTML = "Jaglenohidrati : " + theItem.carbohydrates
+            modalFats.innerHTML = "Masti : " + theItem.fats
+            modalDescription.innerHTML = "Description : " + theItem.description
 
           })
           .catch((err) => {
-            // Do something for an error here
+            console.log(err)
           })
 
   }
@@ -713,7 +712,7 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
 
     console.log(t)
 
-    fetch("/chose_tech", {
+    fetch("/chose_tech.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -721,15 +720,16 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
           },
             body: JSON.stringify(t)
           }).then((response) => {
-              console.log(response)
-            return response.json()
+              // console.log(response)
+            return response.text()
           })
           .then((data) => {
             // Work with JSON data here
             // console.log(data[0])
-            modalName.innerHTML = "Name: " + data[0].name
-            modalLink.innerHTML = "Link : " + data[0].link
-            modalTrainingDescription.innerHTML = "Description : " + data[0].description
+            var theItem = JSON.parse(data.slice(57, -1))
+            modalName.innerHTML = "Name: " + theItem.name
+            modalLink.innerHTML = "Link : " + theItem.link
+            modalTrainingDescription.innerHTML = "Description : " + theItem.description
 
           })
           .catch((err) => {

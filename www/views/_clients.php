@@ -37,13 +37,13 @@
 				  				<?php foreach($people as $person): ?>
 				  				<tr>
 										<td><?= $person->client_id; ?></td>
-										<td><?= $person->name; $person->surname; ?></td>
-										<td><?= $person->client_id; ?></td>
+										<td><?= $person->name; ?> <?= $person->surname; ?></td>
+										<td><?= $person->email; ?></td>
 										<td>
 					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Delete</a>
 										</td>
 										<td>
-					  					<a href="/clients_profile/{{row['client_id']}}" class="btn btn-default btn-xs">Profile</a>
+					  						<a href="profile_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Profile</a>
 										</td>
 				  				</tr>
 				  				<?php endforeach; ?>

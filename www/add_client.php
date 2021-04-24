@@ -15,6 +15,7 @@
   	$surname = $_POST['surname'];
   	$email = $_POST['email'];
   	$password = $_POST['password'];
+    $password = md5($password);
   	$sql = 'INSERT INTO clients(managers_manager_id, name, surname, email, password) VALUES(:managers_manager_id, :name, :surname, :email, :password)';
   	$statement = $connection->prepare($sql);
   	if ($statement->execute([':managers_manager_id' => $managers_manager_id, ':name' => $name, ':surname' => $surname, ':email' => $email, ':password' => $password])) {

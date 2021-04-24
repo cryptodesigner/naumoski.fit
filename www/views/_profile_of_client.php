@@ -1,3 +1,89 @@
+<?php
+
+	$current_client = $_GET['client_id'];
+	
+	$sql = "SELECT * FROM clients WHERE client_id = '$current_client.';";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$clients = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM measurements WHERE clients_client_id = '$current_client.';";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$measurements = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM basics WHERE clients_client_id = '$current_client.';";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$basics = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM schedules WHERE clients_client_id = '$current_client.';";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$schedules = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+	  AND date = CURDATE()
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$today_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+	  AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$tomorrow_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+	  AND date >= CURDATE()
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$all_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+	  AND date = CURDATE()
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$today_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+	  AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$tomorrow_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+	  AND date >= CURDATE()
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$all_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+
+	$sql = "SELECT m.name FROM managers m 
+	  INNER JOIN clients c ON m.manager_id = c.managers_manager_id
+	  WHERE client_id = '$current_client.';";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$assigned_manager = $statement->fetchAll(PDO::FETCH_OBJ);
+
+?>
+
+
 <section>
 	<div class="profile">
 	  <div class="profile-header">
@@ -8,7 +94,10 @@
 							<img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Teddy Wilson">
 					  </div>
 					  <div class="profile-overview">
-							<h1 class="profile-name">{% for row in data %}{{row['name']}}'s Profile{% endfor %}</h1>
+					  	<?php foreach($clients as $c): ?>
+            	  <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
+            	<?php endforeach; ?>
+							<!-- <h1 class="profile-name">{% for row in data %}{{row['name']}}'s Profile{% endfor %}</h1> -->
 							<p>Genesis Fitness Client<a class="link-inverted"></a></p>
 					  </div>
 					</div>
@@ -29,7 +118,9 @@
 
 			<div id="Profile" class="tab">
 				<div class="profile-container">
-					{% for row in data %}<h1>{{row['name']}}'s Profile</h1>{% endfor %}
+					<?php foreach($clients as $c): ?>
+					  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
+					<?php endforeach; ?>
 				</div>
 
 				<div class="col-md-4">
@@ -45,34 +136,34 @@
 						<div class="card-body" data-toggle="match-height">
 							<table class="table table-striped">
 								<tr>
-									{% for row in data %}
+									<?php foreach($clients as $c): ?>
 									<th colspan="6">Serial: </th>
-									<td colspan="6">{{row['client_id']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $c->client_id; ?></td>
+									<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for row in assigned_manager %}
+									<?php foreach($assigned_manager as $am): ?>
 									<th colspan="6">Manager: </th>
-									<td colspan="6">{{row['name']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $am->name; ?></td>
+									<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for row in data %}
+									<?php foreach($clients as $c): ?>
 									<th colspan="6">Ime: </th>
-									<td colspan="6">{{row['name']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $c->name; ?></td>
+									<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for row in data %}
+									<?php foreach($clients as $c): ?>
 									<th colspan="6">Prezime: </th>
-									<td colspan="6">{{row['surname']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $c->surname; ?></td>
+									<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for row in data %}
+									<?php foreach($clients as $c): ?>
 									<th colspan="6">Email: </th>
-									<td colspan="6">{{row['email']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $c->email; ?></td>
+									<?php endforeach; ?>
 								</tr>
 							</table>
 						</div>
@@ -92,34 +183,34 @@
 						<div class="card-body" data-toggle="match-height">
 							<table class="table table-striped">
 								<tr>
-									{% for row in data %}
+									<?php foreach($clients as $c): ?>
 									<th colspan="6">Ime: </th>
-									<td colspan="6">{{row['name']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $c->name; ?></td>
+									<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Pol: </th>
-									<td colspan="6">{{basic['pol']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+               		<th colspan="6">Pol: </th>
+               		<td colspan="6"><?= $b->pol; ?></td>
+               		<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Rodenden: </th>
-									<td colspan="6">{{basic['godini']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Rodenden: </th>
+                	<td colspan="6"><?= $b->godini; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
+									<?php foreach($basics as $b): ?>
 									<th colspan="6">Visina: </th>
-									<td colspan="6">{{basic['visina']}}</td>
-									{% endfor %}
+									<td colspan="6"><?= $b->visina; ?></td>
+									<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Tezina: </th>
-									<td colspan="6">{{basic['tezina']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Tezina: </th>
+                	<td colspan="6"><?= $b->tezina; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 							</table>
 						</div>
@@ -139,34 +230,34 @@
 						<div class="card-body" data-toggle="match-height">
 							<table class="table table-striped">
 								<tr>
-									{% for row in data3 %}
-									<th colspan="6">Alergii: </th>
-									<td colspan="6">{{row['alergija']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Alergii: </th>
+                	<td colspan="6"><?= $b->alergija; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Netolerantnost: </th>
-									<td colspan="6">{{basic['netolerantnost']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Netolerantnost: </th>
+                	<td colspan="6"><?= $b->netolerantnost; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Odbivnost: </th>
-									<td colspan="6">{{basic['odbivnost']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Odbivnost: </th>
+                	<td colspan="6"><?= $b->odbivnost; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Zaboluvanja: </th>
-									<td colspan="6">{{basic['zaboluvanja']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Zaboluvanja: </th>
+                	<td colspan="6"><?= $b->zaboluvanja; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 								<tr>
-									{% for basic in data3 %}
-									<th colspan="6">Iskustvo: </th>
-									<td colspan="6">{{basic['iskustvo']}}</td>
-									{% endfor %}
+									<?php foreach($basics as $b): ?>
+                	<th colspan="6">Iskustvo: </th>
+                	<td colspan="6"><?= $b->iskustvo; ?></td>
+                	<?php endforeach; ?>
 								</tr>
 							</table>
 						</div>
@@ -211,7 +302,9 @@
 		     
 			<div id="Trainings" class="tab" style="display: none">
 				<div class="profile-container">
-					{% for row in data %}<h1>{{row['name']}}'s Training List</h1>{% endfor %}
+					<?php foreach($clients as $c): ?>
+        	  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Training List</h1>
+        	<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
 					<ul class="nav nav-tabs nav-justified">
@@ -239,18 +332,18 @@
 							      </tr>
 							    </thead>
 							    <tbody>
-							      {% for row in t_today %}
-							      <tr>
-							        <!-- <td>{{row['training_id']}}</td> -->
-							        <td>{{row['name']}}</td>
-							        <td>{{row['muskulna_grupa']}}</td>
-							        <td>{{row['serii_povt']}}</td>
-							        <td>{{row['link_vezba']}}</td>
-							        <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
-							        <td>{{row['vreme']}}</td>
-							        <td>{{row['description']}}</td>
-							      </tr>
-							      {% endfor %}
+							     	<?php foreach($today_trainings as $tt): ?>
+                  	<tr>
+                  	  <!-- <td>{{row['training_id']}}</td> -->
+                  	  <td><?= $tt->name; ?></td>
+                  	  <td><?= $tt->muskulna_grupa; ?></td>
+                  	  <td><?= $tt->serii_povt; ?></td>
+                  	  <td><?= $tt->link_vezba; ?></td>
+                  	  <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
+                    	<td><?= $tt->vreme; ?></td>
+                    	<td><?= $tt->description; ?></td>
+                  	</tr>
+                  	<?php endforeach; ?>
 							    </tbody>
 							  </table>
 							</div>
@@ -275,18 +368,18 @@
 							      </tr>
 							    </thead>
 							    <tbody>
-							      {% for row in t_tomorrow %}
+							      <?php foreach($tomorrow_trainings as $tts): ?>
 							      <tr>
 							        <!-- <td>{{row['training_id']}}</td> -->
-							        <td>{{row['name']}}</td>
-							        <td>{{row['muskulna_grupa']}}</td>
-							        <td>{{row['serii_povt']}}</td>
-							        <td>{{row['link_vezba']}}</td>
-							        <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
-							        <td>{{row['vreme']}}</td>
-							        <td>{{row['description']}}</td>
+							        <td><?= $tts->name; ?></td>
+							        <td><?= $tts->muskulna_grupa; ?></td>
+							        <td><?= $tts->serii_povt; ?></td>
+							        <td><?= $tts->link_vezba; ?></td>
+							        <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
+							        <td><?= $tts->vreme; ?></td>
+							        <td><?= $tts->description; ?></td>
 							      </tr>
-							      {% endfor %}
+							      <?php endforeach; ?>
 							    </tbody>
 							  </table>
 							</div>
@@ -311,18 +404,18 @@
 							      </tr>
 							    </thead>
 							    <tbody>
-							      {% for row in t_week %}
-							      <tr>
-							        <!-- <td>{{row['training_id']}}</td> -->
-							        <td>{{row['name']}}</td>
-							        <td>{{row['muskulna_grupa']}}</td>
-							        <td>{{row['serii_povt']}}</td>
-							        <td>{{row['link_vezba']}}</td>
-							        <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining({{row['tech']}})">See Option</button></td>
-							        <td>{{row['vreme']}}</td>
-							        <td>{{row['description']}}</td>
-							      </tr>
-							      {% endfor %}
+							      <?php foreach($all_trainings as $at): ?>
+                  	<tr>
+                  	  <!-- <td>{{row['training_id']}}</td> -->
+                  	  <td><?= $at->name; ?></td>
+                  	  <td><?= $at->muskulna_grupa; ?></td>
+                  	  <td><?= $at->serii_povt; ?></td>
+                  	  <td><?= $at->link_vezba; ?></td>
+                  	  <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
+                  	  <td><?= $at->vreme; ?></td>
+                  	  <td><?= $at->description; ?></td>
+                  	</tr>
+                  	<?php endforeach; ?>
 							    </tbody>
 							  </table>
 							</div>
@@ -335,7 +428,9 @@
 	    
 			<div id="Diets" class="tab" style="display: none">
 				<div class="profile-container">
-					{% for row in data %}<h1>{{row['name']}}'s Diet List</h1>{% endfor %}
+					<?php foreach($clients as $c): ?>
+       		  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Diet List</h1>
+       		<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
 					<ul class="nav nav-tabs nav-justified">
@@ -361,16 +456,31 @@
 							      </tr>
 							    </thead>
 							    <tbody>
-							      {% for row in m_today %}
-							      <tr>
-							        <!-- <td>{{row['meal_id']}}</td> -->
-							        <td>{{row['name']}}</td>
-							        <td>{{row['vreme']}}</td>
-							        <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
-	                				<td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
-	                				<td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
-							      </tr>
-							      {% endfor %}
+							      <?php foreach($today_meals as $tm): ?>
+                 		<tr>
+                 		  <!-- <td>{{row['meal_id']}}</td> -->
+                 		  <td><?= $tm->name; ?></td>
+                 		  <td><?= $tm->vreme; ?></td>
+                 		  <td><?php if($tm->option1 != 0): ?> 
+                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option1; ?>)">See Option</button>  
+                   		  <?php else: ?>
+                   		    <p>No Option</p>
+                   		  <?php endif; ?>    
+                   		</td>
+                   		<td><?php if($tm->option2 != 0): ?> 
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option2; ?>)">See Option</button>  
+                   		  <?php else: ?>
+                   		    <p>No Option</p>
+                   		  <?php endif; ?>    
+                   		</td>
+                   		<td><?php if($tm->option3 != 0): ?> 
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
+                 		    <?php else: ?>
+                 		      <p>No Option</p>
+                 		    <?php endif; ?>    
+                 		  </td>
+                 		</tr>
+                 		<?php endforeach; ?>
 							    </tbody>
 							  </table>
 							</div>
@@ -393,16 +503,31 @@
 							      </tr>
 							    </thead>
 							    <tbody>
-							      {% for row in m_tomorrow %}
-							      <tr>
-							        <!-- <td>{{row['meal_id']}}</td> -->
-							        <td>{{row['name']}}</td>
-							        <td>{{row['vreme']}}</td>
-							        <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
-	                				<td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
-	                				<td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
-							      </tr>
-							      {% endfor %}
+							      <?php foreach($tomorrow_meals as $tms): ?>
+                 		<tr>
+                 		  <!-- <td>{{row['meal_id']}}</td> -->
+                 		  <td><?= $tms->name; ?></td>
+                 		  <td><?= $tms->vreme; ?></td>
+                 		  <td><?php if($tms->option1 != 0): ?> 
+                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">See Option</button>  
+                    	  <?php else: ?>
+                    	    <p>No Option</p>
+                    	  <?php endif; ?>    
+                    	</td>
+                    	<td><?php if($tms->option2 != 0): ?> 
+                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">See Option</button>  
+                    	  <?php else: ?>
+                    	    <p>No Option</p>
+                    	  <?php endif; ?>    
+                    	</td>
+                    	<td><?php if($tms->option3 != 0): ?> 
+                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">See Option</button>  
+                 		    <?php else: ?>
+                 		      <p>No Option</p>
+                 		    <?php endif; ?>    
+                 		  </td>
+                 		</tr>
+                 		<?php endforeach; ?>
 							    </tbody>
 							  </table>
 							</div>
@@ -426,17 +551,32 @@
 							      </tr>
 							    </thead>
 							    <tbody>
-							      {% for row in m_week %}
-							      <tr>
-							        <!-- <td>{{row['meal_id']}}</td> -->
-							        <td>{{row['name']}}</td>
-							        <td>{{row['vreme']}}</td>
-							        <td>{% if row['option1'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option1']}})">See Option</button>{% else %}No option{% endif %}</td>
-	                				<td>{% if row['option2'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option2']}})">See Option</button>{% else %}No option{% endif %}</td>
-	                				<td>{% if row['option3'] != 0 %}<button data-toggle="modal" data-target="#exampleModal" onClick="seeOption({{row['option3']}})">See Option</button>{% else %}No option{% endif %}</td>
-							        <td>{{row['date']}}</td>
-							      </tr>
-							      {% endfor %}
+							      <?php foreach($all_meals as $ams): ?>
+                  	<tr>
+                  	  <!-- <td>{{row['meal_id']}}</td> -->
+                  	  <td><?= $ams->name; ?></td>
+                  	  <td><?= $ams->vreme; ?></td>
+                  	  <td><?php if($ams->option1 != 0): ?> 
+                  	      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">See Option</button>  
+                   		  <?php else: ?>
+                   		    <p>No Option</p>
+                   		  <?php endif; ?>    
+                   		</td>
+                   		<td><?php if($ams->option2 != 0): ?> 
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">See Option</button>  
+                    	  <?php else: ?>
+                    	    <p>No Option</p>
+                    	  <?php endif; ?>    
+                    	</td>
+                    	<td><?php if($ams->option3 != 0): ?> 
+                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">See Option</button>  
+                  	    <?php else: ?>
+                  	      <p>No Option</p>
+                  	    <?php endif; ?>    
+                  	  </td>
+                  	  <td><?= $ams->date; ?></td>
+                  	</tr>
+                  	<?php endforeach; ?>
 							    </tbody>
 							  </table>
 							</div>
@@ -514,30 +654,29 @@ console.log(modalSostojki)
 
     console.log(t)
 
-    fetch("/chose_option", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: 'application/json'
-          },
-            body: JSON.stringify(t)
-          }).then((response) => {
-              console.log(response)
-            return response.json()
-          })
-          .then((data) => {
-            // Work with JSON data here
-            console.log(data[0])
-            modalSostojki.innerHTML = "Sostoji: " + data[0].sostojki
-            modalProteins.innerHTML = "Proteini : " + data[0].proteins
-            modalCarbohydrates.innerHTML = "Jaglenohidrati : " + data[0].carbohydrates
-            modalFats.innerHTML = "Masti : " + data[0].fats
-            modalDescription.innerHTML = "Description : " + data[0].description
+    fetch("/chose_option.php", {
+        	method: "POST",
+        	headers: {
+           	"Content-Type": "application/json",
+           	Accept: 'application/json'
+        	},
+        		body: JSON.stringify(t)
+      		}).then((response) => {
+  				  return response.text()
+  				})
+  				.then((data) => {
+  				  // Work with JSON data here  
+  				  var theItem = JSON.parse(data.slice(57,-1))
+  				  modalSostojki.innerHTML = "Sostoji: " + theItem.sostojki
+  				  modalProteins.innerHTML = "Proteini : " + theItem.proteins
+  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + theItem.carbohydrates
+  				  modalFats.innerHTML = "Masti : " + theItem.fats
+  				  modalDescription.innerHTML = "Description : " + theItem.description
 
-          })
-          .catch((err) => {
-            // Do something for an error here
-          })
+  				})
+  				.catch((err) => {
+  				  console.log(err)
+  				})
 
   }
 </script>
@@ -551,7 +690,7 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
 
 		console.log(t)
 
-		fetch("/chose_tech", {
+		fetch("/chose_tech.php", {
         	method: "POST",
         	headers: {
            	"Content-Type": "application/json",
@@ -559,15 +698,16 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
         	},
         		body: JSON.stringify(t)
       		}).then((response) => {
-      			  console.log(response)
-  				  return response.json()
+      			  // console.log(response)
+  				  return response.text()
   				})
   				.then((data) => {
   				  // Work with JSON data here
   				  // console.log(data[0])
-  				  modalName.innerHTML = "Name: " + data[0].name
-  				  modalLink.innerHTML = "Link : " + data[0].link
-  				  modalTrainingDescription.innerHTML = "Description : " + data[0].description
+  				  var theItem = JSON.parse(data.slice(57, -1))
+  				  modalName.innerHTML = "Name: " + theItem.name
+  				  modalLink.innerHTML = "Link : " + theItem.link
+  				  modalTrainingDescription.innerHTML = "Description : " + theItem.description
 
   				})
   				.catch((err) => {

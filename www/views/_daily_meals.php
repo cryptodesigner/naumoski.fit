@@ -36,6 +36,7 @@
 									<th>Option2</th>
 									<th>Option3</th>
 									<th>Date</th>
+									<th>Action</th>
 									<!-- <th>Action</th> -->
 				  			</tr>
 							</thead>
@@ -44,11 +45,28 @@
 				  			<tr>
 									<td><?= $meal->name; ?></td>
 									<td><?= $meal->vreme; ?></td>
-									<td><?= $meal->option1; ?></td>
-									<td><?= $meal->option2; ?></td>
-									<td><?= $meal->option3; ?></td>
+									<td><?php if($meal->option1 != 0): ?> 
+                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option1; ?>)">See Option</button>  
+                   		  <?php else: ?>
+                   		    <p>No Option</p>
+                   		  <?php endif; ?>    
+                   		</td>
+                   		<td><?php if($meal->option2 != 0): ?> 
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option2; ?>)">See Option</button>  
+                   		  <?php else: ?>
+                   		    <p>No Option</p>
+                   		  <?php endif; ?>    
+                   		</td>
+                   		<td><?php if($meal->option3 != 0): ?> 
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option3; ?>)">See Option</button>  
+                 		    <?php else: ?>
+                 		      <p>No Option</p>
+                 		    <?php endif; ?>    
+                 		  </td>
 									<td><?= $meal->date ?></td>
-									
+									<td>
+										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?meal_id=<?= $meal->meal_id ?>" class='btn btn-danger'>Delete</a>
+									</td>
 				  			</tr>
 				  			<?php endforeach; ?>
 							</tbody>
@@ -93,14 +111,15 @@ var modalFats = document.getElementById("modalFats")
 var modalDescription = document.getElementById("modalDescription")
 
 modalSostojki.innerHTML = "proba"
-console.log(modalSostojki)
+// console.log(modalSostojki)
 
 
 	function seeOption(t){
 
-		console.log(t)
+		// console.log(t)
 
-		fetch("/chose_option", {
+
+		fetch("/chose_option.php", {
         	method: "POST",
         	headers: {
            	"Content-Type": "application/json",
@@ -108,21 +127,20 @@ console.log(modalSostojki)
         	},
         		body: JSON.stringify(t)
       		}).then((response) => {
-      			  console.log(response)
-  				  return response.json()
+  				  return response.text()
   				})
   				.then((data) => {
-  				  // Work with JSON data here
-  				  console.log(data[0])
-  				  modalSostojki.innerHTML = "Sostoji: " + data[0].sostojki
-  				  modalProteins.innerHTML = "Proteini : " + data[0].proteins
-  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + data[0].carbohydrates
-  				  modalFats.innerHTML = "Masti : " + data[0].fats
-  				  modalDescription.innerHTML = "Description : " + data[0].description
+  				  // Work with JSON data here  
+  				  var theItem = JSON.parse(data.slice(57,-1))
+  				  modalSostojki.innerHTML = "Sostoji: " + theItem.sostojki
+  				  modalProteins.innerHTML = "Proteini : " + theItem.proteins
+  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + theItem.carbohydrates
+  				  modalFats.innerHTML = "Masti : " + theItem.fats
+  				  modalDescription.innerHTML = "Description : " + theItem.description
 
   				})
   				.catch((err) => {
-  				  // Do something for an error here
+  				  console.log(err)
   				})
 
 	}

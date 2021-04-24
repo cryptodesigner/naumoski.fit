@@ -93,7 +93,7 @@ var modalDescription = document.getElementById("modalDescription")
 
 		console.log(t)
 
-		fetch("/chose_tech", {
+		fetch("/chose_tech.php", {
         	method: "POST",
         	headers: {
            	"Content-Type": "application/json",
@@ -101,15 +101,16 @@ var modalDescription = document.getElementById("modalDescription")
         	},
         		body: JSON.stringify(t)
       		}).then((response) => {
-      			  console.log(response)
-  				  return response.json()
+      			  // console.log(response)
+  				  return response.text()
   				})
   				.then((data) => {
   				  // Work with JSON data here
   				  // console.log(data[0])
-  				  modalName.innerHTML = "Name: " + data[0].name
-  				  modalLink.innerHTML = "Link : " + data[0].link
-  				  modalDescription.innerHTML = "Description : " + data[0].description
+  				  var theItem = JSON.parse(data.slice(57, -1))
+  				  modalName.innerHTML = "Name: " + theItem.name
+  				  modalLink.innerHTML = "Link : " + theItem.link
+  				  modalDescription.innerHTML = "Description : " + theItem.description
 
   				})
   				.catch((err) => {

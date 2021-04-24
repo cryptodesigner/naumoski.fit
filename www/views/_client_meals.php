@@ -114,30 +114,29 @@
 
 			console.log(t)
 
-			fetch("/chose_option", {
-	        	method: "POST",
-	        	headers: {
-	           	"Content-Type": "application/json",
-	           	Accept: 'application/json'
-	        	},
-	        		body: JSON.stringify(t)
-	      		}).then((response) => {
-	      			  console.log(response)
-	  				  return response.json()
-	  				})
-	  				.then((data) => {
-	  				  // Work with JSON data here
-	  				  console.log(data[0])
-	  				  modalSostojki.innerHTML = "Sostoji: " + data[0].sostojki
-	  				  modalProteins.innerHTML = "Proteini : " + data[0].proteins
-	  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + data[0].carbohydrates
-	  				  modalFats.innerHTML = "Masti : " + data[0].fats
-	  				  modalDescription.innerHTML = "Description : " + data[0].description
+			fetch("/chose_option.php", {
+        	method: "POST",
+        	headers: {
+           	"Content-Type": "application/json",
+           	Accept: 'application/json'
+        	},
+        		body: JSON.stringify(t)
+      		}).then((response) => {
+  				  return response.text()
+  				})
+  				.then((data) => {
+  				  // Work with JSON data here  
+  				  var theItem = JSON.parse(data.slice(57,-1))
+  				  modalSostojki.innerHTML = "Sostoji: " + theItem.sostojki
+  				  modalProteins.innerHTML = "Proteini : " + theItem.proteins
+  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + theItem.carbohydrates
+  				  modalFats.innerHTML = "Masti : " + theItem.fats
+  				  modalDescription.innerHTML = "Description : " + theItem.description
 
-	  				})
-	  				.catch((err) => {
-	  				  // Do something for an error here
-	  				})
+  				})
+  				.catch((err) => {
+  				  console.log(err)
+  				})
 
 		}
 	</script>
