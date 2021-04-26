@@ -3490,7 +3490,7 @@ tbody.collapse.in {
 
 .navbar-brand {
     float: left;
-    padding: 15px 15px;
+    padding: 12px 15px;
     font-size: 18px;
     line-height: 20px;
     height: 50px
@@ -10790,7 +10790,7 @@ select.md-form-control option {
 }
 
 .navbar-brand-logo {
-    height: 20px;
+    height: 25px;
     width: auto
 }
 
