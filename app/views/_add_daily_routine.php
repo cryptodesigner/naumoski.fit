@@ -168,12 +168,12 @@
 
 			</div>
 
-			<div class="col-xs-12" id="addedMealsAndTrainings"></div>
+			<div class="" id="addedMealsAndTrainings"></div>
 								
-			<div class="row" id="firstDate">
-				<div class="col-sm-12">
+			<div class="col-xs-12">
+				<div class="md-form-group">
 					<div class="md-form-group md-label-floating">
-						<input class="md-form-contro mealsAndTrainingsDate" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
+						<input class="md-form-control mealsAndTrainingsDate" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
 						<button type="button" onClick="removeCurrDate(this)">Remove Date</button>
 					</div>
 				</div>
@@ -181,13 +181,14 @@
 
 			<div id="datesWrapper"></div>
 
-			<div>
+			<div class="col-xs-12">
+			  <div class="md-form-group">
 				<button type="button" onClick="addNewDate()">Add Date</button>
 				<button type="button" id="addMeal">Add Meal</button>
 				<button type="button" id="addTraining">Add Training</button>
 				<button type="button" id="submitBtn">Submit</button>
+			  </div>
 			</div>
-			
 		</div>
 	</div>
 </form>
