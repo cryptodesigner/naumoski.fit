@@ -42,7 +42,7 @@
 			
 			<div class="row" id="mealsAndTrainingContainer" style="display: none;">
 				
-				<div id="mealDiv"> 								
+				<div class="col-xs-12" id="mealDiv"> 								
 					<div class="md-form-group">
 						<div class="row">
 							<div class="col-sm-2">
