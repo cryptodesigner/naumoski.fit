@@ -47,7 +47,7 @@
 						<div class="row">
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<input class="md-form-control mealName" type="text" name="mealName"  placeholder="Meal Name">
+									<input class="md-form-control mealName" type="text" name="mealName"  placeholder="Meal">
 								</div>
 							</div>
 							<!-- <div class="col-sm-1">
@@ -108,12 +108,12 @@
 					</div>
 				</div>
 				
-				<div id="trainingDiv"> 								
+				<div class="col-xs-12" id="trainingDiv"> 								
 					<div class="md-form-group">
 						<div class="row">
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<input class="md-form-control trainingName" type="text" name="trainingName"  placeholder="Training Name">
+									<input class="md-form-control trainingName" type="text" name="trainingName"  placeholder="Training">
 								</div>
 							</div>
 							<div class="col-sm-1">
@@ -168,7 +168,7 @@
 
 			</div>
 
-			<div id="addedMealsAndTrainings"></div>
+			<div class="col-xs-12" id="addedMealsAndTrainings"></div>
 								
 			<div class="row" id="firstDate">
 				<div class="col-sm-12">
