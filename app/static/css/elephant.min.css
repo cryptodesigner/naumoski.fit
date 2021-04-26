@@ -280,7 +280,7 @@ body {
     font-size: 13px;
     line-height: 1.538462;
     color: #757575;
-    background-color: #eceff1;
+    background-color: #111111;
 }
 
 button,input,select,textarea {
@@ -756,7 +756,7 @@ pre code {
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
 }
 
 .container:after,.container:before {
@@ -770,19 +770,19 @@ pre code {
 
 @media (min-width: 768px) {
     .container {
-        width:750px
+        width:100%
     }
 }
 
 @media (min-width: 992px) {
     .container {
-        width:970px
+        width:100%
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        width:1170px
+        width:100%
     }
 }
 
@@ -820,7 +820,7 @@ pre code {
     position: relative;
     min-height: 1px;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
 }
 
 .col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9 {
@@ -2413,8 +2413,8 @@ a.btn.disabled,fieldset[disabled] a.btn {
 }
 
 .btn-primary:hover {
-    background-color: #02679e;
-    border-color: #02679e;
+    background-color: #111111;
+    border-color: #111111;
     color: #fff
 }
 
@@ -10453,8 +10453,8 @@ button.collapsed .ellipsis-object {
 }
 
 .layout-sidebar {
-    background-color: #fff;
-    color: #757575
+    background-color: #111111;
+    color: #cccccc;
 }
 
 @media (min-width: 768px) {
@@ -10487,7 +10487,7 @@ button.collapsed .ellipsis-object {
 
 @media (min-width: 768px) {
     .layout-sidebar-backdrop {
-        background-color:#fff;
+        background-color: #111111;
         -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2);
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2);
         display: block;
@@ -10500,7 +10500,7 @@ button.collapsed .ellipsis-object {
         -o-transition: width .3s;
         transition: width .3s;
         width: 220px;
-        z-index: -1
+        z-index: -1;
     }
 }
 
@@ -10699,14 +10699,14 @@ button.collapsed .ellipsis-object {
 }
 
 .md-form-group {
-    margin-bottom: 20px;
-    padding: 20px 0;
-    position: relative
+    margin-bottom: 10px;
+    padding: 10px 0;
+    position: relative;
 }
 
 .md-form-group .md-form-group {
-    margin-bottom: -20px;
-    margin-top: -20px
+    margin-bottom: -10px;
+    margin-top: -10px
 }
 
 select.md-form-control {
@@ -11227,7 +11227,7 @@ select.md-form-control option {
 }
 
 .sidenav>li>a {
-    color: #757575;
+    color: #cccccc;
     display: block;
     font-size: 13px;
     line-height: 18px;
@@ -11236,7 +11236,7 @@ select.md-form-control option {
     text-decoration: none;
     -webkit-transition: all .3s;
     -o-transition: all .3s;
-    transition: all .3s
+    transition: all .3s;
 }
 
 .sidenav>li.has-subnav>a:before {
@@ -11260,13 +11260,13 @@ select.md-form-control option {
 }
 
 .sidenav>li.hover>a,.sidenav>li:hover>a {
-    background-color: #eee;
-    color: #757575
+    background-color: #cccccc;
+    color: #98721a
 }
 
 .sidenav>li.open>a {
-    background-color: #eee;
-    color: #757575
+    background-color: #000000;
+    color: #999999;
 }
 
 .sidenav>li.open>a:before {
@@ -11359,18 +11359,18 @@ select.md-form-control option {
 }
 
 .sidenav-subnav>li>a {
-    background-color: #eee;
-    color: #757575;
+    background-color: #222222;
+    color: #cccccc;
     display: block;
     font-size: 13px;
     line-height: 18px;
     padding: 8px 15px 8px 42px;
     position: relative;
-    text-decoration: none
+    text-decoration: none;
 }
 
 .sidenav-subnav>li.hover>a,.sidenav-subnav>li:hover>a {
-    background-color: #eee;
+    background-color: #cccccc;
     color: #98721a
 }
 
