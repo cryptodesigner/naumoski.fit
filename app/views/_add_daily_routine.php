@@ -101,7 +101,7 @@
 							</div>
 							<div class="col-sm-1">
 								<div class="md-form-group">
-									<button type="button" onclick="removeThis(this)">Remove</button>
+									<button class="btn btn-primary" type="button" onclick="removeThis(this)">Remove</button>
 								</div>
 							</div>
 						</div>
@@ -159,7 +159,7 @@
 							</div>
 							<div class="col-sm-1">
 								<div class="md-form-group">
-									<button type="button" onclick="removeThis(this)" >Remove</button>
+									<button class="btn btn-primary" type="button" onclick="removeThis(this)" >Remove</button>
 								</div>
 							</div>
 						</div>
@@ -174,7 +174,7 @@
 				<div class="md-form-group">
 					<div class="md-form-group md-label-floating">
 						<input class="md-form-control mealsAndTrainingsDate" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
-						<button type="button" onClick="removeCurrDate(this)">Remove Date</button>
+						<button class="btn btn-primary" type="button" onClick="removeCurrDate(this)">Remove Date</button>
 					</div>
 				</div>
 			</div>
@@ -183,10 +183,10 @@
 
 			<div class="col-xs-12">
 			  <div class="md-form-group">
-				<button type="button" onClick="addNewDate()">Add Date</button>
-				<button type="button" id="addMeal">Add Meal</button>
-				<button type="button" id="addTraining">Add Training</button>
-				<button type="button" id="submitBtn">Submit</button>
+				<button class="btn btn-primary" type="button" onClick="addNewDate()">Add Date</button>
+				<button class="btn btn-primary" type="button" id="addMeal">Add Meal</button>
+				<button class="btn btn-primary" type="button" id="addTraining">Add Training</button>
+				<button class="btn btn-primary" type="button" id="submitBtn">Submit</button>
 			  </div>
 			</div>
 		</div>
