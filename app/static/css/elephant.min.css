@@ -2318,7 +2318,7 @@ fieldset[disabled] input[type=checkbox],fieldset[disabled] input[type=radio],inp
 .btn {
     display: inline-block;
     margin-bottom: 0;
-    font-weight: 400;
+    /* font-weight: 400; */
     text-align: center;
     vertical-align: middle;
     -ms-touch-action: manipulation;
@@ -2327,13 +2327,13 @@ fieldset[disabled] input[type=checkbox],fieldset[disabled] input[type=radio],inp
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 6px 6px;
+    font-size: 11px;
     line-height: 1.538462;
     border-radius: 0;
     -webkit-user-select: none;
     -ms-user-select: none;
-    user-select: none
+    user-select: none;
 }
 
 .btn.focus,.btn:focus,.btn:hover {
@@ -2403,7 +2403,9 @@ a.btn.disabled,fieldset[disabled] a.btn {
 .btn-primary {
     background-color: #98721a;
     border-color: #98721a;
-    color: #fff
+    color: #fff;
+    font-weight: 300;
+    font-size: 11px;
 }
 
 .btn-primary.focus,.btn-primary:focus {
@@ -2419,14 +2421,14 @@ a.btn.disabled,fieldset[disabled] a.btn {
 }
 
 .btn-primary.active,.btn-primary:active,.open>.btn-primary.dropdown-toggle {
-    background-color: #02679e;
-    border-color: #02679e;
+    background-color: #555555;
+    border-color: #555555;
     color: #fff
 }
 
 .btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.btn-primary.dropdown-toggle.focus,.open>.btn-primary.dropdown-toggle:focus,.open>.btn-primary.dropdown-toggle:hover {
-    background-color: #015785;
-    border-color: #015785;
+    background-color: #555555;
+    border-color: #555555;
     color: #fff
 }
 
@@ -2602,7 +2604,7 @@ a.btn.disabled,fieldset[disabled] a.btn {
 
 .btn-link {
     color: #98721a;
-    font-weight: 400;
+    font-weight: 300;
     border-radius: 0
 }
 
@@ -10596,7 +10598,7 @@ button.collapsed .ellipsis-object {
     display: block;
     font-size: 16px;
     line-height: 20px;
-    padding: 4px 0;
+    padding: 6px 0;
     width: 100%
 }
 
@@ -10652,14 +10654,14 @@ button.collapsed .ellipsis-object {
 
 .md-control-label:after {
     background-color: #98721a;
-    bottom: 20px;
+    bottom: 10px;
     content: '';
-    height: 2px;
+    height: 3px;
     left: 45%;
     position: absolute;
-    -webkit-transition-duration: .2s;
-    -o-transition-duration: .2s;
-    transition-duration: .2s;
+    -webkit-transition-duration: 1.2s;
+    -o-transition-duration: 1.2s;
+    transition-duration: 1.2s;
     -webkit-transition-timing-function: cubic-bezier(.4,0,.2,1);
     -o-transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-timing-function: cubic-bezier(.4,0,.2,1);
