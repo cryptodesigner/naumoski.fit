@@ -122,7 +122,7 @@
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
-                    <span class="sidenav-icon icon icon-bell-o"></span>
+                    <span class="sidenav-icon icon icon-line-chart"></span>
                     <span class="sidenav-label">Measurements</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
@@ -134,7 +134,7 @@
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
-                    <span class="sidenav-icon icon icon-bell-o"></span>
+                    <span class="sidenav-icon icon icon-paw"></span>
                     <span class="sidenav-label">Basics</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
@@ -146,7 +146,7 @@
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
-                    <span class="sidenav-icon icon icon-bell-o"></span>
+                    <span class="sidenav-icon icon icon-calendar-check-o"></span>
                     <span class="sidenav-label">Schedules</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
@@ -158,21 +158,21 @@
 
                 <li class="sidenav-item">
                   <a href="client_trainings.php">
-                    <span class="sidenav-icon icon icon-heart"></span>
+                    <span class="sidenav-icon icon icon-heartbeat"></span>
                     <span class="sidenav-label">Trainings</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item">
                   <a href="client_meals.php">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-cutlery"></span>
                     <span class="sidenav-label">Diets</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item">
                   <a href="client_recepts.php">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-apple"></span>
                     <span class="sidenav-label">Recepts</span>
                   </a>
                 </li>
