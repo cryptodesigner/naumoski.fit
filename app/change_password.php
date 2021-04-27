@@ -16,6 +16,7 @@
   $message = '';
   if (isset ($_POST['newpass'])) {
     $newpass = $_POST['newpass'];
+    $newpass = md5($newpass);
     $sql = 'UPDATE clients SET password = :newpass WHERE client_id = :client_id';
     $statement = $connection->prepare($sql);
 
