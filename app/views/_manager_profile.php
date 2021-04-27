@@ -111,7 +111,7 @@
      			    <td><?= $c->name; ?> <?= $c->surname; ?></td>
      			    <td><?= $c->email; ?></td>
      			    <td>
-     			      <a href="/clients_profile/{{client['client_id']}}" class="btn btn-primary btn-xs">Profile</a>
+     			      <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
      			    </td>
      			  </tr>
      			  <?php endforeach; ?>
