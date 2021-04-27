@@ -72,23 +72,32 @@
               </span>
             </button>
             <ul class="nav navbar-nav navbar-right">
+              <li class="visible-xs-block">
+                <h4 class="navbar-text text-center"><?php echo $_SESSION['email']; ?></h4>
+              </li>
               <li class="dropdown hidden-xs">
                 <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
-                  <img class="rounded" width="36" height="36" src="../static/img/user.jpg" alt="Teddy Wilson">
+                  <img class="rounded" width="36" height="36" src="../static/img/user.jpg" alt="Teddy Wilson"> 
                   <?php echo $_SESSION['email']; ?>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li>
-                    <a href="upgrade.html">
+                    <a href="#">
                       <h5 class="navbar-upgrade-heading">Dashboard Info</h5>
                     </a>
                   </li>
                   <li class="divider"></li>
-                  <li><a href="contacts.html">Contacts</a></li>
-                  <li><a href="profile.html">Profile</a></li>
+                  <!-- <li><a href="contacts.html">Contacts</a></li>
+                  <li><a href="profile.html">Profile</a></li> -->
                   <li><a href="logout.php">Sign out</a></li>
                 </ul>
+              </li>
+              <li class="visible-xs-block">
+                <a href="logout.php">
+                  <span class="icon icon-power-off icon-lg icon-fw"></span>
+                  Sign out
+                </a>
               </li>
             </ul>
           </nav>
