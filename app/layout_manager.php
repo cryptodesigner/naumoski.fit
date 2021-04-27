@@ -146,7 +146,7 @@
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-heartbeat"></span>
                     <span class="sidenav-label">Techniques</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
@@ -158,7 +158,7 @@
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-cutlery"></span>
                     <span class="sidenav-label">Meal Options</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
@@ -194,7 +194,7 @@
 
                 <li class="sidenav-item">
                   <a href="trainings.php">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-gear"></span>
                     <span class="sidenav-label">Show Trainings</span>
                   </a>
                 </li>
@@ -213,7 +213,7 @@
 
                 <li class="sidenav-item">
                   <a href="daily_meals.php">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-apple"></span>
                     <span class="sidenav-label">Show Daily Meals</span>
                   </a>
                 </li>
@@ -232,7 +232,7 @@
 
                 <li class="sidenav-item">
                   <a href="add_daily_routine.php">
-                    <span class="sidenav-icon icon icon-certificate"></span>
+                    <span class="sidenav-icon icon icon-sun-o"></span>
                     <span class="sidenav-label">Add Daily Routine</span>
                   </a>
                 </li>
