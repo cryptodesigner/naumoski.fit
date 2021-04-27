@@ -120,7 +120,7 @@
         <?php endforeach; ?>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -167,7 +167,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -214,7 +214,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -261,7 +261,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
