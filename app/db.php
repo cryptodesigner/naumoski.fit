@@ -1,6 +1,6 @@
 <!-- code by webdevtrick (https://webdevtrick.com) -->
 <?php
-$dsn = 'mysql:host=localhost;dbname=naumoski_db';
+$dsn = 'mysql:host=localhost;dbname=naumoski_db;charset=utf8';
 $username = 'root';
 $password = '';
 $options = [];

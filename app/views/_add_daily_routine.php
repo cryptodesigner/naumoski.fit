@@ -120,10 +120,10 @@
 								<div class="md-form-group">
 									<select class="md-form-control trainingMuscle" name="trainingMuscle" data-msg="Muscle">
 										<option value="" disabled="disabled" selected="selected">Muscle</option>
-										<option value="Race">Race</option>
-										<option value="Noze">Noze</option>
-										<option value="Grb">Grb</option>
-										<option value="Gradi">Gradi</option>
+										<option value="Раце">Раце</option>
+										<option value="Нозе">Нозе</option>
+										<option value="Грб">Грб</option>
+										<option value="Гради">Гради</option>
 									</select>
 								</div>
 							</div>
