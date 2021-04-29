@@ -50,18 +50,17 @@
   	foreach($data[1] as $info => $y){
   		$clients_client_id = (int)$y->clients_client_id;
   		$name = $y->name;
-  		$muskulna_grupa = $y->muskulna_grupa;
-  		$serii_povt = $y->serii_povt;
-  		$link_vezba = $y->link_vezba;
-  		$tech = (int)$y->tech;
   		$vreme = $y->vreme;
+  		$vezba = (int)$y->vezba;
+  		$serii_povt = $y->serii_povt;
+  		$tech = (int)$y->tech;
   		$date = $y->date;
-  		$description = $y->description;
 
-  		$sql = 'INSERT INTO trainings(clients_client_id, name, muskulna_grupa, serii_povt, link_vezba, tech, vreme, date, description) VALUES(:clients_client_id, :name, :muskulna_grupa, :serii_povt, :link_vezba, :tech, :vreme, :date, :description)';
+      $sql = 'INSERT INTO trainings(clients_client_id, name, vreme, vezba, serii_povt, tech, date) VALUES(:clients_client_id, :name, :vreme, :vezba, :serii_povt, :tech, :date)';
+
   		$statement = $connection->prepare($sql);
   		
-  		if ($statement->execute([':clients_client_id' => $clients_client_id, ':name' => $name, ':muskulna_grupa' => $muskulna_grupa, ':serii_povt' => $serii_povt, ':link_vezba' => $link_vezba, ':tech' => $tech, ':vreme' => $vreme, ':date' => $date, ':description' => $description])) {
+  		if ($statement->execute([':clients_client_id' => $clients_client_id, ':name' => $name, ':vreme' => $vreme, ':vezba' => $vezba, ':serii_povt' => $serii_povt, ':tech' => $tech, ':date' => $date])) {
   			 $message = 'Client Added Successfully';
   		}
   	}

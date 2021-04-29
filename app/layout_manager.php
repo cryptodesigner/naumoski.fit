@@ -167,6 +167,18 @@
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
+                    <span class="sidenav-icon icon icon-universal-access"></span>
+                    <span class="sidenav-label">Exercises</span>
+                  </a>
+                  <ul class="sidenav-subnav collapse">
+                    <li class="sidenav-subheading">Exercises</li>
+                    <li><a href="exercises.php">Show All Exercises</a></li>
+                    <li><a href="add_exercise.php">Add Exercise</a></li>
+                  </ul>
+                </li>
+
+                <li class="sidenav-item has-subnav">
+                  <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-cutlery"></span>
                     <span class="sidenav-label">Meal Options</span>
                   </a>

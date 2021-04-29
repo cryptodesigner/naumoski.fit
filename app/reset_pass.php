@@ -1,4 +1,56 @@
+<?php
+  include("config.php");
+  require 'db.php';
+  if(isset($_POST['email'])) {
+    $email = $_POST['email'];
 
+    $sql = "SELECT * FROM clients WHERE email = '$email'";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    // $active = $row['active'];
+  
+    $count = mysqli_num_rows($result);
+
+    if($count == 1) {
+      $to = $email;
+      $password = generateRandomString();
+      $from = "beyourowncode@gmail.com";
+      $subject = "Reset Password";
+      $message = $password;
+      $headers = 'From: beyourowncode@gmail.com' . "\r\n" .
+    'Reply-To: beyourowncode@gmail.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+      mail($to, $subject, $message, $headers);
+
+      // $sql2 = mysqli_query($connection, "UPDATE clients SET password = '$password' WHERE email = '$email'");
+
+
+      // mail($email, "Reset Password", $letters);
+
+      // $encPassword = md5($letters);
+      // $sql = 'UPDATE clients SET password=:encPassword WHERE email=:email';
+      // $statement = $connection->prepare($sql);
+      // $statement->execute([':password' => $encPassword, ':email' => $email]);
+    }
+    else {
+      "No client";
+    }
+  }
+
+
+  function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+  }
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,9 +92,9 @@
           <form data-toggle="md-validator" action="" method="POST">
             <div class="md-form-group md-label-floating">
               <input class="md-form-control" type="email" name="email" id="email" spellcheck="false" autocomplete="off" data-msg-required="Please enter your email address." placeholder="Email" required>
-              <label class="md-control-label"></label>
               <span class="md-help-block">We'll send you an email to reset your password.</span>
             </div>
+            <br>
             <button class="btn btn-primary btn-block" type="submit">Send password reset email</button>
           </form>
         </div>

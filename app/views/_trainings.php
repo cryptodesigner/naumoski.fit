@@ -31,11 +31,11 @@
 									<!-- <th>Seq.</th>
 									<th>Client</th> -->
 									<th>Name</th>
-									<th>Muscle Group</th>
-									<th>Serii / Povtoruvanja</th>
-									<th>Vezba Link</th>
+									<th>Vezba</th>
+									<th>Serii / Povt</th>
 									<th>Technique</th>
-									<th>Description</th>
+									<th>Vreme</th>
+									<th>Date</th>
 									<th>Action</th>
 				  			</tr>
 							</thead>
@@ -45,11 +45,11 @@
 					  			<!-- <td>{{training['training_id']}}</td>
 					  			<td>{{training['clients_client_id']}}</td> -->
 					  			<td><?= $training->name; ?></td>
-					  			<td><?= $training->muskulna_grupa; ?></td>
+					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $training->vezba; ?>)">See Exercise</button></td>
 					  			<td><?= $training->serii_povt; ?></td>
-					  			<td><?= $training->link_vezba; ?></td>
 					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $training->tech; ?>)">See Option</button></td>
-					  			<td><?= $training->description; ?></td>
+					  			<td><?= $training->vreme; ?></td>
+					  			<td><?= $training->date; ?></td>
 					  			<td>
 									<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?training_id=<?= $training->training_id ?>" class='btn btn-danger'>Delete</a>
 					  			</td>
@@ -78,6 +78,30 @@
 	        <div id="modalName">Name:</div>
 	        <div id="modalLink">Link:</div>
 	        <div id="modalDescription">Description:</div>
+
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- Modal Vezba-->
+	<div class="modal fade" id="exampleVezbaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Current Exercise Details</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        <div id="modalVezbaName">Name:</div>
+	        <div id="modalVezbaLink">Link:</div>
+	        <div id="modalVezbaMuscle">Muskulna Grupa:</div>
+	        <div id="modalVezbaDescription">Description:</div>
 
 	      </div>
 	      <div class="modal-footer">
@@ -123,4 +147,42 @@ var modalDescription = document.getElementById("modalDescription")
   				})
 
 	}
+</script>
+
+<script type="text/javascript">
+var modalVezbaName = document.getElementById("modalVezbaName")
+var modalVezbaLink = document.getElementById("modalVezbaLink")
+var modalVezbaMuscle = document.getElementById("modalVezbaMuscle")
+var modalVezbaDescription = document.getElementById("modalVezbaDescription")
+
+  function seeVezba(t){
+
+    console.log(t)
+
+    fetch("/chose_vezba.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: 'application/json'
+          },
+            body: JSON.stringify(t)
+          }).then((response) => {
+              // console.log(response)
+            return response.text()
+          })
+          .then((data) => {
+            // Work with JSON data here
+            // console.log(data[0])
+            var theItem = JSON.parse(data.slice(57, -1))
+            modalVezbaName.innerHTML = "Name: " + theItem.name
+            modalVezbaLink.innerHTML = "Link : " + theItem.link_vezba
+            modalVezbaMuscle.innerHTML = "Muskulna Grupa : " + theItem.muskulna_grupa
+            modalVezbaDescription.innerHTML = "Description : " + theItem.description
+
+          })
+          .catch((err) => {
+            // Do something for an error here
+          })
+
+  }
 </script>

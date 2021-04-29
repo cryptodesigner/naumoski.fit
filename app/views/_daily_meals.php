@@ -27,8 +27,8 @@
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
-									<!-- <th>Seq.</th>
-									<th>Client</th> -->
+									<!-- <th>Seq.</th>-->
+									<th>Client</th> 
 									<th>Name</th>
 									
 									<th>Vreme</th>
@@ -43,6 +43,7 @@
 							<tbody>
 				  			<?php foreach($meals as $meal): ?>
 				  			<tr>
+				  				<td><?= $meal->clients_client_id; ?></td>
 									<td><?= $meal->name; ?></td>
 									<td><?= $meal->vreme; ?></td>
 									<td><?php if($meal->option1 != 0): ?> 

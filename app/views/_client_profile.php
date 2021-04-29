@@ -346,12 +346,10 @@
                   <tr>
                     <!-- <th>Seq.</th> -->
                     <th>Name</th>
-                    <th>Muscle Group</th>
+                    <th>Vezba</th>
                     <th>Serii/Povtoruvanja</th>
-                    <th>Link Vezba</th>
                     <th>Tehnika</th>
                     <th>Vreme</th>
-                    <th>Description</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -359,12 +357,10 @@
                   <tr>
                     <!-- <td>{{row['training_id']}}</td> -->
                     <td><?= $tt->name; ?></td>
-                    <td><?= $tt->muskulna_grupa; ?></td>
+                    <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">See Exercise</button></td>
                     <td><?= $tt->serii_povt; ?></td>
-                    <td><?= $tt->link_vezba; ?></td>
                     <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
                     <td><?= $tt->vreme; ?></td>
-                    <td><?= $tt->description; ?></td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -382,12 +378,10 @@
                   <tr>
                     <!-- <th>Seq.</th> -->
                     <th>Name</th>
-                    <th>Muscle Group</th>
+                    <th>Vezba</th>
                     <th>Serii/Povtoruvanja</th>
-                    <th>Link Vezba</th>
                     <th>Tehnika</th>
                     <th>Vreme</th>
-                    <th>Description</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -395,12 +389,10 @@
                   <tr>
                     <!-- <td>{{row['training_id']}}</td> -->
                     <td><?= $tts->name; ?></td>
-                    <td><?= $tts->muskulna_grupa; ?></td>
+                    <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">See Exercise</button></td>
                     <td><?= $tts->serii_povt; ?></td>
-                    <td><?= $tts->link_vezba; ?></td>
                     <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
                     <td><?= $tts->vreme; ?></td>
-                    <td><?= $tts->description; ?></td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -418,12 +410,11 @@
                   <tr>
                     <!-- <th>Seq.</th> -->
                     <th>Name</th>
-                    <th>Muscle Group</th>
+                    <th>Vezba</th>
                     <th>Serii/Povtoruvanja</th>
-                    <th>Link Vezba</th>
                     <th>Tehnika</th>
                     <th>Vreme</th>
-                    <th>Description</th>
+                    <th>Date</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -431,12 +422,11 @@
                   <tr>
                     <!-- <td>{{row['training_id']}}</td> -->
                     <td><?= $at->name; ?></td>
-                    <td><?= $at->muskulna_grupa; ?></td>
+                    <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">See Exercise</button></td>
                     <td><?= $at->serii_povt; ?></td>
-                    <td><?= $at->link_vezba; ?></td>
                     <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
                     <td><?= $at->vreme; ?></td>
-                    <td><?= $at->description; ?></td>
+                    <td><?= $at->date; ?></td>
                   </tr>
                   <?php endforeach; ?>
                 </tbody>
@@ -659,6 +649,30 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Vezba-->
+  <div class="modal fade" id="exampleVezbaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Current Exercise Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="modalVezbaName">Name:</div>
+          <div id="modalVezbaLink">Link:</div>
+          <div id="modalVezbaMuscle">Muskulna Grupa:</div>
+          <div id="modalVezbaDescription">Description:</div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script type="text/javascript">
@@ -730,6 +744,44 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
             modalName.innerHTML = "Name: " + theItem.name
             modalLink.innerHTML = "Link : " + theItem.link
             modalTrainingDescription.innerHTML = "Description : " + theItem.description
+
+          })
+          .catch((err) => {
+            // Do something for an error here
+          })
+
+  }
+</script>
+
+<script type="text/javascript">
+var modalVezbaName = document.getElementById("modalVezbaName")
+var modalVezbaLink = document.getElementById("modalVezbaLink")
+var modalVezbaMuscle = document.getElementById("modalVezbaMuscle")
+var modalVezbaDescription = document.getElementById("modalVezbaDescription")
+
+  function seeVezba(t){
+
+    console.log(t)
+
+    fetch("/chose_vezba.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: 'application/json'
+          },
+            body: JSON.stringify(t)
+          }).then((response) => {
+              // console.log(response)
+            return response.text()
+          })
+          .then((data) => {
+            // Work with JSON data here
+            // console.log(data[0])
+            var theItem = JSON.parse(data.slice(57, -1))
+            modalVezbaName.innerHTML = "Name: " + theItem.name
+            modalVezbaLink.innerHTML = "Link : " + theItem.link_vezba
+            modalVezbaMuscle.innerHTML = "Muskulna Grupa : " + theItem.muskulna_grupa
+            modalVezbaDescription.innerHTML = "Description : " + theItem.description
 
           })
           .catch((err) => {

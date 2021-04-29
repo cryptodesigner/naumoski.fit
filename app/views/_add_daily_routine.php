@@ -14,6 +14,11 @@
   	$statement->execute();
   	$tehniki = $statement->fetchAll(PDO::FETCH_OBJ);
 
+  	$sql = "SELECT * FROM vezbi";
+ 	$statement = $connection->prepare($sql);
+  	$statement->execute();
+  	$exercises = $statement->fetchAll(PDO::FETCH_OBJ);
+
 ?>
 
 <section>
@@ -116,27 +121,24 @@
 									<input class="md-form-control trainingName" type="text" name="trainingName"  placeholder="Training">
 								</div>
 							</div>
-							<div class="col-sm-1">
+
+							<div class="col-sm-2">
 								<div class="md-form-group">
-									<select class="md-form-control trainingMuscle" name="trainingMuscle" data-msg="Muscle">
-										<option value="" disabled="disabled" selected="selected">Muscle</option>
-										<option value="Раце">Раце</option>
-										<option value="Нозе">Нозе</option>
-										<option value="Грб">Грб</option>
-										<option value="Гради">Гради</option>
+									<select class="md-form-control trainingVezba" name="trainingVezba" placeholder="Vezba">
+										<option value="" disabled="disabled" selected="selected">Vezba</option>
+										<?php foreach($exercises as $ex): ?>
+											<option value="<?= $ex->vezba_id; ?>"><?= $ex->name; ?></option>
+										<?php endforeach; ?>
 									</select>
 								</div>
 							</div>
-							<div class="col-sm-1">
+
+							<div class="col-sm-2">
 								<div class="md-form-group">
 									<input class="md-form-control trainingSerii" type="text" name="trainingSerii"  placeholder="Serii">
 								</div>
 							</div>
-							<div class="col-sm-1">
-								<div class="md-form-group">
-									<input class="md-form-control trainingVezbaLink" type="text" name="trainingVezbaLink"  placeholder="Link">
-								</div>
-							</div>
+							
 							<div class="col-sm-2">
 								<div class="md-form-group">
 									<select class="md-form-control trainingTech" name="trainingTech" placeholder="Technique">
@@ -147,16 +149,12 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-sm-1">
+							<div class="col-sm-2">
 								<div class="md-form-group">
 									<input class="md-form-control trainingVreme" type="text" name="trainingVreme"  placeholder="Vreme">
 								</div>
 							</div>
-							<div class="col-sm-2">
-								<div class="md-form-group">
-									<input class="md-form-control trainingDescription" type="text" name="trainingDescription"  placeholder="Description">
-								</div>
-							</div>
+							
 							<div class="col-sm-1">
 								<div class="md-form-group">
 									<button class="btn btn-primary" type="button" onclick="removeThis(this)" >Remove</button>
@@ -283,12 +281,13 @@
 
 		function createArrayOfAllTrainings(){
 			var trainingName = document.querySelectorAll(".trainingName");
-			var trainingMuscle = document.querySelectorAll(".trainingMuscle");
+			var trainingVezba = document.querySelectorAll(".trainingVezba");
+			// var trainingMuscle = document.querySelectorAll(".trainingMuscle");
 			var trainingSerii = document.querySelectorAll(".trainingSerii");
-			var trainingVezbaLink = document.querySelectorAll(".trainingVezbaLink");
+			// var trainingVezbaLink = document.querySelectorAll(".trainingVezbaLink");
 			var trainingTech = document.querySelectorAll(".trainingTech");
 			var trainingVreme = document.querySelectorAll(".trainingVreme");
-			var trainingDescription = document.querySelectorAll(".trainingDescription");
+			// var trainingDescription = document.querySelectorAll(".trainingDescription");
 			var mealsAndTrainingsDate = document.querySelectorAll(".mealsAndTrainingsDate");
 
 			var allDates=[]
@@ -304,13 +303,14 @@
 					var newTraining = {
 						clients_client_id  : client.value,
 						name : trainingName[i].value,
-						muskulna_grupa : trainingMuscle[i].value,
+						vezba : trainingVezba[i].value,
+						// muskulna_grupa : trainingMuscle[i].value,
 						serii_povt : trainingSerii[i].value,
-						link_vezba : trainingVezbaLink[i].value,
+						// link_vezba : trainingVezbaLink[i].value,
 						tech : trainingTech[i].value,
 						vreme : trainingVreme[i].value,
-						date : allDates[x],
-						description : trainingDescription[i].value
+						date : allDates[x]
+						// description : trainingDescription[i].value
 					}
 					allSelectedTrainings.push(newTraining)
 				}
