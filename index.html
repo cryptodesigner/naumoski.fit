@@ -25,7 +25,6 @@
     <link href="web/assets/css/line-awesome.min.css" rel="stylesheet">
     <link href="web/assets/css/style.css" rel="stylesheet">
 </head>
-
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
 
 <!-- Loader -->
@@ -39,7 +38,7 @@
     <!--Navigation-->
     <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
         <div class="container">
-            <a href="index.html" title="Logo" class="logo scroll">
+            <a href="index.html" title="Logo" class="logo">
                 <!--Logo Default-->
                 <img src="web/assets/images/logo.svg" alt="logo" class="ml-lg-3 m-0">
             </a>
@@ -47,11 +46,10 @@
             <!--Nav Links-->
             <div class="collapse navbar-collapse" id="megaone">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link scroll line" href="#slider-section">Home</a>
-                    <a class="nav-link scroll line" href="#about">About Me</a>
-                    <a class="nav-link scroll line" href="#portfolio">Before & After</a>
+                    <a class="nav-link line" href="index.html">Home</a>
+                    <a class="nav-link line" href="about.html">About Me</a>
+                    <a class="nav-link scroll line" href="#portfolio">Application</a>
                     <a class="nav-link scroll line" href="#pricing">Pricing Plans</a>
-                    <a class="nav-link scroll line" href="#blog">Blog</a>
                     <a href="https://app.naumoski.fit" class="btn btn-large btn-rounded btn-pink nav-button" data-animation-duration="500">Login</a>
                 </div>
             </div>
@@ -86,19 +84,16 @@
                 </a>
                 <ul class="navbar-nav text-capitalize">
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#slider-section">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#about">About Me</a>
+                        <a class="nav-link" href="about.html">About Me</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#portfolio">Before & After</a>
+                        <a class="nav-link scroll" href="#portfolio">Application</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll" href="#pricing">Pricing Plans</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll" href="#blog">Blog</a>
                     </li>
                     <li class="get-started-btn">
                         <a href="https://app.naumoski.fit" class="btn btn-medium btn-rounded btn-pink d-lg-none" data-animation-duration="500">Login</a>
@@ -441,7 +436,7 @@
     </ul>
 </div>
 <!--scroll down-->
-<a href="#about" class="scroll-down link scroll main-font font-15 animate">Scroll Down <i class="fas fa-long-arrow-alt-down"></i></a>
+<a href="#about" class="scroll-down link scroll main-font font-15 animate"><i class="fas fa-long-arrow-alt-down"></i></a>
 <!-- END MAIN SLIDER -->
 
 <!-- START ABOUT US -->
@@ -499,82 +494,31 @@
 <!-- END ABOUT US -->
 
 <!-- START TEAM STATS -->
-<section class="half-section p-0 stats-bg">
-    <h2 class="d-none">heading</h2>
+<div id="our-blog" class="half-section">
     <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-12 p-0 order-1 order-md-2">
-                <div class="owl-carousel owl-theme owl-split">
-                    <!-- Team-1 -->
-                    <div class="item">
-                        <div class="hover-effect">
-                            <img alt="blog" src="web/assets/images/boban.jpg" class="team-img">
-                        </div>
+        <div class="row align-items-center blog-bg">
+            <div class="col-lg-6 col-md-12 nopadding">
+                <div class="skill-box">
+                    <div class="main-title mb-5 text-center text-lg-left main-title wow fadeIn" data-wow-delay="300ms">
+                        <p class="font-weight-200 text-pink font-20">Biography</p>
+                        <h2 class="margin-top main-font font-40 font-weight-normal text-white">About Myself</h2>
                     </div>
-                    <!-- Team-2 -->
-                    <div class="item">
-                        <div class="hover-effect">
-                            <img alt="blog" src="web/assets/images/boban.jpg" class="team-img">
-                        </div>
+                    <div class="text-left text-white font-18">
+                        <p>I am professional bodybulder, started competing since 2007. I am 4 times national champion of North Macedonia in Bodybuilding category. (2007/2008/2009/2010).</p>
+                        <p>I am the first Macedonian junior-bodybuilder who represented Macedonia at IFBB World juniors and Masters championship in Poland, 2009.</p>
                     </div>
-                    <!-- Team-3 -->
-                    <div class="item">
-                        <div class="hover-effect">
-                            <img alt="blog" src="web/assets/images/boban.jpg" class="team-img">
-                        </div>
-                    </div>
+                    <div class="pt-5">
+                    <a href="web/assets/standalone.html" class="btn btn-medium btn-rounded btn-pink">More</a>
+                </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="skill-box">
-                    <div class="main-title mb-5 text-center text-lg-left main-title wow fadeIn" data-wow-delay="300ms">
-                        <p class="font-weight-200 text-pink font-20">My Skills</p>
-                        <h2 class="margin-top main-font font-40 font-weight-normal text-white">I can help anyone to improve their fitness level no matter what their physical condition may be.</h2>
-                    </div>
-                    <ul class="text-left">
-                        <!-- First Bar -->
-                        <li class="custom-progress text-white">
-                            <h6 class="font-16 mb-0 text-capitalize">Fat Loss <span class="float-right"><b class="numscroller">99</b>%</span></h6>
-
-                            <div class="progress">
-                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Second Bar -->
-                        <li class="custom-progress text-white">
-                            <h6 class="font-16 mb-0 text-capitalize">Muscle Gain<span class="float-right"><b class="numscroller">99</b>%</span></h6>
-
-                            <div class="progress">
-                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Third Bar -->
-                        <li class="custom-progress text-white">
-                            <h6 class="font-16 mb-0 text-capitalize">Nutritional Coaching <span class="float-right"><b class="numscroller">99</b>%</span></h6>
-
-                            <div class="progress">
-                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Fourth Bar -->
-                        <li class="custom-progress mb-0 text-white">
-                            <h6 class="font-16 mb-0">Pro Competition training<span class="float-right"><b class="numscroller">99</b>%</span></h6>
-
-                            <div class="progress">
-                                <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-md-6 col-sm-12 p-0">
+                <div class="image hover-effect"><img src="web/assets/images/boban.jpg" alt="our blog" class="equalheight"></div>
             </div>
         </div>
     </div>
-</section>
+</div>
 <!-- END TEAM STATS -->
 
 <!-- START PORTFOLIO -->
@@ -583,9 +527,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="title text-center pb-5 wow fadeInUp" data-wow-delay="100ms">
-                    <p class="text-pink font-weight-200 font-20">Gallery</p>
-                    <h1 class="main-font font-weight-600 text-white">Creative Diets & Trainings</h1>
-                    <p class="margin-top font-16 alt-font font-weight-normal text-grey">Check some of our clients, and their results</p>
+                    <p class="text-pink font-weight-200 font-20">Screenshots</p>
+                    <h1 class="main-font font-weight-600 text-white">Our application</h1>
+                    <p class="margin-top font-16 alt-font font-weight-normal text-grey">This is what you get when you sign up with us</p>
                 </div>
                 <div class="pointer nav nav-pills mb-4 mb-md-4 d-flex justify-content-center filtering">
                     <span data-filter="*" class="nav-link active">All</span>
@@ -681,7 +625,7 @@
                     </li>
                 </ul>
                 <div class="text-center pt-5">
-                    <a href="web/assets/standalone.html" class="btn btn-medium btn-rounded btn-pink">Portfolio</a>
+                    <a href="about.html" class="btn btn-medium btn-rounded btn-pink">Login</a>
                 </div>
             </div>
         </div>
@@ -786,53 +730,60 @@
             <!-- Plan-1 -->
             <div class="col-lg-4 col-md-12 col-sm-12 price-pink wow fadeInLeft" data-wow-delay="300ms">
                 <div class="pricing-item">
-                    <h3 class="pb-3 main-font font-24 text-white">Basic</h3>
-                    <div class="pricing-price d-flex"><sup class="price-dollar text-white">$</sup> <span class="pricing-currency text-white">29
+                    <h3 class="pb-3 main-font font-24 text-white">Diet plan</h3>
+                    <div class="pricing-price d-flex"><sup class="price-dollar text-white">$</sup> <span class="pricing-currency text-white">39
                             <span class="d-block alt-font font-weight-200 font-10 text-center text-green">Month</span></span>
-                        <p class="pricing-para text-grey ml-3">It has survived not only five centuries, but also the leap into electronic</p>
+                        <p class="pricing-para text-grey ml-3">Tell me your wish and I will make it happen</p>
                     </div>
                     <ul class="pricing-list mb-0">
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit amet.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit amet.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum.</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Personalized diet plan</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Detailed food recipes</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Calculated macros</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Track your progress</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Psychological support</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Live chat with Boban Naumoski</li>
                     </ul>
                     <a href="javascript:void(0)" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
                 </div>
             </div>
             <!-- Plan-2 -->
             <div class="col-lg-4 col-md-12 col-sm-12 price-pink wow fadeInUp" data-wow-delay="500ms">
-                <div class="pricing-item active selected">
-                    <h3 class="pb-3 main-font font-24 text-white">Popular</h3>
-                    <div class="pricing-price d-flex"><sup class="price-dollar text-white">$</sup> <span class="pricing-currency text-white">69
+                <div class="pricing-item">
+                    <h3 class="pb-3 main-font font-24 text-white">Training plan</h3>
+                    <div class="pricing-price d-flex"><sup class="price-dollar text-white">$</sup> <span class="pricing-currency text-white">39
                             <span class="d-block alt-font font-weight-200 font-10 text-center">Month</span></span>
-                        <p class="pricing-para text-grey ml-3">It has survived not only five centuries, but also the leap into electronic</p>
+                        <p class="pricing-para text-grey ml-3">Do you know how to lift weights? Let's see!</p>
                     </div>
                     <ul class="pricing-list mb-0">
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit amet.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit amet.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum.</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Personalized training plan</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Gym or Home based</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Video techniques description</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Track your progress</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Psychological support</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Live chat with Boban Naumoski</li>
                     </ul>
                     <a href="javascript:void(0)" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
                 </div>
             </div>
             <!-- Plan-3 -->
             <div class="col-lg-4 col-md-12 col-sm-12 price-pink wow fadeInRight" data-wow-delay="300ms">
-                <div class="pricing-item">
-                    <h3 class="pb-3 main-font font-24 text-white">Advance</h3>
-                    <div class="pricing-price d-flex"><sup class="price-dollar text-white">$</sup> <span class="pricing-currency text-white">99
+                <div class="pricing-item active selected">
+                    <h3 class="pb-3 main-font font-24 text-white">Combo Fit</h3>
+                    <div class="pricing-price d-flex"><sup class="price-dollar text-white">$</sup> <span class="pricing-currency text-white">59
                             <span class="d-block alt-font font-weight-200 font-10 text-center">Month</span></span>
-                        <p class="pricing-para text-grey ml-3">It has survived not only five centuries, but also the leap into electronic</p>
+                        <p class="pricing-para text-grey ml-3">Everything you need to make your dream body come true</p>
                     </div>
                     <ul class="pricing-list mb-0">
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit amet.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum dolor sit amet.</li>
-                        <li><i class="fa fa-check" aria-hidden="true"></i> Lorem ipsum.</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Personalized diet plan</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Detailed food recipes</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Calculated macros</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Personalized training plan</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Gym or Home based</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Video techniques description</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Daily planer</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Track your progress</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Psychological support</li>
+                        <li><i class="fa fa-check" aria-hidden="true"></i> Live chat with Boban Naumoski</li>
                     </ul>
                     <a href="javascript:void(0)" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
                 </div>
@@ -842,48 +793,26 @@
 </section>
 <!-- END PRICE -->
 
-<!-- START BLOG -->
-<section class="half-section p-0 blog blog-bg" id="blog">
-    <h2 class="d-none">heading</h2>
+<!-- START TEAM STATS -->
+<div id="our-blog" class="half-section">
     <div class="container-fluid">
         <div class="row align-items-center blog-bg">
-            <div class="col-lg-6 col-md-12 p-0 order-1 order-md-2">
-                <div class="owl-carousel owl-theme owl-split">
-                    <!-- Team-1 -->
-                    <div class="item">
-                        <div class="hover-effect">
-                            <img alt="blog" src="web/assets/images/boban.jpg" class="team-img">
-                        </div>
-                    </div>
-                    <!-- Team-2 -->
-                    <div class="item">
-                        <div class="hover-effect">
-                            <img alt="blog" src="web/assets/images/boban.jpg" class="team-img">
-                        </div>
-                    </div>
-                    <!-- Team-3 -->
-                    <div class="item">
-                        <div class="hover-effect">
-                            <img alt="blog" src="web/assets/images/boban.jpg" class="team-img">
-                        </div>
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="skill-box">
+                    <div class="main-title mb-5 text-center text-lg-left main-title wow fadeIn" data-wow-delay="300ms">
+                        <p class="font-weight-200 text-pink font-20">My Skills</p>
+                        <h2 class="margin-top main-font font-40 font-weight-normal text-white">I can help anyone to improve their fitness level no matter what their physical condition may be.</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
-                <div class="align-items-center pc-0 px-md-5 skill-box">
-                    <div class="main-title mb-5 text-center text-lg-left wow fadeIn" data-wow-delay="300ms">
-                        <p class="text-pink font-weight-200 font-20">News & Info</p>
-                        <h1 class="main-font font-weight-600 text-white margin-top">Your Guide</h1>
-                        <p class="font-15 alt-font font-weight-normal text-grey margin-top">We tend to inform you about all news and important information about health and fitness</p>
-                        <a href="web/assets/blog.html" class="mt-3 btn btn-medium btn-rounded btn-pink">Read our Blog</a>
-                    </div>
-                </div>
+            <div class="col-md-6 col-sm-12 p-0">
+                <div class="image hover-effect"><img src="web/assets/images/boban2.jpg" alt="our blog" class="equalheight"></div>
             </div>
         </div>
     </div>
-</section>
-<!-- END BLOG -->
+</div>
+<!-- END TEAM STATS -->
 
 <!-- START CONTACT-FORM -->
 <section id="contact" class="contact-sec">
@@ -972,8 +901,8 @@
     </div>
 </section>
 <!-- END CONTACT-FORM -->
-
-<!-- START GOOGLE MAP -->
+<!--
+<!- - START GOOGLE MAP - ->
 <section class="p-0">
     <div class="row">
         <div class="col-12">
@@ -983,8 +912,8 @@
         </div>
     </div>
 </section>
-<!-- END GOOGLE-MAP -->
-
+<!- - END GOOGLE-MAP - ->
+-->
 <!-- START FOOTER -->
 <footer class="footer">
     <div class="container">
