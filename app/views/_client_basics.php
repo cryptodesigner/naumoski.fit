@@ -39,7 +39,8 @@
 									<th>Odbivnost</th>
 									<th>Zaboluvanja</th>
 									<th>Iskustvo</th>
-									<th>Action</th>
+									<th>Action Del</th>
+									<th>Action Upd</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -56,7 +57,10 @@
 									<td><?= $b->zaboluvanja; ?></td>
 									<td><?= $b->iskustvo; ?></td>
 									<td>
-					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="client_delete.php?basic_id=<?= $b->basic_id ?>" class='btn btn-danger'>Delete</a>
+					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-danger'>Delete</a>
+									</td>
+									<td>
+					  				<a href="edit_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-default'>Edit</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>

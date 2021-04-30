@@ -28,8 +28,8 @@
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
-									<!-- <th>Seq.</th>
-									<th>Client</th> -->
+									<!-- <th>Seq.</th>-->
+									<th>Client</th> 
 									<th>Name</th>
 									<th>Vezba</th>
 									<th>Serii / Povt</th>
@@ -42,8 +42,8 @@
 							<tbody>
 				  			<?php foreach($trainings as $training): ?>
 								<tr>
-					  			<!-- <td>{{training['training_id']}}</td>
-					  			<td>{{training['clients_client_id']}}</td> -->
+					  			<!-- <td>{{training['training_id']}}</td>-->
+					  			<td><?= $training->clients_client_id; ?></td> 
 					  			<td><?= $training->name; ?></td>
 					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $training->vezba; ?>)">See Exercise</button></td>
 					  			<td><?= $training->serii_povt; ?></td>
@@ -51,7 +51,7 @@
 					  			<td><?= $training->vreme; ?></td>
 					  			<td><?= $training->date; ?></td>
 					  			<td>
-									<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?training_id=<?= $training->training_id ?>" class='btn btn-danger'>Delete</a>
+									<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_training.php?training_id=<?= $training->training_id ?>" class='btn btn-danger'>Delete</a>
 					  			</td>
 								</tr>
 				  			<?php endforeach; ?>

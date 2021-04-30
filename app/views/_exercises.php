@@ -33,7 +33,8 @@
 										<th>Link na Vezba</th>
 										<th>Muskulna Grupa</th>
 										<th>Description</th>
-										<th>Action</th>
+										<th>Action Del</th>
+										<th>Action Upd</th>
 				  				</tr>
 								</thead>
 								<tbody>
@@ -45,7 +46,10 @@
 					  				<td><?= $ex->muskulna_grupa; ?></td>
 					  				<td><?= $ex->description; ?></td>
 					  				<td>
-										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-danger'>Delete</a>
+											<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_exercise.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-danger'>Delete</a>
+					  				</td>
+					  				<td>
+											<a href="edit_exercise.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-default'>Edit</a>
 					  				</td>
 									</tr>
 				  				<?php endforeach; ?>

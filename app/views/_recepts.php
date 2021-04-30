@@ -32,7 +32,8 @@
 									<th>Name</th>
 									<th>Description</th>
 									<th>Link</th>
-									<th>Action</th>
+									<th>Action Del</th>
+									<th>Action Upd</th>
 				  			</tr>
 							</thead>
 							<tbody>
@@ -43,7 +44,10 @@
 									<td><?= $recept->description; ?></td>
 									<td><?= $recept->link; ?></td>
 									<td>
-					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?recept_id=<?= $recept->recept_id ?>" class='btn btn-danger'>Delete</a>
+					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_recept.php?recept_id=<?= $recept->recept_id ?>" class='btn btn-danger'>Delete</a>
+									</td>
+									<td>
+					  				<a href="edit_recept.php?recept_id=<?= $recept->recept_id ?>" class='btn btn-default'>Edit</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>

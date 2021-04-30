@@ -1,5 +1,6 @@
 <?php
-  $sql = 'SELECT * FROM clients';
+  $current_manager = $_SESSION['manager_id'];
+  $sql = "SELECT * FROM clients WHERE managers_manager_id = '$current_manager.';";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $clients = $statement->fetchAll(PDO::FETCH_OBJ);

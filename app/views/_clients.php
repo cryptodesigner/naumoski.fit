@@ -1,5 +1,6 @@
-<?php 	
- 	$sql = "SELECT * FROM clients";
+<?php
+	$current_manager = $_SESSION['manager_id']; 	
+ 	$sql = "SELECT * FROM clients WHERE managers_manager_id = '$current_manager.';";
  	$statement = $connection->prepare($sql);
   	$statement->execute();
   	$people = $statement->fetchAll(PDO::FETCH_OBJ);
@@ -29,7 +30,8 @@
 										<th>Seq.</th>
 										<th>Name / Surname</th>
 										<th>Email</th>
-										<th>Action</th>
+										<th>Action Del</th>
+										<th>Action Upd</th>
 										<th>Profile</th>
 				  				</tr>
 								</thead>
@@ -40,7 +42,10 @@
 										<td><?= $person->name; ?> <?= $person->surname; ?></td>
 										<td><?= $person->email; ?></td>
 										<td>
-					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Delete</a>
+					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_client.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Delete</a>
+										</td>
+										<td>
+					  						<a href="edit_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Edit</a>
 										</td>
 										<td>
 					  						<a href="profile_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Profile</a>

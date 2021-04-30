@@ -39,7 +39,8 @@
 									<th>Raka</th>
 									<th>But</th>
 									<th>Date</th>
-									<th>Action</th>
+									<th>Action Del</th>
+									<th>Action Upd</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -56,7 +57,10 @@
 									<td><?= $m->but; ?></td>
 									<td><?= $m->cur_date; ?></td>
 									<td>
-					  				<a href="/delete_measurement/{{measurement['measurement_id']}}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete the measurement?')">Delete</a>
+					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_measurement.php?measurement_id=<?= $m->measurement_id ?>" class='btn btn-danger'>Delete</a>
+									</td>
+									<td>
+					  				<a href="edit_measurement.php?measurement_id=<?= $m->measurement_id ?>" class='btn btn-default'>Edit</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>

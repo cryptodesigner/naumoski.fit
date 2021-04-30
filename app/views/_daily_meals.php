@@ -66,7 +66,7 @@
                  		  </td>
 									<td><?= $meal->date ?></td>
 									<td>
-										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?meal_id=<?= $meal->meal_id ?>" class='btn btn-danger'>Delete</a>
+										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_meal.php?meal_id=<?= $meal->meal_id ?>" class='btn btn-danger'>Delete</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>
@@ -89,11 +89,20 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <div id="modalSostojki">Sostojki:</div>
-	        <div id="modalProteins">Proteini:</div>
-	        <div id="modalCarbohydrates">Jaglenohidrati:</div>
-	        <div id="modalFats">Masti:</div>
-	        <div id="modalDescription">Description:</div>
+	      	<hr>
+	      	<h4 style="text-align: center;">Opcija - Sostojki</h4>
+	        <div id="modalSostojki" style="text-align: center;">Sostojki:</div>
+	        <hr>
+	        <hr>
+	        <h4 style="text-align: center;">Macro Nutrienti</h4>
+	        <div id="modalProteins" style="text-align: center;">Proteini:</div>
+	        <div id="modalCarbohydrates" style="text-align: center;">Jaglenohidrati:</div>
+	        <div id="modalFats" style="text-align: center;">Masti:</div>
+	        <hr>
+	        <hr>
+	        <h4 style="text-align: center;">Objasnuvanje</h4>
+	        <div id="modalDescription" style="text-align: center;">Description:</div>
+	        <hr>
 
 	      </div>
 	      <div class="modal-footer">
@@ -133,11 +142,11 @@ modalSostojki.innerHTML = "proba"
   				.then((data) => {
   				  // Work with JSON data here  
   				  var theItem = JSON.parse(data.slice(57,-1))
-  				  modalSostojki.innerHTML = "Sostoji: " + theItem.sostojki
+  				  modalSostojki.innerHTML = "" + theItem.sostojki
   				  modalProteins.innerHTML = "Proteini : " + theItem.proteins
   				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + theItem.carbohydrates
   				  modalFats.innerHTML = "Masti : " + theItem.fats
-  				  modalDescription.innerHTML = "Description : " + theItem.description
+  				  modalDescription.innerHTML = "" + theItem.description
 
   				})
   				.catch((err) => {

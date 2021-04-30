@@ -35,7 +35,8 @@
 										<th>Carbohydrates</th>
 										<th>Fats</th>
 										<th>Description</th>
-										<th>Action</th>
+										<th>Action Del</th>
+										<th>Action Upd</th>
 				  				</tr>
 								</thead>
 								<tbody>
@@ -49,7 +50,10 @@
 					  				<td><?= $meal->fats; ?></td>
 					  				<td><?= $meal->description; ?></td>
 					  				<td>
-										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?option_id=<?= $meal->option_id ?>" class='btn btn-danger'>Delete</a>
+										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_option.php?option_id=<?= $meal->option_id ?>" class='btn btn-danger'>Delete</a>
+					  				</td>
+					  				<td>
+										<a href="edit_meal.php?option_id=<?= $meal->option_id ?>" class='btn btn-default'>Edit</a>
 					  				</td>
 									</tr>
 				  				<?php endforeach; ?>
