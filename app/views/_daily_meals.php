@@ -81,7 +81,7 @@
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
+	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
 	        <h5 class="modal-title" id="exampleModalLabel">Current Option Details</h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -89,24 +89,20 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	      	<hr>
-	      	<h4 style="text-align: center;">Opcija - Sostojki</h4>
+	      	<h4 class="text-primary text-center">Opcija - Sostojki</h4>
 	        <div id="modalSostojki" style="text-align: center;">Sostojki:</div>
 	        <hr>
-	        <hr>
-	        <h4 style="text-align: center;">Macro Nutrienti</h4>
+	        <h4 class="text-primary text-center">Macro Nutrienti</h4>
 	        <div id="modalProteins" style="text-align: center;">Proteini:</div>
 	        <div id="modalCarbohydrates" style="text-align: center;">Jaglenohidrati:</div>
 	        <div id="modalFats" style="text-align: center;">Masti:</div>
 	        <hr>
-	        <hr>
-	        <h4 style="text-align: center;">Objasnuvanje</h4>
+	        <h4 class="text-primary text-center">Objasnuvanje</h4>
 	        <div id="modalDescription" style="text-align: center;">Description:</div>
-	        <hr>
 
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 	      </div>
 	    </div>
 	  </div>

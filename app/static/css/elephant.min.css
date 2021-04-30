@@ -552,7 +552,7 @@ a.bg-info:focus,a.bg-info:hover {
 }
 
 .bg-warning {
-    background-color: #ffb070
+    background-color: #98721a
 }
 
 a.bg-warning:focus,a.bg-warning:hover {
@@ -5208,7 +5208,7 @@ button.close {
 
 .modal-content {
     position: relative;
-    background-color: #fff;
+    background-color: #111111;
     border: 1px solid #eee;
     border: 1px solid #eee;
     border-radius: 0;
@@ -5216,7 +5216,7 @@ button.close {
     box-shadow: 0 3px 9px rgba(0,0,0,.5);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
-    outline: 0
+    outline: 0;
 }
 
 .modal-backdrop {

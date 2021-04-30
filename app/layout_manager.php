@@ -54,7 +54,7 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="arrow-up"></span>
             <span class="ellipsis ellipsis-vertical">
-              <img class="ellipsis-object" width="32" height="32" src="../static/img/0180441436.jpg" alt="Teddy Wilson">
+              <img class="ellipsis-object" width="32" height="32" src="../static/img/user.jpg" alt="">
             </span>
           </button>
         </div>

@@ -91,7 +91,7 @@
     <div class="login">
       <div class="login-body">
         <a class="login-brand" href="index.html">
-          <img class="img-responsive" src="../static/img/logo.svg" alt="Elephant">
+          <img class="img-responsive" src="../static/img/logo-inverse.svg" alt="Naumoski">
         </a>
         <h3 class="login-heading">Sign in</h3>
         <div class="login-form">
