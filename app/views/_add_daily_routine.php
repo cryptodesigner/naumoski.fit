@@ -172,8 +172,8 @@
 			<div class="col-xs-12" id="firstDate">
 				<div class="md-form-group">
 					<div class="md-form-group md-label-floating">
-						<input class="md-form-control mealsAndTrainingsDate" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
-						<button class="btn btn-primary" type="button" onClick="removeCurrDate(this)">Remove Date</button>
+						<input class="md-form-control mealsAndTrainingsDate" style="width: 38%;" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
+						<button class="btn btn-primary m-t" type="button" onClick="removeCurrDate(this)">Remove Date</button>
 					</div>
 				</div>
 			</div>
