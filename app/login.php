@@ -90,8 +90,8 @@
   <body>
     <div class="login">
       <div class="login-body">
-        <a class="login-brand" href="index.html">
-          <img class="img-responsive" src="../static/img/logo-inverse.svg" alt="Naumoski">
+        <a class="login-brand" href="#">
+          <img class="img-responsive" src="../static/img/logo.svg" alt="Naumoski">
         </a>
         <h3 class="login-heading">Sign in</h3>
         <div class="login-form">
@@ -108,9 +108,8 @@
               <label class="custom-control custom-control-primary custom-checkbox">
                 <input class="custom-control-input" type="checkbox" checked="checked">
                 <span class="custom-control-indicator"></span>
-                <span class="custom-control-label">Keep me signed in</span>
+                <span class="custom-control-label">Keep me signed in? </span>
               </label>
-              <span aria-hidden="true"> · </span>
               <a href="reset_pass.php">Forgot password?</a>
             </div>
             <button class="btn btn-primary btn-block" type="submit" value="Submit">Sign in</button>
