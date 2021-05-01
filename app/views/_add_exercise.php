@@ -12,7 +12,6 @@
 					
 					<div class="md-form-group">
 							<input class="md-form-control" type="text" name="name" id="name" placeholder="Exercise Name">
-							<label class="md-control-label"></label>
 					</div>
 
 					<div class="md-form-group">
@@ -32,7 +31,6 @@
 					
 					<div class="md-form-group">
 							<input class="md-form-control" type="text" name="description" id="description" placeholder="Description">
-							<label class="md-control-label"></label>
 					</div>
 
 					<button class="btn btn-default btn-block" type="submit">Add Exercise</button>

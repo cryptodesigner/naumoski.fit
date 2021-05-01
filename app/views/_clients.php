@@ -24,11 +24,12 @@
 			  			<strong>Clients List</strong>
 						</div>
 						<div class="card-body">
-			  		 	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+			  		 	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 								<thead>
 				  				<tr>
 										<th>Seq.</th>
-										<th>Name / Surname</th>
+										<th>Name</th>
+										<th>Surname</th>
 										<th>Email</th>
 										<th>Action Del</th>
 										<th>Action Upd</th>
@@ -39,7 +40,8 @@
 				  				<?php foreach($people as $person): ?>
 				  				<tr>
 										<td><?= $person->client_id; ?></td>
-										<td><?= $person->name; ?> <?= $person->surname; ?></td>
+										<td><?= $person->name; ?></td>
+										<td><?= $person->surname; ?></td>
 										<td><?= $person->email; ?></td>
 										<td>
 					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_client.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Delete</a>

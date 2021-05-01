@@ -318,7 +318,7 @@
 							<strong>Today</strong>
 
 							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    <thead>
 							      <tr>
 							        <!-- <th>Seq.</th> -->
@@ -350,7 +350,7 @@
 							<strong>Tomorrow</strong>
 
 							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    <thead>
 							      <tr>
 							        <!-- <th>Seq.</th> -->
@@ -382,7 +382,7 @@
 							<strong>All</strong>
 
 							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    <thead>
 							      <tr>
 							        <!-- <th>Seq.</th> -->
@@ -434,7 +434,7 @@
 							<strong>Today</strong>
 
 							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    <thead>
 							      <tr>
 							        <!-- <th>Seq.</th> -->
@@ -481,7 +481,7 @@
 							<strong>Tomorrow</strong>
 
 							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    <thead>
 							      <tr>
 							        <!-- <th>Seq.</th> -->
@@ -528,7 +528,7 @@
 							<strong>All</strong>
 
 							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable"cellspacing="0" width="100%">
+							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    <thead>
 							      <tr>
 							        <!-- <th>Seq.</th> -->
@@ -583,23 +583,28 @@
 	<!-- Modal Meal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
+	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Current Option Details</h5>
+	        <h5 class="modal-title" id="modalOpName"></h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <div id="modalSostojki">Sostojki:</div>
-	        <div id="modalProteins">Proteini:</div>
-	        <div id="modalCarbohydrates">Jaglenohidrati:</div>
-	        <div id="modalFats">Masti:</div>
-	        <div id="modalDescription">Description:</div>
-
+	        <h4 class="text-primary text-center">Опција - Состојки</h4>
+	        <div id="modalSostojki" style="text-align: center;">Sostojki:</div>
+	        <hr>
+	        <h4 class="text-primary text-center">Макро Нутриенти</h4>
+	        <div id="modalProteins" class="text-center">Proteini:</div>
+	        <div id="modalCarbohydrates" class="text-center">Jaglenohidrati:</div>
+	        <div id="modalFats" class="text-center">Masti:</div>
+	        <div class="text-center mark bg-primary" id="modalCalories">Kalorii:</div>
+	        <hr>
+	        <h4 class="text-primary text-center dt">Објаснување</h4>
+	        <div id="modalDescription" style="text-align: center;">Description:</div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
 	      </div>
 	    </div>
 	  </div>
@@ -608,21 +613,25 @@
 	<!-- Modal Training -->
 	<div class="modal fade" id="exampleTrainingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
+	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Current Technique Details</h5>
+	        <h5 class="modal-title" id="modalTechName"></h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <div id="modalName">Name:</div>
-	        <div id="modalLink">Link:</div>
-	        <div id="modalTrainingDescription">Description:</div>
-
+	      	<h4 class="text-primary text-center">Име на Техника</h4>
+	        <div id="modalName" style="text-align: center;">Name:</div>
+	        <hr>
+	        <h4 class="text-primary text-center">Линк за Техника</h4>
+	        <div id="modalLink" style="text-align: center;">Link:</div>
+	        <hr>
+	        <h4 class="text-primary text-center">Објаснување</h4>
+	        <div id="modalTrainingDescription" style="text-align: center;">Description:</div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
 	      </div>
 	    </div>
 	  </div>
@@ -631,22 +640,28 @@
 	<!-- Modal Vezba-->
 	<div class="modal fade" id="exampleVezbaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
+	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLabel">Current Exercise Details</h5>
+	        <h5 class="modal-title" id="modalVezbaName1"></h5>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <div id="modalVezbaName">Name:</div>
-	        <div id="modalVezbaLink">Link:</div>
-	        <div id="modalVezbaMuscle">Muskulna Grupa:</div>
-	        <div id="modalVezbaDescription">Description:</div>
-
+	      	<h4 class="text-primary text-center">Име на Вежба</h4>
+	        <div id="modalVezbaName" style="text-align: center;">Name:</div>
+	        <hr>
+	        <h4 class="text-primary text-center">Линк за Вежба</h4>
+	        <div id="modalVezbaLink" style="text-align: center;">Link:</div>
+	        <hr>
+	        <h4 class="text-primary text-center">Мускулна Група</h4>
+	        <div id="modalVezbaMuscle" style="text-align: center;">Muskulna Grupa:</div>
+	        <hr>
+	        <h4 class="text-primary text-center">Објаснување</h4>
+	        <div id="modalVezbaDescription" style="text-align: center;">Description:</div>
 	      </div>
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary" data-dismiss="modal">Затвори</button>
 	      </div>
 	    </div>
 	  </div>
@@ -654,10 +669,12 @@
 </section>
 
 <script type="text/javascript">
+var modalOpName = document.getElementById("modalOpName")
 var modalSostojki = document.getElementById("modalSostojki")
 var modalProteins = document.getElementById("modalProteins")
 var modalCarbohydrates = document.getElementById("modalCarbohydrates")
 var modalFats = document.getElementById("modalFats")
+var modalCalories = document.getElementById("modalCalories")
 var modalDescription = document.getElementById("modalDescription")
 
 modalSostojki.innerHTML = "proba"
@@ -681,11 +698,13 @@ console.log(modalSostojki)
   				.then((data) => {
   				  // Work with JSON data here  
   				  var theItem = JSON.parse(data.slice(57,-1))
-  				  modalSostojki.innerHTML = "Sostoji: " + theItem.sostojki
-  				  modalProteins.innerHTML = "Proteini : " + theItem.proteins
-  				  modalCarbohydrates.innerHTML = "Jaglenohidrati : " + theItem.carbohydrates
-  				  modalFats.innerHTML = "Masti : " + theItem.fats
-  				  modalDescription.innerHTML = "Description : " + theItem.description
+  				  modalOpName.innerHTML = "" + theItem.name
+  				  modalSostojki.innerHTML = "" + theItem.sostojki
+  				  modalProteins.innerHTML = "Протеини : " + theItem.proteins + "гр"
+  				  modalCarbohydrates.innerHTML = "Јагленохидрати : " + theItem.carbohydrates + "гр"
+  				  modalFats.innerHTML = "Масти : " + theItem.fats + "гр"
+  				  modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
+  				  modalDescription.innerHTML = "" + theItem.description
 
   				})
   				.catch((err) => {
@@ -696,6 +715,7 @@ console.log(modalSostojki)
 </script>
 
 <script type="text/javascript">
+var modalTechName = document.getElementById("modalTechName")
 var modalName = document.getElementById("modalName")
 var modalLink = document.getElementById("modalLink")
 var modalTrainingDescription = document.getElementById("modalTrainingDescription")
@@ -719,9 +739,10 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
   				  // Work with JSON data here
   				  // console.log(data[0])
   				  var theItem = JSON.parse(data.slice(57, -1))
-  				  modalName.innerHTML = "Name: " + theItem.name
-  				  modalLink.innerHTML = "Link : " + theItem.link
-  				  modalTrainingDescription.innerHTML = "Description : " + theItem.description
+  				  modalTechName.innerHTML = "" + theItem.name
+  				  modalName.innerHTML = "" + theItem.name
+  				  modalLink.innerHTML = "" + theItem.link
+  				  modalTrainingDescription.innerHTML = "" + theItem.description
 
   				})
   				.catch((err) => {
@@ -732,6 +753,7 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
 </script>
 
 <script type="text/javascript">
+var modalVezbaName1 = document.getElementById("modalVezbaName1")
 var modalVezbaName = document.getElementById("modalVezbaName")
 var modalVezbaLink = document.getElementById("modalVezbaLink")
 var modalVezbaMuscle = document.getElementById("modalVezbaMuscle")
@@ -756,10 +778,11 @@ var modalVezbaDescription = document.getElementById("modalVezbaDescription")
             // Work with JSON data here
             // console.log(data[0])
             var theItem = JSON.parse(data.slice(57, -1))
-            modalVezbaName.innerHTML = "Name: " + theItem.name
-            modalVezbaLink.innerHTML = "Link : " + theItem.link_vezba
-            modalVezbaMuscle.innerHTML = "Muskulna Grupa : " + theItem.muskulna_grupa
-            modalVezbaDescription.innerHTML = "Description : " + theItem.description
+            modalVezbaName1.innerHTML = "" + theItem.name
+            modalVezbaName.innerHTML = "" + theItem.name
+            modalVezbaLink.innerHTML = "" + theItem.link_vezba
+            modalVezbaMuscle.innerHTML = "" + theItem.muskulna_grupa
+            modalVezbaDescription.innerHTML = "" + theItem.description
 
           })
           .catch((err) => {

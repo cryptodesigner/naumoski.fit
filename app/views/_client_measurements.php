@@ -26,7 +26,7 @@
 		  			<strong>Clients Measurements List</strong>
 					</div>
 					<div class="card-body">
-			  		<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>Seq.</th>

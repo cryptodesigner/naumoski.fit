@@ -22,7 +22,7 @@
 							<input class="md-form-control" type="text" name="description" id="description" placeholder="Description">
 					</div>
 
-					<button class="btn btn-default btn-block" type="submit">Add Meal Option</button>
+					<button class="btn btn-default btn-block" type="submit">Add Technique</button>
 					</div>
 			</div>
 			</div>

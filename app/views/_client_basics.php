@@ -11,7 +11,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Measurements</span>
+			  <span class="d-ib">All Basics</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -23,10 +23,10 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 		  			</div>
-		  			<strong>Clients Measurements List</strong>
+		  			<strong>Clients Basics List</strong>
 					</div>
 					<div class="card-body">
-			  		<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>Seq.</th>

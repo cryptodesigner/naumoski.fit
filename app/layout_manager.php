@@ -35,7 +35,7 @@
     <div class="layout-header">
       <div class="navbar navbar-default">
         <div class="navbar-header">
-          <a class="navbar-brand navbar-brand-center" href="{{url_for('home')}}">
+          <a class="navbar-brand navbar-brand-center" href="manager_profile.php">
             <img class="navbar-brand-logo" src="../static/img/logo-inverse.svg" alt="Elephant">
           </a>
           <button class="navbar-toggler visible-xs-block collapsed" type="button" data-toggle="collapse" data-target="#sidenav">

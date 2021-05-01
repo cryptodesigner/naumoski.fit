@@ -53,8 +53,8 @@ h1 {
 }
 
 mark {
-    background: #ff0;
-    color: #000
+    background: #98721a;
+    color: #fff
 }
 
 small {
@@ -443,8 +443,9 @@ p {
 }
 
 .mark,mark {
-    background-color: #ffb070;
-    padding: .2em
+    background-color: #98721a;
+    padding: .2em;
+    colot: #fff;
 }
 
 .text-left {

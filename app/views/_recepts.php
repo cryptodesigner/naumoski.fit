@@ -25,10 +25,11 @@
 			  		<strong>Recepts List</strong>
 					</div>
 					<div class="card-body">
-			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
 									<th>Seq.</th>
+									<th>Manager</th>
 									<th>Name</th>
 									<th>Description</th>
 									<th>Link</th>
@@ -40,6 +41,7 @@
 				  			<?php foreach($recepts as $recept): ?>
 				  			<tr>
 									<td><?= $recept->recept_id; ?></td>
+									<td><?= $recept->managers_manager_id; ?></td>
 									<td><?= $recept->name; ?></td>
 									<td><?= $recept->description; ?></td>
 									<td><?= $recept->link; ?></td>
