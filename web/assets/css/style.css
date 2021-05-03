@@ -1584,15 +1584,15 @@ header a.logo img {
 .go-top {
     position: fixed;
     cursor: pointer;
-    bottom: 15px;
-    right: 15px;
+    bottom: 22px;
+    left: 22px;
     color: #ffffff;
     background-color: #A38800;
     border-radius: 50%;
     z-index: 4;
-    width: 40px;
+    width: 60px;
     text-align: center;
-    height: 42px;
+    height: 60px;
     line-height: 42px;
     opacity: 0;
     visibility: hidden;
