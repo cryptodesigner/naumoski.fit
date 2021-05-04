@@ -11799,7 +11799,9 @@ button.spinner.active.focus,button.spinner.active:focus,button.spinner.active:ho
 }
 
 .nav-tabs>li {
-    margin-bottom: 0
+    margin-bottom: 0;
+    width: 33.33%;
+    text-align: center;
 }
 
 .nav-tabs>li>a {
