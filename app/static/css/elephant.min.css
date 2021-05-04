@@ -3283,11 +3283,11 @@ tbody.collapse.in {
 }
 
 .nav-justified,.nav-tabs.nav-justified {
-    width: 100%;
+    width: 100%
 }
 
 .nav-justified>li,.nav-tabs.nav-justified>li {
-     width: 33.33%;
+    float: none
 }
 
 .nav-justified>li>a,.nav-tabs.nav-justified>li>a {
@@ -3312,7 +3312,7 @@ tbody.collapse.in {
 }
 
 .nav-tabs-justified,.nav-tabs.nav-justified {
-    border-bottom: 0;
+    border-bottom: 0
 }
 
 .nav-tabs-justified>li>a,.nav-tabs.nav-justified>li>a {
@@ -11795,7 +11795,7 @@ button.spinner.active.focus,button.spinner.active:focus,button.spinner.active:ho
 .nav-tabs {
     background-color: #98721a;
     border-bottom: none;
-    border-radius: 0;
+    border-radius: 0
 }
 
 .nav-tabs>li {
