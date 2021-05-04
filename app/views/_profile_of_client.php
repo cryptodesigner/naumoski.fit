@@ -307,7 +307,7 @@
         	<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
-					<ul class="nav nav-tabs nav-justified">
+					<ul class="nav nav-tabs">
 						<li class="active"><a href="#trainingtoday" data-toggle="tab">Today</a></li>
 						<li><a href="#trainingtomorrow" data-toggle="tab">Tomorrow</a></li>
 						<li><a href="#trainingweek" data-toggle="tab">Week</a></li>
@@ -444,7 +444,7 @@
        		<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
-					<ul class="nav nav-tabs nav-justified">
+					<ul class="nav nav-tabs">
 						<li class="active"><a href="#mealtoday" data-toggle="tab">Today</a></li>
 						<li><a href="#mealtomorrow" data-toggle="tab">Tomorrow</a></li>
 						<li><a href="#mealweek" data-toggle="tab">Week</a></li>
