@@ -69,7 +69,7 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalTechName"></h5>
+	        <!--<h5 class="modal-title" id="modalTechName"></h5>-->
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -97,7 +97,7 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalVezbaName1"></h5>
+	        <!--<h5 class="modal-title" id="modalVezbaName1"></h5>-->
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -126,7 +126,7 @@
 </section>
 
 <script type="text/javascript">
-var modalTechName = document.getElementById("modalTechName")
+// var modalTechName = document.getElementById("modalTechName")
 var modalName = document.getElementById("modalName")
 var modalLink = document.getElementById("modalLink")
 var modalDescription = document.getElementById("modalDescription")
@@ -150,7 +150,7 @@ var modalDescription = document.getElementById("modalDescription")
   				  // Work with JSON data here
   				  // console.log(data[0])
   				  var theItem = JSON.parse(data.slice(57, -1))
-  				  modalTechName.innerHTML = "" + theItem.name
+  				  //modalTechName.innerHTML = "" + theItem.name
   				  modalName.innerHTML = "" + theItem.name
   				  modalLink.innerHTML = "" + theItem.link
   				  modalDescription.innerHTML = "" + theItem.description
@@ -164,7 +164,7 @@ var modalDescription = document.getElementById("modalDescription")
 </script>
 
 <script type="text/javascript">
-var modalVezbaName1 = document.getElementById("modalVezbaName1")
+// var modalVezbaName1 = document.getElementById("modalVezbaName1")
 var modalVezbaName = document.getElementById("modalVezbaName")
 var modalVezbaLink = document.getElementById("modalVezbaLink")
 var modalVezbaMuscle = document.getElementById("modalVezbaMuscle")
@@ -189,7 +189,7 @@ var modalVezbaDescription = document.getElementById("modalVezbaDescription")
             // Work with JSON data here
             // console.log(data[0])
             var theItem = JSON.parse(data.slice(57, -1))
-            modalVezbaName1.innerHTML = "" + theItem.name
+            // modalVezbaName1.innerHTML = "" + theItem.name
             modalVezbaName.innerHTML = "" + theItem.name
             modalVezbaLink.innerHTML = "" + theItem.link_vezba
             modalVezbaMuscle.innerHTML = "" + theItem.muskulna_grupa

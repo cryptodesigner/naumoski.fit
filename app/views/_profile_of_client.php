@@ -585,22 +585,31 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalOpName"></h5>
+	        <h3 class="modal-title text-primary text-center" id="modalOpName"></h3>
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <h4 class="text-primary text-center">Опција - Состојки</h4>
+	        <h4 class="text-primary text-center">Состојки</h4>
 	        <div id="modalSostojki" style="text-align: center;">Sostojki:</div>
 	        <hr>
-	        <h4 class="text-primary text-center">Макро Нутриенти</h4>
-	        <div id="modalProteins" class="text-center">Proteini:</div>
-	        <div id="modalCarbohydrates" class="text-center">Jaglenohidrati:</div>
-	        <div id="modalFats" class="text-center">Masti:</div>
+	        <h4 class="text-primary text-center">Макронутриенти</h4>
+	        <div class="row">
+	        	<div class="col-md-4">
+	        		<div id="modalProteins" class="text-center">Proteini:</div>
+	        	</div>
+	        	<div class="col-md-4">
+	        		<div id="modalCarbohydrates" class="text-center">Jaglenohidrati:</div>
+	        	</div>
+	        	<div class="col-md-4">
+	        		<div id="modalFats" class="text-center">Masti:</div>
+	        	</div>
+	        </div>
+	        <br>
 	        <div class="text-center mark bg-primary" id="modalCalories">Kalorii:</div>
 	        <hr>
-	        <h4 class="text-primary text-center dt">Објаснување</h4>
+	        <h4 class="text-primary text-center dt">Начин на Подготовка</h4>
 	        <div id="modalDescription" style="text-align: center;">Description:</div>
 	      </div>
 	      <div class="modal-footer">
@@ -615,7 +624,7 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalTechName"></h5>
+	        <!--<h5 class="modal-title" id="modalTechName"></h5>-->
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -642,7 +651,7 @@
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content animated flipInY">
 	      <div class="modal-header">
-	        <h5 class="modal-title" id="modalVezbaName1"></h5>
+	        <!--<h5 class="modal-title" id="modalVezbaName1"></h5>-->
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	          <span aria-hidden="true">&times;</span>
 	        </button>
@@ -700,9 +709,9 @@ console.log(modalSostojki)
   				  var theItem = JSON.parse(data.slice(57,-1))
   				  modalOpName.innerHTML = "" + theItem.name
   				  modalSostojki.innerHTML = "" + theItem.sostojki
-  				  modalProteins.innerHTML = "Протеини : " + theItem.proteins + "гр"
-  				  modalCarbohydrates.innerHTML = "Јагленохидрати : " + theItem.carbohydrates + "гр"
-  				  modalFats.innerHTML = "Масти : " + theItem.fats + "гр"
+  				  modalProteins.innerHTML = "Протеини<br>" + theItem.proteins + "гр"
+  				  modalCarbohydrates.innerHTML = "Јагленохидрати<br>" + theItem.carbohydrates + "гр"
+  				  modalFats.innerHTML = "Масти<br>" + theItem.fats + "гр"
   				  modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
   				  modalDescription.innerHTML = "" + theItem.description
 
@@ -715,7 +724,7 @@ console.log(modalSostojki)
 </script>
 
 <script type="text/javascript">
-var modalTechName = document.getElementById("modalTechName")
+// var modalTechName = document.getElementById("modalTechName")
 var modalName = document.getElementById("modalName")
 var modalLink = document.getElementById("modalLink")
 var modalTrainingDescription = document.getElementById("modalTrainingDescription")
@@ -739,7 +748,7 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
   				  // Work with JSON data here
   				  // console.log(data[0])
   				  var theItem = JSON.parse(data.slice(57, -1))
-  				  modalTechName.innerHTML = "" + theItem.name
+  				  //modalTechName.innerHTML = "" + theItem.name
   				  modalName.innerHTML = "" + theItem.name
   				  modalLink.innerHTML = "" + theItem.link
   				  modalTrainingDescription.innerHTML = "" + theItem.description
@@ -753,7 +762,7 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
 </script>
 
 <script type="text/javascript">
-var modalVezbaName1 = document.getElementById("modalVezbaName1")
+// var modalVezbaName1 = document.getElementById("modalVezbaName1")
 var modalVezbaName = document.getElementById("modalVezbaName")
 var modalVezbaLink = document.getElementById("modalVezbaLink")
 var modalVezbaMuscle = document.getElementById("modalVezbaMuscle")
@@ -778,7 +787,7 @@ var modalVezbaDescription = document.getElementById("modalVezbaDescription")
             // Work with JSON data here
             // console.log(data[0])
             var theItem = JSON.parse(data.slice(57, -1))
-            modalVezbaName1.innerHTML = "" + theItem.name
+            // modalVezbaName1.innerHTML = "" + theItem.name
             modalVezbaName.innerHTML = "" + theItem.name
             modalVezbaLink.innerHTML = "" + theItem.link_vezba
             modalVezbaMuscle.innerHTML = "" + theItem.muskulna_grupa
