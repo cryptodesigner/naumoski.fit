@@ -301,7 +301,7 @@
 			</div>
 		     
 			<div id="Trainings" class="tab" style="display: none">
-				<div class="profile-container">
+				<div class="">
 					<?php foreach($clients as $c): ?>
         	  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Training List</h1>
         	<?php endforeach; ?>
