@@ -315,101 +315,122 @@
 					<div class="tab-content">
 
 						<div class="tab-pane fade active in" id="trainingtoday">
-							<strong>Today</strong>
-
-							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-							    <thead>
-							      <tr>
-							        <!-- <th>Seq.</th> -->
-							        <th>Name</th>
-							        <th>Vezba</th>
-							        <th>Serii/Povtoruvanja</th>
-							        <th>Tehnika</th>
-							        <th>Vreme</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							     	<?php foreach($today_trainings as $tt): ?>
-                  	<tr>
-                  	  <!-- <td>{{row['training_id']}}</td> -->
-                  	  <td><?= $tt->name; ?></td>
-                  	  <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">See Exercise</button></td>
-                  	  <td><?= $tt->serii_povt; ?></td>
-                  	  <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
-                    	<td><?= $tt->vreme; ?></td>
-                  	</tr>
-                  	<?php endforeach; ?>
-							    </tbody>
-							  </table>
+							<div class="card">
+								<div class="card-header">
+			  					<div class="card-actions">
+										<button type="button" class="card-action card-toggler" title="Collapse"></button>
+										<button type="button" class="card-action card-reload" title="Reload"></button>
+										<button type="button" class="card-action card-remove" title="Remove"></button>
+			  					</div>
+			  					<strong>Trainings List</strong>
+								</div>
+								<div class="card-body">
+							  	<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							    	<thead>
+							    	  <tr>
+							    	    <th>Seq.</th>
+							    	    <th>Name</th>
+							    	    <th>Vezba</th>
+							    	    <th>Serii/Povtoruvanja</th>
+							    	    <th>Tehnika</th>
+							    	    <th>Vreme</th>
+							    	  </tr>
+							    	</thead>
+							    	<tbody>
+							     		<?php foreach($today_trainings as $tt): ?>
+                  		<tr>
+                  	  	<td><?= $tt->training_id; ?></td>
+                  	  	<td><?= $tt->name; ?></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">See Exercise</button></td>
+                  	  	<td><?= $tt->serii_povt; ?></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
+                    		<td><?= $tt->vreme; ?></td>
+                  		</tr>
+                  		<?php endforeach; ?>
+							   	 	</tbody>
+							  	</table>
+								</div>
 							</div>
-
 						</div>
 
 						<div class="tab-pane fade" id="trainingtomorrow">
-							<strong>Tomorrow</strong>
-
-							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-							    <thead>
-							      <tr>
-							        <!-- <th>Seq.</th> -->
-							        <th>Name</th>
-							        <th>Vezba</th>
-							        <th>Serii/Povtoruvanja</th>
-							        <th>Tehnika</th>
-							        <th>Vreme</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <?php foreach($tomorrow_trainings as $tts): ?>
-							      <tr>
-							        <!-- <td>{{row['training_id']}}</td> -->
-							        <td><?= $tts->name; ?></td>
-                  	  <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">See Exercise</button></td>
-                  	  <td><?= $tts->serii_povt; ?></td>
-                  	  <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
-                    	<td><?= $tts->vreme; ?></td>
-							      </tr>
-							      <?php endforeach; ?>
-							    </tbody>
-							  </table>
+							<div class="card">
+								<div class="card-header">
+			  					<div class="card-actions">
+										<button type="button" class="card-action card-toggler" title="Collapse"></button>
+										<button type="button" class="card-action card-reload" title="Reload"></button>
+										<button type="button" class="card-action card-remove" title="Remove"></button>
+			  					</div>
+			  					<strong>Trainings List</strong>
+								</div>
+								<div class="card-body">
+							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							    	<thead>
+							    	  <tr>
+							    	    <th>Seq.</th>
+							    	    <th>Name</th>
+							    	    <th>Vezba</th>
+							    	    <th>Serii/Povtoruvanja</th>
+							    	    <th>Tehnika</th>
+							    	    <th>Vreme</th>
+							    	  </tr>
+							    	</thead>
+							    	<tbody>
+							      	<?php foreach($tomorrow_trainings as $tts): ?>
+							      	<tr>
+							       		<td><?= $tts->training_id; ?></td>
+							       		<td><?= $tts->name; ?></td>
+                  	 		<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">See Exercise</button></td>
+                  	  	<td><?= $tts->serii_povt; ?></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
+                    		<td><?= $tts->vreme; ?></td>
+							      	</tr>
+							      	<?php endforeach; ?>
+							    	</tbody>
+							  	</table>
+								</div>
 							</div>
-
 						</div>
 
 						<div class="tab-pane fade" id="trainingweek">
-							<strong>All</strong>
-
-							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-							    <thead>
-							      <tr>
-							        <!-- <th>Seq.</th> -->
-							        <th>Name</th>
-							        <th>Vezba</th>
-							        <th>Serii/Povtoruvanja</th>
-							        <th>Tehnika</th>
-							        <th>Vreme</th>
-							        <th>Date</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <?php foreach($all_trainings as $at): ?>
-                  	<tr>
-                  	  <!-- <td>{{row['training_id']}}</td> -->
-                  	  <td><?= $at->name; ?></td>
-                  	  <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">See Exercise</button></td>
-                  	  <td><?= $at->serii_povt; ?></td>
-                  	  <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
-                    	<td><?= $at->vreme; ?></td>
-                    	<td><?= $at->date; ?></td>
-                  	</tr>
-                  	<?php endforeach; ?>
-							    </tbody>
-							  </table>
+							<div class="card">
+								<div class="card-header">
+			  					<div class="card-actions">
+										<button type="button" class="card-action card-toggler" title="Collapse"></button>
+										<button type="button" class="card-action card-reload" title="Reload"></button>
+										<button type="button" class="card-action card-remove" title="Remove"></button>
+			  					</div>
+			  					<strong>Trainings List</strong>
+								</div>
+								<div class="card-body">
+							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							    	<thead>
+							    	  <tr>
+							    	    <th>Seq.</th>
+							    	    <th>Name</th>
+							    	    <th>Vezba</th>
+							    	    <th>Serii/Povtoruvanja</th>
+							    	    <th>Tehnika</th>
+							    	    <th>Vreme</th>
+							    	    <th>Date</th>
+							    	  </tr>
+							    	</thead>
+							    	<tbody>
+							      	<?php foreach($all_trainings as $at): ?>
+                  		<tr>
+                  	  	<td><?= $at->training_id; ?></td>
+                  	  	<td><?= $at->name; ?></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">See Exercise</button></td>
+                  	  	<td><?= $at->serii_povt; ?></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
+                    		<td><?= $at->vreme; ?></td>
+                    		<td><?= $at->date; ?></td>
+                  		</tr>
+                  		<?php endforeach; ?>
+							    	</tbody>
+							  	</table>
+								</div>
 							</div>
-
 						</div>
 
 					</div>
@@ -431,146 +452,167 @@
 					<div class="tab-content">
 
 						<div class="tab-pane fade active in" id="mealtoday">
-							<strong>Today</strong>
-
-							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-							    <thead>
-							      <tr>
-							        <!-- <th>Seq.</th> -->
-							        <th>Name</th>
-							        <th>Vreme</th>
-							        <th>Opcija 1</th>
-							        <th>Opcija 2</th>
-							        <th>Opcija 3</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <?php foreach($today_meals as $tm): ?>
-                 		<tr>
-                 		  <!-- <td>{{row['meal_id']}}</td> -->
-                 		  <td><?= $tm->name; ?></td>
-                 		  <td><?= $tm->vreme; ?></td>
-                 		  <td><?php if($tm->option1 != 0): ?> 
+							<div class="card">
+								<div class="card-header">
+			  					<div class="card-actions">
+										<button type="button" class="card-action card-toggler" title="Collapse"></button>
+										<button type="button" class="card-action card-reload" title="Reload"></button>
+										<button type="button" class="card-action card-remove" title="Remove"></button>
+			  					</div>
+			  					<strong>Diet List</strong>
+								</div>
+								<div class="card-body">
+							  	<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							    	<thead>
+							    	  <tr>
+							    	    <th>Seq.</th>
+							    	    <th>Name</th>
+							    	    <th>Vreme</th>
+							    	    <th>Opcija 1</th>
+							    	    <th>Opcija 2</th>
+							    	    <th>Opcija 3</th>
+							    	  </tr>
+							    	</thead>
+							    	<tbody>
+							      	<?php foreach($today_meals as $tm): ?>
+                 			<tr>
+                 			  <td><?= $tm->meal_id; ?></td>
+                 			  <td><?= $tm->name; ?></td>
+                 			  <td><?= $tm->vreme; ?></td>
+                 			  <td><?php if($tm->option1 != 0): ?> 
                  		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option1; ?>)">See Option</button>  
-                   		  <?php else: ?>
-                   		    <p>No Option</p>
-                   		  <?php endif; ?>    
-                   		</td>
-                   		<td><?php if($tm->option2 != 0): ?> 
+                   		  	<?php else: ?>
+                   		  	  <p>No Option</p>
+                   		  	<?php endif; ?>    
+                   			</td>
+                   			<td><?php if($tm->option2 != 0): ?> 
                    		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option2; ?>)">See Option</button>  
-                   		  <?php else: ?>
-                   		    <p>No Option</p>
-                   		  <?php endif; ?>    
-                   		</td>
-                   		<td><?php if($tm->option3 != 0): ?> 
-                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
-                 		    <?php else: ?>
-                 		      <p>No Option</p>
-                 		    <?php endif; ?>    
-                 		  </td>
-                 		</tr>
-                 		<?php endforeach; ?>
-							    </tbody>
-							  </table>
+                   		 		<?php else: ?>
+                   		 		  <p>No Option</p>
+                   		 		<?php endif; ?>    
+                   			</td>
+                   			<td><?php if($tm->option3 != 0): ?> 
+                   			  <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
+                 		    	<?php else: ?>
+                 		    	  <p>No Option</p>
+                 		    	<?php endif; ?>    
+                 		  	</td>
+                 			</tr>
+                 			<?php endforeach; ?>
+							    	</tbody>
+							  	</table>
+								</div>
 							</div>
-
 						</div>
 
 						<div class="tab-pane fade" id="mealtomorrow">
-							<strong>Tomorrow</strong>
-
-							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-							    <thead>
-							      <tr>
-							        <!-- <th>Seq.</th> -->
-							        <th>Name</th>
-							        <th>Vreme</th>
-							        <th>Opcija 1</th>
-							        <th>Opcija 2</th>
-							        <th>Opcija 3</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <?php foreach($tomorrow_meals as $tms): ?>
-                 		<tr>
-                 		  <!-- <td>{{row['meal_id']}}</td> -->
-                 		  <td><?= $tms->name; ?></td>
-                 		  <td><?= $tms->vreme; ?></td>
-                 		  <td><?php if($tms->option1 != 0): ?> 
+							<div class="card">
+								<div class="card-header">
+			  					<div class="card-actions">
+										<button type="button" class="card-action card-toggler" title="Collapse"></button>
+										<button type="button" class="card-action card-reload" title="Reload"></button>
+										<button type="button" class="card-action card-remove" title="Remove"></button>
+			  					</div>
+			  					<strong>Diet List</strong>
+								</div>
+								<div class="card-body">
+							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							    	<thead>
+							    	  <tr>
+							    	    <th>Seq.</th>
+							    	    <th>Name</th>
+							    	    <th>Vreme</th>
+							    	    <th>Opcija 1</th>
+							    	    <th>Opcija 2</th>
+							    	    <th>Opcija 3</th>
+							    	  </tr>
+							    	</thead>
+							    	<tbody>
+							      	<?php foreach($tomorrow_meals as $tms): ?>
+                 			<tr>
+                 			  <td><?= $tms->meal_id; ?></td>
+                 			  <td><?= $tms->name; ?></td>
+                 			  <td><?= $tms->vreme; ?></td>
+                 			  <td><?php if($tms->option1 != 0): ?> 
                  		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">See Option</button>  
-                    	  <?php else: ?>
-                    	    <p>No Option</p>
-                    	  <?php endif; ?>    
-                    	</td>
-                    	<td><?php if($tms->option2 != 0): ?> 
+                    	  	<?php else: ?>
+                    	  	  <p>No Option</p>
+                    	  	<?php endif; ?>    
+                    		</td>
+                    		<td><?php if($tms->option2 != 0): ?> 
                     	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">See Option</button>  
-                    	  <?php else: ?>
-                    	    <p>No Option</p>
-                    	  <?php endif; ?>    
-                    	</td>
-                    	<td><?php if($tms->option3 != 0): ?> 
+                    	  	<?php else: ?>
+                    	  	  <p>No Option</p>
+                    	  	<?php endif; ?>    
+                    		</td>
+                    		<td><?php if($tms->option3 != 0): ?> 
                     	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">See Option</button>  
-                 		    <?php else: ?>
-                 		      <p>No Option</p>
-                 		    <?php endif; ?>    
-                 		  </td>
-                 		</tr>
-                 		<?php endforeach; ?>
-							    </tbody>
-							  </table>
+                 		    	<?php else: ?>
+                 		    	  <p>No Option</p>
+                 		    	<?php endif; ?>    
+                 		  	</td>
+                 			</tr>
+                 			<?php endforeach; ?>
+							    	</tbody>
+							  	</table>
+								</div>
 							</div>
-
 						</div>
 
 						<div class="tab-pane fade" id="mealweek">
-							<strong>All</strong>
-
-							<div class="card-body">
-							  <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-							    <thead>
-							      <tr>
-							        <!-- <th>Seq.</th> -->
-							        <th>Name</th>
-							        <th>Vreme</th>
-							        <th>Opcija 1</th>
-							        <th>Opcija 2</th>
-							        <th>Opcija 3</th>
-							        <th>Date</th>
-							      </tr>
-							    </thead>
-							    <tbody>
-							      <?php foreach($all_meals as $ams): ?>
-                  	<tr>
-                  	  <!-- <td>{{row['meal_id']}}</td> -->
-                  	  <td><?= $ams->name; ?></td>
-                  	  <td><?= $ams->vreme; ?></td>
-                  	  <td><?php if($ams->option1 != 0): ?> 
+							<div class="card">
+								<div class="card-header">
+			  					<div class="card-actions">
+										<button type="button" class="card-action card-toggler" title="Collapse"></button>
+										<button type="button" class="card-action card-reload" title="Reload"></button>
+										<button type="button" class="card-action card-remove" title="Remove"></button>
+			  					</div>
+			  					<strong>Diet List</strong>
+								</div>
+								<div class="card-body">
+							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							    	<thead>
+							    	  <tr>
+							    	    <!-- <th>Seq.</th> -->
+							    	    <th>Name</th>
+							    	    <th>Vreme</th>
+							    	    <th>Opcija 1</th>
+							    	    <th>Opcija 2</th>
+							    	    <th>Opcija 3</th>
+							    	    <th>Date</th>
+							    	  </tr>
+							    	</thead>
+							    	<tbody>
+							    	  <?php foreach($all_meals as $ams): ?>
+                  		<tr>
+                  	  	<td><?= $ams->meal_id; ?></td>
+                  	  	<td><?= $ams->name; ?></td>
+                  	  	<td><?= $ams->vreme; ?></td>
+                  	  	<td><?php if($ams->option1 != 0): ?> 
                   	      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">See Option</button>  
-                   		  <?php else: ?>
-                   		    <p>No Option</p>
-                   		  <?php endif; ?>    
-                   		</td>
-                   		<td><?php if($ams->option2 != 0): ?> 
+                   		  	<?php else: ?>
+                   		  	  <p>No Option</p>
+                   		  	<?php endif; ?>    
+                   			</td>
+                   			<td><?php if($ams->option2 != 0): ?> 
                    		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">See Option</button>  
-                    	  <?php else: ?>
-                    	    <p>No Option</p>
-                    	  <?php endif; ?>    
-                    	</td>
-                    	<td><?php if($ams->option3 != 0): ?> 
+                    	  	<?php else: ?>
+                    	  	  <p>No Option</p>
+                    	  	<?php endif; ?>    
+                    		</td>
+                    		<td><?php if($ams->option3 != 0): ?> 
                     	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">See Option</button>  
-                  	    <?php else: ?>
-                  	      <p>No Option</p>
-                  	    <?php endif; ?>    
-                  	  </td>
-                  	  <td><?= $ams->date; ?></td>
-                  	</tr>
-                  	<?php endforeach; ?>
-							    </tbody>
-							  </table>
+                  	    	<?php else: ?>
+                  	    	  <p>No Option</p>
+                  	    	<?php endif; ?>    
+                  	  	</td>
+                  	  	<td><?= $ams->date; ?></td>
+                  		</tr>
+                  		<?php endforeach; ?>
+							   	 	</tbody>
+							  	</table>
+								</div>
 							</div>
-
 						</div>
 
 					</div>

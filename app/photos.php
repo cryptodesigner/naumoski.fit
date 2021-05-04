@@ -6,7 +6,4 @@
   $title = 'Uploaded Photos';
   $childView = 'views/_photos.php';
   include('layout_client.php');
-
-  
-
 ?>

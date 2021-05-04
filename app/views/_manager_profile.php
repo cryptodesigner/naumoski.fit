@@ -124,7 +124,7 @@
                   <th>Name</th>
                   <th>Surname</th>
                   <th>Email</th>
-                  <th>Password</th>
+                  <!-- <th>Password</th> -->
                   <th>Profile</th>
                 </tr>
               </thead>
@@ -135,7 +135,7 @@
                   <td><?= $c->name; ?></td>
                   <td><?= $c->surname; ?></td>
                   <td><?= $c->email; ?></td>
-                  <td><?= $c->password; ?></td>
+                  <!-- <td><?= $c->password; ?></td> -->
                   <td>
                     <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
                   </td>
