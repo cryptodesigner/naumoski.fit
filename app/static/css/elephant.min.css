@@ -3193,7 +3193,7 @@ tbody.collapse.in {
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 10px 15px
+    padding: 25px 15px;
 }
 
 .nav>li>a:focus,.nav>li>a:hover {
@@ -3241,7 +3241,7 @@ tbody.collapse.in {
     margin-right: 2px;
     line-height: 1.538462;
     border: 1px solid transparent;
-    border-radius: 0
+    border-radius: 0;
 }
 
 .nav-tabs>li>a:hover {
@@ -11793,7 +11793,7 @@ button.spinner.active.focus,button.spinner.active:focus,button.spinner.active:ho
 }
 
 .nav-tabs {
-    background-color: #dde3e6;
+    background-color: #98721a;
     border-bottom: none;
     border-radius: 0
 }
@@ -11805,7 +11805,7 @@ button.spinner.active.focus,button.spinner.active:focus,button.spinner.active:ho
 .nav-tabs>li>a {
     border: none;
     border-radius: 0;
-    color: #4f4f4f;
+    color: #ffffff;
     margin-right: 0
 }
 
@@ -11814,7 +11814,7 @@ button.spinner.active.focus,button.spinner.active:focus,button.spinner.active:ho
 }
 
 .nav-tabs>li>a:focus,.nav-tabs>li>a:hover {
-    background-color: #e5e9ec;
+    background-color: #111111;
     border: none
 }
 
