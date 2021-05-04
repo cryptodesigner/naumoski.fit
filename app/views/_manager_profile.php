@@ -4,6 +4,12 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $clients = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $cur_manager = $_SESSION['manager_id'];
+  $sql = "SELECT * FROM managers WHERE manager_id = '$cur_manager.';";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $managers = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <section>
@@ -16,7 +22,9 @@
             <img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Wilson">
           </div>
           <div class="profile-overview">
-            <h1 class="profile-name"><?php echo $_SESSION['email']; ?></h1>
+            <?php foreach($managers as $m): ?>
+              <h1 class="profile-name"><?= $m->name; ?> <?= $m->surname; ?>'s Profile</h1>
+            <?php endforeach; ?>
             <a class="profile-follow-btn" href ="edit_m_profile.php">Edit Profile</a>
             <p>Genesis Fitness Manager<a class="link-inverted"></a></p>
           </div>
@@ -31,12 +39,13 @@
     </div>
   </div>
 </div>
-</section>
 
-<section>
+
 <div class="profile-body">
   <div class="card-body">
+
     <div id="Profile" class="tab">
+
       <div class="col-xs-6 col-md-3">
         <div class="card no-background no-border">
           <div class="card-values">
@@ -93,34 +102,52 @@
 
     <div id="Clients" class="tab" style="display: none">
       <div class="profile-container">
-        <?php echo $_SESSION['email']; ?>'s Profile
+        <?php foreach($managers as $m): ?>
+          <h1><?= $m->name; ?>'s Client List</h1>
+        <?php endforeach; ?>
       </div>
-      <div>
-        <table id="demo-datatables-responsive-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
-          <thead>
-            <tr>
-              <th>Seq.</th>
-              <th>Name / Surname</th>
-              <th>Email</th>
-              <th>Profile</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach($clients as $c): ?>
-            <tr>
-              <td><?= $c->client_id; ?></td>
-              <td><?= $c->name; ?> <?= $c->surname; ?></td>
-              <td><?= $c->email; ?></td>
-              <td>
-                <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
-              </td>
-            </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
-      </div>
+      <div class="tab-content">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Clients List</strong>
+          </div>
+          <div class="card-body">
+            <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Seq.</th>
+                  <th>Name</th>
+                  <th>Surname</th>
+                  <th>Email</th>
+                  <th>Password</th>
+                  <th>Profile</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach($clients as $c): ?>
+                <tr>
+                  <td><?= $c->client_id; ?></td>
+                  <td><?= $c->name; ?></td>
+                  <td><?= $c->surname; ?></td>
+                  <td><?= $c->email; ?></td>
+                  <td><?= $c->password; ?></td>
+                  <td>
+                    <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
+                  </td>
+                </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>    
     </div>
-
+   
   </div>
 </div>
 </section>

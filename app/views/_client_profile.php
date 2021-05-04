@@ -92,7 +92,6 @@
             <?php foreach($clients as $c): ?>
               <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
             <?php endforeach; ?>
-            <!-- <h1 class="profile-name"><?php echo $_SESSION['email']; ?></h1> -->
             <a class="profile-follow-btn" href ="edit_profile.php">Edit Profile</a>
             <p>Genesis Fitness Client<a class="link-inverted"></a></p>
           </div>
