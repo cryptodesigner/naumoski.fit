@@ -8,35 +8,35 @@
 
 <section>
 <div class="profile">
-	<div class="profile-header">
-		<div class="profile-cover">
-			<div class="profile-container">
-				<div class="profile-card">
-					<div class="profile-avetar">
-						<img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Wilson">
-					</div>
-					<div class="profile-overview">
-						<h1 class="profile-name"><?php echo $_SESSION['email']; ?></h1>
-						<a class="profile-follow-btn" href ="edit_m_profile.php">Edit Profile</a>
-						<p>Genesis Fitness Manager<a class="link-inverted"></a></p>
-					</div>
-				</div>
-				<div class="profile-tabs">
-					<ul class="profile-nav">
-						<li><a onclick="openTab('Profile')">Profile</a></li>
-						<li><a onclick="openTab('Clients')">Clients</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="profile-header">
+    <div class="profile-cover">
+      <div class="profile-container">
+        <div class="profile-card">
+          <div class="profile-avetar">
+            <img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Wilson">
+          </div>
+          <div class="profile-overview">
+            <h1 class="profile-name"><?php echo $_SESSION['email']; ?></h1>
+            <a class="profile-follow-btn" href ="edit_m_profile.php">Edit Profile</a>
+            <p>Genesis Fitness Manager<a class="link-inverted"></a></p>
+          </div>
+        </div>
+        <div class="profile-tabs">
+          <ul class="profile-nav">
+            <li><a onclick="openTab('Profile')">Profile</a></li>
+            <li><a onclick="openTab('Clients')">Clients</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 
 <section>
 <div class="profile-body">
-	<div class="card-body">
-		<div id="Profile" class="tab">
+  <div class="card-body">
+    <div id="Profile" class="tab">
       <div class="col-xs-6 col-md-3">
         <div class="card no-background no-border">
           <div class="card-values">
@@ -96,32 +96,32 @@
         <?php echo $_SESSION['email']; ?>'s Profile
       </div>
       <div>
-      	<table id="demo-datatables-responsive-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
-     			<thead>
-     			  <tr>
-     			    <th>Seq.</th>
-     			    <th>Name / Surname</th>
-     			    <th>Email</th>
-     			    <th>Profile</th>
-     			  </tr>
-     			</thead>
-     			<tbody>
-     			  <?php foreach($clients as $c): ?>
-     			  <tr>
-     			    <td><?= $c->client_id; ?></td>
-     			    <td><?= $c->name; ?> <?= $c->surname; ?></td>
-     			    <td><?= $c->email; ?></td>
-     			    <td>
-     			      <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
-     			    </td>
-     			  </tr>
-     			  <?php endforeach; ?>
-     			</tbody>
-    		</table>
+        <table id="demo-datatables-responsive-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
+          <thead>
+            <tr>
+              <th>Seq.</th>
+              <th>Name / Surname</th>
+              <th>Email</th>
+              <th>Profile</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($clients as $c): ?>
+            <tr>
+              <td><?= $c->client_id; ?></td>
+              <td><?= $c->name; ?> <?= $c->surname; ?></td>
+              <td><?= $c->email; ?></td>
+              <td>
+                <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
+              </td>
+            </tr>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </div>
 
-	</div>
+  </div>
 </div>
 </section>
 
