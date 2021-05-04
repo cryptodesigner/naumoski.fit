@@ -117,9 +117,9 @@
 		<div class="card-body">
 
 			<div id="Profile" class="tab">
-				<div class="profile-container">
+				<div class="">
 					<?php foreach($clients as $c): ?>
-					  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
+					  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h3>
 					<?php endforeach; ?>
 				</div>
 
@@ -303,7 +303,7 @@
 			<div id="Trainings" class="tab" style="display: none">
 				<div class="">
 					<?php foreach($clients as $c): ?>
-        	  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Training List</h1>
+        	  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Training List</h3>
         	<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
@@ -438,9 +438,9 @@
 			</div>
 	    
 			<div id="Diets" class="tab" style="display: none">
-				<div class="profile-container">
+				<div class="">
 					<?php foreach($clients as $c): ?>
-       		  <h1><?= $c->name; ?> <?= $c->surname; ?>'s Diet List</h1>
+       		  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Diet List</h3>
        		<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
