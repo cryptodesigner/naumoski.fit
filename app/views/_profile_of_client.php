@@ -134,7 +134,7 @@
 							<strong>Client</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
-							<table class="table table-striped">
+							<table class="table table-bordered table-striped table-wrap dataTable">
 								<tr>
 									<?php foreach($clients as $c): ?>
 									<th colspan="6">Serial: </th>
@@ -181,7 +181,7 @@
 							<strong>Basics</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
-							<table class="table table-striped">
+							<table class="table table-bordered table-striped table-wrap dataTable">
 								<tr>
 									<?php foreach($clients as $c): ?>
 									<th colspan="6">Ime: </th>
@@ -228,7 +228,7 @@
 							<strong>Characteristics</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
-							<table class="table table-striped">
+							<table class="table table-bordered table-striped table-wrap dataTable">
 								<tr>
 									<?php foreach($basics as $b): ?>
                 	<th colspan="6">Alergii: </th>
