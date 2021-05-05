@@ -98,7 +98,7 @@
             	  <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
             	<?php endforeach; ?>
 							<!-- <h1 class="profile-name">{% for row in data %}{{row['name']}}'s Profile{% endfor %}</h1> -->
-							<p>Genesis Fitness Client<a class="link-inverted"></a></p>
+							<p>Client<a class="link-inverted"></a></p>
 					  </div>
 					</div>
 					<div class="profile-tabs">
