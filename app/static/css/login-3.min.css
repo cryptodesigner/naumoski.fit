@@ -11,9 +11,9 @@ body {
 }
 
 .login {
-    -webkit-animation-duration: 1s;
-    -o-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     -o-animation-fill-mode: both;
     animation-fill-mode: both;
@@ -26,7 +26,14 @@ body {
 }
 
 .login-body {
-    padding: 30px
+    padding: 30px;
+    background-color:#fff;
+    border: 3px solid #97711a;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 0 10px 10px rgba(0,0,0,.9);
+    box-shadow: 0 0 10px 10px rgba(0,0,0,.9);
+    margin-bottom: 15px;
+    margin-top: 15px
 }
 
 .login-brand {
@@ -58,10 +65,10 @@ body {
 @media (min-width: 768px) {
     .login-body {
         background-color:#fff;
-        border: 1px solid #eee;
-        border-radius: 0;
-        -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
-        box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+        border: 3px solid #97711a;
+        border-radius: 30px;
+        -webkit-box-shadow: 0 0 10px 10px rgba(0,0,0,.9);
+        box-shadow: 0 0 10px 10px rgba(0,0,0,.9);
         margin-bottom: 15px;
         margin-top: 15px
     }
