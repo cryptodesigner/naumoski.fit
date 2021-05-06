@@ -13,6 +13,7 @@
 
 	  	function str_starts_with ( $haystack, $needle ) {
   			return strpos( $haystack , $needle ) === 0;
+  		}
 
 			define('IMAGEPATH', 'uploads/');
 
@@ -30,7 +31,7 @@
     		$directoryfiles[] = $newfile;
 			}
 
-			echo "$user_id";
+			// echo "$user_id";
 
 			foreach($directoryfiles as $directoryfile){
     		if(strlen($directoryfile) > 3){
@@ -39,12 +40,6 @@
     			}
     		}
 			}
-
-			// foreach($directoryfiles as $directoryfile){
-   //  		if(strlen($directoryfile) > 3){
-   //  			echo '<img src="' . IMAGEPATH . $directoryfile . '" alt="' . $directoryfile . '" /> ';
-   //  		}
-			// }
 
 			closedir($handle); 
 		?>
