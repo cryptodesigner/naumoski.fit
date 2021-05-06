@@ -26,7 +26,7 @@
               <h1 class="profile-name"><?= $m->name; ?> <?= $m->surname; ?>'s Profile</h1>
             <?php endforeach; ?>
             <a class="profile-follow-btn" href ="edit_m_profile.php">Edit Profile</a>
-            <p>Manager<a class="link-inverted"></a></p>
+            <p>Genesis Fitness Manager<a class="link-inverted"></a></p>
           </div>
         </div>
         <div class="profile-tabs">
@@ -126,6 +126,7 @@
                   <th>Email</th>
                   <!--<th>Password</th>-->
                   <th>Profile</th>
+                  <th>Photos</th>
                 </tr>
               </thead>
               <tbody>
@@ -138,6 +139,9 @@
                   <!--<td><?= $c->password; ?></td>-->
                   <td>
                     <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
+                  </td>
+                  <td>
+                    <a href="photos_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-primary'>Photos</a>
                   </td>
                 </tr>
                 <?php endforeach; ?>

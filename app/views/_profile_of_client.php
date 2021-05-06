@@ -136,33 +136,33 @@
 						<div class="card-body" data-toggle="match-height">
 							<table class="table table-bordered table-striped table-wrap dataTable">
 								<tr>
-									<?php foreach($clients as $c): ?>
-									<th colspan="6">Serial: </th>
-									<td colspan="6"><?= $c->client_id; ?></td>
+									<?php foreach($schedules as $s): ?>
+									<th colspan="6">Budenje: </th>
+									<td colspan="6"><?= $s->stanuvanje; ?></td>
 									<?php endforeach; ?>
 								</tr>
 								<tr>
-									<?php foreach($assigned_manager as $am): ?>
-									<th colspan="6">Manager: </th>
-									<td colspan="6"><?= $am->name; ?></td>
+									<?php foreach($schedules as $s): ?>
+									<th colspan="6">Zaspivanje: </th>
+									<td colspan="6"><?= $s->legnuvanje; ?></td>
 									<?php endforeach; ?>
 								</tr>
 								<tr>
-									<?php foreach($clients as $c): ?>
-									<th colspan="6">Ime: </th>
-									<td colspan="6"><?= $c->name; ?></td>
+									<?php foreach($schedules as $s): ?>
+									<th colspan="6">Rabota: </th>
+									<td colspan="6"><?= $s->rabota; ?></td>
 									<?php endforeach; ?>
 								</tr>
 								<tr>
-									<?php foreach($clients as $c): ?>
-									<th colspan="6">Prezime: </th>
-									<td colspan="6"><?= $c->surname; ?></td>
+									<?php foreach($schedules as $s): ?>
+									<th colspan="6">Pauzi: </th>
+									<td colspan="6"><?= $s->pauzi; ?></td>
 									<?php endforeach; ?>
 								</tr>
 								<tr>
-									<?php foreach($clients as $c): ?>
-									<th colspan="6">Email: </th>
-									<td colspan="6"><?= $c->email; ?></td>
+									<?php foreach($schedules as $s): ?>
+									<th colspan="6">Trening: </th>
+									<td colspan="6"><?= $s->trening; ?></td>
 									<?php endforeach; ?>
 								</tr>
 							</table>

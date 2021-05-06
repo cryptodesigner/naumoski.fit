@@ -34,6 +34,7 @@
 										<th>Action Del</th>
 										<th>Action Upd</th>
 										<th>Profile</th>
+										<th>Photos</th>
 				  				</tr>
 								</thead>
 								<tbody>
@@ -51,6 +52,9 @@
 										</td>
 										<td>
 					  						<a href="profile_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Profile</a>
+										</td>
+										<td>
+					  						<a href="photos_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-primary'>Photos</a>
 										</td>
 				  				</tr>
 				  				<?php endforeach; ?>
