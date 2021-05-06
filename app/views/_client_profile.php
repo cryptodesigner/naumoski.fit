@@ -340,7 +340,7 @@
             <strong>Today</strong>
 
             <div class="card-body">
-              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+              <table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Seq.</th>
@@ -408,7 +408,7 @@
             <strong>All</strong>
 
             <div class="card-body">
-              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+              <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Seq.</th>
@@ -460,7 +460,7 @@
             <strong>Today</strong>
 
             <div class="card-body">
-              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+              <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Seq.</th>
@@ -508,7 +508,7 @@
             <strong>Tomorrow</strong>
 
             <div class="card-body">
-              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+              <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Seq.</th>
@@ -556,7 +556,7 @@
             <strong>All</strong>
 
             <div class="card-body">
-              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+              <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Seq.</th>
