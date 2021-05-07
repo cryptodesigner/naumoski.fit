@@ -93,7 +93,7 @@
               <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
             <?php endforeach; ?>
             <a class="profile-follow-btn" href ="edit_profile.php">Edit Profile</a>
-            <p>Genesis Fitness Client<a class="link-inverted"></a></p>
+            <p>Client<a class="link-inverted"></a></p>
           </div>
         </div>
         <div class="profile-tabs">

@@ -26,7 +26,7 @@
               <h1 class="profile-name"><?= $m->name; ?> <?= $m->surname; ?>'s Profile</h1>
             <?php endforeach; ?>
             <a class="profile-follow-btn" href ="edit_m_profile.php">Edit Profile</a>
-            <p>Genesis Fitness Manager<a class="link-inverted"></a></p>
+            <p>Manager<a class="link-inverted"></a></p>
           </div>
         </div>
         <div class="profile-tabs">
