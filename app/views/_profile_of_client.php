@@ -117,7 +117,7 @@
 		<div class="card-body">
 
 			<div id="Profile" class="tab">
-				<div class="">
+				<div class="card-body">
 					<?php foreach($clients as $c): ?>
 					  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h3>
 					<?php endforeach; ?>
@@ -134,38 +134,40 @@
 							<strong>Client</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
-							<table class="table table-bordered table-striped table-wrap dataTable">
-								<tr>
-									<?php foreach($schedules as $s): ?>
-									<th colspan="6">Budenje: </th>
-									<td colspan="6"><?= $s->stanuvanje; ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($schedules as $s): ?>
-									<th colspan="6">Zaspivanje: </th>
-									<td colspan="6"><?= $s->legnuvanje; ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($schedules as $s): ?>
-									<th colspan="6">Rabota: </th>
-									<td colspan="6"><?= $s->rabota; ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($schedules as $s): ?>
-									<th colspan="6">Pauzi: </th>
-									<td colspan="6"><?= $s->pauzi; ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($schedules as $s): ?>
-									<th colspan="6">Trening: </th>
-									<td colspan="6"><?= $s->trening; ?></td>
-									<?php endforeach; ?>
-								</tr>
-							</table>
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Budenje: </th>
+										<td colspan="6"><?= $s->stanuvanje; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Zaspivanje: </th>
+										<td colspan="6"><?= $s->legnuvanje; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Rabota: </th>
+										<td colspan="6"><?= $s->rabota; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Pauzi: </th>
+										<td colspan="6"><?= $s->pauzi; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Trening: </th>
+										<td colspan="6"><?= $s->trening; ?></td>
+										<?php endforeach; ?>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -181,38 +183,40 @@
 							<strong>Basics</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
-							<table class="table table-bordered table-striped table-wrap dataTable">
-								<tr>
-									<?php foreach($clients as $c): ?>
-									<th colspan="6">Ime: </th>
-									<td colspan="6"><?= $c->name; ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-               		<th colspan="6">Pol: </th>
-               		<td colspan="6"><?= $b->pol; ?></td>
-               		<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Rodenden: </th>
-                	<td colspan="6"><?= $b->godini; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-									<th colspan="6">Visina: </th>
-									<td colspan="6"><?= $b->visina; ?></td>
-									<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Tezina: </th>
-                	<td colspan="6"><?= $b->tezina; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-							</table>
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<tr>
+										<?php foreach($clients as $c): ?>
+										<th colspan="6">Ime: </th>
+										<td colspan="6"><?= $c->name; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	 		<th colspan="6">Pol: </th>
+              	 		<td colspan="6"><?= $b->pol; ?></td>
+              	 		<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Rodenden: </th>
+              	  	<td colspan="6"><?= $b->godini; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+										<th colspan="6">Visina: </th>
+										<td colspan="6"><?= $b->visina; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Tezina: </th>
+              	  	<td colspan="6"><?= $b->tezina; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -228,38 +232,40 @@
 							<strong>Characteristics</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
-							<table class="table table-bordered table-striped table-wrap dataTable">
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Alergii: </th>
-                	<td colspan="6"><?= $b->alergija; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Netolerantnost: </th>
-                	<td colspan="6"><?= $b->netolerantnost; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Odbivnost: </th>
-                	<td colspan="6"><?= $b->odbivnost; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Zaboluvanja: </th>
-                	<td colspan="6"><?= $b->zaboluvanja; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-								<tr>
-									<?php foreach($basics as $b): ?>
-                	<th colspan="6">Iskustvo: </th>
-                	<td colspan="6"><?= $b->iskustvo; ?></td>
-                	<?php endforeach; ?>
-								</tr>
-							</table>
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Alergii: </th>
+              	  	<td colspan="6"><?= $b->alergija; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Netolerantnost: </th>
+              	  	<td colspan="6"><?= $b->netolerantnost; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Odbivnost: </th>
+              	  	<td colspan="6"><?= $b->odbivnost; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Zaboluvanja: </th>
+              	  	<td colspan="6"><?= $b->zaboluvanja; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+              	  	<th colspan="6">Iskustvo: </th>
+              	  	<td colspan="6"><?= $b->iskustvo; ?></td>
+              	  	<?php endforeach; ?>
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -301,7 +307,7 @@
 			</div>
 		     
 			<div id="Trainings" class="tab" style="display: none">
-				<div class="">
+				<div class="card-body">
 					<?php foreach($clients as $c): ?>
         	  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Training List</h3>
         	<?php endforeach; ?>
@@ -438,7 +444,7 @@
 			</div>
 	    
 			<div id="Diets" class="tab" style="display: none">
-				<div class="">
+				<div class="card-body">
 					<?php foreach($clients as $c): ?>
        		  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Diet List</h3>
        		<?php endforeach; ?>

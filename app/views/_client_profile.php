@@ -113,7 +113,7 @@
   <div class="card-body">
 
     <div id="Profile" class="tab">
-      <div class="profile-container">
+      <div class="card-body">
         <?php foreach($clients as $c): ?>
           <h1><?= $c->name; ?>'s Profile</h1>
         <?php endforeach; ?>
@@ -130,38 +130,40 @@
             <strong>Client</strong>
           </div>
           <div class="card-body" data-toggle="match-height">
-            <table class="table table-striped">
-              <tr>
-                <?php foreach($clients as $c): ?>
-                <th colspan="6">Serial: </th>
-                <td colspan="6"><?= $c->client_id; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($assigned_manager as $am): ?>
-                <th colspan="6">Manager: </th>
-                <td colspan="6"><?= $am->name; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($clients as $c): ?>
-                <th colspan="6">Ime: </th>
-                <td colspan="6"><?= $c->name; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($clients as $c): ?>
-                <th colspan="6">Prezime: </th>
-                <td colspan="6"><?= $c->surname; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($clients as $c): ?>
-                <th colspan="6">Email: </th>
-                <td colspan="6"><?= $c->email; ?></td>
-                <?php endforeach; ?>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <tr>
+                  <?php foreach($clients as $c): ?>
+                  <th colspan="6">Serial: </th>
+                  <td colspan="6"><?= $c->client_id; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($assigned_manager as $am): ?>
+                  <th colspan="6">Manager: </th>
+                  <td colspan="6"><?= $am->name; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($clients as $c): ?>
+                  <th colspan="6">Ime: </th>
+                  <td colspan="6"><?= $c->name; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($clients as $c): ?>
+                  <th colspan="6">Prezime: </th>
+                  <td colspan="6"><?= $c->surname; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($clients as $c): ?>
+                  <th colspan="6">Email: </th>
+                  <td colspan="6"><?= $c->email; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -177,38 +179,40 @@
             <strong>Basics</strong>
           </div>
           <div class="card-body" data-toggle="match-height">
-            <table class="table table-striped">
-              <tr>
-                <?php foreach($clients as $c): ?>
-                <th colspan="6">Ime: </th>
-                <td colspan="6"><?= $c->name; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Pol: </th>
-                <td colspan="6"><?= $b->pol; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Rodenden: </th>
-                <td colspan="6"><?= $b->godini; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Visina: </th>
-                <td colspan="6"><?= $b->visina; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Tezina: </th>
-                <td colspan="6"><?= $b->tezina; ?></td>
-                <?php endforeach; ?>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <tr>
+                  <?php foreach($clients as $c): ?>
+                  <th colspan="6">Ime: </th>
+                  <td colspan="6"><?= $c->name; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Pol: </th>
+                  <td colspan="6"><?= $b->pol; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Rodenden: </th>
+                  <td colspan="6"><?= $b->godini; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Visina: </th>
+                  <td colspan="6"><?= $b->visina; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Tezina: </th>
+                  <td colspan="6"><?= $b->tezina; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -224,38 +228,40 @@
             <strong>Characteristics</strong>
           </div>
           <div class="card-body" data-toggle="match-height">
-            <table class="table table-striped">
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Alergii: </th>
-                <td colspan="6"><?= $b->alergija; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Netolerantnost: </th>
-                <td colspan="6"><?= $b->netolerantnost; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Odbivnost: </th>
-                <td colspan="6"><?= $b->odbivnost; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Zaboluvanja: </th>
-                <td colspan="6"><?= $b->zaboluvanja; ?></td>
-                <?php endforeach; ?>
-              </tr>
-              <tr>
-                <?php foreach($basics as $b): ?>
-                <th colspan="6">Iskustvo: </th>
-                <td colspan="6"><?= $b->iskustvo; ?></td>
-                <?php endforeach; ?>
-              </tr>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Alergii: </th>
+                  <td colspan="6"><?= $b->alergija; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Netolerantnost: </th>
+                  <td colspan="6"><?= $b->netolerantnost; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Odbivnost: </th>
+                  <td colspan="6"><?= $b->odbivnost; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Zaboluvanja: </th>
+                  <td colspan="6"><?= $b->zaboluvanja; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Iskustvo: </th>
+                  <td colspan="6"><?= $b->iskustvo; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -271,22 +277,24 @@
             <strong>Daily Routine</strong>
           </div>
           <div class="card-body" data-toggle="match-height">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Name.</th>
-                  <th>Vreme</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php foreach($daily_routine as $dr): ?>
-                <tr>
-                  <td><?= $dr->name; ?></td>
-                  <td><?= $dr->vreme; ?></td>
-                </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Name.</th>
+                    <th>Vreme</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($daily_routine as $dr): ?>
+                  <tr>
+                    <td><?= $dr->name; ?></td>
+                    <td><?= $dr->vreme; ?></td>
+                  </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -324,7 +332,7 @@
     </div>
      
     <div id="Trainings" class="tab" style="display: none">
-      <div class="profile-container">
+      <div class="card-body">
         <?php foreach($clients as $c): ?>
           <h1><?= $c->name; ?>'s Training List</h1>
         <?php endforeach; ?>
@@ -337,103 +345,127 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade active in" id="trainingtoday">
-            <strong>Today</strong>
-
-            <div class="card-body">
-              <table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Seq.</th>
-                    <th>Name</th>
-                    <th>Vezba</th>
-                    <th>Serii/Povtoruvanja</th>
-                    <th>Tehnika</th>
-                    <th>Vreme</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach($today_trainings as $tt): ?>
-                  <tr>
-                    <td><?= $tt->training_id; ?></td>
-                    <td><?= $tt->name; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">See Exercise</button></td>
-                    <td><?= $tt->serii_povt; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
-                    <td><?= $tt->vreme; ?></td>
-                    <td><?= $tt->date; ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+            <div class="card">
+              <div class="card-header">
+                <div class="card-actions">
+                  <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                  <button type="button" class="card-action card-reload" title="Reload"></button>
+                  <button type="button" class="card-action card-remove" title="Remove"></button>
+                </div>
+                <strong>Today</strong>
+              </div>
+              <div class="card-body">
+                <table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Seq.</th>
+                      <th>Name</th>
+                      <th>Vezba</th>
+                      <th>Serii/Povtoruvanja</th>
+                      <th>Tehnika</th>
+                      <th>Vreme</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($today_trainings as $tt): ?>
+                    <tr>
+                      <td><?= $tt->training_id; ?></td>
+                      <td><?= $tt->name; ?></td>
+                      <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">See Exercise</button></td>
+                      <td><?= $tt->serii_povt; ?></td>
+                      <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
+                      <td><?= $tt->vreme; ?></td>
+                      <td><?= $tt->date; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
           
           <div class="tab-pane fade" id="trainingtomorrow">
-            <strong>Tomorrow</strong>
-
-            <div class="card-body">
-              <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Seq.</th>
-                    <th>Name</th>
-                    <th>Vezba</th>
-                    <th>Serii/Povtoruvanja</th>
-                    <th>Tehnika</th>
-                    <th>Vreme</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach($tomorrow_trainings as $tts): ?>
-                  <tr>
-                    <td><?= $tts->training_id; ?></td>
-                    <td><?= $tts->name; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">See Exercise</button></td>
-                    <td><?= $tts->serii_povt; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
-                    <td><?= $tts->vreme; ?></td>
-                    <td><?= $tts->date; ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+            <div class="card">
+              <div class="card-header">
+                <div class="card-actions">
+                  <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                  <button type="button" class="card-action card-reload" title="Reload"></button>
+                  <button type="button" class="card-action card-remove" title="Remove"></button>
+                </div>
+                <strong>Tomorrow</strong>
+              </div>
+              <div class="card-body">
+                <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Seq.</th>
+                      <th>Name</th>
+                      <th>Vezba</th>
+                      <th>Serii/Povtoruvanja</th>
+                      <th>Tehnika</th>
+                      <th>Vreme</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($tomorrow_trainings as $tts): ?>
+                    <tr>
+                      <td><?= $tts->training_id; ?></td>
+                      <td><?= $tts->name; ?></td>
+                      <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">See Exercise</button></td>
+                      <td><?= $tts->serii_povt; ?></td>
+                      <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
+                      <td><?= $tts->vreme; ?></td>
+                      <td><?= $tts->date; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
           
           <div class="tab-pane fade" id="trainingweek">
-            <strong>All</strong>
-
-            <div class="card-body">
-              <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Seq.</th>
-                    <th>Name</th>
-                    <th>Vezba</th>
-                    <th>Serii/Povtoruvanja</th>
-                    <th>Tehnika</th>
-                    <th>Vreme</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach($all_trainings as $at): ?>
-                  <tr>
-                    <td><?= $at->training_id; ?></td>
-                    <td><?= $at->name; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">See Exercise</button></td>
-                    <td><?= $at->serii_povt; ?></td>
-                    <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
-                    <td><?= $at->vreme; ?></td>
-                    <td><?= $at->date; ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+            <div class="card">
+              <div class="card-header">
+                <div class="card-actions">
+                  <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                  <button type="button" class="card-action card-reload" title="Reload"></button>
+                  <button type="button" class="card-action card-remove" title="Remove"></button>
+                </div>
+                <strong>All</strong>
+              </div>
+              <div class="card-body">
+                <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Seq.</th>
+                      <th>Name</th>
+                      <th>Vezba</th>
+                      <th>Serii/Povtoruvanja</th>
+                      <th>Tehnika</th>
+                      <th>Vreme</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($all_trainings as $at): ?>
+                    <tr>
+                      <td><?= $at->training_id; ?></td>
+                      <td><?= $at->name; ?></td>
+                      <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">See Exercise</button></td>
+                      <td><?= $at->serii_povt; ?></td>
+                      <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
+                      <td><?= $at->vreme; ?></td>
+                      <td><?= $at->date; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
@@ -443,7 +475,7 @@
 
       
     <div id="Diets" class="tab" style="display: none">
-      <div class="profile-container">
+      <div class="card-body">
         <?php foreach($clients as $c): ?>
           <h1><?= $c->name; ?>'s Diet List</h1>
         <?php endforeach; ?>
@@ -457,146 +489,170 @@
 
         <div class="tab-content">
           <div class="tab-pane fade active in" id="dietToday">
-            <strong>Today</strong>
-
-            <div class="card-body">
-              <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Seq.</th>
-                    <th>Name</th>
-                    <th>Vreme</th>
-                    <th>Opcija 1</th>
-                    <th>Opcija 2</th>
-                    <th>Opcija 3</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach($today_meals as $tm): ?>
-                  <tr>
-                    <td><?= $tm->meal_id; ?></td>
-                    <td><?= $tm->name; ?></td>
-                    <td><?= $tm->vreme; ?></td>
-                    <td><?php if($tm->option1 != 0): ?> 
+            <div class="card">
+              <div class="card-header">
+                <div class="card-actions">
+                  <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                  <button type="button" class="card-action card-reload" title="Reload"></button>
+                  <button type="button" class="card-action card-remove" title="Remove"></button>
+                </div>
+                <strong>Today</strong>
+              </div>
+              <div class="card-body">
+                <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Seq.</th>
+                      <th>Name</th>
+                      <th>Vreme</th>
+                      <th>Opcija 1</th>
+                      <th>Opcija 2</th>
+                      <th>Opcija 3</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($today_meals as $tm): ?>
+                    <tr>
+                      <td><?= $tm->meal_id; ?></td>
+                      <td><?= $tm->name; ?></td>
+                      <td><?= $tm->vreme; ?></td>
+                      <td><?php if($tm->option1 != 0): ?> 
                         <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option1; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?php if($tm->option2 != 0): ?> 
+                      </td>
+                      <td><?php if($tm->option2 != 0): ?> 
                         <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option2; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?php if($tm->option3 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
+                      </td>
+                      <td><?php if($tm->option3 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?= $tm->date; ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+                      </td>
+                      <td><?= $tm->date; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
           <div class="tab-pane fade" id="dietTomorrow">
-            <strong>Tomorrow</strong>
-
-            <div class="card-body">
-              <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Seq.</th>
-                    <th>Name</th>
-                    <th>Vreme</th>
-                    <th>Opcija 1</th>
-                    <th>Opcija 2</th>
-                    <th>Opcija 3</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach($tomorrow_meals as $tms): ?>
-                  <tr>
-                    <td><?= $tms->meal_id; ?></td>
-                    <td><?= $tms->name; ?></td>
-                    <td><?= $tms->vreme; ?></td>
-                    <td><?php if($tms->option1 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">See Option</button>  
+            <div class="card">
+              <div class="card-header">
+                <div class="card-actions">
+                  <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                  <button type="button" class="card-action card-reload" title="Reload"></button>
+                  <button type="button" class="card-action card-remove" title="Remove"></button>
+                </div>
+                <strong>Tomorrow</strong>
+              </div>
+              <div class="card-body">
+                <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Seq.</th>
+                      <th>Name</th>
+                      <th>Vreme</th>
+                      <th>Opcija 1</th>
+                      <th>Opcija 2</th>
+                      <th>Opcija 3</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($tomorrow_meals as $tms): ?>
+                    <tr>
+                      <td><?= $tms->meal_id; ?></td>
+                      <td><?= $tms->name; ?></td>
+                      <td><?= $tms->vreme; ?></td>
+                      <td><?php if($tms->option1 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?php if($tms->option2 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">See Option</button>  
+                      </td>
+                      <td><?php if($tms->option2 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?php if($tms->option3 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">See Option</button>  
+                      </td>
+                      <td><?php if($tms->option3 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?= $tms->date; ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+                      </td>
+                      <td><?= $tms->date; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
           <div class="tab-pane fade" id="dietWeek">
-            <strong>All</strong>
-
-            <div class="card-body">
-              <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Seq.</th>
-                    <th>Name</th>
-                    <th>Vreme</th>
-                    <th>Opcija 1</th>
-                    <th>Opcija 2</th>
-                    <th>Opcija 3</th>
-                    <th>Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach($all_meals as $ams): ?>
-                  <tr>
-                    <td><?= $ams->meal_id; ?></td>
-                    <td><?= $ams->name; ?></td>
-                    <td><?= $ams->vreme; ?></td>
-                    <td><?php if($ams->option1 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">See Option</button>  
+            <div class="card">
+              <div class="card-header">
+                <div class="card-actions">
+                  <button type="button" class="card-action card-toggler" title="Collapse"></button>
+                  <button type="button" class="card-action card-reload" title="Reload"></button>
+                  <button type="button" class="card-action card-remove" title="Remove"></button>
+                </div>
+                <strong>All</strong>
+              </div>
+              <div class="card-body">
+               <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Seq.</th>
+                      <th>Name</th>
+                      <th>Vreme</th>
+                      <th>Opcija 1</th>
+                      <th>Opcija 2</th>
+                      <th>Opcija 3</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach($all_meals as $ams): ?>
+                    <tr>
+                      <td><?= $ams->meal_id; ?></td>
+                      <td><?= $ams->name; ?></td>
+                      <td><?= $ams->vreme; ?></td>
+                      <td><?php if($ams->option1 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?php if($ams->option2 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">See Option</button>  
+                      </td>
+                      <td><?php if($ams->option2 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?php if($ams->option3 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">See Option</button>  
+                      </td>
+                      <td><?php if($ams->option3 != 0): ?> 
+                          <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">See Option</button>  
                       <?php else: ?>
                         <p>No Option</p>
                       <?php endif; ?>    
-                    </td>
-                    <td><?= $ams->date; ?></td>
-                  </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+                      </td>
+                      <td><?= $ams->date; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </div>
             </div>
 
           </div>
