@@ -9651,7 +9651,9 @@ button.collapsed .bars-x .bar-line:last-child {
 .card-header {
     border-bottom: 1px solid #eee;
     padding: 10px 15px;
-    position: relative
+    position: relative;
+    background-color: #98721a;
+    color: #eeeeee
 }
 
 .card-header:after,.card-header:before {
