@@ -2,9 +2,9 @@
 	$user_id = $_GET['client_id'];
 ?>
 
-<style>
-	<?php include 'static/css/gallery.css'; ?>
-</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/gallery.css">
 
 <section>
 	<div class="layout-content-body">
@@ -80,7 +80,7 @@
 
 
 		// Adding PopUp HtmlContent
-		$('body').append('<div id="overlay" class="overlay"><div class="popup" id="popupBody"></div></div>');
+		$('.layout-content-body').append('<div id="overlay" class="overlay"><div class="popup" id="popupBody"></div></div>');
 		this.overlay = $('.overlay');
 		this.popup = $('.popup');
 
