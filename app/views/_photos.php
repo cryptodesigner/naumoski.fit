@@ -2,10 +2,9 @@
 	$user_id = $_SESSION["client_id"];
 ?>
 
-<style>
-	<?php include 'static/css/gallery.css'; ?>
-</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="static/css/gallery.css">
 
 <section>
 	<div class="layout-content-body">
@@ -15,109 +14,251 @@
 			</h1>
 	  </div>
 
-	  <div class="gallery">
-  	<div class="img-w">
-	  <?php
-	  	function str_starts_with ( $haystack, $needle ) {
-  			return strpos( $haystack , $needle ) === 0;
-  		}
-			define('IMAGEPATH', 'uploads/');
-			if (is_dir(IMAGEPATH)){
-    		$handle = opendir(IMAGEPATH);
-			}
-			else{
-    		echo 'No image directory';
-			}
-			$directoryfiles = array();
-			while (($file = readdir($handle)) !== false) {
-    		$newfile = str_replace(' ', '_', $file);
-    		// rename(IMAGEPATH . $file, IMAGEPATH . $newfile);
-    		$directoryfiles[] = $newfile;
-			}
-			// echo "$user_id";
-			foreach($directoryfiles as $directoryfile){
-    		if(strlen($directoryfile) > 3){
-    			if(str_starts_with($directoryfile, $user_id)){
-    				echo '<img src="' . IMAGEPATH . $directoryfile . '" alt="' . $directoryfile . '" /> ';
-    			}
-    		}
-			}
-			closedir($handle); 
-		?>
-		</div>
-		</div>
+    <div class='wrap'>
+      <div class="gallery">
+
+        <?php
+          function str_starts_with ( $haystack, $needle ) {
+            return strpos( $haystack , $needle ) === 0;
+          }
+
+          define('IMAGEPATH', 'uploads/');
+
+          if (is_dir(IMAGEPATH)){
+            $handle = opendir(IMAGEPATH);
+          }
+          else{
+            echo 'No image directory';
+          }
+
+          $directoryfiles = array();
+          
+          while (($file = readdir($handle)) !== false) {
+            $newfile = str_replace(' ', '_', $file);
+            // rename(IMAGEPATH . $file, IMAGEPATH . $newfile);
+            $directoryfiles[] = $newfile;
+          }
+      
+          // echo "$user_id";
+          foreach($directoryfiles as $directoryfile){
+            if(strlen($directoryfile) > 3){
+              if(str_starts_with($directoryfile, $user_id)){
+                echo '<img src="' . IMAGEPATH . $directoryfile . '" alt="' . $directoryfile . '" /> ';
+              }
+            }
+          }
+      
+          closedir($handle); 
+        ?>
+      </div>
+    </div>
 
 	</div>
 </section>
 
+<script type="text/javascript">
+  /* ***** */
+/* GALLERY CLASS */
+/* ***** */
 
-<div class="gallery">
-  <div class="img-w">
-    <img src="https://images.unsplash.com/photo-1485766410122-1b403edb53db?dpr=1&auto=format&fit=crop&w=1500&h=846&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485793997698-baba81bf21ab?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485871800663-71856dc09ec4?dpr=1&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485871882310-4ecdab8a6f94?dpr=1&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485872304698-0537e003288d?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485872325464-50f17b82075a?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1470171119584-533105644520?dpr=1&auto=format&fit=crop&w=1500&h=886&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485881787686-9314a2bc8f9b?dpr=1&auto=format&fit=crop&w=1500&h=969&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-  <div class="img-w">
-  	<img src="https://images.unsplash.com/photo-1485889397316-8393dd065127?dpr=1&auto=format&fit=crop&w=1500&h=843&q=80&cs=tinysrgb&crop=" alt="" />
-  </div>
-</div>
+"use strict";
+
+class Gallery{
+
+  constructor(settings) {
+    // Slider Options
+    let defaults = {
+      next_by_click_img: true,
+      speed: 400,
+      play: true,
+      auto_play_speed: 2000,
+      button_play: 'fa fa-play-circle',
+      button_stop: 'fa fa-stop-circle',
+      button_next: 'fa fa-chevron-circle-right',
+      button_prev: 'fa fa-chevron-circle-left',
+      button_close: 'fa fa-times-circle',
+    }
+
+    this.options = $.extend(defaults, settings);
 
 
+    // Adding PopUp HtmlContent
+    $('.layout-content-body').append('<div id="overlay" class="overlay"><div class="popup" id="popupBody"></div></div>');
+    this.overlay = $('.overlay');
+    this.popup = $('.popup');
+
+    // Variable for preventing multiple clicking
+    this.isRun = false;
+  }
+
+  open(content, image) {
+    // Open overlay
+    this.overlay.addClass('open');
+
+    // Creating buttons
+    this.popup.append('<span id="close"><i></i></span><span id="next"><i></i></span><span id="prev"><i></i></span>');
+    if(this.options.play === true) {
+      this.popup.append('<div class="play_wrap"><span id="play"><i></i></span><span id="stop"><i></i></span></div>');
+    }
+    this.closeButton = $('#close');
+    this.nextButton = $('#next');
+    this.prevButton = $('#prev');
+    this.playButton = $('#play');
+    this.stopButton = $('#stop');
+
+    // Adding content
+    this.content = $(content).clone();
+    this.popup.append(this.content);
+    this.index = $(image).index();
+
+    // Running functions
+    this.slider();
+    this.close();
+    this.styles();
+    this.autoplay();
 
 
-<script>
-	$(function() {
-  $(".img-w").each(function() {
-    $(this).wrap("<div class='img-c'></div>")
-    let imgSrc = $(this).find("img").attr("src");
-     $(this).css('background-image', 'url(' + imgSrc + ')');
-  })
-            
-  
-  $(".img-c").click(function() {
-    let w = $(this).outerWidth()
-    let h = $(this).outerHeight()
-    let x = $(this).offset().left
-    let y = $(this).offset().top
+    return this;
+  }
+
+  close(){
+    this.closeButton.on('click', (e) => {
+      this.overlay.removeClass('open');
+      $('.popup').empty();
+    });
+  }
+
+  slider(){
+    // Show the clicked img & adjusting sizes of popUp Window
+    this.content.eq(this.index).css('opacity', 1).css('display', 'block');
+
+    // Click on function buttons of the slider
+    this.nextButton.on('click', (e) => { this.next()});
+    this.prevButton.on('click', (e) => { this.prev()});
+
+    $(document).keydown((e) => {
+      if(e.which == 39) {
+        this.next();
+      }
+      if(e.which == 37) {
+        this.prev();
+      }
+    });
+
+    if(this.options.next_by_click_img !== false){
+      this.content.on('click', (e) => { this.next()});
+      this.content.css('cursor', 'pointer');
+    }
+
+  }
+
+  next(){
+    if(this.isRun) {
+      return;
+    }
+
+    this.isRun = true;
+
+
+    this.content.eq(this.index).animate({
+      'opacity': 0
+    }, this.options.speed);
+
+    this.content.eq(this.index).css('display', 'none');
+
+
+    this.index++;
+    if(this.index > this.content.length - 1){
+      this.index = 0;
+    }
+
+    this.content.eq(this.index).css('display', 'block');
     
-    
-    $(".active").not($(this)).remove()
-    let copy = $(this).clone();
-    copy.insertAfter($(this)).height(h).width(w).delay(500).addClass("active")
-    $(".active").css('top', y - 8);
-    $(".active").css('left', x - 8);
-    
-      setTimeout(function() {
-    copy.addClass("positioned")
-  }, 0)
-    
-  })
-})
+    this.content.eq(this.index).animate({
+        'opacity': 1
+      }, this.options.speed, () => {
+        this.isRun = false;
+      });
+  }
 
-$(document).on("click", ".img-c.active", function() {
-  let copy = $(this)
-  copy.removeClass("positioned active").addClass("postactive")
-  setTimeout(function() {
-    copy.remove();
-  }, 500)
-})
+  prev(){
+    if(this.isRun) {
+      return;
+    }
+
+    this.isRun = true;
+
+    this.content.eq(this.index).animate({
+      'opacity': 0
+    }, this.options.speed);
+
+    this.content.eq(this.index).css('display', 'none');
+    
+    this.index--;
+    if(this.index < 0){
+      this.index = this.content.length - 1;
+    }
+
+    this.content.eq(this.index).css('display', 'block');
+    
+    this.content.eq(this.index).animate({
+      'opacity': 1
+    }, this.options.speed, () => {
+      this.isRun = false;
+    });
+  }
+
+
+  styles(){
+    this.playButton.addClass(this.options.button_play);
+    this.stopButton.addClass(this.options.button_stop);
+    $('.popup span#next i').addClass(this.options.button_next);
+    $('.popup span#prev i').addClass(this.options.button_prev);
+    $('.popup span#close i').addClass(this.options.button_close);
+  }
+
+
+  autoplay(){
+    this.playButtonOn = false;
+
+    this.playButton.on('click', (e) => {
+      this.playButtonOn = setInterval(() => {
+        this.next();
+      },this.options.auto_play_speed);
+      this.playButton.hide();
+      this.stopButton.show();
+
+    });
+
+    this.stopButton.on('click', () => {
+      clearInterval(this.playButtonOn);
+      this.playButtonOn = false;
+      this.playButton.show();
+      this.stopButton.hide();
+    });
+
+
+  }
+
+}
+
+
+/* ***** */
+/* USE GALLERY CLASS */
+/* ***** */
+
+$(function () {
+  let popup = new Gallery({
+    next_by_click_img: true,
+    speed: 400,
+    auto_play_speed: 2000
+  });
+
+  $('.gallery img').on('click', function(e){
+    popup.open('.gallery img', this);
+  });
+
+});
+
+
 </script>
