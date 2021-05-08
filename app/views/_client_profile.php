@@ -719,7 +719,9 @@
         <div id="modalName" style="text-align: center;">Name:</div>
         <hr>
         <h4 class="text-primary text-center">Линк за Техника</h4>
-        <div id="modalLink" style="text-align: center;">Link:</div>
+        <div class="text-center">
+          <a id="modalLink" target="blank">Link:</a>
+        </div>
         <hr>
         <h4 class="text-primary text-center">Објаснување</h4>
         <div id="modalTrainingDescription" style="text-align: center;">Description:</div>
@@ -746,7 +748,9 @@
           <div id="modalVezbaName" style="text-align: center;">Name:</div>
           <hr>
           <h4 class="text-primary text-center">Линк за Вежба</h4>
-          <div id="modalVezbaLink" style="text-align: center;">Link:</div>
+          <div class="text-center">
+            <a id="modalVezbaLink" target="blank">Link:</a>
+          </div>
           <hr>
           <h4 class="text-primary text-center">Мускулна Група</h4>
           <div id="modalVezbaMuscle" style="text-align: center;">Muskulna Grupa:</div>
@@ -836,6 +840,7 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
             // modalTechName.innerHTML = "" + theItem.name
             modalName.innerHTML = "" + theItem.name
             modalLink.innerHTML = "" + theItem.link
+            modalLink.href = theItem.link
             modalTrainingDescription.innerHTML = "" + theItem.description
 
           })
@@ -875,6 +880,7 @@ var modalVezbaDescription = document.getElementById("modalVezbaDescription")
             // modalVezbaName1.innerHTML = "" + theItem.name
             modalVezbaName.innerHTML = "" + theItem.name
             modalVezbaLink.innerHTML = "" + theItem.link_vezba
+            modalVezbaLink.href = theItem.link_vezba
             modalVezbaMuscle.innerHTML = "" + theItem.muskulna_grupa
             modalVezbaDescription.innerHTML = "" + theItem.description
 

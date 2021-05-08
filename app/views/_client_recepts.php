@@ -5,6 +5,8 @@
   $recepts = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
 
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script>
 
 <section>
 	<div class="layout-content-body">
@@ -22,6 +24,7 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 			  		</div>
+			  		<strong>Recepts List</strong>
 					</div>
 					<div class="card-body">
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
@@ -41,7 +44,7 @@
 									<td><?= $r->managers_manager_id; ?></td>
 									<td><?= $r->name; ?></td>
 									<td><?= $r->description; ?></td>
-									<td><?= $r->link; ?></td>
+									<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $r->link; ?>" data-target="#myModal">Watch</button></td>
 				  			</tr>
 				  			<?php endforeach; ?>
 							</tbody>
@@ -51,4 +54,44 @@
 			</div>
 	  </div>
 	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+    	  <div class="modal-body">
+    	   	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    	      <span aria-hidden="true">&times;</span>
+    	    </button>        
+    		  <!-- 16:9 aspect ratio -->
+					<div class="embed-responsive embed-responsive-16by9">
+  					<iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay" allowfullscreen></iframe>
+					</div>
+		    </div>
+		  </div>
+		</div>
+	</div> 
+
 </section>
+
+<script>
+	$(document).ready(function() {
+	// Gets the video src from the data-src on each button
+	var $videoSrc;  
+	$('.video-btn').click(function() {
+	    $videoSrc = $(this).data( "src" );
+	});
+	console.log($videoSrc);
+	// when the modal is opened autoplay it  
+	$('#myModal').on('shown.bs.modal', function (e) {
+	// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... 	you never know what you're gonna get
+	$("#video").attr('src',$videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0" ); 
+	})
+	// stop playing the youtube video when I close the modal
+	$('#myModal').on('hide.bs.modal', function (e) {
+	    // a poor man's stop video
+	    $("#video").attr('src',$videoSrc); 
+	})   
+	// document ready  
+	});
+</script>
