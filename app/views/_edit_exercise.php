@@ -42,10 +42,13 @@
 					<div class="md-form-group">
 						<select value="<?= $vezba->muskulna_grupa; ?>" class="md-form-control" name="muskulna_grupa" id="muskulna_grupa" data-msg="Muscle">
 							<option value="" disabled="disabled" selected="selected">Muscle</option>
-							<option value="Раце">Раце</option>
-							<option value="Нозе">Нозе</option>
-							<option value="Грб">Грб</option>
 							<option value="Гради">Гради</option>
+							<option value="Грб">Грб</option>
+							<option value="Рамо">Рамо</option>
+							<option value="Бицепс">Бицепс</option>
+							<option value="Трицепс">Трицепс</option>
+							<option value="Стомак">Стомак</option>
+							<option value="Нозе">Нозе</option>
 						</select>
 					</div>
 					
