@@ -8,8 +8,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #000;
-  transition: opacity 500ms;
+  background: #111111fa;
+  transition: opacity 1000ms;
   visibility: hidden;
   opacity: 0;
   z-index: 1;
@@ -38,14 +38,23 @@
   width: 100%;
   height: auto;
   display: none;
+  visibility: visible;
+  width: 100%;
+  border: 3px solid;
+  border-color: #98721a;
+  border-radius: 10px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    outline: 0;
+    position: relative
 }
 /*Buttons styles*/
 .popup span#close {
   position: fixed;
-  top: 20px;
-  right: 40px;
+  top: 60px;
+  right: 20px;
   transition: all 200ms;
-  font-size: 40px;
+  font-size: 22px;
   font-weight: bold;
   color: #fff;
   z-index: 100;
@@ -112,7 +121,11 @@
 /* ***** */
 /* PAGE STYLES */
 /* ***** */
-.wrap {display: flex;max-width: 100%;/* margin: 50px auto; */}
+.wrap {
+    display: flex;
+    max-width: 100%;
+    margin: 50px
+}
 .gallery {
   
   /* display: flex; */
@@ -126,10 +139,10 @@
   margin-bottom: 15px;
   cursor: pointer;
 }
-.gallery .gallary_block img:last-child {
+.gallery .gallery_block img:last-child {
   margin-right: 0;
 }
-.gallery .gallary_block {
+.gallery .gallery_block {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
