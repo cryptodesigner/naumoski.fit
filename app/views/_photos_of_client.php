@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="static/css/gallery.css">
 
-<section>
-	<div class="layout-content-body">
+<section class="">
+	<div class="open">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
 			  <span class="d-ib">Uploaded Images</span>
@@ -42,7 +42,7 @@
 			foreach($directoryfiles as $directoryfile){
     		if(strlen($directoryfile) > 3){
     			if(str_starts_with($directoryfile, $user_id)){
-    				echo '<img src="' . IMAGEPATH . $directoryfile . '" height="300" width="auto" alt="' . $directoryfile . '" /> ';
+    				echo '<img src="' . IMAGEPATH . $directoryfile . '"/> ';
     			}
     		}
 			}
@@ -80,7 +80,7 @@
 
 
 		// Adding PopUp HtmlContent
-		$('.layout-content-body').append('<div id="overlay" class="overlay"><div class="popup" id="popupBody"></div></div>');
+		$('.open').append('<div id="overlay" class="overlay"><div class="popup" id="popupBody"></div></div>');
 		this.overlay = $('.overlay');
 		this.popup = $('.popup');
 
