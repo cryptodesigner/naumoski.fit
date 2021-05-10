@@ -39,7 +39,6 @@
   height: auto;
   display: none;
   visibility: visible;
-  width: 100%;
   border: 3px solid;
   border-color: #98721a;
   border-radius: 10px;
@@ -55,57 +54,52 @@
   right: 20px;
   transition: all 200ms;
   font-size: 22px;
-  font-weight: bold;
   color: #fff;
   z-index: 100;
   cursor: pointer;
 }
 .popup span#next {
   position: fixed;
-  top: 50%;
-  right: 30px;
+  top: 60px;
+  right: 50px;
   transition: all 200ms;
-  font-size: 70px;
-  font-weight: bold;
+  font-size: 22px;
   color: #fff;
   z-index: 100;
   cursor: pointer;
 }
 .popup span#prev {
   position: fixed;
-  top: 50%;
-  left: 30px;
+  top: 60px;
+  right: 80px;
   transition: all 200ms;
-  font-size: 70px;
-  font-weight: bold;
+  font-size: 22px;
   color: #fff;
   z-index: 100;
   cursor: pointer;
 }
 .popup .play_wrap {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
+  position: fixed;
+  top: 60px;
+  right: 110px;
   transition: all 200ms;
-  padding-bottom: 30px;
-  padding-top: 35px;
-  opacity: 0;
+  font-size: 22px;
+  color: #fff;
   z-index: 100;
+  cursor: pointer;
 }
 .popup .play_wrap:hover{
   opacity: 1;
-  background-color: rgba(204,204,204, 0.8);
 }
 .popup .play_wrap span {
-  font-size: 60px;
+  font-size: 22px;
 }
 .popup .play_wrap span#stop {
   display: none;
 }
 .popup .play_wrap span#play:hover, .popup .play_wrap span#stop:hover {
-  color: #1F6FEB;
+  color: #98721a;
   cursor: pointer;
 }
 .popup .play_wrap span i {
@@ -115,8 +109,8 @@
   color: #fff;
 }
 .popup span#next:hover, .popup span#prev:hover, .popup span#close:hover {
-  color: #1F6FEB;
-  border-color: #1F6FEB;
+  color: #98721a;
+  border-color: #98721a;
 }
 /* ***** */
 /* PAGE STYLES */
@@ -134,7 +128,7 @@
   flex-direction: row;
 }
 .gallery img {
-  width: calc(100% * (1/4) - 10px - 1px);
+  width: calc(100% * (1/3) - 10px - 1px);
   height: auto;
   margin-bottom: 15px;
   cursor: pointer;
@@ -146,4 +140,16 @@
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
+}
+
+.layout-content-gallery
+{
+    -webkit-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    float: left;
+    padding: 15px 15px 35px;
+    visibility: visible;
+    width: 100%
 }
