@@ -1,43 +1,60 @@
 <?php
   include("config.php");
   require 'db.php';
-  if(isset($_POST['email'])) {
+
+  require_once("php/PHPMailerAutoload.php");
+    
+  require("php/PHPMailer.php");
+  require("php/SMTP.php");
+  require("php/Exception.php");
+
+  $mail = new PHPMailer\PHPMailer\PHPMailer();
+  
+  $mail->SMTPDebug = 2;
+  $mail->Debugoutput = 'html';
+  $mail->Host = 'localhost';
+  $mail->Port = 25;
+
+  //Authentication
+  $mail->Username = "reset@naumoski.fit";
+  $mail->Password = "Naumoski@2021";
+
+  if(isset($_POST['email'])){
     $email = $_POST['email'];
 
     $sql = "SELECT * FROM clients WHERE email = '$email'";
     $result = mysqli_query($db, $sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-    // $active = $row['active'];
-  
     $count = mysqli_num_rows($result);
 
-    if($count == 1) {
-      $to = $email;
+    if($count == 1){
       $password = generateRandomString();
-      $from = "beyourowncode@gmail.com";
-      $subject = "Reset Password";
-      $message = $password;
-      $headers = 'From: beyourowncode@gmail.com' . "\r\n" .
-    'Reply-To: beyourowncode@gmail.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
 
-      mail($to, $subject, $message, $headers);
+      $encPassword = md5($password);
+      
+      $sql = 'UPDATE clients SET password=:encPassword WHERE email=:email';
+      $statement = $connection->prepare($sql);
+    
+      if ($statement->execute([':encPassword' => $encPassword, ':email' => $email])) {
+        // header("location: clients.php");
+      }
 
-      // $sql2 = mysqli_query($connection, "UPDATE clients SET password = '$password' WHERE email = '$email'");
+      //Set Params
+      $mail->SetFrom("reset@naumoski.fit");
+      $mail->AddAddress($email);
+      $mail->Subject = "Reset Password";
+      $mail->Body = $password;
 
-
-      // mail($email, "Reset Password", $letters);
-
-      // $encPassword = md5($letters);
-      // $sql = 'UPDATE clients SET password=:encPassword WHERE email=:email';
-      // $statement = $connection->prepare($sql);
-      // $statement->execute([':password' => $encPassword, ':email' => $email]);
+      if(!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+      } else {
+        echo "Message has been sent";
+      }
     }
-    else {
-      "No client";
+    else{
+      echo "Email not in Database";
     }
   }
-
 
   function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -48,8 +65,6 @@
     }
     return $randomString;
   }
-
-
 ?>
 
 <!DOCTYPE html>
