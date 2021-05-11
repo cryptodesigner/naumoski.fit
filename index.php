@@ -625,7 +625,7 @@
                     </li>
                 </ul>
                 <div class="text-center pt-5">
-                    <a href="app.naumoski.fit" class="btn btn-medium btn-rounded btn-pink">Login</a>
+                    <a href="https://app.naumoski.fit" class="btn btn-medium btn-rounded btn-pink">Login</a>
                 </div>
             </div>
         </div>
