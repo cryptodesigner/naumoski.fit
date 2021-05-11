@@ -38,7 +38,7 @@
     <!--Navigation-->
     <nav class="navbar navbar-top-default navbar-expand-lg navbar-simple nav-line">
         <div class="container">
-            <a href="index.html" title="Logo" class="logo">
+            <a href="index.php" title="Logo" class="logo">
                 <!--Logo Default-->
                 <img src="web/assets/images/logo.svg" alt="logo" class="ml-lg-3 m-0">
             </a>
@@ -46,7 +46,7 @@
             <!--Nav Links-->
             <div class="collapse navbar-collapse" id="megaone">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link line" href="index.html">Home</a>
+                    <a class="nav-link line" href="index.php">Home</a>
                     <a class="nav-link line" href="about.html">About Me</a>
                     <a class="nav-link scroll line" href="#portfolio">Application</a>
                     <a class="nav-link scroll line" href="#pricing">Pricing Plans</a>
@@ -79,12 +79,12 @@
         </span>
         <div class="inner-wrapper">
             <nav class="side-nav w-100">
-                <a href="index.html" title="Logo" class="logo scroll navbar-brand">
+                <a href="index.php" title="Logo" class="logo scroll navbar-brand">
                     <img src="web/assets/images/logo.svg" alt="logo">
                 </a>
                 <ul class="navbar-nav text-capitalize">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Me</a>
