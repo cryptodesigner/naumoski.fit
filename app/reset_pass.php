@@ -51,7 +51,38 @@
         echo "Message has been sent";
       }
     }
-    else{
+
+    $sql = "SELECT * FROM managers WHERE email = '$email'";
+    $result = mysqli_query($db, $sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $count = mysqli_num_rows($result);
+
+    if($count == 1){
+      $password = generateRandomString();
+
+      $encPassword = md5($password);
+      
+      $sql = 'UPDATE managers SET password=:encPassword WHERE email=:email';
+      $statement = $connection->prepare($sql);
+    
+      if ($statement->execute([':encPassword' => $encPassword, ':email' => $email])) {
+        // header("location: clients.php");
+      }
+
+      //Set Params
+      $mail->SetFrom("reset@naumoski.fit");
+      $mail->AddAddress($email);
+      $mail->Subject = "Reset Password";
+      $mail->Body = $password;
+
+      if(!$mail->Send()) {
+        echo "Mailer Error: " . $mail->ErrorInfo;
+      } else {
+        echo "Message has been sent";
+      }
+    }
+
+    if($count != 1){
       echo "Email not in Database";
     }
   }
