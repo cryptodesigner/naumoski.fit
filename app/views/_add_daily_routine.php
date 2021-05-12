@@ -28,6 +28,11 @@
 		<h1 class="title-bar-title">
 			<span class="d-ib">Add Daily routine</span>
 		</h1>
+		<?php if(!empty($message)): ?>
+      	<div class="alert alert-success">
+        	<?= $message; ?>
+      	</div>
+    	<?php endif; ?>
 	</div>
 </div>
 

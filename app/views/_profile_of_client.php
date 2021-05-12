@@ -270,7 +270,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-6">
+				<!-- <div class="col-md-6">
 					<div class="panel panel-body text-center" data-toggle="match-height">
 						<div class="row">
 							<div class="col-xs-6 col-xs-offset-3">
@@ -296,11 +296,19 @@
 						<h6 class="m-b-0">Daily diet calories value (kCal)</h6>
 						<h6 class="m-b-0">Total Calories (kCal)</h6>
 					</div>
-				</div>
+				</div> -->
 
+				<?php
+					$datapoints = array();
+					foreach ($measurements as $m) {
+						array_push($datapoints, array("x"=> $m->cur_date, "y"=> $m->tezina));
+					}
+					// echo '<pre>'; print_r($datapoints); echo '</pre>';
+				?>
+				
 				<div class="col-md-6">
 					<div class="panel panel-body text-center" data-toggle="match-height">
-						<canvas id="weightCanvas" data-chart="line" data-labels='["May", "Jun", "Jul", "Aug"]' data-values='[{"backgroundColor": "rgba(243, 129, 32, 0.7)", "borderColor": "#50b432", "borderWidth": 2, "pointBackgroundColor": "#F27820", "pointRadius": 3, "label": "Kilograms", "data": [75, 70, 60, 66]}]' data-hide='["gridLinesX", "legend"]' height="150" width="300"></canvas>
+						<canvas id="weightCanvas" data-chart="line" data-labels='["May", "Jun", "Jul", "Aug", "Sep"]' data-values='[{"backgroundColor": "rgba(243, 129, 32, 0.7)", "borderColor": "#50b432", "borderWidth": 2, "pointBackgroundColor": "#F27820", "pointRadius": 3, "label": "Kilograms", "data": <?php echo json_encode($datapoints);?>}]' data-hide='["gridLinesX", "legend"]' height="150" width="300"></canvas>
 						<h6 class="m-b-0">Body Weight (Kg)</h6>
 					</div>
 				</div>
