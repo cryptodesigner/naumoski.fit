@@ -39,6 +39,7 @@
 									<th>Odbivnost</th>
 									<th>Zaboluvanja</th>
 									<th>Iskustvo</th>
+									<th>Suplement?</th>
 									<th>Action Del</th>
 									<th>Action Upd</th>
 								</tr>
@@ -56,6 +57,7 @@
 									<td><?= $b->odbivnost; ?></td>
 									<td><?= $b->zaboluvanja; ?></td>
 									<td><?= $b->iskustvo; ?></td>
+									<td><?= $b->suplement; ?></td>
 									<td>
 					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-danger'>Delete</a>
 									</td>

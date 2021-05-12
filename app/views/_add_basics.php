@@ -57,6 +57,13 @@
 							<option value="Професионалец">Професионалец</option>
 						</select>
 					</div>
+					<div class="md-form-group">
+					  	<select class="md-form-control" name="suplement" id="suplement" data-msg-required="Would you like to use suplements?">
+							<option value="" disabled="disabled" selected="selected">Дали би користеле суплементи?</option>
+							<option value="Да">Да</option>
+							<option value="Не">Не</option>
+						</select>
+					</div>
 					<button class="btn btn-default btn-block" type="submit">Додади</button>
 				 </div>
 			</div>

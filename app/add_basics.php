@@ -9,7 +9,7 @@
 
 
   $message = '';
-  if (isset ($_POST['pol']) && isset ($_POST['godini']) && isset ($_POST['visina']) && isset ($_POST['tezina']) && isset ($_POST['alergija']) && isset ($_POST['netolerantnost']) && isset ($_POST['odbivnost']) && isset ($_POST['zaboluvanja']) && isset ($_POST['iskustvo'])) {
+  if (isset ($_POST['pol']) && isset ($_POST['godini']) && isset ($_POST['visina']) && isset ($_POST['tezina']) && isset ($_POST['alergija']) && isset ($_POST['netolerantnost']) && isset ($_POST['odbivnost']) && isset ($_POST['zaboluvanja']) && isset ($_POST['iskustvo']) && isset ($_POST['suplement'])) {
   	$clients_client_id = $_SESSION["client_id"];
   	$pol = $_POST['pol'];
   	$godini = $_POST['godini'];
@@ -20,9 +20,10 @@
     $odbivnost = $_POST['odbivnost'];
     $zaboluvanja = $_POST['zaboluvanja'];
     $iskustvo = $_POST['iskustvo'];
-  	$sql = 'INSERT INTO basics(clients_client_id, pol, godini, visina, tezina, alergija, netolerantnost, odbivnost, zaboluvanja, iskustvo) VALUES(:clients_client_id, :pol, :godini, :visina, :tezina, :alergija, :netolerantnost, :odbivnost, :zaboluvanja, :iskustvo)';
+    $suplement = $_POST['suplement'];
+  	$sql = 'INSERT INTO basics(clients_client_id, pol, godini, visina, tezina, alergija, netolerantnost, odbivnost, zaboluvanja, iskustvo, suplement) VALUES(:clients_client_id, :pol, :godini, :visina, :tezina, :alergija, :netolerantnost, :odbivnost, :zaboluvanja, :iskustvo, :suplement)';
   	$statement = $connection->prepare($sql);
-  	if ($statement->execute([':clients_client_id' => $clients_client_id, ':pol' => $pol, ':godini' => $godini, ':visina' => $visina, ':tezina' => $tezina, ':alergija' => $alergija, ':netolerantnost' => $netolerantnost, ':odbivnost' => $odbivnost, ':zaboluvanja' => $zaboluvanja, ':iskustvo' => $iskustvo])) {
+  	if ($statement->execute([':clients_client_id' => $clients_client_id, ':pol' => $pol, ':godini' => $godini, ':visina' => $visina, ':tezina' => $tezina, ':alergija' => $alergija, ':netolerantnost' => $netolerantnost, ':odbivnost' => $odbivnost, ':zaboluvanja' => $zaboluvanja, ':iskustvo' => $iskustvo, ':suplement' => $suplement])) {
   	  $message = 'Basics Added Successfully';
   	}
   }

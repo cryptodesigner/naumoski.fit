@@ -182,12 +182,6 @@
             <div class="table-responsive">
               <table class="table table-hover">
                 <tr>
-                  <?php foreach($clients as $c): ?>
-                  <th colspan="6">Ime: </th>
-                  <td colspan="6"><?= $c->name; ?></td>
-                  <?php endforeach; ?>
-                </tr>
-                <tr>
                   <?php foreach($basics as $b): ?>
                   <th colspan="6">Pol: </th>
                   <td colspan="6"><?= $b->pol; ?></td>
@@ -209,6 +203,12 @@
                   <?php foreach($basics as $b): ?>
                   <th colspan="6">Tezina: </th>
                   <td colspan="6"><?= $b->tezina; ?></td>
+                  <?php endforeach; ?>
+                </tr>
+                <tr>
+                  <?php foreach($basics as $b): ?>
+                  <th colspan="6">Iskustvo: </th>
+                  <td colspan="6"><?= $b->iskustvo; ?></td>
                   <?php endforeach; ?>
                 </tr>
               </table>
@@ -256,8 +256,8 @@
                 </tr>
                 <tr>
                   <?php foreach($basics as $b): ?>
-                  <th colspan="6">Iskustvo: </th>
-                  <td colspan="6"><?= $b->iskustvo; ?></td>
+                  <th colspan="6">Suplementi?: </th>
+                  <td colspan="6"><?= $b->suplement; ?></td>
                   <?php endforeach; ?>
                 </tr>
               </table>
