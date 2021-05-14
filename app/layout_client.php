@@ -84,19 +84,19 @@
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li>
                     <a href="#">
-                      <h5 class="navbar-upgrade-heading">Dashboard Info</h5>
+                      <h5 class="navbar-upgrade-heading">Контролна табла</h5>
                     </a>
                   </li>
                   <li class="divider"></li>
                   <!-- <li><a href="contacts.html">Contacts</a></li>
                   <li><a href="profile.html">Profile</a></li> -->
-                  <li><a href="logout.php">Sign out</a></li>
+                  <li><a href="logout.php">Одјави се</a></li>
                 </ul>
               </li>
               <li class="visible-xs-block">
                 <a href="logout.php">
                   <span class="icon icon-power-off icon-lg icon-fw"></span>
-                  Sign out
+                  Одјави се
                 </a>
               </li>
             </ul>
@@ -125,76 +125,76 @@
                 <li class="sidenav-item">
                   <a href="client_profile.php">
                     <span class="sidenav-icon icon icon-home"></span>
-                    <span class="sidenav-label">Home</span>
+                    <span class="sidenav-label">Дома</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-line-chart"></span>
-                    <span class="sidenav-label">Measurements</span>
+                    <span class="sidenav-label">Мерења</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Measurements</li>
-                    <li><a href="add_measurement.php">Add Measurements</a></li>
-                    <li><a href="client_measurements.php">Show All Measurements</a></li>
+                    <li class="sidenav-subheading">Мерења</li>
+                    <li><a href="add_measurement.php">Додави Мерење</a></li>
+                    <li><a href="client_measurements.php">Прикажи Мерења</a></li>
                   </ul>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-paw"></span>
-                    <span class="sidenav-label">Basics</span>
+                    <span class="sidenav-label">Основни Информации</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Basics</li>
-                    <li><a href="add_basics.php">Add Basics</a></li>
-                    <li><a href="client_basics.php">Show All Basics</a></li>
+                    <li class="sidenav-subheading">Основни Информации</li>
+                    <li><a href="add_basics.php">Додави Основна Информација</a></li>
+                    <li><a href="client_basics.php">Прикажи Основни Информации</a></li>
                   </ul>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-calendar-check-o"></span>
-                    <span class="sidenav-label">Schedules</span>
+                    <span class="sidenav-label">Распоред</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Schedules</li>
-                    <li><a href="add_schedule.php">Add Schedules</a></li>
-                    <li><a href="client_schedule.php">Show All Schedules</a></li>
+                    <li class="sidenav-subheading">Распоред</li>
+                    <li><a href="add_schedule.php">Додави Распоред</a></li>
+                    <li><a href="client_schedule.php">Прикажи Распоред</a></li>
                   </ul>
                 </li>
 
                 <li class="sidenav-item">
                   <a href="client_trainings.php">
                     <span class="sidenav-icon icon icon-heartbeat"></span>
-                    <span class="sidenav-label">Trainings</span>
+                    <span class="sidenav-label">Тренинзи</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item">
                   <a href="client_meals.php">
                     <span class="sidenav-icon icon icon-cutlery"></span>
-                    <span class="sidenav-label">Diets</span>
+                    <span class="sidenav-label">Диети</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item">
                   <a href="client_recepts.php">
                     <span class="sidenav-icon icon icon-apple"></span>
-                    <span class="sidenav-label">Recepts</span>
+                    <span class="sidenav-label">Рецепти</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-photo"></span>
-                    <span class="sidenav-label">Photo Gallery</span>
+                    <span class="sidenav-label">Фото Галерија</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Photo Gallery</li>
-                    <li><a href="photos.php">Gallery</a></li>
-                    <li><a href="upload_photo.php">Add Photo</a></li>
+                    <li class="sidenav-subheading">Фото Галерија</li>
+                    <li><a href="photos.php">Галерија</a></li>
+                    <li><a href="upload_photo.php">Додади Слика</a></li>
                   </ul>
                 </li>
 

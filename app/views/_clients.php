@@ -9,7 +9,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Clients</span>
+			  <span class="d-ib">Листа На Клиенти</span>
 			</h1>
 	  </div>
 	  	<div class="row gutter-xs">
@@ -21,20 +21,20 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 			 				</div>
-			  			<strong>Clients List</strong>
+			  			<strong>Листа На Клиенти</strong>
 						</div>
 						<div class="card-body">
 			  		 	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 								<thead>
 				  				<tr>
-										<th>Seq.</th>
-										<th>Name</th>
-										<th>Surname</th>
-										<th>Email</th>
-										<th>Action Del</th>
-										<th>Action Upd</th>
-										<th>Profile</th>
-										<th>Photos</th>
+										<th>Р.б.</th>
+										<th>Име</th>
+										<th>Презиме</th>
+										<th>Емаил</th>
+										<th>Бриши</th>
+										<th>Уреди</th>
+										<th>Профил</th>
+										<th>Фото</th>
 				  				</tr>
 								</thead>
 								<tbody>
@@ -45,16 +45,16 @@
 										<td><?= $person->surname; ?></td>
 										<td><?= $person->email; ?></td>
 										<td>
-					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_client.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Delete</a>
+					  						<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_client.php?client_id=<?= $person->client_id ?>" class='btn btn-danger'>Бриши</a>
 										</td>
 										<td>
-					  						<a href="edit_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Edit</a>
+					  						<a href="edit_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Уреди</a>
 										</td>
 										<td>
-					  						<a href="profile_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Profile</a>
+					  						<a href="profile_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-default'>Профил</a>
 										</td>
 										<td>
-					  						<a href="photos_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-primary'>Photos</a>
+					  						<a href="photos_of_client.php?client_id=<?= $person->client_id ?>" class='btn btn-primary'>Фото</a>
 										</td>
 				  				</tr>
 				  				<?php endforeach; ?>

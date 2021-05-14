@@ -84,19 +84,19 @@
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li>
                     <a href="#">
-                      <h5 class="navbar-upgrade-heading">Dashboard Info</h5>
+                      <h5 class="navbar-upgrade-heading">Контролна табла</h5>
                     </a>
                   </li>
                   <li class="divider"></li>
                   <!-- <li><a href="contacts.html">Contacts</a></li>
                   <li><a href="profile.html">Profile</a></li> -->
-                  <li><a href="logout.php">Sign out</a></li>
+                  <li><a href="logout.php">Одјави се</a></li>
                 </ul>
               </li>
               <li class="visible-xs-block">
                 <a href="logout.php">
                   <span class="icon icon-power-off icon-lg icon-fw"></span>
-                  Sign out
+                  Одјави се
                 </a>
               </li>
             </ul>
@@ -125,19 +125,19 @@
                 <li class="sidenav-item">
                   <a href="manager_profile.php">
                     <span class="sidenav-icon icon icon-home"></span>
-                    <span class="sidenav-label">Home</span>
+                    <span class="sidenav-label">Дома</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-user"></span>
-                    <span class="sidenav-label">Clients</span>
+                    <span class="sidenav-label">Клиенти</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Clients</li>
-                    <li><a href="clients.php">Show All Clients</a></li>
-                    <li><a href="add_client.php">Add Client</a></li>
+                    <li class="sidenav-subheading">Клиенти</li>
+                    <li><a href="clients.php">Прикажи Клиенти</a></li>
+                    <li><a href="add_client.php">Додади Клиент</a></li>
                   </ul>
                 </li>
 
@@ -156,36 +156,36 @@
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-heartbeat"></span>
-                    <span class="sidenav-label">Techniques</span>
+                    <span class="sidenav-label">Техники</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Techniques</li>
-                    <li><a href="techniques.php">Show All Techniques</a></li>
-                    <li><a href="add_tech.php">Add Technique</a></li>
+                    <li class="sidenav-subheading">Техники</li>
+                    <li><a href="techniques.php">Прикажи Техники</a></li>
+                    <li><a href="add_tech.php">Додади Техника</a></li>
                   </ul>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-universal-access"></span>
-                    <span class="sidenav-label">Exercises</span>
+                    <span class="sidenav-label">Вежби</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Exercises</li>
-                    <li><a href="exercises.php">Show All Exercises</a></li>
-                    <li><a href="add_exercise.php">Add Exercise</a></li>
+                    <li class="sidenav-subheading">Вежби</li>
+                    <li><a href="exercises.php">Прикажи Вежби</a></li>
+                    <li><a href="add_exercise.php">Додади Вежба</a></li>
                   </ul>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-cutlery"></span>
-                    <span class="sidenav-label">Meal Options</span>
+                    <span class="sidenav-label">Оброци</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Meals Options</li>
-                    <li><a href="meals.php">Show All Meal Options</a></li>
-                    <li><a href="add_meal.php">Add Meal Option</a></li>
+                    <li class="sidenav-subheading">Оброци</li>
+                    <li><a href="meals.php">Прикажи Оброци</a></li>
+                    <li><a href="add_meal.php">Додади Оброк</a></li>
                   </ul>
                 </li>
 
@@ -216,7 +216,7 @@
                 <li class="sidenav-item">
                   <a href="trainings.php">
                     <span class="sidenav-icon icon icon-gear"></span>
-                    <span class="sidenav-label">Show Trainings</span>
+                    <span class="sidenav-label">Тренинзи</span>
                   </a>
                 </li>
 
@@ -235,7 +235,7 @@
                 <li class="sidenav-item">
                   <a href="daily_meals.php">
                     <span class="sidenav-icon icon icon-apple"></span>
-                    <span class="sidenav-label">Show Daily Meals</span>
+                    <span class="sidenav-label">Дневни Оброци</span>
                   </a>
                 </li>
                 
@@ -254,19 +254,19 @@
                 <li class="sidenav-item">
                   <a href="add_daily_routine.php">
                     <span class="sidenav-icon icon icon-sun-o"></span>
-                    <span class="sidenav-label">Add Daily Routine</span>
+                    <span class="sidenav-label">Додади Дневна Рутина</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item has-subnav">
                   <a href="#" aria-haspopup="true">
                     <span class="sidenav-icon icon icon-heart"></span>
-                    <span class="sidenav-label">Recepts</span>
+                    <span class="sidenav-label">Рецепти</span>
                   </a>
                   <ul class="sidenav-subnav collapse">
-                    <li class="sidenav-subheading">Recepts</li>
-                    <li><a href="recepts.php">Show All Recepts</a></li>
-                    <li><a href="add_recept.php">Add Recept</a></li>
+                    <li class="sidenav-subheading">Рецепти</li>
+                    <li><a href="recepts.php">Прикажете Рецепти</a></li>
+                    <li><a href="add_recept.php">Додади Рецепт</a></li>
                   </ul>
                 </li>
 

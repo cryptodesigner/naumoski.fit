@@ -23,16 +23,16 @@
           </div>
           <div class="profile-overview">
             <?php foreach($managers as $m): ?>
-              <h1 class="profile-name"><?= $m->name; ?> <?= $m->surname; ?>'s Profile</h1>
+              <h1 class="profile-name"><?= $m->name; ?> <?= $m->surname; ?></h1>
             <?php endforeach; ?>
-            <a class="profile-follow-btn" href ="edit_m_profile.php">Edit Profile</a>
-            <p>Manager<a class="link-inverted"></a></p>
+            <a class="profile-follow-btn" href ="edit_m_profile.php">Уреди Профил</a>
+            <p>Менажер<a class="link-inverted"></a></p>
           </div>
         </div>
         <div class="profile-tabs">
           <ul class="profile-nav">
-            <li><a onclick="openTab('Profile')">Profile</a></li>
-            <li><a onclick="openTab('Clients')">Clients</a></li>
+            <li><a onclick="openTab('Profile')">Профил</a></li>
+            <li><a onclick="openTab('Clients')">Клиенти</a></li>
           </ul>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <div class="card no-background no-border">
           <div class="card-values">
             <div class="p-x">
-              <small>Clents</small>
+              <small>Клиенти</small>
               <h3 class="card-title fw-l">185,118</h3>
             </div>
           </div>
@@ -63,7 +63,7 @@
         <div class="card bg-primary no-border">
           <div class="card-values">
             <div class="p-x">
-              <small>Groceries</small>
+              <small>Намирници</small>
               <h3 class="card-title fw-l">68,394</h3>
             </div>
           </div>
@@ -76,7 +76,7 @@
         <div class="card bg-info no-border">
           <div class="card-values">
             <div class="p-x">
-              <small>Meals</small>
+              <small>Оброци</small>
               <h3 class="card-title fw-l">95,590</h3>
             </div>
           </div>
@@ -89,7 +89,7 @@
         <div class="card bg-primary no-border">
           <div class="card-values">
             <div class="p-x">
-              <small>Trainings</small>
+              <small>Тренинзи</small>
               <h3 class="card-title fw-l">600,44</h3>
             </div>
           </div>
@@ -103,7 +103,7 @@
     <div id="Clients" class="tab" style="display: none">
       <div class="profile-container">
         <?php foreach($managers as $m): ?>
-          <h1><?= $m->name; ?>'s Client List</h1>
+          <h1><?= $m->name; ?> Листа На Клиенти</h1>
         <?php endforeach; ?>
       </div>
       <div class="tab-content">
@@ -114,19 +114,19 @@
               <button type="button" class="card-action card-reload" title="Reload"></button>
               <button type="button" class="card-action card-remove" title="Remove"></button>
             </div>
-            <strong>Clients List</strong>
+            <strong>Листа На Клиенти</strong>
           </div>
           <div class="card-body">
             <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th>Seq.</th>
-                  <th>Name</th>
-                  <th>Surname</th>
-                  <th>Email</th>
+                  <th>Р.б.</th>
+                  <th>Име</th>
+                  <th>Презиме</th>
+                  <th>Емаил</th>
                   <!--<th>Password</th>-->
-                  <th>Profile</th>
-                  <th>Photos</th>
+                  <th>Профил</th>
+                  <th>Фото</th>
                 </tr>
               </thead>
               <tbody>
@@ -138,10 +138,10 @@
                   <td><?= $c->email; ?></td>
                   <!--<td><?= $c->password; ?></td>-->
                   <td>
-                    <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Profile</a>
+                    <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Профил</a>
                   </td>
                   <td>
-                    <a href="photos_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-primary'>Photos</a>
+                    <a href="photos_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-primary'>Фото</a>
                   </td>
                 </tr>
                 <?php endforeach; ?>

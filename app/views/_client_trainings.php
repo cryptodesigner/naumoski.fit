@@ -11,7 +11,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Trainings</span>
+			  <span class="d-ib">Листа На Тренинзи</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -23,19 +23,19 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 			  		</div>
-			  		<strong>Trainings List</strong>
+			  		<strong>Листа На Тренинзи</strong>
 					</div>
 					<div class="card-body">
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
-									<th>Seq.</th>
-									<th>Name</th>
-									<th>Vezba</th>
-									<th>Serii / Povtoruvanja</th>
-									<th>Technique</th>
-									<th>Vreme</th>
-									<th>Date</th>
+									<th>Р.б.</th>
+									<th>Име</th>
+									<th>Вежба</th>
+									<th>Серии / Повт</th>
+									<th>Техника</th>
+									<th>Време</th>
+									<th>дата</th>
 				  			</tr>
 							</thead>
 							<tbody>
@@ -43,9 +43,9 @@
 								<tr>
 					  			<td><?= $t->training_id; ?></td>
 					  			<td><?= $t->name; ?></td>
-					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $t->vezba; ?>)">See Exercise</button></td>
+					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $t->vezba; ?>)">Преглед</button></td>
 					  			<td><?= $t->serii_povt; ?></td>
-					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $t->tech; ?>)">See Tech</button></td>
+					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $t->tech; ?>)">Преглед</button></td>
 					  			<td><?= $t->vreme; ?></td>
 					  			<td><?= $t->date; ?></td>
 								</tr>

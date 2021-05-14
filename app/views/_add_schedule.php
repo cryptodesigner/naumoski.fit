@@ -24,7 +24,7 @@
 	<div class="layout-content-body">
   <div class="title-bar">
 		<h1 class="title-bar-title">
-		  <span class="d-ib">Add Schedule</span>
+		  <span class="d-ib">Додади Распоред</span>
 		</h1>
 		<?php if(!empty($message)): ?>
       	<div class="alert alert-success">
@@ -37,7 +37,7 @@
 		  <div class="col-sm-6 col-sm-offset-3">
 				<div class="md-form-group">
 				  <select class="md-form-control" name="stanuvanje" id="stanuvanje" data-msg-required="Vreme na budenje" required>
-						<option value="" disabled="disabled" selected="selected">Vreme na Budenje</option>
+						<option value="" disabled="disabled" selected="selected">Време На Будење</option>
 						<option value="05:00">05:00</option>
 						<option value="05:30">05:30</option>
 						<option value="06:00">06:00</option>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="md-form-group">
 		  		<select class="md-form-control" name="legnuvanje" id="legnuvanje" data-msg-required="Vreme na legnuvanje" required>
-						<option value="" disabled="disabled" selected="selected">Vreme na Zaspivanje</option>
+						<option value="" disabled="disabled" selected="selected">Време На Заспивање</option>
 						<option value="21:00">21:00</option>
 						<option value="21:30">21:30</option>
 						<option value="22:00">22:00</option>
@@ -78,21 +78,21 @@
 		  		<label class="md-control-label"></label>
 				</div>
 				<div class="md-form-group">
-				  <input class="md-form-control" type="text" name="rabota" id="rabota" placeholder="Rabota / Shkolo (od - do) ako ima smeni (od - do)">
+				  <input class="md-form-control" type="text" name="rabota" id="rabota" placeholder="Работа / Школо (од - до) ако има смени (од - до)">
 				</div>
 				<div class="md-form-group">
-				  <input class="md-form-control" type="text" name="pauzi" id="pauzi" placeholder="Pauza (od - do)">
+				  <input class="md-form-control" type="text" name="pauzi" id="pauzi" placeholder="Пауза (од - до)">
 				</div>
 				<div class="md-form-group">
-				  <input class="md-form-control" type="text" name="trening" id="trening" placeholder="Trening (preferirano vreme)">
+				  <input class="md-form-control" type="text" name="trening" id="trening" placeholder="Тренинг (преферирано време)">
 				</div>
 				<div class="md-form-group">
-				  <input class="md-form-control" type="text" name="cardio" id="cardio" placeholder="Cardio (preferirano vreme)">
+				  <input class="md-form-control" type="text" name="cardio" id="cardio" placeholder="Кардио (преферирано време)">
 				</div>
 				<div class="md-form-group">
-				  <input class="md-form-control" type="text" name="description" id="description" placeholder="Drugi Fizicki Aktivnosti">
+				  <input class="md-form-control" type="text" name="description" id="description" placeholder="Други Физички Активности">
 				</div>
-				<button class="btn btn-default btn-block" type="submit">Add Schedule</button>
+				<button class="btn btn-default btn-block" type="submit">Додади Распоред</button>
 	  	</div>
 		</div>
   </form>

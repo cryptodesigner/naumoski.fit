@@ -25,7 +25,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-		  	<span class="d-ib">Add Measurement</span>
+		  	<span class="d-ib">Додади Мерење</span>
 			</h1>
 			<?php if(!empty($message)): ?>
       <div class="alert alert-success">
@@ -37,38 +37,38 @@
 			<div class="row">
 		  	<div class="col-sm-6 col-sm-offset-3">
 					<div class="md-form-group">
-			  		<input class="md-form-control" type="text" name="tezina" id="tezina" placeholder="Tezina (kg)">
+			  		<input class="md-form-control" type="text" name="tezina" id="tezina" placeholder="Тежина (кг)">
 			  		<label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="vrat" id="vrat" placeholder="Vrat (cm)">
+					  <input class="md-form-control" type="text" name="vrat" id="vrat" placeholder="Врат (цм)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="gradi" id="gradi" placeholder="Gradi (cm)">
+					  <input class="md-form-control" type="text" name="gradi" id="gradi" placeholder="Гради (цм)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="pod_gradi" id="pod_gradi" placeholder="Pod Gradi (cm)">
+					  <input class="md-form-control" type="text" name="pod_gradi" id="pod_gradi" placeholder="Под Гради (цм)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="papok" id="papok" placeholder="Papok (cm)">
+					  <input class="md-form-control" type="text" name="papok" id="papok" placeholder="Папок (цм)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="kolk" id="kolk" placeholder="Kolk (cm)">
+					  <input class="md-form-control" type="text" name="kolk" id="kolk" placeholder="Колк (цм)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="raka" id="raka" placeholder="Raka (cm)">
+					  <input class="md-form-control" type="text" name="raka" id="raka" placeholder="Рака (цм)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="but" id="but" placeholder="But (cm)">
+					  <input class="md-form-control" type="text" name="but" id="but" placeholder="Бут (цм)">
 					  <label class="md-control-label"></label>
 					</div>
-					<button class="btn btn-default btn-block" type="submit">Add Measurement</button>
+					<button class="btn btn-default btn-block" type="submit">Додади Мерење</button>
 		  	</div>
 			</div>
 	  </form>

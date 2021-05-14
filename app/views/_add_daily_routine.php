@@ -26,7 +26,7 @@
 <div class="layout-content-body">
 	<div class="title-bar">
 		<h1 class="title-bar-title">
-			<span class="d-ib">Add Daily routine</span>
+			<span class="d-ib">Додади Дневна Рутина</span>
 		</h1>
 		<?php if(!empty($message)): ?>
       	<div class="alert alert-success">
@@ -43,7 +43,7 @@
 			<div class="col-xs-12">
 				<div class="md-form-group">
 					<select class="md-form-control client" name="client" id="client" placeholder="Client">
-						<option value="" disabled="disabled" selected="selected">Client</option>
+						<option value="" disabled="disabled" selected="selected">Клиент</option>
 						<?php foreach($people as $person): ?>
 							<option value="<?= $person->client_id; ?>"><?= $person->name; ?> <?= $person->surname; ?> (<?= $person->client_id; ?>)</option>
 						<?php endforeach; ?>
@@ -58,7 +58,7 @@
 						<div class="row">
 							<div class="col-sm-3">
 								<div class="md-form-group">
-									<input class="md-form-control mealName" type="text" name="mealName"  placeholder="Meal">
+									<input class="md-form-control mealName" type="text" name="mealName"  placeholder="Име на Оброк">
 								</div>
 							</div>
 							<!-- <div class="col-sm-1">
@@ -77,8 +77,8 @@
 							</div> -->
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<select class="md-form-control mealOptionOne" name="mealOptionOne" placeholder="Option 1">
-										<option value="" disabled="disabled" selected="selected">Option 1</option>
+									<select class="md-form-control mealOptionOne" name="mealOptionOne" placeholder="Опција 1">
+										<option value="" disabled="disabled" selected="selected">Опција 1</option>
 										<?php foreach($options as $option): ?>
 											<option value="<?= $option->option_id; ?>"><?= $option->name; ?></option>
 										<?php endforeach; ?>
@@ -87,8 +87,8 @@
 							</div>
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<select class="md-form-control mealOptionTwo" name="mealOptionTwo" placeholder="Option 2">
-										<option value="" disabled="disabled" selected="selected">Option 2</option>
+									<select class="md-form-control mealOptionTwo" name="mealOptionTwo" placeholder="Опција 2">
+										<option value="" disabled="disabled" selected="selected">Опција 2</option>
 										<?php foreach($options as $option): ?>
 											<option value="<?= $option->option_id; ?>"><?= $option->name; ?></option>
 										<?php endforeach; ?>
@@ -97,8 +97,8 @@
 							</div>
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<select class="md-form-control mealOptionThree" name="mealOptionThree" placeholder="Option 3">
-										<option value="" disabled="disabled" selected="selected">Option 3</option>
+									<select class="md-form-control mealOptionThree" name="mealOptionThree" placeholder="Опција 3">
+										<option value="" disabled="disabled" selected="selected">Опција 3</option>
 										<?php foreach($options as $option): ?>
 											<option value="<?= $option->option_id; ?>"><?= $option->name; ?></option>
 										<?php endforeach; ?>
@@ -107,12 +107,12 @@
 							</div>
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<input class="md-form-control mealVreme" type="text" name="vreme"  placeholder="Vreme">
+									<input class="md-form-control mealVreme" type="text" name="vreme"  placeholder="Време">
 								</div>
 							</div>
 							<div class="col-sm-1">
 								<div class="md-form-group">
-									<button class="btn btn-primary" type="button" onclick="removeThis(this)">Remove</button>
+									<button class="btn btn-primary" type="button" onclick="removeThis(this)">Бриши</button>
 								</div>
 							</div>
 						</div>
@@ -124,14 +124,14 @@
 						<div class="row">
 							<div class="col-sm-3">
 								<div class="md-form-group">
-									<input class="md-form-control trainingName" type="text" name="trainingName"  placeholder="Training">
+									<input class="md-form-control trainingName" type="text" name="trainingName"  placeholder="Име На Тренинг">
 								</div>
 							</div>
 
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<select class="md-form-control trainingVezba" name="trainingVezba" placeholder="Vezba">
-										<option value="" disabled="disabled" selected="selected">Vezba</option>
+									<select class="md-form-control trainingVezba" name="trainingVezba" placeholder="Вежба">
+										<option value="" disabled="disabled" selected="selected">Вежба</option>
 										<?php foreach($exercises as $ex): ?>
 											<option value="<?= $ex->vezba_id; ?>"><?= $ex->name; ?></option>
 										<?php endforeach; ?>
@@ -141,14 +141,14 @@
 
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<input class="md-form-control trainingSerii" type="text" name="trainingSerii"  placeholder="Serii">
+									<input class="md-form-control trainingSerii" type="text" name="trainingSerii"  placeholder="Серии">
 								</div>
 							</div>
 							
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<select class="md-form-control trainingTech" name="trainingTech" placeholder="Technique">
-										<option value="" disabled="disabled" selected="selected">Technique</option>
+									<select class="md-form-control trainingTech" name="trainingTech" placeholder="Техника">
+										<option value="" disabled="disabled" selected="selected">Техника</option>
 										<?php foreach($tehniki as $t): ?>
 											<option value="<?= $t->tehnika_id; ?>"><?= $t->name; ?></option>
 										<?php endforeach; ?>
@@ -157,13 +157,13 @@
 							</div>
 							<div class="col-sm-2">
 								<div class="md-form-group">
-									<input class="md-form-control trainingVreme" type="text" name="trainingVreme"  placeholder="Vreme">
+									<input class="md-form-control trainingVreme" type="text" name="trainingVreme"  placeholder="Време">
 								</div>
 							</div>
 							
 							<div class="col-sm-1">
 								<div class="md-form-group">
-									<button class="btn btn-primary" type="button" onclick="removeThis(this)" >Remove</button>
+									<button class="btn btn-primary" type="button" onclick="removeThis(this)" >Бриши</button>
 								</div>
 							</div>
 						</div>
@@ -187,10 +187,10 @@
 
 			<div class="col-xs-12">
 			  <div class="md-form-group">
-				<button class="btn btn-primary" type="button" onClick="addNewDate()">Add Date</button>
-				<button class="btn btn-primary" type="button" id="addMeal">Add Meal</button>
-				<button class="btn btn-primary" type="button" id="addTraining">Add Training</button>
-				<button class="btn btn-primary" type="button" id="submitBtn">Submit</button>
+				<button class="btn btn-primary" type="button" onClick="addNewDate()">Додади Дата</button>
+				<button class="btn btn-primary" type="button" id="addMeal">Додади Оброк</button>
+				<button class="btn btn-primary" type="button" id="addTraining">Додади Тренинг</button>
+				<button class="btn btn-primary" type="button" id="submitBtn">Потврди</button>
 			  </div>
 			</div>
 		</div>

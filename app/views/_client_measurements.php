@@ -11,7 +11,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Measurements</span>
+			  <span class="d-ib">Листа На Мерења</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -23,24 +23,24 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 		  			</div>
-		  			<strong>Clients Measurements List</strong>
+		  			<strong>Листа На Мерења</strong>
 					</div>
 					<div class="card-body">
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>Seq.</th>
-									<th>Tezina</th>
-									<th>Vrat</th>
-									<th>Gradi</th>
-									<th>Pod Gradi</th>
-									<th>Papok</th>
-									<th>Kolk</th>
-									<th>Raka</th>
-									<th>But</th>
-									<th>Date</th>
-									<th>Action Del</th>
-									<th>Action Upd</th>
+									<th>Р.б.</th>
+									<th>Тежина</th>
+									<th>Врат</th>
+									<th>Гради</th>
+									<th>Под Гради</th>
+									<th>Папок</th>
+									<th>Колк</th>
+									<th>Рака</th>
+									<th>Бут</th>
+									<th>Дата</th>
+									<th>Бриши</th>
+									<th>Уреди</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -57,10 +57,10 @@
 									<td><?= $m->but; ?></td>
 									<td><?= $m->cur_date; ?></td>
 									<td>
-					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_measurement.php?measurement_id=<?= $m->measurement_id ?>" class='btn btn-danger'>Delete</a>
+					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_measurement.php?measurement_id=<?= $m->measurement_id ?>" class='btn btn-danger'>Бриши</a>
 									</td>
 									<td>
-					  				<a href="edit_measurement.php?measurement_id=<?= $m->measurement_id ?>" class='btn btn-default'>Edit</a>
+					  				<a href="edit_measurement.php?measurement_id=<?= $m->measurement_id ?>" class='btn btn-default'>Уреди</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>

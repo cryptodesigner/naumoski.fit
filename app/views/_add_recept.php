@@ -20,7 +20,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-		  	<span class="d-ib">Add Recept</span>
+		  	<span class="d-ib">Додади Рецепт</span>
 			</h1>
 			<?php if(!empty($message)): ?>
       <div class="alert alert-success">
@@ -33,18 +33,18 @@
 		  	<div class="col-sm-6 col-sm-offset-3">
 					<div class="demo-md-form-wrapper">
 			  		<div class="md-form-group">
-							<input class="md-form-control" type="text" name="name" id="name" placeholder="Recept Name">
+							<input class="md-form-control" type="text" name="name" id="name" placeholder="Име На Рецепт">
 							<label class="md-control-label"></label>
 			  		</div>
 			  		<div class="md-form-group">
-							<input class="md-form-control" type="text" name="description" id="description" placeholder="Description">
+							<input class="md-form-control" type="text" name="description" id="description" placeholder="Дескрипција">
 							<label class="md-control-label"></label>
 			  		</div>
 			  		<div class="md-form-group">
-							<input class="md-form-control" type="text" name="link" id="link" placeholder="Link">
+							<input class="md-form-control" type="text" name="link" id="link" placeholder="Линк">
 							<label class="md-control-label"></label>
 			  		</div>
-			  		<button class="btn btn-default btn-block" type="submit">Add Recept</button>
+			  		<button class="btn btn-default btn-block" type="submit">Додади Рецепт</button>
 					</div>
 		  	</div>
 			</div>

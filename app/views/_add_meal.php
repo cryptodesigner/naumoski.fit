@@ -22,7 +22,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">Add Meal Option</span>
+			  <span class="d-ib">Додади Оброк</span>
 			</h1>
 			<?php if(!empty($message)): ?>
       <div class="alert alert-success">
@@ -36,36 +36,36 @@
 					<div class="demo-md-form-wrapper">
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="name" id="name" placeholder="Meal Option Name">
+							<input class="md-form-control" type="text" name="name" id="name" placeholder="Име На Оброк">
 							<label class="md-control-label"></label>
 					</div>
 
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="sostojki" id="sostojki" placeholder="Sostojki">
+							<input class="md-form-control" type="text" name="sostojki" id="sostojki" placeholder="Состојки">
 							<label class="md-control-label"></label>
 					</div>
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="proteins" id="proteins" placeholder="Amount of Proteins">
+							<input class="md-form-control" type="text" name="proteins" id="proteins" placeholder="Протеини (гр)">
 							<label class="md-control-label"></label>
 					</div>
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="carbohydrates" id="carbohydrates" placeholder="Amount of Carbohydarates">
+							<input class="md-form-control" type="text" name="carbohydrates" id="carbohydrates" placeholder="Јагленохидрати (гр)">
 							<label class="md-control-label"></label>
 					</div>
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="fats" id="fats" placeholder="Amount of Fats">
+							<input class="md-form-control" type="text" name="fats" id="fats" placeholder="Масти (гр)">
 							<label class="md-control-label"></label>
 					</div>
 
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="description" id="description" placeholder="Description">
+							<input class="md-form-control" type="text" name="description" id="description" placeholder="Дескрипција">
 							<label class="md-control-label"></label>
 					</div>
 
-					<button class="btn btn-default btn-block" type="submit">Add Meal Option</button>
+					<button class="btn btn-default btn-block" type="submit">Додади Оброк</button>
 					</div>
 			</div>
 			</div>

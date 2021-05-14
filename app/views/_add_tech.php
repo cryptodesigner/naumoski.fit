@@ -18,8 +18,8 @@
 <section>
 	<div class="layout-content-body">
 	  <div class="title-bar">
-			<h1 class="title-bar-title">
-			  <span class="d-ib">Add Technique</span>
+			<h1 class="title-bar-дtitle">
+			  <span class="d-ib">Додади Техника</span>
 			</h1>
 			<?php if(!empty($message)): ?>
       <div class="alert alert-success">
@@ -33,18 +33,18 @@
 					<div class="demo-md-form-wrapper">
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="name" id="name" placeholder="Technique Name">
+							<input class="md-form-control" type="text" name="name" id="name" placeholder="Име на Техника">
 					</div>
 
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="link" id="link" placeholder="Link (youtube)">
+							<input class="md-form-control" type="text" name="link" id="link" placeholder="Линк">
 					</div>
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="description" id="description" placeholder="Description">
+							<input class="md-form-control" type="text" name="description" id="description" placeholder="Дескрипција">
 					</div>
 
-					<button class="btn btn-default btn-block" type="submit">Add Technique</button>
+					<button class="btn btn-default btn-block" type="submit">Додади Техника</button>
 					</div>
 			</div>
 			</div>

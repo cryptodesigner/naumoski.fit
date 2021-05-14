@@ -10,7 +10,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 	    <h1 class="title-bar-title">
-	      <span class="d-ib">All Schedules</span>
+	      <span class="d-ib">Листа На распореди</span>
 	    </h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -22,22 +22,22 @@
 	            <button type="button" class="card-action card-reload" title="Reload"></button>
 	            <button type="button" class="card-action card-remove" title="Remove"></button>
 	          </div>
-	          <strong>Clients Schedules List</strong>
+	          <strong>Листа На Распореди</strong>
 	        </div>
 	        <div class="card-body">
 	          <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 	            <thead>
 	              <tr>
-	                <th>Seq.</th>
-	                <th>Budenje</th>
-	                <th>Zaspivanje</th>
-	                <th>Rabota / Shkolo</th>
-	                <th>Pauzi</th>
-	                <th>Trening</th>
-	                <th>Cardio</th>
-	                <th>Description</th>
-	                <th>Action Del</th>
-	                <th>Action Upd</th>
+	                <th>Р.б.</th>
+	                <th>Будење</th>
+	                <th>Заспивање</th>
+	                <th>Работа / Школо</th>
+	                <th>Паузи</th>
+	                <th>Тренинг</th>
+	                <th>Кардио</th>
+	                <th>Дескрипција</th>
+	                <th>Бриши</th>
+	                <th>Уреди</th>
 	              </tr>
 	            </thead>
 	            <tbody>
@@ -52,10 +52,10 @@
 	                <td><?= $s->cardio; ?></td>
 	                <td><?= $s->description; ?></td>
 	                <td>
-	                  <a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_schedule.php?schedule_id=<?= $s->schedule_id ?>" class='btn btn-danger'>Delete</a>
+	                  <a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_schedule.php?schedule_id=<?= $s->schedule_id ?>" class='btn btn-danger'>Бриши</a>
 	                </td>
 	                <td>
-	                  <a href="edit_schedule.php?schedule_id=<?= $s->schedule_id ?>" class='btn btn-default'>Edit</a>
+	                  <a href="edit_schedule.php?schedule_id=<?= $s->schedule_id ?>" class='btn btn-default'>Уреди</a>
 	                </td>
 	              </tr>
 	              <?php endforeach; ?>

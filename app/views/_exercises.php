@@ -12,7 +12,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Exercises</span>
+			  <span class="d-ib">Листа На Вежби</span>
 			</h1>
 	  </div>
 	  	<div class="row gutter-xs">
@@ -24,19 +24,19 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 			  			</div>
-			  			<strong>Exercise List</strong>
+			  			<strong>Листа На Вежби</strong>
 						</div>
 						<div class="card-body">
 			  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 								<thead>
 				  				<tr>
-										<th>Seq.</th>
-										<th>Name</th>
-										<th>Link na Vezba</th>
-										<th>Muskulna Grupa</th>
-										<th>Description</th>
-										<th>Action Del</th>
-										<th>Action Upd</th>
+										<th>Р.б.</th>
+										<th>Име</th>
+										<th>Линк</th>
+										<th>Мускулна Група</th>
+										<th>Дескрипција</th>
+										<th>Бриши</th>
+										<th>Уреди</th>
 				  				</tr>
 								</thead>
 								<tbody>
@@ -44,14 +44,14 @@
 									<tr>
 					  				<td><?= $ex->vezba_id; ?></td>
 					  				<td><?= $ex->name; ?></td>
-					  				<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $ex->link_vezba; ?>" data-target="#myModal">Watch</button></td>
+					  				<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $ex->link_vezba; ?>" data-target="#myModal">Гледај</button></td>
 					  				<td><?= $ex->muskulna_grupa; ?></td>
 					  				<td><?= $ex->description; ?></td>
 					  				<td>
-											<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_exercise.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-danger'>Delete</a>
+											<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_exercise.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-danger'>Бриши</a>
 					  				</td>
 					  				<td>
-											<a href="edit_exercise.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-default'>Edit</a>
+											<a href="edit_exercise.php?vezba_id=<?= $ex->vezba_id ?>" class='btn btn-default'>Уреди</a>
 					  				</td>
 									</tr>
 				  				<?php endforeach; ?>

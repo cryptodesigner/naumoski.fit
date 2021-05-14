@@ -11,7 +11,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Basics</span>
+			  <span class="d-ib">Листа На Основни Информации</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -23,25 +23,25 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 		  			</div>
-		  			<strong>Clients Basics List</strong>
+		  			<strong>Листа На Основни Информации</strong>
 					</div>
 					<div class="card-body">
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>Seq.</th>
-									<th>Pol</th>
-									<th>Godini</th>
-									<th>Visina</th>
-									<th>Tezina</th>
-									<th>Alergija</th>
-									<th>Netolerantnost</th>
-									<th>Odbivnost</th>
-									<th>Zaboluvanja</th>
-									<th>Iskustvo</th>
-									<th>Suplement?</th>
-									<th>Action Del</th>
-									<th>Action Upd</th>
+									<th>Р.б.</th>
+									<th>Пол</th>
+									<th>Години</th>
+									<th>Висина</th>
+									<th>Тежина</th>
+									<th>Алергија</th>
+									<th>Нетолерантност</th>
+									<th>Одбивност</th>
+									<th>Заболувања</th>
+									<th>Искуство</th>
+									<th>Суплементи?</th>
+									<th>Бриши</th>
+									<th>Уреди</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -59,10 +59,10 @@
 									<td><?= $b->iskustvo; ?></td>
 									<td><?= $b->suplement; ?></td>
 									<td>
-					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-danger'>Delete</a>
+					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-danger'>Бриши</a>
 									</td>
 									<td>
-					  				<a href="edit_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-default'>Edit</a>
+					  				<a href="edit_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-default'>Уреди</a>
 									</td>
 				  			</tr>
 				  			<?php endforeach; ?>

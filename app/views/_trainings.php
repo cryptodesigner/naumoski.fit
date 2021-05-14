@@ -10,7 +10,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Trainings</span>
+			  <span class="d-ib">Листа На Тренинзи</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -22,21 +22,21 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 			  		</div>
-			  		<strong>Trainings List</strong>
+			  		<strong>Листа На Тренинзи</strong>
 					</div>
 					<div class="card-body">
 			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
 									<!-- <th>Seq.</th>-->
-									<th>Client</th> 
-									<th>Name</th>
-									<th>Vezba</th>
-									<th>Serii / Povt</th>
-									<th>Technique</th>
-									<th>Vreme</th>
-									<th>Date</th>
-									<th>Action</th>
+									<th>Клиент</th> 
+									<th>Име</th>
+									<th>Вежба</th>
+									<th>Серии / Повт</th>
+									<th>Техника</th>
+									<th>Време</th>
+									<th>Дата</th>
+									<th>Бриши</th>
 				  			</tr>
 							</thead>
 							<tbody>
@@ -45,13 +45,13 @@
 					  			<!-- <td>{{training['training_id']}}</td>-->
 					  			<td><?= $training->clients_client_id; ?></td> 
 					  			<td><?= $training->name; ?></td>
-					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $training->vezba; ?>)">See Exercise</button></td>
+					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $training->vezba; ?>)">Преглед</button></td>
 					  			<td><?= $training->serii_povt; ?></td>
-					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $training->tech; ?>)">See Option</button></td>
+					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $training->tech; ?>)">Преглед</button></td>
 					  			<td><?= $training->vreme; ?></td>
 					  			<td><?= $training->date; ?></td>
 					  			<td>
-									<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_training.php?training_id=<?= $training->training_id ?>" class='btn btn-danger'>Delete</a>
+									<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_training.php?training_id=<?= $training->training_id ?>" class='btn btn-danger'>Бриши</a>
 					  			</td>
 								</tr>
 				  			<?php endforeach; ?>

@@ -10,7 +10,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Meal Options</span>
+			  <span class="d-ib">Листа На Оброци</span>
 			</h1>
 	  </div>
 	  	<div class="row gutter-xs">
@@ -22,21 +22,21 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 			  			</div>
-			  			<strong>Meals List</strong>
+			  			<strong>Листа На Оброци</strong>
 						</div>
 						<div class="card-body">
 			  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 								<thead>
 				  				<tr>
-										<th>Seq.</th>
-										<th>Name</th>
-										<th>Sostojki</th>
-										<th>Proteins</th>
-										<th>Carbohydrates</th>
-										<th>Fats</th>
-										<th>Description</th>
-										<th>Action Del</th>
-										<th>Action Upd</th>
+										<th>Р.б.</th>
+										<th>Име</th>
+										<th>Состојки</th>
+										<th>Протеини</th>
+										<th>Јагленохидрати</th>
+										<th>Масти</th>
+										<th>Дескрипција</th>
+										<th>Бриши</th>
+										<th>Уреди</th>
 				  				</tr>
 								</thead>
 								<tbody>
@@ -50,10 +50,10 @@
 					  				<td><?= $meal->fats; ?></td>
 					  				<td><?= $meal->description; ?></td>
 					  				<td>
-										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_option.php?option_id=<?= $meal->option_id ?>" class='btn btn-danger'>Delete</a>
+										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_option.php?option_id=<?= $meal->option_id ?>" class='btn btn-danger'>Бриши</a>
 					  				</td>
 					  				<td>
-										<a href="edit_meal.php?option_id=<?= $meal->option_id ?>" class='btn btn-default'>Edit</a>
+										<a href="edit_meal.php?option_id=<?= $meal->option_id ?>" class='btn btn-default'>Уреди</a>
 					  				</td>
 									</tr>
 				  				<?php endforeach; ?>

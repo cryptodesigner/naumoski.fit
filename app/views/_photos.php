@@ -10,7 +10,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">Uploaded Images</span>
+			  <span class="d-ib">Фотографии</span>
 			</h1>
 	  </div>
 

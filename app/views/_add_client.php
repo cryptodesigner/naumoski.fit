@@ -22,7 +22,7 @@
 <div class="layout-content-body">
 	<div class="title-bar">
 	  <h1 class="title-bar-title">
-			<span class="d-ib">Add Client</span>
+			<span class="d-ib">Додади Клиент</span>
 	  </h1>
     <?php if(!empty($message)): ?>
       <div class="alert alert-success">
@@ -38,27 +38,27 @@
 			  <div class="row">
 				<div class="col-xs-6">
 				  <div class="md-form-group">
-					<input class="md-form-control" type="text" name="name" id="name" placeholder="Name">
+					<input class="md-form-control" type="text" name="name" id="name" placeholder="Име">
 					<label class="md-control-label"></label>
 				  </div>
 				</div>
 				<div class="col-xs-6">
 				  <div class="md-form-group">
-					<input class="md-form-control" type="text" name="surname" id="surname" placeholder="Surname">
+					<input class="md-form-control" type="text" name="surname" id="surname" placeholder="Презиме">
 					<label class="md-control-label"></label>
 				  </div>
 				</div>
 			  </div>
 			</div>
 			<div class="md-form-group">
-			  <input class="md-form-control" type="text" name="email" id="email" placeholder="Email">
+			  <input class="md-form-control" type="text" name="email" id="email" placeholder="Емаил">
 			  <label class="md-control-label"></label>
 			</div>
 			<div class="md-form-group">
-			  <input class="md-form-control" type="password" name="password" id="password" placeholder="Password">
+			  <input class="md-form-control" type="password" name="password" id="password" placeholder="Пасворд">
 			  <label class="md-control-label"></label>
 			</div>
-			<button id="demo-show-toast" class="btn btn-default btn-block" type="submit">Add Client</button>
+			<button id="demo-show-toast" class="btn btn-default btn-block" type="submit">Додади Клиент</button>
 		  </div>
 		</div>
 	  </div>

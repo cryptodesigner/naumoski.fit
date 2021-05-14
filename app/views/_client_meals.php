@@ -11,7 +11,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Diets</span>
+			  <span class="d-ib">Листа На Оброци</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -23,19 +23,19 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 						</div>
-						<strong>Clients Diets List</strong>
+						<strong>Листа На Оброци</strong>
 					</div>
 					<div class="card-body">
 						<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap " cellspacing="0" width="100%">
 							<thead>
 								<tr>
-									<th>Seq.</th>
-									<th>Name</th>
-									<th>Vreme</th>
-									<th>Option1 Id</th>
-									<th>Option2 Id</th>
-									<th>Option3 Id</th>
-									<th>Date</th>
+									<th>Р.б.</th>
+									<th>Име</th>
+									<th>Време</th>
+									<th>Опција 1</th>
+									<th>Опција 2</th>
+									<th>Опција 3</th>
+									<th>Дата</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -45,21 +45,21 @@
 									<td><?= $meal->name; ?></td>
 									<td><?= $meal->vreme; ?></td>
 									<td><?php if($meal->option1 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option1; ?>)">See Option</button>  
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option1; ?>)">Преглед</button>  
                       <?php else: ?>
-                        <p>No Option</p>
+                        <p>Нема Опција</p>
                       <?php endif; ?>    
                     </td>
                     <td><?php if($meal->option2 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option2; ?>)">See Option</button>  
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option2; ?>)">Преглед</button>  
                       <?php else: ?>
-                        <p>No Option</p>
+                        <p>Нема Опција</p>
                       <?php endif; ?>    
                     </td>
                     <td><?php if($meal->option3 != 0): ?> 
-                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option3; ?>)">See Option</button>  
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option3; ?>)">Преглед</button>  
                       <?php else: ?>
-                        <p>No Option</p>
+                        <p>Нема Опција</p>
                       <?php endif; ?>    
                     </td>
 									<td><?= $meal->date; ?></td>

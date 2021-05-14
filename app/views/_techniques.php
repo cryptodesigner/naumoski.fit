@@ -13,7 +13,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">All Techniques</span>
+			  <span class="d-ib">Листа На Техники</span>
 			</h1>
 	  </div>
 	  <div class="row gutter-xs">
@@ -25,18 +25,18 @@
 							<button type="button" class="card-action card-reload" title="Reload"></button>
 							<button type="button" class="card-action card-remove" title="Remove"></button>
 		  			</div>
-		  			<strong>Technique List</strong>
+		  			<strong>Листа На Техники</strong>
 					</div>
 					<div class="card-body">
 		  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
-									<th>Seq.</th>
-									<th>Name</th>
-									<th>Link na Tehnika</th>
-									<th>Description</th>
-									<th>Action Del</th>
-									<th>Action Upd</th>
+									<th>Р.б.</th>
+									<th>Име</th>
+									<th>Линк</th>
+									<th>Дескрипција</th>
+									<th>Бриши</th>
+									<th>Уреди</th>
 				  			</tr>
 							</thead>
 							<tbody>
@@ -44,13 +44,13 @@
 								<tr>
 					  			<td><?= $tech->tehnika_id; ?></td>
 					  			<td><?= $tech->name; ?></td>
-					  			<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $tech->link; ?>" data-target="#myModal">Watch</button></td>
+					  			<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $tech->link; ?>" data-target="#myModal">Гледај</button></td>
 					  			<td><?= $tech->description; ?></td>
 					  			<td>
-										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_tech.php?tehnika_id=<?= $tech->tehnika_id ?>" class='btn btn-danger'>Delete</a>
+										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_tech.php?tehnika_id=<?= $tech->tehnika_id ?>" class='btn btn-danger'>Бриши</a>
 					  			</td>
 					  			<td>
-										<a href="edit_tech.php?tehnika_id=<?= $tech->tehnika_id ?>" class='btn btn-default'>Edit</a>
+										<a href="edit_tech.php?tehnika_id=<?= $tech->tehnika_id ?>" class='btn btn-default'>Уреди</a>
 				  				</td>
 								</tr>
 			  				<?php endforeach; ?>

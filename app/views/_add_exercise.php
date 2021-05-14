@@ -34,17 +34,17 @@
 					<div class="demo-md-form-wrapper">
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="name" id="name" placeholder="Exercise Name">
+							<input class="md-form-control" type="text" name="name" id="name" placeholder="Име на Вежба">
 					</div>
 
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="link_vezba" id="link_vezba" placeholder="Link na Vezba">
+							<input class="md-form-control" type="text" name="link_vezba" id="link_vezba" placeholder="Линк">
 							<label class="md-control-label"></label>
 					</div>
 					
 					<div class="md-form-group">
 						<select class="md-form-control" name="muskulna_grupa" id="muskulna_grupa" data-msg="Muscle">
-							<option value="" disabled="disabled" selected="selected">Muscle</option>
+							<option value="" disabled="disabled" selected="selected">Мускулна Група</option>
 							<option value="Гради">Гради</option>
 							<option value="Грб">Грб</option>
 							<option value="Рамо">Рамо</option>
@@ -56,10 +56,10 @@
 					</div>
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="description" id="description" placeholder="Description">
+							<input class="md-form-control" type="text" name="description" id="description" placeholder="Дескрипција">
 					</div>
 
-					<button class="btn btn-default btn-block" type="submit">Add Exercise</button>
+					<button class="btn btn-default btn-block" type="submit">Додади Вежба</button>
 					</div>
 			</div>
 			</div>
