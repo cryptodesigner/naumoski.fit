@@ -115,7 +115,7 @@
     <div id="Profile" class="tab">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h1><?= $c->name; ?> Профил</h1>
+          <h3><?= $c->name; ?> Профил</h3>
         <?php endforeach; ?>
       </div>
 
@@ -334,11 +334,11 @@
     <div id="Trainings" class="tab" style="display: none">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h1><?= $c->name; ?> Листа На Тренинзи</h1>
+          <h3><?= $c->name; ?> Листа На Тренинзи</h3>
         <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs">
           <li class="active"><a href="#trainingtoday" data-toggle="tab">Денес</a></li>
           <li><a href="#trainingtomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#trainingweek" data-toggle="tab">Сите</a></li>
@@ -477,11 +477,11 @@
     <div id="Diets" class="tab" style="display: none">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h1><?= $c->name; ?> Листа На Диети</h1>
+          <h3><?= $c->name; ?> Листа На Диети</h3>
         <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs">
           <li class="active"><a href="#dietToday" data-toggle="tab">Денес</a></li>
           <li><a href="#dietTomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#dietWeek" data-toggle="tab">Сите</a></li>
