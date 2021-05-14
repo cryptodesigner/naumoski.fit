@@ -1,6 +1,6 @@
 <?php
 	$client_id = $_SESSION['client_id']; 	
- 	$sql = "SELECT * FROM meals WHERE clients_client_id = '$client_id.';";
+ 	$sql = "SELECT * FROM meals WHERE clients_client_id = '$client_id.' ORDER BY date DESC, vreme ASC;";
  	$statement = $connection->prepare($sql);
   $statement->execute();
   $meals = $statement->fetchAll(PDO::FETCH_OBJ);
@@ -26,7 +26,7 @@
 						<strong>Clients Diets List</strong>
 					</div>
 					<div class="card-body">
-						<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+						<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap " cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>Seq.</th>

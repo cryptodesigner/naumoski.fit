@@ -45,7 +45,7 @@
 					<select class="md-form-control client" name="client" id="client" placeholder="Client">
 						<option value="" disabled="disabled" selected="selected">Client</option>
 						<?php foreach($people as $person): ?>
-							<option value="<?= $person->client_id; ?>"><?= $person->name; ?></option>
+							<option value="<?= $person->client_id; ?>"><?= $person->name; ?> <?= $person->surname; ?> (<?= $person->client_id; ?>)</option>
 						<?php endforeach; ?>
 					</select>
 				</div>

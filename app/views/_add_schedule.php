@@ -90,7 +90,7 @@
 				  <input class="md-form-control" type="text" name="cardio" id="cardio" placeholder="Cardio (preferirano vreme)">
 				</div>
 				<div class="md-form-group">
-				  <input class="md-form-control" type="text" name="description" id="description" placeholder="Drugi Zanimanja">
+				  <input class="md-form-control" type="text" name="description" id="description" placeholder="Drugi Fizicki Aktivnosti">
 				</div>
 				<button class="btn btn-default btn-block" type="submit">Add Schedule</button>
 	  	</div>

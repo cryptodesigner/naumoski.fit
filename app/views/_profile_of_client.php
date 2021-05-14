@@ -8,7 +8,7 @@
 	$clients = $statement->fetchAll(PDO::FETCH_OBJ);
 
 
-	$sql = "SELECT * FROM measurements WHERE clients_client_id = '$current_client.';";
+	$sql = "SELECT * FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$measurements = $statement->fetchAll(PDO::FETCH_OBJ);
@@ -131,55 +131,6 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 							</div>
-							<strong>Client</strong>
-						</div>
-						<div class="card-body" data-toggle="match-height">
-							<div class="table-responsive">
-								<table class="table table-hover">
-									<tr>
-										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Budenje: </th>
-										<td colspan="6"><?= $s->stanuvanje; ?></td>
-										<?php endforeach; ?>
-									</tr>
-									<tr>
-										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Zaspivanje: </th>
-										<td colspan="6"><?= $s->legnuvanje; ?></td>
-										<?php endforeach; ?>
-									</tr>
-									<tr>
-										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Rabota: </th>
-										<td colspan="6"><?= $s->rabota; ?></td>
-										<?php endforeach; ?>
-									</tr>
-									<tr>
-										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Pauzi: </th>
-										<td colspan="6"><?= $s->pauzi; ?></td>
-										<?php endforeach; ?>
-									</tr>
-									<tr>
-										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Trening: </th>
-										<td colspan="6"><?= $s->trening; ?></td>
-										<?php endforeach; ?>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="card">
-						<div class="card-header">
-							<div class="card-actions">
-								<button type="button" class="card-action card-toggler" title="Collapse"></button>
-								<button type="button" class="card-action card-reload" title="Reload"></button>
-								<button type="button" class="card-action card-remove" title="Remove"></button>
-							</div>
 							<strong>Basics</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
@@ -220,6 +171,62 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-actions">
+								<button type="button" class="card-action card-toggler" title="Collapse"></button>
+								<button type="button" class="card-action card-reload" title="Reload"></button>
+								<button type="button" class="card-action card-remove" title="Remove"></button>
+							</div>
+							<strong>Schedules</strong>
+						</div>
+						<div class="card-body" data-toggle="match-height">
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Budenje: </th>
+										<td colspan="6"><?= $s->stanuvanje; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Zaspivanje: </th>
+										<td colspan="6"><?= $s->legnuvanje; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Rabota: </th>
+										<td colspan="6"><?= $s->rabota; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Pauzi: </th>
+										<td colspan="6"><?= $s->pauzi; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Trening: </th>
+										<td colspan="6"><?= $s->trening; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Cardio: </th>
+										<td colspan="6"><?= $s->cardio; ?></td>
+										<?php endforeach; ?>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+
 
 				<div class="col-md-4">
 					<div class="card">
@@ -270,6 +277,53 @@
 					</div>
 				</div>
 
+				<div class="col-md-12">
+		 			<div class="card">
+						<div class="card-header">
+		  				<div class="card-actions">
+								<button type="button" class="card-action card-toggler" title="Collapse"></button>
+								<button type="button" class="card-action card-reload" title="Reload"></button>
+								<button type="button" class="card-action card-remove" title="Remove"></button>
+		  				</div>
+		  				<strong>Clients Measurements List</strong>
+						</div>
+						<div class="card-body">
+			  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+								<thead>
+									<tr>
+										<th>Seq.</th>
+										<th>Tezina</th>
+										<th>Vrat</th>
+										<th>Gradi</th>
+										<th>Pod Gradi</th>
+										<th>Papok</th>
+										<th>Kolk</th>
+										<th>Raka</th>
+										<th>But</th>
+										<th>Date</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach($measurements as $m): ?>
+									<tr>
+										<td><?= $m->measurement_id; ?></td>
+										<td><?= $m->tezina; ?></td>
+										<td><?= $m->vrat; ?></td>
+										<td><?= $m->gradi; ?></td>
+										<td><?= $m->pod_gradi; ?></td>
+										<td><?= $m->papok; ?></td>
+										<td><?= $m->kolk; ?></td>
+										<td><?= $m->raka; ?></td>
+										<td><?= $m->but; ?></td>
+										<td><?= $m->cur_date; ?></td>
+				  				</tr>
+				  				<?php endforeach; ?>
+								</tbody>
+			 	 			</table>
+						</div>
+		  		</div>
+				</div>
+
 				<!-- <div class="col-md-6">
 					<div class="panel panel-body text-center" data-toggle="match-height">
 						<div class="row">
@@ -298,7 +352,7 @@
 					</div>
 				</div> -->
 
-				<?php
+				<!-- <?php
 					$datapoints = array();
 					foreach ($measurements as $m) {
 						array_push($datapoints, array("x"=> $m->cur_date, "y"=> $m->tezina));
@@ -311,7 +365,7 @@
 						<canvas id="weightCanvas" data-chart="line" data-labels='["May", "Jun", "Jul", "Aug", "Sep"]' data-values='[{"backgroundColor": "rgba(243, 129, 32, 0.7)", "borderColor": "#50b432", "borderWidth": 2, "pointBackgroundColor": "#F27820", "pointRadius": 3, "label": "Kilograms", "data": <?php echo json_encode($datapoints);?>}]' data-hide='["gridLinesX", "legend"]' height="150" width="300"></canvas>
 						<h6 class="m-b-0">Body Weight (Kg)</h6>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		     
 			<div id="Trainings" class="tab" style="display: none">
