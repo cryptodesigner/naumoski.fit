@@ -136,7 +136,7 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Мерења</li>
-                    <li><a href="add_measurement.php">Додави Мерење</a></li>
+                    <li><a href="add_measurement.php">Додади Мерење</a></li>
                     <li><a href="client_measurements.php">Прикажи Мерења</a></li>
                   </ul>
                 </li>
@@ -148,7 +148,7 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Основни Информации</li>
-                    <li><a href="add_basics.php">Додави Основна Информација</a></li>
+                    <li><a href="add_basics.php">Додади Основна Информација</a></li>
                     <li><a href="client_basics.php">Прикажи Основни Информации</a></li>
                   </ul>
                 </li>
@@ -160,7 +160,7 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Распоред</li>
-                    <li><a href="add_schedule.php">Додави Распоред</a></li>
+                    <li><a href="add_schedule.php">Додади Распоред</a></li>
                     <li><a href="client_schedule.php">Прикажи Распоред</a></li>
                   </ul>
                 </li>
