@@ -8,17 +8,17 @@
     $sql = 'INSERT INTO tehniki(name, link, description) VALUES(:name, :link, :description)';
     $statement = $connection->prepare($sql);
     if ($statement->execute([':name' => $name, ':link' => $link, ':description' => $description])) {
-      $message = 'Technique Added Successfully';
+      $message = 'Успешно Додадено';
     }
     else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     } 
   }
 ?>
 <section>
 	<div class="layout-content-body">
 	  <div class="title-bar">
-			<h1 class="title-bar-дtitle">
+			<h1 class="title-bar-title">
 			  <span class="d-ib">Додади Техника</span>
 			</h1>
 			<?php if(!empty($message)): ?>

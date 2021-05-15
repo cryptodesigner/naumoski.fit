@@ -9,10 +9,10 @@
     $sql = 'INSERT INTO vezbi(name, link_vezba, muskulna_grupa, description) VALUES(:name, :link_vezba, :muskulna_grupa, :description)';
     $statement = $connection->prepare($sql);
     if ($statement->execute([':name' => $name, ':link_vezba' => $link_vezba, ':muskulna_grupa' => $muskulna_grupa, ':description' => $description])) {
-      $message = 'Exercise Added Successfully';
+      $message = 'Успешно Додадено';
     }
     else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     } 
   }
 ?>
@@ -20,7 +20,7 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">Add Exercise</span>
+			  <span class="d-ib">Додади Вежба</span>
 			</h1>
 			<?php if(!empty($message)): ?>
       		<div class="alert alert-success">

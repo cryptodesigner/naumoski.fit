@@ -26,7 +26,7 @@
               <h1 class="profile-name"><?= $m->name; ?> <?= $m->surname; ?></h1>
             <?php endforeach; ?>
             <a class="profile-follow-btn" href ="edit_m_profile.php">Уреди Профил</a>
-            <p>Менажер<a class="link-inverted"></a></p>
+            <p>Менаџер<a class="link-inverted"></a></p>
           </div>
         </div>
         <div class="profile-tabs">

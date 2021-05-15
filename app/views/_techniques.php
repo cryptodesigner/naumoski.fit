@@ -44,7 +44,7 @@
 								<tr>
 					  			<td><?= $tech->tehnika_id; ?></td>
 					  			<td><?= $tech->name; ?></td>
-					  			<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $tech->link; ?>" data-target="#myModal">Гледај</button></td>
+					  			<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $tech->link; ?>" data-target="#myModal">Преглед</button></td>
 					  			<td><?= $tech->description; ?></td>
 					  			<td>
 										<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_tech.php?tehnika_id=<?= $tech->tehnika_id ?>" class='btn btn-danger'>Бриши</a>

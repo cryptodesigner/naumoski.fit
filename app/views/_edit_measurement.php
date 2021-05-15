@@ -17,8 +17,11 @@
 	  $sql = 'UPDATE measurements SET tezina=:tezina, vrat=:vrat, gradi=:gradi, pod_gradi=:pod_gradi, papok=:papok, kolk=:kolk, raka=:raka, but=:but WHERE measurement_id=:measurement_id';
 	  $statement = $connection->prepare($sql);
 	  if ($statement->execute([':tezina' => $tezina, ':vrat' => $vrat, ':gradi' => $gradi, ':pod_gradi' => $pod_gradi, ':papok' => $papok, ':kolk' => $kolk, ':raka' => $raka, ':but' => $but, ':measurement_id' => $measurement_id])) {
-	    // header("location: client_measurements.php");
+	    $message = 'Ажурирано Успешно';
 	  }
+	  else{
+  		$message = 'Настанат проблем, обидете се повторно';
+  	}
 	}
 ?>
 
@@ -26,37 +29,42 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-		  	<span class="d-ib">Edit Measurement</span>
+		  	<span class="d-ib">Уредување на Мерки</span>
 			</h1>
+			<?php if(!empty($message)): ?>
+      <div class="alert alert-success">
+        <?= $message; ?>
+      </div>
+    	<?php endif; ?>
 	  </div>
 	  <form data-toggle="md-validator" action="" method="POST">
 			<div class="row">
 		  	<div class="col-sm-6 col-sm-offset-3">
 					<div class="md-form-group">
-			  		<input value="<?= $measurement->tezina; ?>" class="md-form-control" type="text" name="tezina" id="tezina" placeholder="Tezina (kg)">
+			  		<input value="<?= $measurement->tezina; ?>" class="md-form-control" type="text" name="tezina" id="tezina" placeholder="Тежина (кг)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->vrat; ?>" class="md-form-control" type="text" name="vrat" id="vrat" placeholder="Vrat (cm)">
+					  <input value="<?= $measurement->vrat; ?>" class="md-form-control" type="text" name="vrat" id="vrat" placeholder="Врат (цм)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->gradi; ?>" class="md-form-control" type="text" name="gradi" id="gradi" placeholder="Gradi (cm)">
+					  <input value="<?= $measurement->gradi; ?>" class="md-form-control" type="text" name="gradi" id="gradi" placeholder="Гради (цм)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->pod_gradi; ?>" class="md-form-control" type="text" name="pod_gradi" id="pod_gradi" placeholder="Pod Gradi (cm)">
+					  <input value="<?= $measurement->pod_gradi; ?>" class="md-form-control" type="text" name="pod_gradi" id="pod_gradi" placeholder="Под Гради (цм)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->papok; ?>" class="md-form-control" type="text" name="papok" id="papok" placeholder="Papok (cm)">
+					  <input value="<?= $measurement->papok; ?>" class="md-form-control" type="text" name="papok" id="papok" placeholder="Папок (цм)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->kolk; ?>" class="md-form-control" type="text" name="kolk" id="kolk" placeholder="Kolk (cm)">
+					  <input value="<?= $measurement->kolk; ?>" class="md-form-control" type="text" name="kolk" id="kolk" placeholder="Колк (цм)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->raka; ?>" class="md-form-control" type="text" name="raka" id="raka" placeholder="Raka (cm)">
+					  <input value="<?= $measurement->raka; ?>" class="md-form-control" type="text" name="raka" id="raka" placeholder="Рака (цм)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $measurement->but; ?>" class="md-form-control" type="text" name="but" id="but" placeholder="But (cm)">
+					  <input value="<?= $measurement->but; ?>" class="md-form-control" type="text" name="but" id="but" placeholder="Бут (цм)">
 					</div>
-					<button class="btn btn-default btn-block" type="submit">Update Measurement</button>
+					<button class="btn btn-default btn-block" type="submit">Ажурирај Мерки</button>
 		  	</div>
 			</div>
 	  </form>

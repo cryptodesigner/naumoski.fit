@@ -8,7 +8,7 @@
 	<div class="open">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">Uploaded Images</span>
+			  <span class="d-ib">Прикачени Фотографии</span>
 			</h1>
 	  </div>
 	  <div class="wrap">

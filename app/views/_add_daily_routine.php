@@ -178,7 +178,7 @@
 				<div class="md-form-group">
 					<div class="md-form-group md-label-floating">
 						<input class="md-form-control mealsAndTrainingsDate" style="width: 38%;" type="date" data-format="dd/MM/yyyy" data-msg-required="Please enter date" required>
-						<button class="btn btn-primary m-t" type="button" onClick="removeCurrDate(this)">Remove Date</button>
+						<button class="btn btn-primary m-t" type="button" onClick="removeCurrDate(this)">Бриши Дата</button>
 					</div>
 				</div>
 			</div>

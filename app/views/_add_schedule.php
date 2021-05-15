@@ -13,10 +13,10 @@
   	$sql = 'INSERT INTO schedules(clients_client_id, stanuvanje, legnuvanje, rabota, pauzi, trening, cardio, description) VALUES(:clients_client_id, :stanuvanje, :legnuvanje, :rabota, :pauzi, :trening, :cardio, :description)';
   	$statement = $connection->prepare($sql);
   	if ($statement->execute([':clients_client_id' => $clients_client_id, ':stanuvanje' => $stanuvanje, ':legnuvanje' => $legnuvanje, ':rabota' => $rabota, ':pauzi' => $pauzi, ':trening' => $trening, ':cardio' => $cardio, ':description' => $description])) {
-  	  $message = 'Schedule Added Successfully';
+  	  $message = 'Успешно Додадено';
   	}
   	else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     }
   }
 ?>

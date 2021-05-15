@@ -10,10 +10,10 @@
     $sql = 'INSERT INTO clients(managers_manager_id, name, surname, email, password) VALUES(:managers_manager_id, :name, :surname, :email, :password)';
     $statement = $connection->prepare($sql);
     if ($statement->execute([':managers_manager_id' => $managers_manager_id, ':name' => $name, ':surname' => $surname, ':email' => $email, ':password' => $password])) {
-      $message = 'Client Added Successfully';
+      $message = 'Успешно Додадено';
     }
     else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     }
   }
 ?>
