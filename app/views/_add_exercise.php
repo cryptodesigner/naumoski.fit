@@ -52,6 +52,7 @@
 							<option value="Трицепс">Трицепс</option>
 							<option value="Стомак">Стомак</option>
 							<option value="Нозе">Нозе</option>
+							<option value="Кардио">Кардио</option>
 						</select>
 					</div>
 					

@@ -10,6 +10,11 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $managers = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  // $cur_manager = $_SESSION['manager_id'];
+  // $sql = "SELECT MAX(client_id) FROM clients WHERE managers_manager_id = '$cur_manager.';";
+  // $row = $sql->fetch_assoc();
+  // $client_number = (int)$row['client_id'];
 ?>
 
 <section>
@@ -19,7 +24,7 @@
       <div class="profile-container">
         <div class="profile-card">
           <div class="profile-avetar">
-            <img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Wilson">
+            <img class="profile-avetar-img" width="128" height="128" src="uploads/1orhan.png" alt="Wilson">
           </div>
           <div class="profile-overview">
             <?php foreach($managers as $m): ?>
@@ -124,7 +129,8 @@
                   <th>Име</th>
                   <th>Презиме</th>
                   <th>Емаил</th>
-                  <!--<th>Password</th>-->
+                  <th>Бриши</th>
+                  <th>Уреди</th>
                   <th>Профил</th>
                   <th>Фото</th>
                 </tr>
@@ -136,7 +142,12 @@
                   <td><?= $c->name; ?></td>
                   <td><?= $c->surname; ?></td>
                   <td><?= $c->email; ?></td>
-                  <!--<td><?= $c->password; ?></td>-->
+                  <td>
+                    <a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_client.php?client_id=<?= $c->client_id ?>" class='btn btn-danger'>Бриши</a>
+                  </td>
+                  <td>
+                    <a href="edit_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Уреди</a>
+                  </td>
                   <td>
                     <a href="profile_of_client.php?client_id=<?= $c->client_id ?>" class='btn btn-default'>Профил</a>
                   </td>
@@ -151,8 +162,6 @@
         </div>
       </div>    
     </div>
-   
   </div>
 </div>
 </section>
-
