@@ -50,6 +50,8 @@
                     <a class="nav-link line" href="about.html">About Me</a>
                     <a class="nav-link scroll line" href="#portfolio">Application</a>
                     <a class="nav-link scroll line" href="#pricing">Pricing Plans</a>
+                    <a class="nav-link line" href="policy.html">Policy</a>
+                    <a class="nav-link line" href="faq.html">Faq</a>
                     <a href="https://app.naumoski.fit" class="btn btn-large btn-rounded btn-pink nav-button" data-animation-duration="500">Login</a>
                 </div>
             </div>
@@ -94,6 +96,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll" href="#pricing">Pricing Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="policy.html">Policy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">Faq</a>
                     </li>
                     <li class="get-started-btn">
                         <a href="https://app.naumoski.fit" class="btn btn-medium btn-rounded btn-pink d-lg-none" data-animation-duration="500">Login</a>
