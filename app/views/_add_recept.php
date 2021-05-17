@@ -9,10 +9,10 @@
   	$sql = 'INSERT INTO recepts(managers_manager_id, name, description, link) VALUES(:managers_manager_id, :name, :description, :link)';
   	$statement = $connection->prepare($sql);
   	if ($statement->execute([':managers_manager_id' => $managers_manager_id, ':name' => $name, ':description' => $description, ':link' => $link])) {
-  	  $message = 'Recept Added Successfully';
+  	  $message = 'Успешно Додадено';
   	}
   	else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     }
   }
 ?>

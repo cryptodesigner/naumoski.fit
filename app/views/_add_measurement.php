@@ -14,10 +14,10 @@
   	$sql = 'INSERT INTO measurements(clients_client_id, tezina, vrat, gradi, pod_gradi, papok, kolk, raka, but, cur_date) VALUES(:clients_client_id, :tezina, :vrat, :gradi, :pod_gradi, :papok, :kolk, :raka, :but, :cur_date)';
   	$statement = $connection->prepare($sql);
   	if ($statement->execute([':clients_client_id' => $clients_client_id, ':tezina' => $tezina, ':vrat' => $vrat, ':gradi' => $gradi, ':pod_gradi' => $pod_gradi, ':papok' => $papok, ':kolk' => $kolk, ':raka' => $raka, ':but' => $but, ':cur_date' => $cur_date])) {
-  	  $message = 'Measurement Added Successfully';
+  	  $message = 'Успешно Додадено';
   	}
   	else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     }
   }
 ?>

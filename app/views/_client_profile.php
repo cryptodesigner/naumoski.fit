@@ -115,7 +115,7 @@
     <div id="Profile" class="tab">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h3><?= $c->name; ?> Профил</h3>
+          <h1><?= $c->name; ?> Профил</h1>
         <?php endforeach; ?>
       </div>
 
@@ -140,7 +140,7 @@
                 </tr>
                 <tr>
                   <?php foreach($assigned_manager as $am): ?>
-                  <th colspan="6">Менажер: </th>
+                  <th colspan="6">Менаџер: </th>
                   <td colspan="6"><?= $am->name; ?></td>
                   <?php endforeach; ?>
                 </tr>
@@ -250,7 +250,7 @@
                 </tr>
                 <tr>
                   <?php foreach($basics as $b): ?>
-                  <th colspan="6">Заболуванња: </th>
+                  <th colspan="6">Заболувања: </th>
                   <td colspan="6"><?= $b->zaboluvanja; ?></td>
                   <?php endforeach; ?>
                 </tr>
@@ -281,7 +281,7 @@
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th>Име.</th>
+                    <th>Име</th>
                     <th>Време</th>
                   </tr>
                 </thead>
@@ -334,11 +334,11 @@
     <div id="Trainings" class="tab" style="display: none">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h3><?= $c->name; ?> Листа На Тренинзи</h3>
+          <h1><?= $c->name; ?> Листа На Тренинзи</h1>
         <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs nav-justified">
           <li class="active"><a href="#trainingtoday" data-toggle="tab">Денес</a></li>
           <li><a href="#trainingtomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#trainingweek" data-toggle="tab">Сите</a></li>
@@ -477,11 +477,11 @@
     <div id="Diets" class="tab" style="display: none">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h3><?= $c->name; ?> Листа На Диети</h3>
+          <h1><?= $c->name; ?> Листа На Диети</h1>
         <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs nav-justified">
           <li class="active"><a href="#dietToday" data-toggle="tab">Денес</a></li>
           <li><a href="#dietTomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#dietWeek" data-toggle="tab">Сите</a></li>
@@ -799,7 +799,7 @@ modalSostojki.innerHTML = "proba"
             modalOpName.innerHTML = "" + theItem.name
             modalSostojki.innerHTML = "" + theItem.sostojki
             modalProteins.innerHTML = "Протеини<br>" + theItem.proteins + "гр"
-            modalCarbohydrates.innerHTML = "Јагленохидрати<br>" + theItem.carbohydrates + "гр"
+            modalCarbohydrates.innerHTML = "Јаглехидрати<br>" + theItem.carbohydrates + "гр"
             modalFats.innerHTML = "Масти<br>" + theItem.fats + "гр"
             modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
             modalDescription.innerHTML = "" + theItem.description

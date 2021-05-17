@@ -44,7 +44,7 @@
 									<tr>
 					  				<td><?= $ex->vezba_id; ?></td>
 					  				<td><?= $ex->name; ?></td>
-					  				<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $ex->link_vezba; ?>" data-target="#myModal">Гледај</button></td>
+					  				<td><button type="button" class="btn btn-primary video-btn" data-toggle="modal" data-src="<?= $ex->link_vezba; ?>" data-target="#myModal">Преглед</button></td>
 					  				<td><?= $ex->muskulna_grupa; ?></td>
 					  				<td><?= $ex->description; ?></td>
 					  				<td>

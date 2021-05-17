@@ -146,7 +146,7 @@
   				  modalOpName.innerHTML = "" + theItem.name
   				  modalSostojki.innerHTML = "" + theItem.sostojki
   				  modalProteins.innerHTML = "Протеини<br>" + theItem.proteins + "гр"
-  				  modalCarbohydrates.innerHTML = "Јагленохидрати<br>" + theItem.carbohydrates + "гр"
+  				  modalCarbohydrates.innerHTML = "Јаглехидрати<br>" + theItem.carbohydrates + "гр"
   				  modalFats.innerHTML = "Масти<br>" + theItem.fats + "гр"
   				  modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
   				  modalDescription.innerHTML = "" + theItem.description

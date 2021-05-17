@@ -14,8 +14,11 @@
 	  $sql = 'UPDATE vezbi SET name=:name, link_vezba=:link_vezba, muskulna_grupa=:muskulna_grupa, description=:description WHERE vezba_id=:vezba_id';
 	  $statement = $connection->prepare($sql);
 	  if ($statement->execute([':name' => $name, ':link_vezba' => $link_vezba, ':muskulna_grupa' => $muskulna_grupa, ':description' => $description, ':vezba_id' => $vezba_id])) {
-	    // header("location: exercises.php");
+	    $message = 'Ажурирано Успешно';
 	  }
+	  else{
+  		$message = 'Настанат проблем, обидете се повторно';
+  	}
 	}
 ?>
 
@@ -23,8 +26,13 @@
 	<div class="layout-content-body">
 	  <div class="title-bar">
 			<h1 class="title-bar-title">
-			  <span class="d-ib">Edit Exercise</span>
+			  <span class="d-ib">Уредување Тренинг</span>
 			</h1>
+			<?php if(!empty($message)): ?>
+      <div class="alert alert-success">
+        <?= $message; ?>
+      </div>
+    	<?php endif; ?>
 	  </div>
 	  <form data-toggle="md-validator" action="" method="POST">
 			<div class="row">
@@ -32,16 +40,16 @@
 					<div class="demo-md-form-wrapper">
 					
 					<div class="md-form-group">
-							<input value="<?= $vezba->name; ?>" class="md-form-control" type="text" name="name" id="name" placeholder="Exercise Name">
+							<input value="<?= $vezba->name; ?>" class="md-form-control" type="text" name="name" id="name" placeholder="Име на Тренинг">
 					</div>
 
 					<div class="md-form-group">
-							<input value="<?= $vezba->link_vezba; ?>" class="md-form-control" type="text" name="link_vezba" id="link_vezba" placeholder="Link na Vezba">
+							<input value="<?= $vezba->link_vezba; ?>" class="md-form-control" type="text" name="link_vezba" id="link_vezba" placeholder="Линк за Вежба">
 					</div>
 					
 					<div class="md-form-group">
 						<select value="<?= $vezba->muskulna_grupa; ?>" class="md-form-control" name="muskulna_grupa" id="muskulna_grupa" data-msg="Muscle">
-							<option value="" disabled="disabled" selected="selected">Muscle</option>
+							<option value="" disabled="disabled" selected="selected">Мускулна Група</option>
 							<option value="Гради">Гради</option>
 							<option value="Грб">Грб</option>
 							<option value="Рамо">Рамо</option>
@@ -53,10 +61,10 @@
 					</div>
 					
 					<div class="md-form-group">
-							<input value="<?= $vezba->description; ?>" class="md-form-control" type="text" name="description" id="description" placeholder="Description">
+							<input value="<?= $vezba->description; ?>" class="md-form-control" type="text" name="description" id="description" placeholder="Дескрипција">
 					</div>
 
-					<button class="btn btn-default btn-block" type="submit">Update Exercise</button>
+					<button class="btn btn-default btn-block" type="submit">Ажурирај Тренинг</button>
 					</div>
 			</div>
 			</div>

@@ -54,19 +54,19 @@
 									<td><?php if($meal->option1 != 0): ?> 
                  		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option1; ?>)">Преглед</button>  
                    		  <?php else: ?>
-                   		    <p>No Option</p>
+                   		    <p>Нема Опција</p>
                    		  <?php endif; ?>    
                    		</td>
                    		<td><?php if($meal->option2 != 0): ?> 
                    		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option2; ?>)">Преглед</button>  
                    		  <?php else: ?>
-                   		    <p>No Option</p>
+                   		    <p>Нема Опција</p>
                    		  <?php endif; ?>    
                    		</td>
                    		<td><?php if($meal->option3 != 0): ?> 
                    		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $meal->option3; ?>)">Преглед</button>  
                  		    <?php else: ?>
-                 		      <p>No Option</p>
+                 		      <p>Нема Опција</p>
                  		    <?php endif; ?>    
                  		  </td>
 									<td><?= $meal->date ?></td>
@@ -157,7 +157,7 @@ modalSostojki.innerHTML = "proba"
   				  modalOpName.innerHTML = "" + theItem.name
   				  modalSostojki.innerHTML = "" + theItem.sostojki
   				  modalProteins.innerHTML = "Протеини<br>" + theItem.proteins + "гр"
-  				  modalCarbohydrates.innerHTML = "Јагленохидрати<br>" + theItem.carbohydrates + "гр"
+  				  modalCarbohydrates.innerHTML = "Јаглехидрати<br>" + theItem.carbohydrates + "гр"
   				  modalFats.innerHTML = "Масти<br>" + theItem.fats + "гр"
   				  modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
   				  modalDescription.innerHTML = "" + theItem.description

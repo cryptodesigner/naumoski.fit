@@ -95,17 +95,17 @@
 					  </div>
 					  <div class="profile-overview">
 					  	<?php foreach($clients as $c): ?>
-            	  <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h1>
+            	  <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?> Профил</h1>
             	<?php endforeach; ?>
 							<!-- <h1 class="profile-name">{% for row in data %}{{row['name']}}'s Profile{% endfor %}</h1> -->
-							<p>Client<a class="link-inverted"></a></p>
+							<p>Клиент<a class="link-inverted"></a></p>
 					  </div>
 					</div>
 					<div class="profile-tabs">
 					  <ul class="profile-nav">
-							<li><a onclick="openTab('Profile')">Profile</a></li>
-							<li><a onclick="openTab('Trainings')">Trainings</a></li>
-							<li><a onclick="openTab('Diets')">Diets</a></li>
+							<li><a onclick="openTab('Profile')">Профил</a></li>
+							<li><a onclick="openTab('Trainings')">Тренинзи</a></li>
+							<li><a onclick="openTab('Diets')">Диети</a></li>
 					  </ul>
 					</div>
 				 </div>
@@ -119,7 +119,7 @@
 			<div id="Profile" class="tab">
 				<div class="card-body">
 					<?php foreach($clients as $c): ?>
-					  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Profile</h3>
+					  <h3><?= $c->name; ?> <?= $c->surname; ?> Профил</h3>
 					<?php endforeach; ?>
 				</div>
 
@@ -131,38 +131,38 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 							</div>
-							<strong>Basics</strong>
+							<strong>Основни Инфо</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
 							<div class="table-responsive">
 								<table class="table table-hover">
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	 		<th colspan="6">Pol: </th>
+              	 		<th colspan="6">Пол: </th>
               	 		<td colspan="6"><?= $b->pol; ?></td>
               	 		<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Rodenden: </th>
+              	  	<th colspan="6">Роденден: </th>
               	  	<td colspan="6"><?= $b->godini; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-										<th colspan="6">Visina: </th>
+										<th colspan="6">Висина: </th>
 										<td colspan="6"><?= $b->visina; ?></td>
 										<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Tezina: </th>
+              	  	<th colspan="6">Тезина: </th>
               	  	<td colspan="6"><?= $b->tezina; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-										<th colspan="6">Iskustvo: </th>
+										<th colspan="6">Искуство: </th>
 										<td colspan="6"><?= $b->iskustvo; ?></td>
 										<?php endforeach; ?>
 									</tr>
@@ -180,44 +180,44 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 							</div>
-							<strong>Schedules</strong>
+							<strong>Распоред</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
 							<div class="table-responsive">
 								<table class="table table-hover">
 									<tr>
 										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Budenje: </th>
+										<th colspan="6">Будење: </th>
 										<td colspan="6"><?= $s->stanuvanje; ?></td>
 										<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Zaspivanje: </th>
+										<th colspan="6">Заспивање: </th>
 										<td colspan="6"><?= $s->legnuvanje; ?></td>
 										<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Rabota: </th>
+										<th colspan="6">Работа: </th>
 										<td colspan="6"><?= $s->rabota; ?></td>
 										<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Pauzi: </th>
+										<th colspan="6">Паузи: </th>
 										<td colspan="6"><?= $s->pauzi; ?></td>
 										<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Trening: </th>
+										<th colspan="6">Тренинг: </th>
 										<td colspan="6"><?= $s->trening; ?></td>
 										<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($schedules as $s): ?>
-										<th colspan="6">Cardio: </th>
+										<th colspan="6">Кардио: </th>
 										<td colspan="6"><?= $s->cardio; ?></td>
 										<?php endforeach; ?>
 									</tr>
@@ -236,38 +236,38 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 							</div>
-							<strong>Characteristics</strong>
+							<strong>Карактеристики</strong>
 						</div>
 						<div class="card-body" data-toggle="match-height">
 							<div class="table-responsive">
 								<table class="table table-hover">
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Alergii: </th>
+              	  	<th colspan="6">Алергии: </th>
               	  	<td colspan="6"><?= $b->alergija; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Netolerantnost: </th>
+              	  	<th colspan="6">Нетолерантност: </th>
               	  	<td colspan="6"><?= $b->netolerantnost; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Odbivnost: </th>
+              	  	<th colspan="6">Одбивност: </th>
               	  	<td colspan="6"><?= $b->odbivnost; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Zaboluvanja: </th>
+              	  	<th colspan="6">Заболувања: </th>
               	  	<td colspan="6"><?= $b->zaboluvanja; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Suplementi?: </th>
+              	  	<th colspan="6">Суплементи?: </th>
               	  	<td colspan="6"><?= $b->suplement; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
@@ -285,22 +285,22 @@
 								<button type="button" class="card-action card-reload" title="Reload"></button>
 								<button type="button" class="card-action card-remove" title="Remove"></button>
 		  				</div>
-		  				<strong>Clients Measurements List</strong>
+		  				<strong>Листа На Мерења</strong>
 						</div>
 						<div class="card-body">
 			  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 								<thead>
 									<tr>
-										<th>Seq.</th>
-										<th>Tezina</th>
-										<th>Vrat</th>
-										<th>Gradi</th>
-										<th>Pod Gradi</th>
-										<th>Papok</th>
-										<th>Kolk</th>
-										<th>Raka</th>
-										<th>But</th>
-										<th>Date</th>
+										<th>Р.б.</th>
+										<th>Тежина</th>
+										<th>Врат</th>
+										<th>Гради</th>
+										<th>Под Гради</th>
+										<th>Папок</th>
+										<th>Колк</th>
+										<th>Рака</th>
+										<th>Бут</th>
+										<th>Дата</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -371,14 +371,14 @@
 			<div id="Trainings" class="tab" style="display: none">
 				<div class="card-body">
 					<?php foreach($clients as $c): ?>
-        	  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Training List</h3>
+        	  <h3><?= $c->name; ?> <?= $c->surname; ?> Листа на Тренинзи</h3>
         	<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#trainingtoday" data-toggle="tab">Today</a></li>
-						<li><a href="#trainingtomorrow" data-toggle="tab">Tomorrow</a></li>
-						<li><a href="#trainingweek" data-toggle="tab">Week</a></li>
+						<li class="active"><a href="#trainingtoday" data-toggle="tab">Денес</a></li>
+						<li><a href="#trainingtomorrow" data-toggle="tab">Утре</a></li>
+						<li><a href="#trainingweek" data-toggle="tab">Сите</a></li>
 					</ul>
 					<div class="tab-content">
 
@@ -390,18 +390,18 @@
 										<button type="button" class="card-action card-reload" title="Reload"></button>
 										<button type="button" class="card-action card-remove" title="Remove"></button>
 			  					</div>
-			  					<strong>Trainings List</strong>
+			  					<strong>Листа на Тренинзи</strong>
 								</div>
 								<div class="card-body">
 							  	<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
-							    	    <th>Seq.</th>
-							    	    <th>Name</th>
-							    	    <th>Vezba</th>
-							    	    <th>Serii/Povtoruvanja</th>
-							    	    <th>Tehnika</th>
-							    	    <th>Vreme</th>
+							    	    <th>Р.б.</th>
+							    	    <th>Име</th>
+							    	    <th>Вежба</th>
+							    	    <th>Серии / Повт</th>
+							    	    <th>Техника</th>
+							    	    <th>Време</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -409,9 +409,9 @@
                   		<tr>
                   	  	<td><?= $tt->training_id; ?></td>
                   	  	<td><?= $tt->name; ?></td>
-                  	  	<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">See Exercise</button></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tt->vezba; ?>)">Преглед</button></td>
                   	  	<td><?= $tt->serii_povt; ?></td>
-                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">See Tech</button></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tt->tech; ?>)">Преглед</button></td>
                     		<td><?= $tt->vreme; ?></td>
                   		</tr>
                   		<?php endforeach; ?>
@@ -429,18 +429,18 @@
 										<button type="button" class="card-action card-reload" title="Reload"></button>
 										<button type="button" class="card-action card-remove" title="Remove"></button>
 			  					</div>
-			  					<strong>Trainings List</strong>
+			  					<strong>Листа на Тренинзи</strong>
 								</div>
 								<div class="card-body">
 							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
-							    	    <th>Seq.</th>
-							    	    <th>Name</th>
-							    	    <th>Vezba</th>
-							    	    <th>Serii/Povtoruvanja</th>
-							    	    <th>Tehnika</th>
-							    	    <th>Vreme</th>
+							    	    <th>Р.б.</th>
+							    	    <th>Име</th>
+							    	    <th>Вежба</th>
+							    	    <th>Серии / Повт</th>
+							    	    <th>Техника</th>
+							    	    <th>Време</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -448,9 +448,9 @@
 							      	<tr>
 							       		<td><?= $tts->training_id; ?></td>
 							       		<td><?= $tts->name; ?></td>
-                  	 		<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">See Exercise</button></td>
+                  	 		<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $tts->vezba; ?>)">Преглед</button></td>
                   	  	<td><?= $tts->serii_povt; ?></td>
-                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">See Tech</button></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $tts->tech; ?>)">Преглед</button></td>
                     		<td><?= $tts->vreme; ?></td>
 							      	</tr>
 							      	<?php endforeach; ?>
@@ -468,19 +468,19 @@
 										<button type="button" class="card-action card-reload" title="Reload"></button>
 										<button type="button" class="card-action card-remove" title="Remove"></button>
 			  					</div>
-			  					<strong>Trainings List</strong>
+			  					<strong>Листа на Тренинзи</strong>
 								</div>
 								<div class="card-body">
 							  	<table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
-							    	    <th>Seq.</th>
-							    	    <th>Name</th>
-							    	    <th>Vezba</th>
-							    	    <th>Serii/Povtoruvanja</th>
-							    	    <th>Tehnika</th>
-							    	    <th>Vreme</th>
-							    	    <th>Date</th>
+							    	    <th>Р.б.</th>
+							    	    <th>Име</th>
+							    	    <th>Вежба</th>
+							    	    <th>Серии / Повт</th>
+							    	    <th>Техника</th>
+							    	    <th>Време</th>
+							    	    <th>Дата</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -488,9 +488,9 @@
                   		<tr>
                   	  	<td><?= $at->training_id; ?></td>
                   	  	<td><?= $at->name; ?></td>
-                  	  	<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">See Exercise</button></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">Преглед</button></td>
                   	  	<td><?= $at->serii_povt; ?></td>
-                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">See Tech</button></td>
+                  	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">Преглед</button></td>
                     		<td><?= $at->vreme; ?></td>
                     		<td><?= $at->date; ?></td>
                   		</tr>
@@ -508,14 +508,14 @@
 			<div id="Diets" class="tab" style="display: none">
 				<div class="card-body">
 					<?php foreach($clients as $c): ?>
-       		  <h3><?= $c->name; ?> <?= $c->surname; ?>'s Diet List</h3>
+       		  <h3><?= $c->name; ?> <?= $c->surname; ?> Листа на Диети</h3>
        		<?php endforeach; ?>
 				</div>
 				<div class="panel m-b-lg">
 					<ul class="nav nav-tabs">
-						<li class="active"><a href="#mealtoday" data-toggle="tab">Today</a></li>
-						<li><a href="#mealtomorrow" data-toggle="tab">Tomorrow</a></li>
-						<li><a href="#mealweek" data-toggle="tab">Week</a></li>
+						<li class="active"><a href="#mealtoday" data-toggle="tab">Денес</a></li>
+						<li><a href="#mealtomorrow" data-toggle="tab">Утре</a></li>
+						<li><a href="#mealweek" data-toggle="tab">Сите</a></li>
 					</ul>
 					<div class="tab-content">
 
@@ -527,18 +527,18 @@
 										<button type="button" class="card-action card-reload" title="Reload"></button>
 										<button type="button" class="card-action card-remove" title="Remove"></button>
 			  					</div>
-			  					<strong>Diet List</strong>
+			  					<strong>Листа на Диети</strong>
 								</div>
 								<div class="card-body">
 							  	<table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
-							    	    <th>Seq.</th>
-							    	    <th>Name</th>
-							    	    <th>Vreme</th>
-							    	    <th>Opcija 1</th>
-							    	    <th>Opcija 2</th>
-							    	    <th>Opcija 3</th>
+							    	    <th>Р.б.</th>
+							    	    <th>Име</th>
+							    	    <th>Време</th>
+							    	    <th>Опција 1</th>
+							    	    <th>Опција 2</th>
+							    	    <th>Опција 3</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -548,21 +548,21 @@
                  			  <td><?= $tm->name; ?></td>
                  			  <td><?= $tm->vreme; ?></td>
                  			  <td><?php if($tm->option1 != 0): ?> 
-                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option1; ?>)">See Option</button>  
+                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option1; ?>)">Преглед</button>  
                    		  	<?php else: ?>
-                   		  	  <p>No Option</p>
+                   		  	  <p>Нема Опција</p>
                    		  	<?php endif; ?>    
                    			</td>
                    			<td><?php if($tm->option2 != 0): ?> 
-                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option2; ?>)">See Option</button>  
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option2; ?>)">Преглед</button>  
                    		 		<?php else: ?>
-                   		 		  <p>No Option</p>
+                   		 		  <p>Нема Опција</p>
                    		 		<?php endif; ?>    
                    			</td>
                    			<td><?php if($tm->option3 != 0): ?> 
-                   			  <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">See Option</button>  
+                   			  <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tm->option3; ?>)">Преглед</button>  
                  		    	<?php else: ?>
-                 		    	  <p>No Option</p>
+                 		    	  <p>Нема Опција</p>
                  		    	<?php endif; ?>    
                  		  	</td>
                  			</tr>
@@ -581,18 +581,18 @@
 										<button type="button" class="card-action card-reload" title="Reload"></button>
 										<button type="button" class="card-action card-remove" title="Remove"></button>
 			  					</div>
-			  					<strong>Diet List</strong>
+			  					<strong>Листа на Диети</strong>
 								</div>
 								<div class="card-body">
 							  	<table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
-							    	    <th>Seq.</th>
-							    	    <th>Name</th>
-							    	    <th>Vreme</th>
-							    	    <th>Opcija 1</th>
-							    	    <th>Opcija 2</th>
-							    	    <th>Opcija 3</th>
+							    	    <th>Р.б.</th>
+							    	    <th>Име</th>
+							    	    <th>Време</th>
+							    	    <th>Опција 1</th>
+							    	    <th>Опција 2</th>
+							    	    <th>Опција 3</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -602,21 +602,21 @@
                  			  <td><?= $tms->name; ?></td>
                  			  <td><?= $tms->vreme; ?></td>
                  			  <td><?php if($tms->option1 != 0): ?> 
-                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">See Option</button>  
+                 		      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option1; ?>)">Преглед</button>  
                     	  	<?php else: ?>
-                    	  	  <p>No Option</p>
+                    	  	  <p>Нема Опција</p>
                     	  	<?php endif; ?>    
                     		</td>
                     		<td><?php if($tms->option2 != 0): ?> 
-                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">See Option</button>  
+                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option2; ?>)">Преглед</button>  
                     	  	<?php else: ?>
-                    	  	  <p>No Option</p>
+                    	  	  <p>Нема Опција</p>
                     	  	<?php endif; ?>    
                     		</td>
                     		<td><?php if($tms->option3 != 0): ?> 
-                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">See Option</button>  
+                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $tms->option3; ?>)">Преглед</button>  
                  		    	<?php else: ?>
-                 		    	  <p>No Option</p>
+                 		    	  <p>Нема Опција</p>
                  		    	<?php endif; ?>    
                  		  	</td>
                  			</tr>
@@ -635,19 +635,19 @@
 										<button type="button" class="card-action card-reload" title="Reload"></button>
 										<button type="button" class="card-action card-remove" title="Remove"></button>
 			  					</div>
-			  					<strong>Diet List</strong>
+			  					<strong>Листа на Диети</strong>
 								</div>
 								<div class="card-body">
 							  	<table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
-							    	    <!-- <th>Seq.</th> -->
-							    	    <th>Name</th>
-							    	    <th>Vreme</th>
-							    	    <th>Opcija 1</th>
-							    	    <th>Opcija 2</th>
-							    	    <th>Opcija 3</th>
-							    	    <th>Date</th>
+							    	    <th>Р.б.</th>
+							    	    <th>Име</th>
+							    	    <th>Време</th>
+							    	    <th>Опција 1</th>
+							    	    <th>Опција 2</th>
+							    	    <th>Опција 3</th>
+							    	    <th>Дата</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -657,21 +657,21 @@
                   	  	<td><?= $ams->name; ?></td>
                   	  	<td><?= $ams->vreme; ?></td>
                   	  	<td><?php if($ams->option1 != 0): ?> 
-                  	      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">See Option</button>  
+                  	      <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option1; ?>)">Преглед</button>  
                    		  	<?php else: ?>
-                   		  	  <p>No Option</p>
+                   		  	  <p>Нема Опција</p>
                    		  	<?php endif; ?>    
                    			</td>
                    			<td><?php if($ams->option2 != 0): ?> 
-                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">See Option</button>  
+                   		    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option2; ?>)">Преглед</button>  
                     	  	<?php else: ?>
-                    	  	  <p>No Option</p>
+                    	  	  <p>Нема Опција</p>
                     	  	<?php endif; ?>    
                     		</td>
                     		<td><?php if($ams->option3 != 0): ?> 
-                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">See Option</button>  
+                    	    <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $ams->option3; ?>)">Преглед</button>  
                   	    	<?php else: ?>
-                  	    	  <p>No Option</p>
+                  	    	  <p>Нема Опција</p>
                   	    	<?php endif; ?>    
                   	  	</td>
                   	  	<td><?= $ams->date; ?></td>
@@ -824,7 +824,7 @@ console.log(modalSostojki)
   				  modalOpName.innerHTML = "" + theItem.name
   				  modalSostojki.innerHTML = "" + theItem.sostojki
   				  modalProteins.innerHTML = "Протеини<br>" + theItem.proteins + "гр"
-  				  modalCarbohydrates.innerHTML = "Јагленохидрати<br>" + theItem.carbohydrates + "гр"
+  				  modalCarbohydrates.innerHTML = "Јаглехидрати<br>" + theItem.carbohydrates + "гр"
   				  modalFats.innerHTML = "Масти<br>" + theItem.fats + "гр"
   				  modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
   				  modalDescription.innerHTML = "" + theItem.description

@@ -11,10 +11,10 @@
     $sql = 'INSERT INTO options(name, sostojki, proteins, carbohydrates, fats, description) VALUES(:name, :sostojki, :proteins, :carbohydrates, :fats, :description)';
     $statement = $connection->prepare($sql);
     if ($statement->execute([':name' => $name, ':sostojki' => $sostojki, ':proteins' => $proteins, ':carbohydrates' => $carbohydrates, ':fats' => $fats, ':description' => $description])) {
-      $message = 'Meal Added Successfully';
+      $message = 'Успешно Додадено';
     }
     else{
-      $message = 'Problem Occured, Try Again';
+      $message = 'Настанат проблем, обидете се повторно';
     } 
   }
 ?>
@@ -51,7 +51,7 @@
 					</div>
 					
 					<div class="md-form-group">
-							<input class="md-form-control" type="text" name="carbohydrates" id="carbohydrates" placeholder="Јагленохидрати (гр)">
+							<input class="md-form-control" type="text" name="carbohydrates" id="carbohydrates" placeholder="Јаглехидрати (гр)">
 							<label class="md-control-label"></label>
 					</div>
 					

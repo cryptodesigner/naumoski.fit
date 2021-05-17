@@ -15,10 +15,10 @@
   	$sql = 'INSERT INTO basics(clients_client_id, pol, godini, visina, tezina, alergija, netolerantnost, odbivnost, zaboluvanja, iskustvo, suplement) VALUES(:clients_client_id, :pol, :godini, :visina, :tezina, :alergija, :netolerantnost, :odbivnost, :zaboluvanja, :iskustvo, :suplement)';
   	$statement = $connection->prepare($sql);
   	if ($statement->execute([':clients_client_id' => $clients_client_id, ':pol' => $pol, ':godini' => $godini, ':visina' => $visina, ':tezina' => $tezina, ':alergija' => $alergija, ':netolerantnost' => $netolerantnost, ':odbivnost' => $odbivnost, ':zaboluvanja' => $zaboluvanja, ':iskustvo' => $iskustvo, ':suplement' => $suplement])) {
-  	  $message = 'Basics Added Successfully';
+  	  $message = 'Успешно Додадено';
   	}
   	else{
-  		$message = 'Problem Occured, Try Again';
+  		$message = 'Настанат проблем, обидете се повторно';
   	}
   }
 ?>
