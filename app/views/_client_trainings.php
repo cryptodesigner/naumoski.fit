@@ -26,7 +26,7 @@
 			  		<strong>Листа На Тренинзи</strong>
 					</div>
 					<div class="card-body">
-			  		<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+			  		<table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
 									<th>Р.б.</th>
@@ -34,8 +34,8 @@
 									<th>Вежба</th>
 									<th>Серии / Повт</th>
 									<th>Техника</th>
+									<th>Дата</th>
 									<th>Време</th>
-									<th>дата</th>
 				  			</tr>
 							</thead>
 							<tbody>
@@ -46,8 +46,8 @@
 					  			<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $t->vezba; ?>)">Преглед</button></td>
 					  			<td><?= $t->serii_povt; ?></td>
 					  			<td><button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $t->tech; ?>)">Преглед</button></td>
-					  			<td><?= $t->vreme; ?></td>
 					  			<td><?= $t->date; ?></td>
+					  			<td><?= $t->vreme; ?></td>
 								</tr>
 				  			<?php endforeach; ?>
 							</tbody>

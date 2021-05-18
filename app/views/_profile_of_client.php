@@ -288,7 +288,7 @@
 		  				<strong>Листа На Мерења</strong>
 						</div>
 						<div class="card-body">
-			  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+			  			<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 								<thead>
 									<tr>
 										<th>Р.б.</th>
@@ -393,7 +393,7 @@
 			  					<strong>Листа на Тренинзи</strong>
 								</div>
 								<div class="card-body">
-							  	<table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							  	<table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
 							    	    <th>Р.б.</th>
@@ -432,7 +432,7 @@
 			  					<strong>Листа на Тренинзи</strong>
 								</div>
 								<div class="card-body">
-							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							  	<table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
 							    	    <th>Р.б.</th>
@@ -471,7 +471,7 @@
 			  					<strong>Листа на Тренинзи</strong>
 								</div>
 								<div class="card-body">
-							  	<table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							  	<table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
 							    	    <th>Р.б.</th>
@@ -481,6 +481,8 @@
 							    	    <th>Техника</th>
 							    	    <th>Време</th>
 							    	    <th>Дата</th>
+							    	    <th>Бриши</th>
+							    	    <th>Уреди</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -493,6 +495,12 @@
                   	  	<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">Преглед</button></td>
                     		<td><?= $at->vreme; ?></td>
                     		<td><?= $at->date; ?></td>
+                    		<td>
+													<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_training_week.php?training_id=<?= $at->training_id ?>" class='btn btn-danger'>Бриши</a>
+					  						</td>
+					  						<td>
+					  							<a href="edit_client_training.php?training_id=<?= $at->training_id ?>" class='btn btn-default'>Уреди</a>
+												</td>
                   		</tr>
                   		<?php endforeach; ?>
 							    	</tbody>
@@ -530,7 +538,7 @@
 			  					<strong>Листа на Диети</strong>
 								</div>
 								<div class="card-body">
-							  	<table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							  	<table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
 							    	    <th>Р.б.</th>
@@ -584,7 +592,7 @@
 			  					<strong>Листа на Диети</strong>
 								</div>
 								<div class="card-body">
-							  	<table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							  	<table id="demo-datatables-buttons-7" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
 							    	    <th>Р.б.</th>
@@ -638,7 +646,7 @@
 			  					<strong>Листа на Диети</strong>
 								</div>
 								<div class="card-body">
-							  	<table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+							  	<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
 							    	<thead>
 							    	  <tr>
 							    	    <th>Р.б.</th>
@@ -648,6 +656,8 @@
 							    	    <th>Опција 2</th>
 							    	    <th>Опција 3</th>
 							    	    <th>Дата</th>
+							    	    <th>Бриши</th>
+							    	    <th>Уреди</th>
 							    	  </tr>
 							    	</thead>
 							    	<tbody>
@@ -675,6 +685,12 @@
                   	    	<?php endif; ?>    
                   	  	</td>
                   	  	<td><?= $ams->date; ?></td>
+                  	  	<td>
+					  							<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_meal_week.php?meal_id=<?= $ams->meal_id ?>" class='btn btn-danger'>Бриши</a>
+												</td>
+												<td>
+					  							<a href="edit_client_diet.php?meal_id=<?= $ams->meal_id ?>" class='btn btn-default'>Уреди</a>
+												</td>
                   		</tr>
                   		<?php endforeach; ?>
 							   	 	</tbody>

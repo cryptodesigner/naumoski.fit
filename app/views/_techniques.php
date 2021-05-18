@@ -28,7 +28,7 @@
 		  			<strong>Листа На Техники</strong>
 					</div>
 					<div class="card-body">
-		  			<table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+		  			<table id="demo-datatables-buttons-8" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
 							<thead>
 				  			<tr>
 									<th>Р.б.</th>

@@ -48,7 +48,7 @@
 
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
-    AND date >= CURDATE()
+    AND date >= CURDATE() AND date <= DATE_ADD(CURDATE(), INTERVAL 7 DAY)
     ORDER BY vreme ASC";
   $statement = $connection->prepare($sql);
   $statement->execute();
@@ -72,7 +72,7 @@
 
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
-    AND date >= CURDATE()
+    AND date >= CURDATE() AND date <= DATE_ADD(CURDATE(), INTERVAL 7 DAY)
     ORDER BY vreme ASC";
   $statement = $connection->prepare($sql);
   $statement->execute();
@@ -355,7 +355,7 @@
                 <strong>Денес</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-1" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -397,7 +397,7 @@
                 <strong>Утре</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -439,7 +439,7 @@
                 <strong>Сите</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -447,8 +447,8 @@
                       <th>Вежба</th>
                       <th>Серии / Повт</th>
                       <th>Техника</th>
-                      <th>Време</th>
                       <th>Дата</th>
+                      <th>Време</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -459,8 +459,8 @@
                       <td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $at->vezba; ?>)">Преглед</button></td>
                       <td><?= $at->serii_povt; ?></td>
                       <td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $at->tech; ?>)">Преглед</button></td>
-                      <td><?= $at->vreme; ?></td>
                       <td><?= $at->date; ?></td>
+                      <td><?= $at->vreme; ?></td>
                     </tr>
                     <?php endforeach; ?>
                   </tbody>
@@ -499,7 +499,7 @@
                 <strong>Денес</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -555,7 +555,7 @@
                 <strong>Утре</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-7" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -611,7 +611,7 @@
                 <strong>Сите</strong>
               </div>
               <div class="card-body">
-               <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
