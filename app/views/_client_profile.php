@@ -387,9 +387,13 @@
             <strong>Графикон за Тежина</strong>
           </div>
           <div class="card-body">
+<<<<<<< Updated upstream
             <div class="chart-container">
               <canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
             </div>
+=======
+            <canvas id="myChart" style="width:100%; max-width:1200px; height:200px"></canvas>
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>
