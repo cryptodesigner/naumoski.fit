@@ -678,7 +678,7 @@
         <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs">
           <li class="active"><a href="#trainingtoday" data-toggle="tab">Денес</a></li>
           <li><a href="#trainingtomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#trainingweek" data-toggle="tab">Сите</a></li>
@@ -821,7 +821,7 @@
         <?php endforeach; ?>
       </div>
       <div class="panel m-b-lg">
-        <ul class="nav nav-tabs nav-justified">
+        <ul class="nav nav-tabs">
           <li class="active"><a href="#dietToday" data-toggle="tab">Денес</a></li>
           <li><a href="#dietTomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#dietWeek" data-toggle="tab">Сите</a></li>
