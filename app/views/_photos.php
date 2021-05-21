@@ -43,7 +43,8 @@
           foreach($directoryfiles as $directoryfile){
             if(strlen($directoryfile) > 3){
               if(str_starts_with($directoryfile, $user_id)){
-                echo '<img src="' . IMAGEPATH . $directoryfile . '" alt="' . $directoryfile . '" /> ';
+                echo '<img src="' . IMAGEPATH . $directoryfile . '" alt="' . $directoryfile . '" />';
+                // echo '<span class="close-icon">Delete</span> ';
               }
             }
           }

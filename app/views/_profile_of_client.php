@@ -352,22 +352,108 @@
 					</div>
 				</div> -->
 
-				<!-- <?php
+				<?php
 					$datapoints = array();
 					foreach ($measurements as $m) {
 						array_push($datapoints, array("x"=> $m->cur_date, "y"=> $m->tezina));
 					}
 					// echo '<pre>'; print_r($datapoints); echo '</pre>';
+
+					$datapoints2 = array();
+					foreach ($measurements as $m) {
+						array_push($datapoints2, array("x"=> $m->cur_date, "y"=> $m->gradi));
+					}
 				?>
-				
-				<div class="col-md-6">
-					<div class="panel panel-body text-center" data-toggle="match-height">
-						<canvas id="weightCanvas" data-chart="line" data-labels='["May", "Jun", "Jul", "Aug", "Sep"]' data-values='[{"backgroundColor": "rgba(243, 129, 32, 0.7)", "borderColor": "#50b432", "borderWidth": 2, "pointBackgroundColor": "#F27820", "pointRadius": 3, "label": "Kilograms", "data": <?php echo json_encode($datapoints);?>}]' data-hide='["gridLinesX", "legend"]' height="150" width="300"></canvas>
-						<h6 class="m-b-0">Body Weight (Kg)</h6>
+
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-actions">
+								<button type="button" class="card-action card-toggler" title="Collapse"></button>
+								<button type="button" class="card-action card-reload" title="Reload"></button>
+								<button type="button" class="card-action card-remove" title="Remove"></button>
+		  				</div>
+							<strong>Графикон за Тежина</strong>
+						</div>
+						<div class="card-body">
+							<canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
+						</div>
 					</div>
-				</div> -->
+				</div>
+			
+				<script>
+					var myArray = <?php echo json_encode($datapoints); ?>;
+					// console.log(myArray)
+					var xresults = [];
+					var yresults = [];
+					for(var i=myArray.length-1; i>=0; i--) {
+						xresults.push(myArray[i].x)
+						yresults.push(parseInt(myArray[i].y))
+					}
+					// console.log(xresults)
+					// console.log(yresults)
+					new Chart("myChart", {
+					  type: "line",
+					  data: {
+					    labels: xresults,
+					    datasets: [{ 
+					      data: yresults,
+					      borderColor: "red",
+					      fill: false
+					    }]
+					  },
+					  options: {
+					    legend: {display: false}
+					  }
+					});
+				</script>
+
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="card-actions">
+								<button type="button" class="card-action card-toggler" title="Collapse"></button>
+								<button type="button" class="card-action card-reload" title="Reload"></button>
+								<button type="button" class="card-action card-remove" title="Remove"></button>
+		  				</div>
+							<strong>Графикон за Гради</strong>
+						</div>
+						<div class="card-body">
+							<canvas id="myChart2" style="width:100%;max-width:1200px;height:200px"></canvas>
+						</div>
+					</div>
+				</div>
+			
+				<script>
+					var myArray2 = <?php echo json_encode($datapoints2); ?>;
+					// console.log(myArray)
+					var xresults2 = [];
+					var yresults2 = [];
+					for(var i=myArray2.length-1; i>=0; i--) {
+						xresults2.push(myArray2[i].x)
+						yresults2.push(parseInt(myArray2[i].y))
+					}
+					// console.log(xresults)
+					// console.log(yresults)
+					new Chart("myChart2", {
+					  type: "line",
+					  data: {
+					    labels: xresults2,
+					    datasets: [{ 
+					      data: yresults2,
+					      borderColor: "red",
+					      fill: false
+					    }]
+					  },
+					  options: {
+					    legend: {display: false}
+					  }
+					});
+				</script>
+
 			</div>
-		     
+				
 			<div id="Trainings" class="tab" style="display: none">
 				<div class="card-body">
 					<?php foreach($clients as $c): ?>
@@ -816,7 +902,7 @@ var modalFats = document.getElementById("modalFats")
 var modalCalories = document.getElementById("modalCalories")
 var modalDescription = document.getElementById("modalDescription")
 
-modalSostojki.innerHTML = "proba"
+// modalSostojki.innerHTML = "proba"
 console.log(modalSostojki)
 
 

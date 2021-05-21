@@ -77,6 +77,12 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $all_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT * FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $measurements = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <section>
@@ -299,7 +305,16 @@
         </div>
       </div>
 
-      <!-- <div class="col-md-12">
+      <?php
+        $datapoints = array();
+        foreach ($measurements as $m) {
+          array_push($datapoints, array("x"=> $m->cur_date, "y"=> $m->tezina));
+        }
+        // echo '<pre>'; print_r($datapoints); echo '</pre>';
+      ?>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+      <div class="col-md-12">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -307,28 +322,40 @@
               <button type="button" class="card-action card-reload" title="Reload"></button>
               <button type="button" class="card-action card-remove" title="Remove"></button>
             </div>
-            <strong>Daily Routine</strong>
+            <strong>Графикон за Тежина</strong>
           </div>
-          <div class="card-body" data-toggle="match-height">
-            
-
-            <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-nowrap dataTable" cellspacing="0" width="100%">
-              <thead>
-                <tr>
-                  <th>Routine Name</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for row in data5 %}
-                <tr>
-                  <td>{{row['dailyRoutineName']}}</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
+          <div class="card-body">
+            <canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
           </div>
         </div>
-      </div> -->
+      </div>
+      
+      <script>
+        var myArray = <?php echo json_encode($datapoints); ?>;
+        // console.log(myArray)
+        var xresults = [];
+        var yresults = [];
+        for(var i=myArray.length-1; i>=0; i--) {
+          xresults.push(myArray[i].x)
+          yresults.push(parseInt(myArray[i].y))
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart", {
+          type: "line",
+          data: {
+            labels: xresults,
+            datasets: [{ 
+              data: yresults,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
     </div>
      
     <div id="Trainings" class="tab" style="display: none">
