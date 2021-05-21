@@ -424,14 +424,38 @@
             }]
           },
           options: {
+            animations: {
+            y: {
+            easing: 'easeInOutQuad',
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
             maintainAspectRatio: true,
             legend: {display: false},
             layout: {
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 2000
+            duration: 3000
           },
           },
           }
@@ -485,14 +509,38 @@
             }]
           },
           options: {
+            animations: {
+            y: {
+            easing: 'easeInOutQuad',
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
             maintainAspectRatio: true,
             legend: {display: false},
             layout: {
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 2000
+            duration: 3000
           },
           },
           }
@@ -546,14 +594,38 @@
             }]
           },
           options: {
+            animations: {
+            y: {
+            easing: 'easeInOutQuad',
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
             maintainAspectRatio: true,
             legend: {display: false},
             layout: {
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 2000
+            duration: 3000
           },
           },
           }
@@ -607,14 +679,38 @@
             }]
           },
           options: {
+            animations: {
+            y: {
+            easing: 'easeInOutQuad',
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
             maintainAspectRatio: true,
             legend: {display: false},
             layout: {
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 2000
+            duration: 3000
           },
           },
           }
@@ -668,14 +764,38 @@
             }]
           },
           options: {
+            animations: {
+            y: {
+            easing: 'easeInOutQuad',
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
             maintainAspectRatio: true,
             legend: {display: false},
             layout: {
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 2000
+            duration: 3000
           },
           },
           }
@@ -729,14 +849,38 @@
             }]
           },
           options: {
+            animations: {
+            y: {
+            easing: 'easeInOutQuad',
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
             responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
             maintainAspectRatio: true,
             legend: {display: false},
             layout: {
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 2000
+            duration: 3000
           },
           },
           }
