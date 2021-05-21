@@ -426,7 +426,10 @@
           options: {
             animations: {
             y: {
-            easing: 'easeInOutQuad',
+            duration: 3000,
+            lazy: false,
+            easing: 'easeOutBounce',
+            loop: true,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -511,7 +514,10 @@
           options: {
             animations: {
             y: {
-            easing: 'easeInOutQuad',
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutSine',
+            loop: true,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -596,7 +602,10 @@
           options: {
             animations: {
             y: {
-            easing: 'easeInOutQuad',
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutQuint',
+            loop: true,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -681,7 +690,10 @@
           options: {
             animations: {
             y: {
-            easing: 'easeInOutQuad',
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutExpo',
+            loop: true,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -766,7 +778,10 @@
           options: {
             animations: {
             y: {
-            easing: 'easeInOutQuad',
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutElastic',
+            loop: true,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -851,7 +866,10 @@
           options: {
             animations: {
             y: {
-            easing: 'easeInOutQuad',
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutBack',
+            loop: true,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
