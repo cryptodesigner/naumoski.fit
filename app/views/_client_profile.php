@@ -387,7 +387,9 @@
             <strong>Графикон за Тежина</strong>
           </div>
           <div class="card-body">
-            <canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
+            <div class="chart-container">
+              <canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
+            </div>
           </div>
         </div>
       </div>
