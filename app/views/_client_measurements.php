@@ -4,6 +4,42 @@
  	$statement = $connection->prepare($sql);
   $statement->execute();
   $measurements = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT tezina, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $tezina = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT gradi, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $gradi = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT papok, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $papok = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT kolk, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $kolk = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT raka, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $raka = $statement->fetchAll(PDO::FETCH_OBJ);
+
+  $current_client = $_SESSION['client_id'];
+  $sql = "SELECT but, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
+  $statement = $connection->prepare($sql);
+  $statement->execute();
+  $but = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 
@@ -69,6 +105,336 @@
 					</div>
 		  	</div>
 			</div>
+
+			<?php
+        $datapoints = array();
+        foreach ($tezina as $t) {
+          array_push($datapoints, array("x"=> $t->cur_date, "y"=> $t->tezina));
+        }
+        // echo '<pre>'; print_r($datapoints); echo '</pre>';
+
+        $datapoints2 = array();
+        foreach ($gradi as $g) {
+          array_push($datapoints2, array("x"=> $g->cur_date, "y"=> $g->gradi));
+        }
+
+        $datapoints3 = array();
+        foreach ($papok as $p) {
+          array_push($datapoints3, array("x"=> $p->cur_date, "y"=> $p->papok));
+        }
+
+        $datapoints4 = array();
+        foreach ($kolk as $k) {
+          array_push($datapoints4, array("x"=> $k->cur_date, "y"=> $k->kolk));
+        }
+
+        $datapoints5 = array();
+        foreach ($raka as $r) {
+          array_push($datapoints5, array("x"=> $r->cur_date, "y"=> $r->raka));
+        }
+
+        $datapoints6 = array();
+        foreach ($but as $b) {
+          array_push($datapoints6, array("x"=> $b->cur_date, "y"=> $b->but));
+        }
+      ?>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+    <!-- Grafikon za Tezina -->
+    	<div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Графикон за Тежина</strong>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        var myArray = <?php echo json_encode($datapoints); ?>;
+        // console.log(myArray)
+        var xresults = [];
+        var yresults = [];
+        for(var i=myArray.length-1; i>=0; i--) {
+          if(!(myArray[i].y)){
+            // console.log("do nothing",i)
+          }
+          else{
+            xresults.push(myArray[i].x)
+            yresults.push(parseInt(myArray[i].y))
+          }
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart", {
+          type: "line",
+          data: {
+            labels: xresults,
+            datasets: [{ 
+              data: yresults,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
+
+    <!-- Grafikon za Gradi -->
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Графикон за Гради</strong>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart2" style="width:100%;max-width:1200px;height:200px"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        var myArray2 = <?php echo json_encode($datapoints2); ?>;
+        // console.log(myArray)
+        var xresults2 = [];
+        var yresults2 = [];
+        for(var i=myArray2.length-1; i>=0; i--) {
+          if(!(myArray2[i].y)){
+            // console.log("do nothing",i)
+          }
+          else{
+            xresults2.push(myArray2[i].x)
+            yresults2.push(parseInt(myArray2[i].y))
+          }
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart2", {
+          type: "line",
+          data: {
+            labels: xresults2,
+            datasets: [{ 
+              data: yresults2,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
+
+    <!-- Grafikon za Papok -->
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Графикон за Папок</strong>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart3" style="width:100%;max-width:1200px;height:200px"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        var myArray3 = <?php echo json_encode($datapoints3); ?>;
+        // console.log(myArray)
+        var xresults3 = [];
+        var yresults3 = [];
+        for(var i=myArray3.length-1; i>=0; i--) {
+          if(!(myArray3[i].y)){
+            // console.log("do nothing",i)
+          }
+          else{
+            xresults3.push(myArray3[i].x)
+            yresults3.push(parseInt(myArray3[i].y))
+          }
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart3", {
+          type: "line",
+          data: {
+            labels: xresults3,
+            datasets: [{ 
+              data: yresults3,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
+
+    <!-- Grafikon za Kolk -->
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Графикон за Колк</strong>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart4" style="width:100%;max-width:1200px;height:200px"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        var myArray4 = <?php echo json_encode($datapoints4); ?>;
+        // console.log(myArray)
+        var xresults4 = [];
+        var yresults4 = [];
+        for(var i=myArray4.length-1; i>=0; i--) {
+          if(!(myArray4[i].y)){
+            // console.log("do nothing",i)
+          }
+          else{
+            xresults4.push(myArray4[i].x)
+            yresults4.push(parseInt(myArray4[i].y))
+          }
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart4", {
+          type: "line",
+          data: {
+            labels: xresults4,
+            datasets: [{ 
+              data: yresults4,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
+
+    <!-- Grafikon za Raka -->
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Графикон за Рака</strong>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart5" style="width:100%;max-width:1200px;height:200px"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        var myArray5 = <?php echo json_encode($datapoints5); ?>;
+        // console.log(myArray)
+        var xresults5 = [];
+        var yresults5 = [];
+        for(var i=myArray5.length-1; i>=0; i--) {
+          if(!(myArray5[i].y)){
+            // console.log("do nothing",i)
+          }
+          else{
+            xresults5.push(myArray5[i].x)
+            yresults5.push(parseInt(myArray5[i].y))
+          }
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart5", {
+          type: "line",
+          data: {
+            labels: xresults5,
+            datasets: [{ 
+              data: yresults5,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
+
+    <!-- Grafikon za But -->
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-actions">
+              <button type="button" class="card-action card-toggler" title="Collapse"></button>
+              <button type="button" class="card-action card-reload" title="Reload"></button>
+              <button type="button" class="card-action card-remove" title="Remove"></button>
+            </div>
+            <strong>Графикон за Бут</strong>
+          </div>
+          <div class="card-body">
+            <canvas id="myChart6" style="width:100%;max-width:1200px;height:200px"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        var myArray6 = <?php echo json_encode($datapoints6); ?>;
+        // console.log(myArray)
+        var xresults6 = [];
+        var yresults6 = [];
+        for(var i=myArray6.length-1; i>=0; i--) {
+          if(!(myArray6[i].y)){
+            // console.log("do nothing",i)
+          }
+          else{
+            xresults6.push(myArray6[i].x)
+            yresults6.push(parseInt(myArray6[i].y))
+          }
+        }
+        // console.log(xresults)
+        // console.log(yresults)
+        new Chart("myChart6", {
+          type: "line",
+          data: {
+            labels: xresults6,
+            datasets: [{ 
+              data: yresults6,
+              borderColor: "red",
+              fill: false
+            }]
+          },
+          options: {
+            legend: {display: false}
+          }
+        });
+      </script>
+
 	  </div>
 	</div>
 </section>
