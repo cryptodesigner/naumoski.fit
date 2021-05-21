@@ -682,7 +682,7 @@
               data: yresults4,
               label: "Графикон за Колк",
               borderColor: "#000000",
-              backgroundColor: '#3AC12B55',
+              backgroundColor: '#f0ff0055',
               fill: true,
               borderWidth: 0,
             }]
