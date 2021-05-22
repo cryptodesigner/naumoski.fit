@@ -895,7 +895,7 @@
                 <strong>Денес</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-3" class="table table-bordered table-striped table-wrap dataTable" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -936,7 +936,7 @@
                 <strong>Утре</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-4" class="table table-bordered table-striped table-wrap dataTable" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -977,7 +977,7 @@
                 <strong>Сите</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-5" class="table table-bordered table-striped table-wrap dataTable" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -1034,7 +1034,7 @@
                 <strong>Денес</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-6" class="table table-bordered table-striped table-wrap dataTable" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -1089,7 +1089,7 @@
                 <strong>Утре</strong>
               </div>
               <div class="card-body">
-                <table id="demo-datatables-buttons-7" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+                <table id="demo-datatables-buttons-7" class="table table-bordered table-striped table-wrap dataTable" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
@@ -1144,7 +1144,7 @@
                 <strong>Сите</strong>
               </div>
               <div class="card-body">
-               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable"cellspacing="0" width="100%">
+               <table id="demo-datatables-buttons-2" class="table table-bordered table-striped table-wrap dataTable" width="100%">
                   <thead>
                     <tr>
                       <th>Р.б.</th>
