@@ -1377,8 +1377,7 @@
           }
         });
       </script>
-=======
->>>>>>> Stashed changes
+
 
       <script src="static/js/chart.js"></script>
 
