@@ -265,6 +265,12 @@
               	  	<td colspan="6"><?= $b->suplement; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
+									<tr>
+										<?php foreach($schedules as $s): ?>
+										<th colspan="6">Др. Физ. Активности: </th>
+										<td colspan="6"><?= $s->description; ?></td>
+										<?php endforeach; ?>
+									</tr>
 								</table>
 							</div>
 						</div>
