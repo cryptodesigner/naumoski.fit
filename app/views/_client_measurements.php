@@ -139,10 +139,9 @@
         }
       ?>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
-    <!-- Grafikon za Tezina -->
-    	<div class="col-md-12">
+      <!-- Grafikon za Tezina -->
+      <script src="static/js/chart.js"></script>
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -153,7 +152,9 @@
             <strong>Графикон за Тежина</strong>
           </div>
           <div class="card-body">
-            <canvas id="myChart" style="width:100%;max-width:1200px;height:200px"></canvas>
+            <div class="chart-container">
+              <canvas id="myChart" style="width:100%; height:200px"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -180,18 +181,57 @@
             labels: xresults,
             datasets: [{ 
               data: yresults,
-              borderColor: "red",
-              fill: false
+              label: "Графикон за Тежина",
+              borderColor: "#000000",
+              backgroundColor: '#98721a55',
+              fill: true,
+              borderWidth: 0,
             }]
           },
           options: {
-            legend: {display: false}
+            animations: {
+            y: {
+            duration: 3000,
+            lazy: false,
+            easing: 'easeOutBounce',
+            loop: false,
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
+            maintainAspectRatio: true,
+            legend: {display: false},
+            layout: {
+            padding: 2,
+            animation: {
+            easing: 'easeInOutQuad',
+            duration: 3000
+          },
+          },
           }
         });
       </script>
 
     <!-- Grafikon za Gradi -->
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -229,18 +269,57 @@
             labels: xresults2,
             datasets: [{ 
               data: yresults2,
-              borderColor: "red",
-              fill: false
+              label: "Графикон за Гради",
+              borderColor: "#000000",
+              backgroundColor: '#00B0ED55',
+              fill: true,
+              borderWidth: 0,
             }]
           },
           options: {
-            legend: {display: false}
+            animations: {
+            y: {
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutSine',
+            loop: false,
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
+            maintainAspectRatio: true,
+            legend: {display: false},
+            layout: {
+            padding: 2,
+            animation: {
+            easing: 'easeInOutQuad',
+            duration: 3000
+          },
+          },
           }
         });
       </script>
 
     <!-- Grafikon za Papok -->
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -278,18 +357,57 @@
             labels: xresults3,
             datasets: [{ 
               data: yresults3,
-              borderColor: "red",
-              fill: false
+              label: "Графикон за Папок",
+              borderColor: "#000000",
+              backgroundColor: '#00FF7955',
+              fill: true,
+              borderWidth: 0,
             }]
           },
           options: {
-            legend: {display: false}
+            animations: {
+            y: {
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutQuint',
+            loop: false,
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
+            maintainAspectRatio: true,
+            legend: {display: false},
+            layout: {
+            padding: 2,
+            animation: {
+            easing: 'easeInOutQuad',
+            duration: 3000
+          },
+          },
           }
         });
       </script>
 
     <!-- Grafikon za Kolk -->
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -327,18 +445,57 @@
             labels: xresults4,
             datasets: [{ 
               data: yresults4,
-              borderColor: "red",
-              fill: false
+              label: "Графикон за Колк",
+              borderColor: "#000000",
+              backgroundColor: '#f0ff0055',
+              fill: true,
+              borderWidth: 0,
             }]
           },
           options: {
-            legend: {display: false}
+            animations: {
+            y: {
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutExpo',
+            loop: false,
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
+            maintainAspectRatio: true,
+            legend: {display: false},
+            layout: {
+            padding: 2,
+            animation: {
+            easing: 'easeInOutQuad',
+            duration: 3000
+          },
+          },
           }
         });
       </script>
 
     <!-- Grafikon za Raka -->
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -376,18 +533,57 @@
             labels: xresults5,
             datasets: [{ 
               data: yresults5,
-              borderColor: "red",
-              fill: false
+              label: "Графикон за Рака",
+              borderColor: "#000000",
+              backgroundColor: '#D3000055',
+              fill: true,
+              borderWidth: 0,
             }]
           },
           options: {
-            legend: {display: false}
+            animations: {
+            y: {
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutElastic',
+            loop: false,
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
+            maintainAspectRatio: true,
+            legend: {display: false},
+            layout: {
+            padding: 2,
+            animation: {
+            easing: 'easeInOutQuad',
+            duration: 3000
+          },
+          },
           }
         });
       </script>
 
     <!-- Grafikon za But -->
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <div class="card-actions">
@@ -425,12 +621,51 @@
             labels: xresults6,
             datasets: [{ 
               data: yresults6,
-              borderColor: "red",
-              fill: false
+              label: "Графикон за Бут",
+              borderColor: "#000000",
+              backgroundColor: '#B400D355',
+              fill: true,
+              borderWidth: 0,
             }]
           },
           options: {
-            legend: {display: false}
+            animations: {
+            y: {
+            duration: 3000,
+            lazy: false,
+            easing: 'easeInOutBack',
+            loop: false,
+            from: (ctx) => {
+            if (ctx.type === 'data') {
+            if (ctx.mode === 'default' && !ctx.dropped) {
+              ctx.dropped = true;
+              return 0;
+                        }
+                      }
+                    }
+                  }
+                },
+            responsive: true,
+            plugins: {
+              legend: {
+                labels: {
+                  usePointStyle: true,
+                },
+              },
+              title: {
+              display: false,
+              text: 'TEXT'
+              }
+              },
+            maintainAspectRatio: true,
+            legend: {display: false},
+            layout: {
+            padding: 2,
+            animation: {
+            easing: 'easeInOutQuad',
+            duration: 3000
+          },
+          },
           }
         });
       </script>
