@@ -153,7 +153,7 @@
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Тезина: </th>
+              	  	<th colspan="6">Тежина: </th>
               	  	<td colspan="6"><?= $b->tezina; ?></td>
               	  	<?php endforeach; ?>
 									</tr>
@@ -243,7 +243,7 @@
 									</tr>
 									<tr>
 										<?php foreach($basics as $b): ?>
-              	  	<th colspan="6">Нетолерантност: </th>
+              	  	<th colspan="6">Интолерантност: </th>
               	  	<td colspan="6"><?= $b->netolerantnost; ?></td>
               	  	<?php endforeach; ?>
 									</tr>

@@ -67,7 +67,7 @@
 					  <input value="<?= $basic->alergija; ?>" class="md-form-control" type="text" name="alergija" id="alergija" placeholder="Алергија (ако има)">
 					</div>
 					<div class="md-form-group">
-					  <input value="<?= $basic->netolerantnost; ?>" class="md-form-control" type="text" name="netolerantnost" id="netolerantnost" placeholder="Нетолерантност (ако има)">
+					  <input value="<?= $basic->netolerantnost; ?>" class="md-form-control" type="text" name="netolerantnost" id="netolerantnost" placeholder="Интолерантност (ако има)">
 					</div>
 					<div class="md-form-group">
 					  <input value="<?= $basic->odbivnost; ?>" class="md-form-control" type="text" name="odbivnost" id="odbivnost" placeholder="Одбивност (ако има)">

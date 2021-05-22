@@ -67,7 +67,7 @@
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">
-					  <input class="md-form-control" type="text" name="netolerantnost" id="netolerantnost" placeholder="Нетолерантност на Храна (ако има)">
+					  <input class="md-form-control" type="text" name="netolerantnost" id="netolerantnost" placeholder="Интолерантност на Храна (ако има)">
 					  <label class="md-control-label"></label>
 					</div>
 					<div class="md-form-group">

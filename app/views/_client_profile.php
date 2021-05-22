@@ -258,7 +258,7 @@
                 </tr>
                 <tr>
                   <?php foreach($basics as $b): ?>
-                  <th colspan="6">Нетолерантност: </th>
+                  <th colspan="6">Интолерантност: </th>
                   <td colspan="6"><?= $b->netolerantnost; ?></td>
                   <?php endforeach; ?>
                 </tr>
