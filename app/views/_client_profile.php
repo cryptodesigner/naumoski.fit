@@ -913,7 +913,7 @@
           <h1><?= $c->name; ?> Листа На Тренинзи</h1>
         <?php endforeach; ?>
       </div>
-      <div class="panel m-b-lg">
+      <div class="profile-body">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#trainingtoday" data-toggle="tab">Денес</a></li>
           <li><a href="#trainingtomorrow" data-toggle="tab">Утре</a></li>
@@ -1056,7 +1056,7 @@
           <h1><?= $c->name; ?> Листа На Диети</h1>
         <?php endforeach; ?>
       </div>
-      <div class="panel m-b-lg">
+      <div class="profile-body">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#dietToday" data-toggle="tab">Денес</a></li>
           <li><a href="#dietTomorrow" data-toggle="tab">Утре</a></li>
