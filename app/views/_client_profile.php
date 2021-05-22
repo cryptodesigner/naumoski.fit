@@ -4,7 +4,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $clients = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT m.name FROM managers m 
     INNER JOIN clients c ON m.manager_id = c.managers_manager_id
@@ -12,13 +11,11 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $assigned_manager = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM basics WHERE clients_client_id = '$current_client.';";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $basics = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT name, vreme FROM meals WHERE clients_client_id = '$current_client.'
     AND date = CURDATE()
@@ -29,7 +26,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $daily_routine = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
     AND date = CURDATE()
@@ -37,7 +33,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $today_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
     AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
@@ -45,7 +40,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $tomorrow_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
     AND date >= CURDATE() AND date <= DATE_ADD(CURDATE(), INTERVAL 7 DAY)
@@ -53,7 +47,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $all_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
     AND date = CURDATE()
@@ -61,7 +54,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $today_meals = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
     AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
@@ -69,7 +61,6 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $tomorrow_meals = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
     AND date >= CURDATE() AND date <= DATE_ADD(CURDATE(), INTERVAL 7 DAY)
@@ -77,50 +68,42 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $all_meals = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT * FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $measurements = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT tezina, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $tezina = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT gradi, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $gradi = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT papok, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $papok = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT kolk, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $kolk = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT raka, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $raka = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $current_client = $_SESSION['client_id'];
   $sql = "SELECT but, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $but = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
-
 <section>
 <div class="profile">
   <div class="profile-header">
@@ -149,18 +132,15 @@
     </div>
   </div>
 </div>
-
           
 <div class="profile-body">
   <div class="card-body">
-
     <div id="Profile" class="tab">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h1><?= $c->name; ?> Профил</h1>
+          <h3><?= $c->name; ?> Профил</h3>
         <?php endforeach; ?>
       </div>
-
       <div class="col-md-3">
         <div class="card">
           <div class="card-header">
@@ -209,7 +189,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
           <div class="card-header">
@@ -258,7 +237,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
           <div class="card-header">
@@ -307,7 +285,6 @@
           </div>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
           <div class="card-header">
@@ -340,40 +317,33 @@
           </div>
         </div>
       </div>
-
       <?php
         $datapoints = array();
         foreach ($tezina as $t) {
           array_push($datapoints, array("x"=> $t->cur_date, "y"=> $t->tezina));
         }
         // echo '<pre>'; print_r($datapoints); echo '</pre>';
-
         $datapoints2 = array();
         foreach ($gradi as $g) {
           array_push($datapoints2, array("x"=> $g->cur_date, "y"=> $g->gradi));
         }
-
         $datapoints3 = array();
         foreach ($papok as $p) {
           array_push($datapoints3, array("x"=> $p->cur_date, "y"=> $p->papok));
         }
-
         $datapoints4 = array();
         foreach ($kolk as $k) {
           array_push($datapoints4, array("x"=> $k->cur_date, "y"=> $k->kolk));
         }
-
         $datapoints5 = array();
         foreach ($raka as $r) {
           array_push($datapoints5, array("x"=> $r->cur_date, "y"=> $r->raka));
         }
-
         $datapoints6 = array();
         foreach ($but as $b) {
           array_push($datapoints6, array("x"=> $b->cur_date, "y"=> $b->but));
         }
       ?>
-
     <!-- Grafikon za Tezina -->
       <script src="static/js/chart.js"></script>
       <div class="col-md-6">
@@ -464,7 +434,6 @@
           }
         });
       </script>
-
     <!-- Grafikon za Gradi -->
       <div class="col-md-6">
         <div class="card">
@@ -552,7 +521,6 @@
           }
         });
       </script>
-
     <!-- Grafikon za Papok -->
       <div class="col-md-6">
         <div class="card">
@@ -640,7 +608,6 @@
           }
         });
       </script>
-
     <!-- Grafikon za Kolk -->
       <div class="col-md-6">
         <div class="card">
@@ -728,7 +695,6 @@
           }
         });
       </script>
-
     <!-- Grafikon za Raka -->
       <div class="col-md-6">
         <div class="card">
@@ -816,7 +782,6 @@
           }
         });
       </script>
-
     <!-- Grafikon za But -->
       <div class="col-md-6">
         <div class="card">
@@ -904,13 +869,12 @@
           }
         });
       </script>
-
     </div>
      
     <div id="Trainings" class="tab" style="display: none">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h1><?= $c->name; ?> Листа На Тренинзи</h1>
+          <h3><?= $c->name; ?> Листа На Тренинзи</h3>
         <?php endforeach; ?>
       </div>
       <div class="profile-body">
@@ -959,7 +923,6 @@
                 </table>
               </div>
             </div>
-
           </div>
           
           <div class="tab-pane fade" id="trainingtomorrow">
@@ -1001,7 +964,6 @@
                 </table>
               </div>
             </div>
-
           </div>
           
           <div class="tab-pane fade" id="trainingweek">
@@ -1043,17 +1005,15 @@
                 </table>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
       
     <div id="Diets" class="tab" style="display: none">
       <div class="card-body">
         <?php foreach($clients as $c): ?>
-          <h1><?= $c->name; ?> Листа На Диети</h1>
+          <h3><?= $c->name; ?> Листа На Диети</h3>
         <?php endforeach; ?>
       </div>
       <div class="profile-body">
@@ -1062,7 +1022,6 @@
           <li><a href="#dietTomorrow" data-toggle="tab">Утре</a></li>
           <li><a href="#dietWeek" data-toggle="tab">Сите</a></li>
         </ul>
-
         <div class="tab-content">
           <div class="tab-pane fade active in" id="dietToday">
             <div class="card">
@@ -1118,7 +1077,6 @@
                 </table>
               </div>
             </div>
-
           </div>
           <div class="tab-pane fade" id="dietTomorrow">
             <div class="card">
@@ -1174,7 +1132,6 @@
                 </table>
               </div>
             </div>
-
           </div>
           <div class="tab-pane fade" id="dietWeek">
             <div class="card">
@@ -1230,17 +1187,12 @@
                 </table>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -1279,7 +1231,6 @@
     </div>
   </div>
 </div>
-
 <!-- Modal Training -->
 <div class="modal fade" id="exampleTrainingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -1308,7 +1259,6 @@
     </div>
   </div>
 </div>
-
 <!-- Modal Vezba-->
   <div class="modal fade" id="exampleVezbaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -1341,7 +1291,6 @@
     </div>
   </div>
 </section>
-
 <script type="text/javascript">
 var modalOpName = document.getElementById("modalOpName")
 var modalSostojki = document.getElementById("modalSostojki")
@@ -1350,15 +1299,10 @@ var modalCarbohydrates = document.getElementById("modalCarbohydrates")
 var modalFats = document.getElementById("modalFats")
 var modalCalories = document.getElementById("modalCalories")
 var modalDescription = document.getElementById("modalDescription")
-
 modalSostojki.innerHTML = "proba"
 // console.log(modalSostojki)
-
-
   function seeOption(t){
-
     console.log(t)
-
     fetch("/chose_option.php", {
           method: "POST",
           headers: {
@@ -1379,25 +1323,19 @@ modalSostojki.innerHTML = "proba"
             modalFats.innerHTML = "Масти<br>" + theItem.fats + "гр"
             modalCalories.innerHTML = "Вкупно Калории : " + ((parseInt(theItem.proteins) * 4) + (parseInt(theItem.carbohydrates) * 4) + (parseInt(theItem.fats) * 9)) + " kCal"
             modalDescription.innerHTML = "" + theItem.description
-
           })
           .catch((err) => {
             console.log(err)
           })
-
   }
 </script>
-
 <script type="text/javascript">
 // var modalTechName = document.getElementById("modalTechName")
 var modalName = document.getElementById("modalName")
 var modalLink = document.getElementById("modalLink")
 var modalTrainingDescription = document.getElementById("modalTrainingDescription")
-
   function seeOptionTraining(t){
-
     console.log(t)
-
     fetch("/chose_tech.php", {
           method: "POST",
           headers: {
@@ -1418,26 +1356,20 @@ var modalTrainingDescription = document.getElementById("modalTrainingDescription
             modalLink.innerHTML = "" + theItem.link
             modalLink.href = theItem.link
             modalTrainingDescription.innerHTML = "" + theItem.description
-
           })
           .catch((err) => {
             // Do something for an error here
           })
-
   }
 </script>
-
 <script type="text/javascript">
 // var modalVezbaName1 = document.getElementById("modalVezbaName1")
 var modalVezbaName = document.getElementById("modalVezbaName")
 var modalVezbaLink = document.getElementById("modalVezbaLink")
 var modalVezbaMuscle = document.getElementById("modalVezbaMuscle")
 var modalVezbaDescription = document.getElementById("modalVezbaDescription")
-
   function seeVezba(t){
-
     console.log(t)
-
     fetch("/chose_vezba.php", {
           method: "POST",
           headers: {
@@ -1459,11 +1391,9 @@ var modalVezbaDescription = document.getElementById("modalVezbaDescription")
             modalVezbaLink.href = theItem.link_vezba
             modalVezbaMuscle.innerHTML = "" + theItem.muskulna_grupa
             modalVezbaDescription.innerHTML = "" + theItem.description
-
           })
           .catch((err) => {
             // Do something for an error here
           })
-
   }
 </script>
