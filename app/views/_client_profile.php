@@ -429,7 +429,7 @@
             duration: 3000,
             lazy: false,
             easing: 'easeOutBounce',
-            loop: true,
+            loop: false,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -517,7 +517,7 @@
             duration: 3000,
             lazy: false,
             easing: 'easeInOutSine',
-            loop: true,
+            loop: false,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -605,7 +605,7 @@
             duration: 3000,
             lazy: false,
             easing: 'easeInOutQuint',
-            loop: true,
+            loop: false,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -693,7 +693,7 @@
             duration: 3000,
             lazy: false,
             easing: 'easeInOutExpo',
-            loop: true,
+            loop: false,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -781,7 +781,7 @@
             duration: 3000,
             lazy: false,
             easing: 'easeInOutElastic',
-            loop: true,
+            loop: false,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
@@ -869,7 +869,7 @@
             duration: 3000,
             lazy: false,
             easing: 'easeInOutBack',
-            loop: true,
+            loop: false,
             from: (ctx) => {
             if (ctx.type === 'data') {
             if (ctx.mode === 'default' && !ctx.dropped) {
