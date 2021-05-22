@@ -50,8 +50,7 @@
 			  <span class="d-ib">Листа На Мерења</span>
 			</h1>
 	  </div>
-	  <div class="row gutter-xs">
-			<div class="col-xs-12">
+			<div class="col-md-12">
 		 		<div class="card">
 					<div class="card-header">
 		  			<div class="card-actions">
@@ -670,6 +669,6 @@
         });
       </script>
 
-	  </div>
+	  
 	</div>
 </section>
