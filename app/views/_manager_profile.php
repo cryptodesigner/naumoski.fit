@@ -100,7 +100,7 @@
     <div id="Clients" class="tab" style="display: none">
       <div class="profile-container">
         <?php foreach($managers as $m): ?>
-          <h1><?= $m->name; ?> Листа На Клиенти</h1>
+          <h3><?= $m->name; ?> Листа На Клиенти</h3>
         <?php endforeach; ?>
       </div>
       <div class="tab-content">
