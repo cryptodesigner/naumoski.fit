@@ -4,19 +4,16 @@
   $statement = $connection->prepare($sql);
   $statement->execute();
   $clients = $statement->fetchAll(PDO::FETCH_OBJ);
-
   $cur_manager = $_SESSION['manager_id'];
   $sql = "SELECT * FROM managers WHERE manager_id = '$cur_manager.';";
   $statement = $connection->prepare($sql);
   $statement->execute();
   $managers = $statement->fetchAll(PDO::FETCH_OBJ);
-
   // $cur_manager = $_SESSION['manager_id'];
   // $sql = "SELECT MAX(client_id) FROM clients WHERE managers_manager_id = '$cur_manager.';";
   // $row = $sql->fetch_assoc();
   // $client_number = (int)$row['client_id'];
 ?>
-
 <section>
 <div class="profile">
   <div class="profile-header">
@@ -24,7 +21,7 @@
       <div class="profile-container">
         <div class="profile-card">
           <div class="profile-avetar">
-            <img class="profile-avetar-img" width="128" height="128" src="uploads/1orhan.png" alt="Wilson">
+            <img class="profile-avetar-img" width="128" height="128" src="uploads/1orhan.png" alt="user">
           </div>
           <div class="profile-overview">
             <?php foreach($managers as $m): ?>
@@ -44,13 +41,9 @@
     </div>
   </div>
 </div>
-
-
 <div class="profile-body">
   <div class="card-body">
-
     <div id="Profile" class="tab">
-
       <div class="col-xs-6 col-md-3">
         <div class="card no-background no-border">
           <div class="card-values">
@@ -104,7 +97,6 @@
         </div>
       </div>
     </div>
-
     <div id="Clients" class="tab" style="display: none">
       <div class="profile-container">
         <?php foreach($managers as $m): ?>
