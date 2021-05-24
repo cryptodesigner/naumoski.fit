@@ -396,7 +396,7 @@
           options: {
             animations: {
             y: {
-            duration: 3000,
+            duration: 2000,
             lazy: false,
             easing: 'easeOutBounce',
             loop: false,
@@ -428,7 +428,6 @@
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 3000
           },
           },
           }
@@ -483,7 +482,7 @@
           options: {
             animations: {
             y: {
-            duration: 3000,
+            duration: 2000,
             lazy: false,
             easing: 'easeInOutSine',
             loop: false,
@@ -515,7 +514,6 @@
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 3000
           },
           },
           }
@@ -570,7 +568,7 @@
           options: {
             animations: {
             y: {
-            duration: 3000,
+            duration: 2000,
             lazy: false,
             easing: 'easeInOutQuint',
             loop: false,
@@ -602,7 +600,6 @@
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 3000
           },
           },
           }
@@ -657,7 +654,7 @@
           options: {
             animations: {
             y: {
-            duration: 3000,
+            duration: 2000,
             lazy: false,
             easing: 'easeInOutExpo',
             loop: false,
@@ -689,7 +686,6 @@
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 3000
           },
           },
           }
@@ -744,7 +740,7 @@
           options: {
             animations: {
             y: {
-            duration: 3000,
+            duration: 2000,
             lazy: false,
             easing: 'easeInOutElastic',
             loop: false,
@@ -776,7 +772,6 @@
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 3000
           },
           },
           }
@@ -831,7 +826,7 @@
           options: {
             animations: {
             y: {
-            duration: 3000,
+            duration: 2000,
             lazy: false,
             easing: 'easeInOutBack',
             loop: false,
@@ -863,7 +858,6 @@
             padding: 2,
             animation: {
             easing: 'easeInOutQuad',
-            duration: 3000
           },
           },
           }
