@@ -111,7 +111,7 @@
       <div class="profile-container">
         <div class="profile-card">
           <div class="profile-avetar">
-            <img class="profile-avetar-img" width="128" height="128" src="../static/img/user.jpg" alt="Teddy Wilson">
+            <img class="profile-avetar-img" width="128" height="128" src="../static/img/avatar-logo.png" alt="user">
           </div>
           <div class="profile-overview">
             <?php foreach($clients as $c): ?>

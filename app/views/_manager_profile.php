@@ -21,7 +21,7 @@
       <div class="profile-container">
         <div class="profile-card">
           <div class="profile-avetar">
-            <img class="profile-avetar-img" width="128" height="128" src="uploads/1orhan.png" alt="user">
+            <img class="profile-avetar-img" width="128" height="128" src="uploads/avatar-logo.png" alt="user">
           </div>
           <div class="profile-overview">
             <?php foreach($managers as $m): ?>
