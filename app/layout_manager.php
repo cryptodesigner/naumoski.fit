@@ -54,7 +54,7 @@
             <span class="sr-only">Toggle navigation</span>
             <span class="arrow-up"></span>
             <span class="ellipsis ellipsis-vertical">
-              <img class="ellipsis-object" width="32" height="32" src="../static/img/user.jpg" alt="">
+              <img class="ellipsis-object" width="32" height="32" src="../static/img/avatar-logo-small.jpg" alt="">
             </span>
           </button>
         </div>
@@ -77,7 +77,7 @@
               </li>
               <li class="dropdown hidden-xs">
                 <button class="navbar-account-btn" data-toggle="dropdown" aria-haspopup="true">
-                  <img class="rounded" width="36" height="36" src="../static/img/user.jpg" alt="Teddy Wilson"> 
+                  <img class="rounded" width="36" height="36" src="../static/img/avatar-logo-small.jpg" alt=""> 
                   <?php echo $_SESSION['email']; ?>
                   <span class="caret"></span>
                 </button>
