@@ -113,7 +113,6 @@
 		</div>
 	</div>
 	<div class="profile-body">
-		<div class="card-body">
 			<div id="Profile" class="tab">
 				<div class="card-body">
 					<?php foreach($clients as $c): ?>
