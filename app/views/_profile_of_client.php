@@ -5,85 +5,102 @@
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$clients = $statement->fetchAll(PDO::FETCH_OBJ);
+
 	$sql = "SELECT * FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$measurements = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM basics WHERE clients_client_id = '$current_client.';";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$basics = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM schedules WHERE clients_client_id = '$current_client.';";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$schedules = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
 	  AND date = CURDATE()
 	  ORDER BY vreme ASC";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$today_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
 	  AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
 	  ORDER BY vreme ASC";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$tomorrow_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
 	  AND date >= CURDATE()
 	  ORDER BY vreme ASC";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$all_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
 	  AND date = CURDATE()
 	  ORDER BY vreme ASC";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$today_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
 	  AND date = DATE_ADD(CURDATE(), INTERVAL 1 DAY)
 	  ORDER BY vreme ASC";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$tomorrow_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
 	  AND date >= CURDATE()
 	  ORDER BY vreme ASC";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$all_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT m.name FROM managers m 
 	  INNER JOIN clients c ON m.manager_id = c.managers_manager_id
 	  WHERE client_id = '$current_client.';";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$assigned_manager = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT tezina, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$tezina = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT gradi, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$gradi = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT papok, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$papok = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT kolk, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$kolk = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT raka, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$raka = $statement->fetchAll(PDO::FETCH_OBJ);
+	
 	$sql = "SELECT but, cur_date FROM measurements WHERE clients_client_id = '$current_client.' ORDER BY cur_date DESC;";
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$but = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
+
 <section>
 	<div class="profile">
 	  <div class="profile-header">
@@ -160,6 +177,12 @@
 										<?php foreach($basics as $b): ?>
 										<th colspan="6">Искуство: </th>
 										<td colspan="6"><?= $b->iskustvo; ?></td>
+										<?php endforeach; ?>
+									</tr>
+									<tr>
+										<?php foreach($basics as $b): ?>
+										<th colspan="6">Тип на Работа: </th>
+										<td colspan="6"><?= $b->tip_rabota; ?></td>
 										<?php endforeach; ?>
 									</tr>
 								</table>

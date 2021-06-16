@@ -1,6 +1,6 @@
 <?php
 	$message = '';
-  if (isset ($_POST['pol']) && isset ($_POST['godini']) && isset ($_POST['visina']) && isset ($_POST['tezina']) && isset ($_POST['alergija']) && isset ($_POST['netolerantnost']) && isset ($_POST['odbivnost']) && isset ($_POST['zaboluvanja']) && isset ($_POST['iskustvo']) && isset ($_POST['suplement'])) {
+  if (isset ($_POST['pol']) && isset ($_POST['godini']) && isset ($_POST['visina']) && isset ($_POST['tezina']) && isset ($_POST['alergija']) && isset ($_POST['netolerantnost']) && isset ($_POST['odbivnost']) && isset ($_POST['zaboluvanja']) && isset ($_POST['iskustvo']) && isset ($_POST['suplement']) && isset ($_POST['tip_rabota'])) {
   	$clients_client_id = $_SESSION["client_id"];
   	$pol = $_POST['pol'];
   	$godini = $_POST['godini'];
@@ -12,9 +12,10 @@
     $zaboluvanja = $_POST['zaboluvanja'];
     $iskustvo = $_POST['iskustvo'];
     $suplement = $_POST['suplement'];
-  	$sql = 'INSERT INTO basics(clients_client_id, pol, godini, visina, tezina, alergija, netolerantnost, odbivnost, zaboluvanja, iskustvo, suplement) VALUES(:clients_client_id, :pol, :godini, :visina, :tezina, :alergija, :netolerantnost, :odbivnost, :zaboluvanja, :iskustvo, :suplement)';
+    $tip_rabota = $_POST['tip_rabota'];
+  	$sql = 'INSERT INTO basics(clients_client_id, pol, godini, visina, tezina, alergija, netolerantnost, odbivnost, zaboluvanja, iskustvo, suplement, tip_rabota) VALUES(:clients_client_id, :pol, :godini, :visina, :tezina, :alergija, :netolerantnost, :odbivnost, :zaboluvanja, :iskustvo, :suplement, :tip_rabota)';
   	$statement = $connection->prepare($sql);
-  	if ($statement->execute([':clients_client_id' => $clients_client_id, ':pol' => $pol, ':godini' => $godini, ':visina' => $visina, ':tezina' => $tezina, ':alergija' => $alergija, ':netolerantnost' => $netolerantnost, ':odbivnost' => $odbivnost, ':zaboluvanja' => $zaboluvanja, ':iskustvo' => $iskustvo, ':suplement' => $suplement])) {
+  	if ($statement->execute([':clients_client_id' => $clients_client_id, ':pol' => $pol, ':godini' => $godini, ':visina' => $visina, ':tezina' => $tezina, ':alergija' => $alergija, ':netolerantnost' => $netolerantnost, ':odbivnost' => $odbivnost, ':zaboluvanja' => $zaboluvanja, ':iskustvo' => $iskustvo, ':suplement' => $suplement, ':tip_rabota' => $tip_rabota])) {
   	  $message = 'Успешно Додадено';
   	}
   	else{
@@ -49,7 +50,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 						  <div class="md-form-group md-label-floating">
-								<input class="md-form-control" type="date" name="godini" id="godini" data-format="dd/MM/yyyy" data-msg-required="Please enter your birth date">
+								<input class="md-form-control" type="date" name="godini" id="godini"  data-msg-required="Роденден">
 								<label class="md-control-label"></label>
 						  </div>
 						</div>
@@ -91,6 +92,13 @@
 							<option value="" disabled="disabled" selected="selected">Дали би користеле суплементи?</option>
 							<option value="Да">Да</option>
 							<option value="Не">Не</option>
+						</select>
+					</div>
+					<div class="md-form-group">
+					  	<select class="md-form-control" name="tip_rabota" id="tip_rabota" data-msg-required="kakva rabota rabotite?">
+							<option value="" disabled="disabled" selected="selected">Дали работата ви е физичка или психичка</option>
+							<option value="Физичка">Физичка</option>
+							<option value="Психичка">Психичка</option>
 						</select>
 					</div>
 					<button class="btn btn-default btn-block" type="submit">Додади</button>

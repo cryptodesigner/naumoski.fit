@@ -40,6 +40,7 @@
 									<th>Заболувања</th>
 									<th>Искуство</th>
 									<th>Суплементи?</th>
+									<th>Тип на Работа?</th>
 									<th>Бриши</th>
 									<th>Уреди</th>
 								</tr>
@@ -58,6 +59,7 @@
 									<td><?= $b->zaboluvanja; ?></td>
 									<td><?= $b->iskustvo; ?></td>
 									<td><?= $b->suplement; ?></td>
+									<td><?= $b->tip_rabota; ?></td>
 									<td>
 					  				<a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete_basic.php?basic_id=<?= $b->basic_id ?>" class='btn btn-danger'>Бриши</a>
 									</td>
