@@ -122,7 +122,7 @@
 	var modalCalories = document.getElementById("modalCalories")
 	var modalDescription = document.getElementById("modalDescription")
 
-	modalSostojki.innerHTML = "proba"
+	// modalSostojki.innerHTML = "proba"
 	// console.log(modalSostojki)
 
 
