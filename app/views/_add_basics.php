@@ -50,9 +50,10 @@
 					<div class="row">
 						<div class="col-sm-12">
 						  <div class="md-form-group md-label-floating">
-								<input class="md-form-control" type="date" name="godini" id="godini"  data-msg-required="Роденден">
-								<label class="md-control-label"></label>
-						  </div>
+                Роденден
+                <input class="md-form-control" type="date" name="godini" id="godini"  data-msg-required="Роденден">
+                <label class="md-control-label"></label>
+              </div>
 						</div>
 					</div>
 					<div class="md-form-group">
