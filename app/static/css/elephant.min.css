@@ -11342,3 +11342,19 @@ a.bg-dribbble:focus,a.bg-dribbble:hover {
 .fw-b {
     font-weight: 600
 }
+
+[type="date"] {
+    background-color: #98721a;
+    background-image: none;
+    border-color: #e0e0e0;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0 0 1px;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 8px;
+    width: 100%
+  
+}
