@@ -41,6 +41,12 @@
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$all_trainings = $statement->fetchAll(PDO::FETCH_OBJ);
+
+	$sql = "SELECT * FROM trainings WHERE clients_client_id = '$current_client.'
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$trainings_history = $statement->fetchAll(PDO::FETCH_OBJ);
 	
 	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
 	  AND date = CURDATE()
@@ -62,6 +68,12 @@
 	$statement = $connection->prepare($sql);
 	$statement->execute();
 	$all_meals = $statement->fetchAll(PDO::FETCH_OBJ);
+
+	$sql = "SELECT * FROM meals WHERE clients_client_id = '$current_client.'
+	  ORDER BY vreme ASC";
+	$statement = $connection->prepare($sql);
+	$statement->execute();
+	$meals_history = $statement->fetchAll(PDO::FETCH_OBJ);
 	
 	$sql = "SELECT m.name FROM managers m 
 	  INNER JOIN clients c ON m.manager_id = c.managers_manager_id
@@ -123,6 +135,7 @@
 							<li><a onclick="openTab('Profile')">Профил</a></li>
 							<li><a onclick="openTab('Trainings')">Тренинзи</a></li>
 							<li><a onclick="openTab('Diets')">Диети</a></li>
+							<li><a onclick="openTab('History')">Историја</a></li>
 					  </ul>
 					</div>
 				 </div>
@@ -1251,6 +1264,115 @@
 					</div>
 				</div>
 			</div>
+
+			<div id="History" class="tab" style="display: none">
+				<div class="card-body">
+					<?php foreach($clients as $c): ?>
+       		  <h3><?= $c->name; ?> <?= $c->surname; ?> Историја</h3>
+       		<?php endforeach; ?>
+				</div>
+				<div class="profile-body">
+					<div class="tab-content">
+
+						<div class="card">
+							<div class="card-header">
+								<div class="card-actions">
+									<button type="button" class="card-action card-toggler" title="Collapse"></button>
+									<button type="button" class="card-action card-reload" title="Reload"></button>
+									<button type="button" class="card-action card-remove" title="Remove"></button>
+								</div>
+								<strong>Листа На Оброци</strong>
+							</div>
+							<div class="card-body">
+								<table id="demo-datatables-buttons-8" class="table table-bordered table-striped table-wrap " cellspacing="0" width="100%">
+									<thead>
+										<tr>
+											<th>Р.б.</th>
+											<th>Име</th>
+											<th>Време</th>
+											<th>Опција 1</th>
+											<th>Опција 2</th>
+											<th>Опција 3</th>
+											<th>Дата</th>
+										</tr>
+									</thead>
+									<tbody>
+									<?php foreach($meals_history as $mh): ?>
+										<tr>
+											<td><?= $mh->meal_id; ?></td>
+											<td><?= $mh->name; ?></td>
+											<td><?= $mh->vreme; ?></td>
+											<td><?php if($mh->option1 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $mh->option1; ?>)">Преглед</button>  
+                      	<?php else: ?>
+                        	<p>Нема Опција</p>
+                      	<?php endif; ?>    
+                    	</td>
+                    	<td><?php if($mh->option2 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $mh->option2; ?>)">Преглед</button>  
+                      	<?php else: ?>
+                        	<p>Нема Опција</p>
+                      	<?php endif; ?>    
+                    	</td>
+                   	 	<td><?php if($mh->option3 != 0): ?> 
+                        <button data-toggle="modal" data-target="#exampleModal" onClick="seeOption(<?= $mh->option3; ?>)">Преглед</button>  
+                      	<?php else: ?>
+                        	<p>Нема Опција</p>
+                      	<?php endif; ?>    
+                    	</td>
+											<td><?= $mh->date; ?></td>
+										</tr>
+									<?php endforeach; ?>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+		  			<br>
+
+		  			<div class="card">
+							<div class="card-header">
+			  				<div class="card-actions">
+									<button type="button" class="card-action card-toggler" title="Collapse"></button>
+									<button type="button" class="card-action card-reload" title="Reload"></button>
+									<button type="button" class="card-action card-remove" title="Remove"></button>
+			  				</div>
+			  				<strong>Листа На Тренинзи</strong>
+							</div>
+							<div class="card-body">
+			  				<table id="demo-datatables-buttons-9" class="table table-bordered table-striped table-wrap dataTable" cellspacing="0" width="100%">
+									<thead>
+				  					<tr>
+											<th>Р.б.</th>
+											<th>Име</th>
+											<th>Време</th>
+											<th>Вежба</th>
+											<th>Сер/Повт</th>
+											<th>Техника</th>
+											<th>Дата</th>
+				  					</tr>
+									</thead>
+									<tbody>
+				  					<?php foreach($trainings_history as $th): ?>
+										<tr>
+					  					<td><?= $th->training_id; ?></td>
+					  					<td><?= $th->name; ?></td>
+					  					<td><?= $th->vreme; ?></td>
+					  					<td><button data-toggle="modal" data-target="#exampleVezbaModal" onClick="seeVezba(<?= $th->vezba; ?>)">Преглед</button></td>
+					  					<td><?= $th->serii_povt; ?></td>
+					  					<td><button data-toggle="modal" data-target="#exampleTrainingModal" onClick="seeOptionTraining(<?= $th->tech; ?>)">Преглед</button></td>
+					  					<td><?= $th->date; ?></td>
+										</tr>
+				  					<?php endforeach; ?>
+									</tbody>
+			  				</table>
+							</div>
+		  			</div>
+
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 	<!-- Modal Meal -->
