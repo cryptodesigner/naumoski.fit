@@ -26,13 +26,11 @@
     <link href="web/assets/css/style.css" rel="stylesheet">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="90">
-
 <!-- Loader -->
 <div class="loader-bg">
     <div class="loader"></div>
 </div>
 <!-- Loader ends -->
-
 <!-- START HEADER -->
 <header>
     <!--Navigation-->
@@ -42,7 +40,6 @@
                 <!--Logo Default-->
                 <img src="web/assets/images/logo.svg" alt="logo" class="ml-lg-3 m-0">
             </a>
-
             <!--Nav Links-->
             <div class="collapse navbar-collapse" id="megaone">
                 <div class="navbar-nav ml-auto">
@@ -56,7 +53,6 @@
                 </div>
             </div>
         </div>
-
         <!--Side Menu Button-->
         <div class="navigation-toggle">
             <ul class="slider-social toggle-btn my-0">
@@ -70,12 +66,9 @@
             </ul>
         </div>
     </nav>
-
     <!--Side Nav-->
     <div class="side-menu hidden">
-
         <div class="mega-title" id="mega-title"><h2 class="inner-mega-title">Naumoski.Fit</h2></div>
-
         <span id="btn_sideNavClose">
           <i class="las la-times btn-close"></i>
         </span>
@@ -108,7 +101,6 @@
                     </li>
                 </ul>
             </nav>
-
             <div class="side-footer w-100">
                 <ul class="social-icons-simple">
                     <li><a class="social-icon wow fadeInLeft" href="https://www.facebook.com/naumoski.fit/" target="_blank" data-wow-delay="300ms"><i class="fab fa-facebook-f"></i> </a> </li>
@@ -134,7 +126,6 @@
             <div class="row">
                 <!- -Result- ->
                 <div class="col-12" id="quote_result"></div>
-
                 <!- -Left Column- ->
                 <div class="col-md-6">
                     <div class="form-group">
@@ -150,7 +141,6 @@
                                type="text">
                     </div>
                 </div>
-
                 <! --Right Column- ->
                 <div class="col-md-6">
                     <div class="form-group">
@@ -166,7 +156,6 @@
                                type="text">
                     </div>
                 </div>
-
                 <!- -Full Column- ->
                 <div class="col-md-12">
                     <div class="form-group">
@@ -174,7 +163,6 @@
                                   name="userMessage"  placeholder="Please explain your project in detail."></textarea>
                     </div>
                 </div>
-
                 <!- -Button- ->
                 <div class="col-md-12">
                     <div class="form-check">
@@ -189,9 +177,7 @@
         </form>
     </div> -->
 </header>
-
 <!-- END HEADER -->
-
 <!-- START MAIN SLIDER -->
 <div id="slider-section" class="slider-section">
     <div id="revo_main_wrapper" class="rev_slider_wrapper fullwidthbanner-container m-0 p-0 bg-dark" data-alias="classic4export" data-source="gallery">
@@ -201,7 +187,6 @@
                 <!-- SLIDE 1 -->
                 <li data-index="rs-01" data-transition="fade" data-slotamount="default" data-easein="Power100.easeIn" data-easeout="Power100.easeOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="01">
                     <!-- MAIN IMAGE -->
-
                     <img src="web/assets/images/slider-1.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <div class="bg-overlay bg-black opacity-4"></div>
                     <!-- LAYER NR. 1 -->
@@ -266,7 +251,6 @@
                         <a href="https://app.naumoski.fit" class="btn btn-medium btn-rounded btn-trans">Login</a>
                     </div>
                 </li>
-
                 <!-- SLIDE 2 -->
                 <li data-index="rs-02" data-transition="fade" data-slotamount="default" data-easein="Power100.easeIn" data-easeout="Power100.easeOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="02">
                     <!-- MAIN IMAGE -->
@@ -311,7 +295,6 @@
                         <a href="#contact" class="btn btn-medium btn-rounded btn-trans scroll">Contact us</a>
                     </div>
                 </li>
-
                 <!-- SLIDE 3 -->
                 <li data-index="rs-03" data-transition="fade" data-slotamount="default" data-easein="Power100.easeIn" data-easeout="Power100.easeOut" data-masterspeed="2000" data-fsmasterspeed="1500" data-param1="03">
                     <!-- MAIN IMAGE -->
@@ -446,7 +429,6 @@
 <!--scroll down-->
 <a href="#about" class="scroll-down link scroll main-font font-15 animate"><i class="fas fa-long-arrow-alt-down"></i></a>
 <!-- END MAIN SLIDER -->
-
 <!-- START ABOUT US -->
 <section class="about" id="about">
     <div class="container">
@@ -455,7 +437,6 @@
                 <p class="text-pink font-weight-200 font-20">Basic Info about me</p>
                 <h1 class="main-font font-weight-600 text-white">Mr. Boban <span>Naumoski</span></h1>
             </div>
-
             <div class="col-12 col-lg-6 m-ipad wow fadeInRight" data-wow-delay="300ms">
                 <div class="ml-md-4 pl-md-2 font-weight-200 text-grey font-18">
                     <p>Teaching and coaching has been my passion and career choice. To this day I enjoy passing the knowledge I have acquired through a broad spectrum of experience to others through the medium of the human body.  </p>
@@ -500,7 +481,6 @@
     </div>
 </section>
 <!-- END ABOUT US -->
-
 <!-- START TEAM STATS -->
 <div id="our-blog" class="half-section">
     <div class="container-fluid">
@@ -520,7 +500,6 @@
                 </div>
                 </div>
             </div>
-
             <div class="col-md-6 col-sm-12 p-0">
                 <div class="image hover-effect"><img src="web/assets/images/boban.jpg" alt="our blog" class="equalheight"></div>
             </div>
@@ -528,7 +507,6 @@
     </div>
 </div>
 <!-- END TEAM STATS -->
-
 <!-- START PORTFOLIO -->
 <section id="portfolio" class="padding portfolio">
     <div class="container">
@@ -546,7 +524,6 @@
                     <span class="nav-link" data-filter=".Personal">Competition</span>
                     <span class="nav-link" data-filter=".Medical">Recreation</span>
                 </div> -->
-
                 <ul class="da-thumbs gallery">
                     <!-- First Image -->
                     <li class="items Business Medical Agencies">
@@ -561,7 +538,6 @@
                             </div>
                         </a>
                     </li>
-
                     <!-- Second Image -->
                     <li class="items Business Medical Agencies">
                         <img src="web/assets/images/screenshot2.png" alt="img">
@@ -575,7 +551,6 @@
                             </div>
                         </a>
                     </li>
-
                     <!-- Third Image -->
                     <li class="items Personal Business">
                         <img src="web/assets/images/screenshot3.png" alt="img">
@@ -589,7 +564,6 @@
                             </div>
                         </a>
                     </li>
-
                     <!-- Fourth Image -->
                     <li class="items Medical Personal">
                         <img src="web/assets/images/screenshot4.png" alt="img">
@@ -603,7 +577,6 @@
                             </div>
                         </a>
                     </li>
-
                     <!-- Fifth Image -->
                     <li class="items Medical Agencies">
                         <img src="web/assets/images/screenshot5.png" alt="img">
@@ -617,7 +590,6 @@
                             </div>
                         </a>
                     </li>
-
                     <!-- Sixth Image -->
                     <li class="items Business surgery Medical">
                         <img src="web/assets/images/screenshot6.png" alt="img">
@@ -662,7 +634,6 @@
     <!-- END CLIENTS -->
 </section>
 <!-- END PORTFOLIO -->
-
 <!-- START PARALLAX -->
 <section class="parallax-img parallax">
     <div class="container">
@@ -685,7 +656,6 @@
                             <h3 class="mb-0 text-white alt-font font-weight-normal font-24">Boban Naumoski</h3>
                         </div>
                     </div>
-
                     <!-- Item-2-->
                     <div class="item">
                         <div class="icon-quotes mb-4">
@@ -701,7 +671,6 @@
                             <h3 class="mb-0 text-white alt-font font-weight-normal font-24">Boban Naumoski</h3>
                         </div>
                     </div>
-
                     <!-- Item-3 -->
                     <div class="item">
                         <div class="icon-quotes mb-4">
@@ -723,7 +692,6 @@
     </div>
 </section>
 <!-- END PARALLAX -->
-
 <!-- START PRICE -->
 <section id="pricing" class="pricing">
     <div class="container">
@@ -751,7 +719,7 @@
                         <li><i class="fa fa-check" aria-hidden="true"></i> Psychological support</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> Live chat with Boban Naumoski</li>
                     </ul>
-                    <a href="javascript:void(0)" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
+                    <a href="https://buy.naumoski.fit/" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
                 </div>
             </div>
             <!-- Plan-2 -->
@@ -770,7 +738,7 @@
                         <li><i class="fa fa-check" aria-hidden="true"></i> Psychological support</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> Live chat with Boban Naumoski</li>
                     </ul>
-                    <a href="javascript:void(0)" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
+                    <a href="https://buy.naumoski.fit/" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
                 </div>
             </div>
             <!-- Plan-3 -->
@@ -793,14 +761,13 @@
                         <li><i class="fa fa-check" aria-hidden="true"></i> Psychological support</li>
                         <li><i class="fa fa-check" aria-hidden="true"></i> Live chat with Boban Naumoski</li>
                     </ul>
-                    <a href="javascript:void(0)" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
+                    <a href="https://buy.naumoski.fit/" class="btn btn-medium rounded-pill w-100 portfolio-btn-pink">Choose Plan</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- END PRICE -->
-
 <!-- START TEAM STATS -->
 <div id="our-blog" class="half-section">
     <div class="container-fluid">
@@ -813,7 +780,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6 col-sm-12 p-0">
                 <div class="image hover-effect"><img src="web/assets/images/boban2.jpg" alt="our blog" class="equalheight"></div>
             </div>
@@ -821,7 +787,6 @@
     </div>
 </div>
 <!-- END TEAM STATS -->
-
 <!-- START CONTACT-FORM -->
 <section id="contact" class="contact-sec">
     <div class="container">
@@ -832,7 +797,6 @@
                 <h1 class="main-font font-weight-600 text-white">Let’s Get in Touch</h1>
             </div>
         </div>
-
         <!-- Contact-us -->
         <div class="row">
             <div class="col-12 col-lg-6 contact-details text-md-left">
@@ -851,7 +815,6 @@
                         <p class="alt-font font-14 text-white mt-3">Phone number with prefix</p>
                     </div>
                 </div>
-
                 <div class="row mt-5">
                     <!-- Email-Box -->
                     <div class="col-12 col-md-6 wow fadeIn text-center text-lg-left" data-wow-delay="600ms">
@@ -865,7 +828,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-lg-6 contact-form-box">
                 <form method="POST" class="contact-form" id="contact-form-data">
                     <div class="row">
@@ -936,13 +898,10 @@
         </div>
     </div>
 </footer>
-
 <!-- END FOOTER -->
-
 <!--START SCROLL TOP-->
 <div class="go-top"><i class="fas fa-angle-up"></i><i class="fas fa-angle-up"></i></div>
 <!--END SCROLL TOP-->
-
 <!-- JavaScript -->
 <script src="web/vendor/js/bundle.min.js"></script>
 <!-- Plugin Js -->
@@ -1002,25 +961,20 @@
 <!-- End Facebook Messenger -->
 </body>
 </html>
-
 <?php
 /* Email input from a live contact form to your desired email address through a SMTP and access to your Gmail account of choice. */
-
 $msg = '';
 if (array_key_exists('email', $_POST)) {
     date_default_timezone_set('Etc/UTC');
-
     require_once("php/PHPMailerAutoload.php");
     
     require("php/PHPMailer.php");
     require("php/SMTP.php");
     require("php/Exception.php");
     
-
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     //Tell PHPMailer to use SMTP - requires a local mail server so don't use
     //$mail->isSMTP();
-
     // 0 = off // 1 = client messages // 2 = client and server messages
     $mail->SMTPDebug = 2;
     $mail->Debugoutput = 'html';
@@ -1030,12 +984,10 @@ if (array_key_exists('email', $_POST)) {
     //$mail->SMTPAuth = true;
     $mail->Username = "contact@naumoski.fit";
     $mail->Password = "Naumoski@2021";
-
     // Set as the same email address you just gave up the password to up above.
     $mail->setFrom('contact@naumoski.fit', 'First Last');
     // Where do you want the message to be sent?
     $mail->addAddress('contact@naumoski.fit', 'Name Here');
-
     if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
         // Edit the Subject line below, as desired
         $mail->Subject = 'NaumoskiFit';
