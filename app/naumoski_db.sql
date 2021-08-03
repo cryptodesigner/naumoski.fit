@@ -89,7 +89,6 @@ CREATE TABLE IF NOT EXISTS `naumoski_db`.`basics` (
   `zaboluvanja` VARCHAR(300) NULL,
   `iskustvo` VARCHAR(200) NULL,
   `suplement` VARCHAR(200) NULL,
-  `tip_rabota` VARCHAR(200) NULL,
   PRIMARY KEY (`basic_id`, `clients_client_id`),
     FOREIGN KEY (`clients_client_id`)
     REFERENCES `naumoski_db`.`clients` (`client_id`)
