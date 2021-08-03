@@ -890,7 +890,7 @@
             <!--Social-->
             <div class="col-6 text-center">
                 <!--Text-->
-                <p class="company-about fadeIn text-white">Наумоски ФИТ ДООЕЛ (Sportsko I rekreativno obrazovanie)<br>ул. Абас Емин 325 Охрид, Македонија, <br>Тел: 078/455-556 <br>ЕМБС: 7500688 <br>Даночен бр.: 4020021543301</p>
+                <p class="company-about fadeIn text-white">Наумоски ФИТ ДООЕЛ (Спортско и рекреативно образование)<br>ул. Абас Емин 325 Охрид, Македонија, <br>Тел: 078/455-556 <br>ЕМБС: 7500688 <br>Даночен бр.: 4020021543301</p>
             </div>
             <div class="col-6 text-center">
                 <div class="footer-social">
