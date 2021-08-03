@@ -610,28 +610,6 @@
             </div>
         </div>
     </div>
-    <!-- START CLIENTS -->
-    <div class="clients">
-        <h2 class="d-none">hidden</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <!--Client Slider-->
-                    <div class="owl-carousel partners-slider">
-                        <!--Item-->
-                        <a href="https://cryptodesign.cc" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/cryptodesign-white.svg"></div></a>
-                        <!--Item-->
-                        <a href="https://cryptodesign.cc" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/cryptodesign-white.svg"></div></a>
-                        <!--Item-->
-                        <a href="https://cryptodesign.cc" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/cryptodesign-white.svg"></div></a>
-                        <!--Item-->
-                        <a href="https://cryptodesign.cc" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/cryptodesign-white.svg"></div></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END CLIENTS -->
 </section>
 <!-- END PORTFOLIO -->
 <!-- START PARALLAX -->
@@ -880,11 +858,41 @@
 <!- - END GOOGLE-MAP - ->
 -->
 <!-- START FOOTER -->
+    <!-- START CLIENTS -->
+<section id="portfolio" class="padding portfolio">
+    <div class="clients">
+        <h2 class="d-none">hidden</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!--Client Slider-->
+                    <div class="owl-carousel partners-slider">
+                        <!--Item-->
+                        <a href="#" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/visasecure.svg"></div></a>
+                        <!--Item-->
+                        <a href="#" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/mastercard.svg"></div></a>
+                        <!--Item-->
+                        <a href="#" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/maestro.svg"></div></a>
+                        <!--Item-->
+                        <a href="#" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/diners.svg"></div></a>
+                        <!--Item-->
+                        <a href="#" target="_blank"><div class="logo-item"><img alt="client-logo" src="web/assets/images/americanexpress.svg"></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- END CLIENTS -->
 <footer class="footer">
     <div class="container">
         <div class="row align-items-center">
             <!--Social-->
-            <div class="col-12 text-center">
+            <div class="col-6 text-center">
+                <!--Text-->
+                <p class="company-about fadeIn text-white">Наумоски ФИТ ДООЕЛ (Sportsko I rekreativno obrazovanie)<br>ул. Абас Емин 325 Охрид, Македонија, <br>Тел: 078/455-556 <br>ЕМБС: 7500688 <br>Даночен бр.: 4020021543301</p>
+            </div>
+            <div class="col-6 text-center">
                 <div class="footer-social">
                     <ul class="list-unstyled social-icons social-icons-simple">
                         <li><a class="social-icon wow fadeInUp" href="https://www.facebook.com/naumoski.fit/" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i> </a> </li>

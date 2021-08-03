@@ -257,12 +257,12 @@ jQuery(function ($) {
         autoplayHoverPause: true,
         slideBy: 1,
         loop: true,
-        margin: 30,
+        margin: 20,
         dots: false,
         nav: false,
         responsive: {
             1200: {
-                items: 4,
+                items: 5,
             },
             768: {
                 items: 3,
