@@ -890,7 +890,7 @@
             <!--Social-->
             <div class="col-6 text-center">
                 <!--Text-->
-                <p class="company-about fadeIn text-white">Наумоски ФИТ ДООЕЛ (Спортско и рекреативно образование)<br>ул. Абас Емин 325 Охрид, Македонија, <br>Тел: 078/455-556 <br>ЕМБС: 7500688 <br>Даночен бр.: 4020021543301</p>
+                <p class="company-about fadeIn text-white">Наумоски ФИТ ДООЕЛ (Спортско и рекреативно образование)<br>ул. Абас Емин 325 Охрид, Македонија, <br>Тел: 078/455-556 <br>ЕМБС: 7500688 | Даночен бр.: 4020021543301</p>
             </div>
             <div class="col-6 text-center">
                 <div class="footer-social">
@@ -901,7 +901,7 @@
                     </ul>
                 </div>
                 <!--Text-->
-                <p class="company-about fadeIn text-white">&copy; 2021 Naumoski.Fit. All rights reserved <br>Designed with <i style="color:red;" class="fa fa-heart" aria-hidden="true"></i> by <a href="https://cryptodesign.cc" target="_blank">CryptoDesign</a></p>
+                <p class="company-about fadeIn text-white">&copy; 2021 Naumoski.Fit. All rights reserved <br>contact email: <a href="mailto:someone@yoursite.com">naumoski.fit@gmail.com</a><br>Designed with <i style="color:red;" class="fa fa-heart" aria-hidden="true"></i> by <a href="https://cryptodesign.cc" target="_blank">CryptoDesign</a></p>
             </div>
         </div>
     </div>
