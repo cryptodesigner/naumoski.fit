@@ -123,7 +123,7 @@
                 </li>
 
                 <li class="sidenav-item">
-                  <a href="client_profile.php">
+                  <a href="client_profile_en.php">
                     <span class="sidenav-icon icon icon-home"></span>
                     <span class="sidenav-label">Home</span>
                   </a>
@@ -136,8 +136,8 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Measurements</li>
-                    <li><a href="add_measurement.php">Add Measurement</a></li>
-                    <li><a href="client_measurements.php">Show Measurements</a></li>
+                    <li><a href="add_measurement_en.php">Add Measurement</a></li>
+                    <li><a href="client_measurements_en.php">Show Measurements</a></li>
                   </ul>
                 </li>
 
@@ -148,8 +148,8 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Basic Information</li>
-                    <li><a href="add_basics.php">Add Basic Information</a></li>
-                    <li><a href="client_basics.php">Show Basic Information</a></li>
+                    <li><a href="add_basics_en.php">Add Basic Information</a></li>
+                    <li><a href="client_basics_en.php">Show Basic Information</a></li>
                   </ul>
                 </li>
 
@@ -160,27 +160,27 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Schedule</li>
-                    <li><a href="add_schedule.php">Add Schedule</a></li>
-                    <li><a href="client_schedule.php">Show Schedule</a></li>
+                    <li><a href="add_schedule_en.php">Add Schedule</a></li>
+                    <li><a href="client_schedule_en.php">Show Schedule</a></li>
                   </ul>
                 </li>
 
                 <li class="sidenav-item">
-                  <a href="client_trainings.php">
+                  <a href="client_trainings_en.php">
                     <span class="sidenav-icon icon icon-heartbeat"></span>
                     <span class="sidenav-label">Trainings</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item">
-                  <a href="client_meals.php">
+                  <a href="client_meals_en.php">
                     <span class="sidenav-icon icon icon-cutlery"></span>
                     <span class="sidenav-label">Diets</span>
                   </a>
                 </li>
 
                 <li class="sidenav-item">
-                  <a href="client_recepts.php">
+                  <a href="client_recepts_en.php">
                     <span class="sidenav-icon icon icon-apple"></span>
                     <span class="sidenav-label">Recepts</span>
                   </a>
@@ -193,8 +193,8 @@
                   </a>
                   <ul class="sidenav-subnav collapse">
                     <li class="sidenav-subheading">Photo Gallery</li>
-                    <li><a href="photos.php">Gallery</a></li>
-                    <li><a href="upload_photo.php">Add Photo</a></li>
+                    <li><a href="photos_en.php">Gallery</a></li>
+                    <li><a href="upload_photo_en.php">Add Photo</a></li>
                   </ul>
                 </li>
 
