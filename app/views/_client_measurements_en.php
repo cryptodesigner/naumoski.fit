@@ -180,7 +180,7 @@
             labels: xresults,
             datasets: [{ 
               data: yresults,
-              label: "Графикон за Тежина",
+              label: "Weight Graphique",
               borderColor: "#000000",
               backgroundColor: '#98721a55',
               fill: true,
@@ -268,7 +268,7 @@
             labels: xresults2,
             datasets: [{ 
               data: yresults2,
-              label: "Графикон за Гради",
+              label: "Chest Graphique",
               borderColor: "#000000",
               backgroundColor: '#00B0ED55',
               fill: true,
@@ -356,7 +356,7 @@
             labels: xresults3,
             datasets: [{ 
               data: yresults3,
-              label: "Графикон за Папок",
+              label: "Navel Graphique",
               borderColor: "#000000",
               backgroundColor: '#00FF7955',
               fill: true,
@@ -444,7 +444,7 @@
             labels: xresults4,
             datasets: [{ 
               data: yresults4,
-              label: "Графикон за Колк",
+              label: "Hip Graphique",
               borderColor: "#000000",
               backgroundColor: '#f0ff0055',
               fill: true,
@@ -532,7 +532,7 @@
             labels: xresults5,
             datasets: [{ 
               data: yresults5,
-              label: "Графикон за Рака",
+              label: "Arm Graphique",
               borderColor: "#000000",
               backgroundColor: '#D3000055',
               fill: true,
@@ -620,7 +620,7 @@
             labels: xresults6,
             datasets: [{ 
               data: yresults6,
-              label: "Графикон за Бут",
+              label: "But Graphique",
               borderColor: "#000000",
               backgroundColor: '#B400D355',
               fill: true,
