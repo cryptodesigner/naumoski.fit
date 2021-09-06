@@ -118,7 +118,9 @@
               <h1 class="profile-name"><?= $c->name; ?> <?= $c->surname; ?></h1>
             <?php endforeach; ?>
             <a class="profile-follow-btn" href ="edit_profile.php">Edit Profile</a>
+
             <span><a style="color: white;" href="client_profile.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="client_profile_en.php">EN</a></span>
+
             <p>Client<a class="link-inverted"></a></p>
           </div>
         </div>

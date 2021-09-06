@@ -27,6 +27,9 @@
 			<h1 class="title-bar-title">
 		  	<span class="d-ib">Додади Мерење</span>
 			</h1>
+
+			<span><a style="color: white;" href="add_measurement.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="add_measurement_en.php">EN</a></span>
+
 			<?php if(!empty($message)): ?>
       <div class="alert alert-success">
         <?= $message; ?>

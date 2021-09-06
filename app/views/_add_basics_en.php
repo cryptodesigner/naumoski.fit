@@ -29,6 +29,9 @@
 		  <h1 class="title-bar-title">
 			<span class="d-ib">Add Basic Information</span>
 		  </h1>
+
+		  <span><a style="color: white;" href="add_basics.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="add_basics_en.php">EN</a></span>
+		  
 		  <?php if(!empty($message)): ?>
       <div class="alert alert-success">
         <?= $message; ?>

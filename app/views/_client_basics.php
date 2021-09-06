@@ -13,6 +13,9 @@
 			<h1 class="title-bar-title">
 			  <span class="d-ib">Листа На Основни Информации</span>
 			</h1>
+
+			<span><a style="color: white;" href="client_basics.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="client_basics_en.php">EN</a></span>
+
 	  </div>
 	  <div class="row gutter-xs">
 			<div class="col-xs-12">

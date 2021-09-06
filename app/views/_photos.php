@@ -12,6 +12,9 @@
 			<h1 class="title-bar-title">
 			  <span class="d-ib">Фотографии</span>
 			</h1>
+
+      <span><a style="color: white;" href="photos.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="photos_en.php">EN</a></span>
+
 	  </div>
 
     <div class='wrap'>

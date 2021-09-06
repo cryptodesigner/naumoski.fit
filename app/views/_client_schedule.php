@@ -12,6 +12,9 @@
 	    <h1 class="title-bar-title">
 	      <span class="d-ib">Листа На распореди</span>
 	    </h1>
+
+	    <span><a style="color: white;" href="client_schedule.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="client_schedule_en.php">EN</a></span>
+
 	  </div>
 	  <div class="row gutter-xs">
 	    <div class="col-xs-12">

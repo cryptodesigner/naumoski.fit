@@ -4,6 +4,9 @@
 			<h1 class="title-bar-title">
 			  <span class="d-ib">Прикачете Фотографија</span>
 			</h1>
+
+			<span><a style="color: white;" href="upload_photo.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="upload_photo_en.php">EN</a></span>
+
 	  </div>
 	  <form data-toggle="md-validator" action="upload_photo.php" method="POST" enctype="multipart/form-data">
 			<div class="row">

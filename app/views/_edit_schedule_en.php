@@ -30,6 +30,9 @@
 		<h1 class="title-bar-title">
 		  <span class="d-ib">Edit Schedule</span>
 		</h1>
+
+		<span><a style="color: white;" href="edit_schedule.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="edit_schedule_en.php">EN</a></span>
+		
 		<?php if(!empty($message)): ?>
       <div class="alert alert-success">
         <?= $message; ?>

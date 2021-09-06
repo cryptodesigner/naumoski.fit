@@ -49,6 +49,9 @@
 			<h1 class="title-bar-title">
 			  <span class="d-ib">List of Measurements</span>
 			</h1>
+
+      <span><a style="color: white;" href="client_measurements.php">MK</a> <span style="color: white;">|</span> <a style="color: white;" href="client_measurements_en.php">EN</a></span>
+      
 	  </div>
 			<div class="col-md-12">
 		 		<div class="card">
