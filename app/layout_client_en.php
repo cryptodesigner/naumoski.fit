@@ -71,6 +71,7 @@
                 <span class="bar-line bar-line-6 in"></span>
               </span>
             </button>
+
             <ul class="nav navbar-nav navbar-right">
               <li class="visible-xs-block">
                 <h4 class="navbar-text text-center"><?php echo $_SESSION['email']; ?></h4>
