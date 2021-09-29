@@ -333,7 +333,7 @@
     .profile-header {
         display:table;
         height: 100%;
-        height: calc(100vh - 50px);
+        /*height: calc(100vh - 50px);*/
         min-height: 100%;
         padding-bottom: 2px;
         table-layout: fixed;
